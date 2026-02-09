@@ -1,0 +1,61 @@
+site_name: Robokassa Docs
+site_url: https://rk-sales.github.io/docs/
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: white
+      accent: blue
+
+extra_css:
+  - extra.css
+  
+plugins:
+  - search
+  - section-index
+
+nav:
+  - Главная: index.md
+
+  - Приём платежей:
+      - priem-platezhey/index.md
+      - Платёжные методы:
+          - Карты РФ: priem-platezhey/platezhnye-metody/cards-rf.md
+          - Иностранные карты: priem-platezhey/platezhnye-metody/cards-foreign.md
+          - СБП: priem-platezhey/platezhnye-metody/sbp.md
+          - Sber Pay: priem-platezhey/platezhnye-metody/sberpay.md
+          - T-Pay Pay: priem-platezhey/platezhnye-metody/tpay.md
+          - MTS Pay: priem-platezhey/platezhnye-metody/mts-pay.md
+          - Alfa Pay: priem-platezhey/platezhnye-metody/alfa-pay.md
+          - Yandex Pay (с двойным кэшбэком): priem-platezhey/platezhnye-metody/yandex-pay.md
+          - Mir Pay (с двойным кэшбэком): priem-platezhey/platezhnye-metody/mir-pay.md
+          - Оплата частями «Подели»: priem-platezhey/platezhnye-metody/podeli.md
+          - Оплата частями «Yandex Split»: priem-platezhey/platezhnye-metody/yandex-split.md
+          - Оплата частями «Мокка»: priem-platezhey/platezhnye-metody/mokka.md
+          - Рассрочка / кредит ОТП-Банк: priem-platezhey/platezhnye-metody/otp-credit.md
+          - Рассрочка через карту «Халва»: priem-platezhey/platezhnye-metody/halva.md
+          - ЮMoney кошелёк: priem-platezhey/platezhnye-metody/yoomoney.md
+      - Функции Robokassa:
+          - Мультибанкинг: priem-platezhey/funktsii/multibanking.md
+          - Формирование ссылок на оплату: priem-platezhey/funktsii/payment-links.md
+          - Холдирование платежей: priem-platezhey/funktsii/hold.md
+          - Рекуррентные платежи (подписки): priem-platezhey/funktsii/recurring.md
+          - Мультиаккаунт: priem-platezhey/funktsii/multiaccount.md
+          - Брендирование платёжной формы: priem-platezhey/funktsii/branding.md
+
+  - Подключение:
+      - Инструкция подключения для ИП: podklyuchenie/ip.md
+      - Инструкция подключения для ООО: podklyuchenie/ooo.md
+      - Инструкция подключения для СМЗ: podklyuchenie/smz.md
+      - Требования к подключаемым веб-ресурсам:
+          - Требования к сайтам: podklyuchenie/trebovaniya/sites.md
+          - Требования к сообществу VK: podklyuchenie/trebovaniya/vk.md
+          - Требования к Telegram‑каналу или боту: podklyuchenie/trebovaniya/telegram.md
+          - Требования к мобильному приложению: podklyuchenie/trebovaniya/mobile-app.md
+
+  - Интеграции: integratsii/index.md
+
+  - Мобильное приложение Robokassa: mobile-app/index.md
+
