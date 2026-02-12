@@ -15,13 +15,17 @@ extra_css:
 plugins:
   - search
   - section-index
+  
+markdown_extensions:
+  - attr_list
+  - admonition
 
 nav:
   - Главная: index.md
 
   - Приём платежей:
-      - priem-platezhey/index.md
       - Платёжные методы:
+          - priem-platezhey/platezhnye-metody/index.md
           - Карты РФ: priem-platezhey/platezhnye-metody/cards-rf.md
           - Иностранные карты: priem-platezhey/platezhnye-metody/cards-foreign.md
           - СБП: priem-platezhey/platezhnye-metody/sbp.md
@@ -38,12 +42,20 @@ nav:
           - Рассрочка через карту «Халва»: priem-platezhey/platezhnye-metody/halva.md
           - ЮMoney кошелёк: priem-platezhey/platezhnye-metody/yoomoney.md
       - Функции Robokassa:
+          - priem-platezhey/funktsii/index.md
           - Мультибанкинг: priem-platezhey/funktsii/multibanking.md
           - Формирование ссылок на оплату: priem-platezhey/funktsii/payment-links.md
           - Холдирование платежей: priem-platezhey/funktsii/hold.md
           - Рекуррентные платежи (подписки): priem-platezhey/funktsii/recurring.md
+          - Сплитование (деление платежей на разные компании): priem-platezhey/funktsii/split.md
           - Мультиаккаунт: priem-platezhey/funktsii/multiaccount.md
           - Брендирование платёжной формы: priem-platezhey/funktsii/branding.md
+      - Чеки и ФЗ-54 (Фискализация платежей):
+          - priem-platezhey/fz-54/index.md
+          - Робочеки (Бесплатная Онлайн-Касса): priem-platezhey/fz-54/robocheki.md
+          - Робокасса-Онлайн (Аренда облачной кассы): priem-platezhey/fz-54/robokassa-online.md
+          - Робочеки СМЗ (Чеки для самозанятых): priem-platezhey/fz-54/robocheki-smz.md
+
 
   - Подключение:
       - Инструкция подключения для ИП: podklyuchenie/ip.md
