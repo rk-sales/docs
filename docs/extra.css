@@ -526,19 +526,24 @@ html, body {
   }
 }
 
+/* ПОДСКАЗКА СКРЫТА НА ВСЕХ УСТРОЙСТВАХ */
+p.table-mobile-hint {
+  display: none !important;
+}
+
 /* МОБИЛЬНАЯ ТАБЛИЦА — ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ */
 @media screen and (max-width: 76.2344em) {
   .md-typeset table {
     display: block !important;
     width: 100% !important;
     overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important; /* плавный скролл на iOS */
+    -webkit-overflow-scrolling: touch !important;
     white-space: nowrap !important;
   }
   
   .md-typeset table td,
   .md-typeset table th {
-    white-space: nowrap !important;  /* текст не переносится */
+    white-space: nowrap !important;
   }
   
   /* Первый столбец фиксированной ширины */
@@ -546,13 +551,81 @@ html, body {
   .md-typeset table th:first-child {
     position: sticky !important;
     left: 0 !important;
-    background-color: #fafafa !important;  /* фон, чтобы не просвечивало */
+    background-color: #fafafa !important;
     box-shadow: 2px 0 5px rgba(0,0,0,0.02) !important;
     z-index: 10 !important;
   }
   
-  /* Подсветка Robokassa на мобилках */
-  .md-typeset table tr:first-child td:first-child {
-    background-color: #fff9e6 !important;
+  /* ПОДСКАЗКА — ТОЛЬКО НА МОБИЛКАХ */
+  p.table-mobile-hint {
+    display: block !important;
+  }
+}
+
+/* МОБИЛЬНЫЕ ШРИФТЫ — ВСЁ В ОДНОМ МЕСТЕ */
+@media screen and (max-width: 76.2344em) {
+  /* Основной текст */
+  html, body, .md-typeset {
+    font-size: 16px !important;  /* чуть меньше, чем на ПК (было 18px) */
+  }
+  
+  /* Заголовок H1 — О нас */
+  .md-typeset h1,
+  .about-title {
+    font-size: 36px !important;  /* был 45px */
+    line-height: 1.2 !important;
+  }
+  
+  /* Заголовки H2 — Почему Robokassa, Реквизиты */
+  .md-typeset h2,
+  .why-title,
+  .requisites-title {
+    font-size: 28px !important;  /* был 30-36px */
+    margin-bottom: 1.25rem !important;
+  }
+  
+  /* Заголовок таблицы */
+  .comparison-title {
+    font-size: 24px !important;  /* был 28px */
+  }
+  
+  /* Текст в блоках */
+  .feature-content p,
+  .feature-list li,
+  .feature-sublist li,
+  .feature-lead {
+    font-size: 15px !important;  /* был 16px */
+    line-height: 1.5 !important;
+  }
+  
+  /* Заголовки фич */
+  .feature-content h3 {
+    font-size: 18px !important;  /* был 20px */
+  }
+  
+  /* Реквизиты — значения */
+  .requisite-value {
+    font-size: 16px !important;  /* был 18px */
+  }
+  
+  /* Реквизиты — метки */
+  .requisite-label {
+    font-size: 12px !important;  /* был 13px */
+  }
+  
+  /* Таблица */
+  .md-typeset table {
+    font-size: 14px !important;  /* был 15-16px */
+  }
+  
+  .md-typeset table th,
+  .md-typeset table td {
+    font-size: 14px !important;
+    padding: 0.35rem 0.2rem !important;
+  }
+  
+  /* Галочки в таблице */
+  .md-typeset table td:not(:first-child) {
+    font-size: 18px !important;  /* оставляем крупнее для читаемости */
   }
 }
