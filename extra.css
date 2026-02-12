@@ -525,3 +525,34 @@ html, body {
     padding: 1.5rem !important;
   }
 }
+
+/* МОБИЛЬНАЯ ТАБЛИЦА — ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ */
+@media screen and (max-width: 76.2344em) {
+  .md-typeset table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important; /* плавный скролл на iOS */
+    white-space: nowrap !important;
+  }
+  
+  .md-typeset table td,
+  .md-typeset table th {
+    white-space: nowrap !important;  /* текст не переносится */
+  }
+  
+  /* Первый столбец фиксированной ширины */
+  .md-typeset table td:first-child,
+  .md-typeset table th:first-child {
+    position: sticky !important;
+    left: 0 !important;
+    background-color: #fafafa !important;  /* фон, чтобы не просвечивало */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.02) !important;
+    z-index: 10 !important;
+  }
+  
+  /* Подсветка Robokassa на мобилках */
+  .md-typeset table tr:first-child td:first-child {
+    background-color: #fff9e6 !important;
+  }
+}
