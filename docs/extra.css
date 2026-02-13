@@ -236,22 +236,6 @@ html, body {
   letter-spacing: 2px !important;
 }
 
-/* Мобильные */
-@media screen and (max-width: 76.2344em) {
-  .md-typeset table {
-    font-size: 15px !important;
-  }
-  .md-typeset table th,
-  .md-typeset table td {
-    font-size: 15px !important;
-    padding: 0.4rem 0.2rem !important;
-  }
-  .md-typeset table td:not(:first-child) {
-    font-size: 18px !important;
-    min-width: 55px !important;
-  }
-}
-
 
 /* Фикс размера шрифта в левом меню (перебиваем .8rem темы) */
 @media screen and (max-width: 76.2344em) {
