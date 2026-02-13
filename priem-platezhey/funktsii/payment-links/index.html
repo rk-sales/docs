@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#robokassa" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -466,7 +471,7 @@
   <span class="md-ellipsis">
     
   
-    T-Pay Pay
+    T-Pay
   
 
     
@@ -865,6 +870,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Формирование ссылок на оплату
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -882,6 +907,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Виды ссылок на оплату
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Виды ссылок на оплату">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разовая (динамическая) ссылка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Многоразовая (статическая) ссылка
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные настройки ссылки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как использовать ссылки в работе
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1565,6 +1670,77 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Виды ссылок на оплату
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Виды ссылок на оплату">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разовая (динамическая) ссылка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Многоразовая (статическая) ссылка
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные настройки ссылки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как использовать ссылки в работе
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1581,9 +1757,45 @@
 
 
 
-  <h1>Формирование ссылок на оплату</h1>
-
-
+<h1 id="robokassa">Формирование ссылок на оплату в ЛК Robokassa</h1>
+<p>В личном кабинете Robokassa можно создавать ссылки на оплату для клиентов — разовые (динамические) и многоразовые (статические).<br />
+Такие ссылки удобно использовать, если у клиента нет доступа к сайту, если вы принимаете оплату через мессенджеры, соцсети или по e‑mail.</p>
+<h2 id="_1">Виды ссылок на оплату</h2>
+<h3 id="_2">Разовая (динамическая) ссылка</h3>
+<ul>
+<li>Создаётся под конкретного клиента и/или заказ.</li>
+<li>По умолчанию рассчитана на <strong>одну оплату</strong> — после успешного платежа ссылка становится недействительной.</li>
+<li>Можно задать срок действия (дни на оплату), сумму, описание заказа и дополнительные параметры.</li>
+<li>Удобна для счетов по запросу: индивидуальные заказы, разовые услуги, оплата по договорённости.</li>
+</ul>
+<h3 id="_3">Многоразовая (статическая) ссылка</h3>
+<ul>
+<li>Подходит для <strong>многократного использования</strong> разными клиентами.</li>
+<li>Может использоваться как «кнопка оплаты» в шапке сайта, в описании товара, в соцсетях, в e‑mail‑рассылках.</li>
+<li>Каждый переход — отдельный платёж; вы видите их в списке заказов/счетов.</li>
+<li>Можно ограничивать или настраивать способы оплаты, язык и поведение переадресаций.</li>
+</ul>
+<h2 id="_4">Дополнительные настройки ссылки</h2>
+<p>При создании/редактировании счёта вы можете добавить дополнительные параметры:</p>
+<ul>
+<li><strong>Номер заказа.</strong> Используется для связи оплаты с вашим внутренним заказом или CRM.  </li>
+<li><strong>Описание заказа.</strong> Видно в ЛК и на платёжной странице, помогает клиенту понять, за что именно он платит.  </li>
+<li><strong>Комментарий для сотрудников.</strong> Внутренний комментарий, не отображается клиенту; можно использовать для заметок менеджера.  </li>
+<li><strong>Связать аванс или предоплату.</strong> Привязка платежа к авансовой схеме: отдельно фиксируете предоплату и финальный расчёт.  </li>
+<li><strong>SuccessUrl2.</strong> Адрес, на который перенаправляется клиент после успешной оплаты (например, страница «Спасибо за заказ» или страница с закрытыми материалами).  </li>
+<li><strong>FailUrl2.</strong> Адрес, на который попадает клиент, если оплата не прошла (например, страница с ошибкой и кнопкой «Попробовать ещё раз»).  </li>
+</ul>
+<p>Также доступен выбор:</p>
+<ul>
+<li><strong>Дней на оплату.</strong> Сколько дней ссылка остаётся активной; по истечении срока страница оплаты становится недоступной.  </li>
+<li><strong>Интерфейс оплаты.</strong> Язык платёжной страницы: русский, английский и, при необходимости, другие доступные локали.</li>
+</ul>
+<h2 id="_5">Как использовать ссылки в работе</h2>
+<ul>
+<li>Отправляйте ссылку клиентам в мессенджере, по SMS или e‑mail.</li>
+<li>Встраивайте многоразовые ссылки в кнопки на лендингах, в соцсетях, в письмах.</li>
+<li>Слежение за оплатами идёт через ЛК Robokassa: по каждой ссылке видны статусы (ожидает, оплачено, просрочено) и детали платежей.</li>
+</ul>
 
 
 
