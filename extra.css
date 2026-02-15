@@ -613,3 +613,127 @@ p.table-mobile-hint {
     font-size: 18px !important;  /* оставляем крупнее для читаемости */
   }
 }
+
+/* ===== УВЕЛИЧИВАЕМ ШРИФТ В РАСКРЫВАЮЩИХСЯ БЛОКАХ ===== */
+
+/* Заголовки вопросов */
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  font-size: 18px;  /* такой же, как основной текст */
+}
+
+.md-typeset .admonition.question > .admonition-title,
+.md-typeset details.question > summary {
+  font-size: 18px;
+  font-weight: 600;  /* полужирный для вопроса */
+}
+
+/* Контент внутри ответа */
+.md-typeset .admonition.question > *:not(.admonition-title),
+.md-typeset details.question > *:not(summary) {
+  font-size: 16px;  /* можно 16-18px, как хочешь */
+  line-height: 1.6;
+}
+
+/* Если используешь question (как в твоём коде) */
+.md-typeset .question .admonition-title,
+.md-typeset .question summary {
+  font-size: 18px !important;
+}
+
+.md-typeset .question {
+  font-size: 18px;
+}
+
+/* Если хочешь увеличить текст внутри списков и параграфов */
+.md-typeset .question p,
+.md-typeset .question li {
+  font-size: 16px;
+}
+
+/* ===== АЛЬТЕРНАТИВНЫЙ ВАРИАНТ: для всех типов admonitions ===== */
+/* Если захочешь увеличить все блоки (note, warning, tip и т.д.) */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 16px;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* ===== МЕНЯЕМ ЦВЕТ ВОПРОСОВ С ЗЕЛЁНОГО НА ЧЁРНЫЙ ===== */
+
+/* Цвет заголовка вопроса (зелёный по умолчанию) */
+.md-typeset .question > .admonition-title,
+.md-typeset .question > summary {
+  color: #000000 !important;  /* чёрный текст */
+  background-color: #f5f5f5 !important;  /* светло-серый фон (как у хедера) */
+}
+
+/* Убираем зелёную полоску слева */
+.md-typeset .question {
+  border-color: #eaeef2 !important;  /* светлая граница, как у других блоков */
+  border-left-width: 4px !important;
+  border-left-color: #000000 !important;  /* или чёрная полоска */
+}
+
+/* Иконка вопроса (зелёный треугольник/вопрос) */
+.md-typeset .question > .admonition-title::before,
+.md-typeset .question > summary::before {
+  color: #000000 !important;  /* чёрная иконка */
+  background-color: transparent !important;
+}
+
+/* СТРЕЛКА СПРАВА - жёстко возвращаем */
+.md-typeset .question > summary {
+  list-style: none !important;  /* убираем стандартный маркер */
+  position: relative !important;  /* для позиционирования стрелки */
+}
+
+.md-typeset .question > summary::-webkit-details-marker {
+  display: none !important;  /* убираем стандартный маркер в WebKit */
+}
+
+.md-typeset .question > summary::after {
+  content: "▶" !important;  /* явно задаём символ стрелки */
+  color: #000000 !important;
+  font-size: 0.8rem !important;
+  position: absolute !important;
+  right: 1rem !important;
+  top: 50% !important;  /* центрируем по вертикали */
+  transform: translateY(-50%) rotate(0deg) !important;  /* выравнивание по центру */
+  transition: transform 0.2s !important;
+  line-height: 1 !important;
+}
+
+.md-typeset .question[open] > summary::after {
+  transform: translateY(-50%) rotate(90deg) !important;  /* поворот при открытии с сохранением центровки */
+}
+
+/* Убираем зелёную обводку при фокусе/клике */
+.md-typeset .question:focus,
+.md-typeset .question:focus-visible,
+.md-typeset .question:focus-within,
+.md-typeset .question summary:focus,
+.md-typeset .question summary:focus-visible {
+  outline: none !important;  /* убираем обводку */
+  box-shadow: none !important;  /* убираем тень если есть */
+}
+
+/* Если хочешь убрать зелёный фон совсем */
+.md-typeset .question {
+  background-color: #ffffff !important;  /* белый фон */
+}
+
+/* При открытом блоке */
+.md-typeset .question[open] {
+  background-color: #ffffff !important;
+}
+
+/* Ховер эффект для вопроса */
+.md-typeset .question > summary:hover {
+  background-color: #fafafa !important;  /* чуть темнее при наведении */
+}
