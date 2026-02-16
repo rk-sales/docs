@@ -737,3 +737,72 @@ p.table-mobile-hint {
 .md-typeset .question > summary:hover {
   background-color: #fafafa !important;  /* чуть темнее при наведении */
 }
+
+/* ===== УБИРАЕМ ФИОЛЕТОВЫЙ У ПРИМЕРОВ ===== */
+
+/* ===== СТИЛИ ДЛЯ ПРИМЕРОВ (example) ===== */
+
+/* Основной контейнер примера */
+.md-typeset .example {
+  border-color: #000000 !important;  /* чёрная обводка */
+  background-color: #ffffff !important;  /* белый фон */
+  border-width: 1px !important;
+  border-style: solid !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;  /* лёгкая тень как у других блоков */
+}
+
+/* Заголовок примера */
+.md-typeset .example > .admonition-title,
+.md-typeset .example > summary {
+  background-color: #f5f5f5 !important;  /* светло-серый фон заголовка (как у вопросов) */
+  color: #000000 !important;  /* чёрный текст */
+  border-bottom: 1px solid #eaeef2 !important;  /* разделитель */
+}
+
+/* Иконка слева */
+.md-typeset .example > .admonition-title::before,
+.md-typeset .example > summary::before {
+  color: #000000 !important;  /* чёрная иконка */
+}
+
+/* Стрелка справа (если используется) */
+.md-typeset .example > summary::after {
+  color: #000000 !important;
+}
+
+/* Контент внутри примера */
+.md-typeset .example > *:not(.admonition-title):not(summary) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Убираем фиолетовые оттенки при наведении/фокусе */
+.md-typeset .example:hover,
+.md-typeset .example:focus,
+.md-typeset .example:focus-within {
+  border-color: #000000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.md-typeset .example > summary:hover {
+  background-color: #fafafa !important;  /* чуть темнее при наведении */
+}
+
+/* Для открытого состояния */
+.md-typeset .example[open] {
+  border-color: #000000 !important;
+}
+
+.md-typeset .example[open] > summary {
+  border-bottom: 1px solid #eaeef2 !important;
+  background-color: #f5f5f5 !important;
+}
+
+/* ===== УБИРАЕМ ИКОНКУ КОЛБОЧКИ ===== */
+
+.md-typeset .example > .admonition-title::before,
+.md-typeset .example > summary::before {
+  content: "" !important;  /* убираем содержимое */
+  margin-right: 0 !important;  /* убираем отступ */
+  display: none !important;
+}
