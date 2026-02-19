@@ -70,8 +70,13 @@ nav:
           - Требования к мобильному приложению: podklyuchenie/trebovaniya/mobile-app.md
           
   - Инструкции и обучение:
-      - Работа через ЛК (login.robokassa.ru): instructions/app-robokassa/index.md
-      - Работа через Мобильное Приложение (pwa.robokassa.ru): instructions/lk-robokassa/index.md
+      - Работа через ЛК (login.robokassa.ru):
+          - Вывод и автовывод денежных средств: instructions/lk-robokassa/vyvod.md
+          - Выставление разовой ссылки на оплату: instructions/lk-robokassa/dynamic-link.md
+          - Выставление многоразовой ссылки на оплату: instructions/lk-robokassa/static-link.md
+          - Выставление ссылок с регулярным списанием (подписка): instructions/lk-robokassa/sub-link.md
+      - Работа через Мобильное Приложение (pwa.robokassa.ru):
+          - Требования к мобильному приложению: instructions/app-robokassa/chiki.md
 
   - Интеграции: integratsii/index.md
 

@@ -806,3 +806,9 @@ p.table-mobile-hint {
   margin-right: 0 !important;  /* убираем отступ */
   display: none !important;
 }
+
+.icon-inline {
+  height: 30px;
+  width: 30px;
+  vertical-align: -0.25em; /* чуть опустить/поднять при необходимости */
+}
