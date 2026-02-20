@@ -75,10 +75,16 @@ nav:
           - Выставление разовой ссылки на оплату: instructions/lk-robokassa/dynamic-link.md
           - Выставление многоразовой ссылки на оплату: instructions/lk-robokassa/static-link.md
           - Выставление ссылок с регулярным списанием (подписка): instructions/lk-robokassa/sub-link.md
+          - Как оформить возврат средств покупателю: instructions/lk-robokassa/vozvrat.md
+          - Как настроить уведомления об успешных платежах: instructions/lk-robokassa/payment-notify.md
       - Работа через Мобильное Приложение (pwa.robokassa.ru):
           - Требования к мобильному приложению: instructions/app-robokassa/chiki.md
+      - Работа через Telegram бота / VK бота: instructions/tg-vk-links.md
+      - Создание Интернет-Магазина на базе Robokassa:
+          - Robomarket: instructions/rk-shops/robomarket.md
+          - RobokassaShopBot в Telegram: instructions/rk-shops/rkshop-bot.md
 
-  - Интеграции: integratsii/index.md
+  - Готовые интеграции и API: integratsii/index.md
 
   - Мобильное приложение Robokassa: mobile-app/index.md
 
