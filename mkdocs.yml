@@ -76,6 +76,7 @@ nav:
           - Выставление ссылок с регулярным списанием (подписка): instructions/lk-robokassa/sub-link.md
           - Как оформить возврат средств покупателю: instructions/lk-robokassa/vozvrat.md
           - Как настроить уведомления об успешных платежах: instructions/lk-robokassa/payment-notify.md
+          - Как выдать персональный доступ для сотрудников к ЛК: instructions/lk-robokassa/roles.md
           - Как подключить фискализацию:
               - Аренда Облачной Кассы - Robokassa Online: instructions/lk-robokassa/fz-54/robokassa-online.md
               - Включение сервиса «Робочеки»: instructions/lk-robokassa/fz-54/robocheki.md
