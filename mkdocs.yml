@@ -56,8 +56,7 @@ nav:
           - priem-platezhey/fz-54/index.md
           - Робочеки (Бесплатная Онлайн-Касса): priem-platezhey/fz-54/robocheki.md
           - Робокасса-Онлайн (Аренда облачной кассы): priem-platezhey/fz-54/robokassa-online.md
-          - Робочеки СМЗ (Чеки для самозанятых): priem-platezhey/fz-54/robocheki-smz.md
-
+          - Робочеки СМЗ (Чеки для самозанятых и ИП на НПД): priem-platezhey/fz-54/robocheki-smz.md
 
   - Подключение:
       - Инструкция подключения для ИП: podklyuchenie/ip.md
@@ -77,8 +76,24 @@ nav:
           - Выставление ссылок с регулярным списанием (подписка): instructions/lk-robokassa/sub-link.md
           - Как оформить возврат средств покупателю: instructions/lk-robokassa/vozvrat.md
           - Как настроить уведомления об успешных платежах: instructions/lk-robokassa/payment-notify.md
+          - Как подключить фискализацию:
+              - Аренда Облачной Кассы - Robokassa Online: instructions/lk-robokassa/fz-54/robokassa-online.md
+              - Включение сервиса «Робочеки»: instructions/lk-robokassa/fz-54/robocheki.md
+              - Подключение внешней интеграции: 
+                  - Комтет-касса: instructions/lk-robokassa/fz-54/external-integration/komtet-kassa.md
+                  - Эвотор: instructions/lk-robokassa/fz-54/external-integration/evotor.md
+                  - Атол-онлайн: instructions/lk-robokassa/fz-54/external-integration/atol-online.md
+                  - Первый ОФД: instructions/lk-robokassa/fz-54/external-integration/perviy-ofd.md
+                  - Бизнес.Ру Онлайн-Чеки: instructions/lk-robokassa/fz-54/external-integration/biznes-ru.md
+                  - LiteBox: instructions/lk-robokassa/fz-54/external-integration/litebox.md
+                  - Инит-Про: instructions/lk-robokassa/fz-54/external-integration/init-pro.md
+                  - Модуль-Касса: instructions/lk-robokassa/fz-54/external-integration/modul-kassa.md
+                  - МТС-Касса: instructions/lk-robokassa/fz-54/external-integration/mts.md
       - Работа через Мобильное Приложение (pwa.robokassa.ru):
-          - Требования к мобильному приложению: instructions/app-robokassa/chiki.md
+          - Выставление разовой ссылки на оплату: instructions/app-robokassa/app-paylink.md
+          - Как оформить возврат средств покупателю: instructions/app-robokassa/app-vozvrat.md
+          - Как отслеживать поступления платежей: instructions/app-robokassa/app-paynotify.md
+          
       - Работа через Telegram бота / VK бота: instructions/tg-vk-links.md
       - Создание Интернет-Магазина на базе Robokassa:
           - Robomarket: instructions/rk-shops/robomarket.md
