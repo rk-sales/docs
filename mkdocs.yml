@@ -21,6 +21,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - md_in_html 
 
 nav:
   - Главная: index.md
@@ -70,6 +71,7 @@ nav:
           
   - Инструкции и обучение:
       - Работа через ЛК (login.robokassa.ru):
+          - instructions/lk-robokassa/index.md
           - Вывод и автовывод денежных средств: instructions/lk-robokassa/vyvod.md
           - Выставление разовой ссылки на оплату: instructions/lk-robokassa/dynamic-link.md
           - Выставление многоразовой ссылки на оплату: instructions/lk-robokassa/static-link.md
@@ -91,7 +93,8 @@ nav:
                   - Модуль-Касса: instructions/lk-robokassa/fz-54/external-integration/modul-kassa.md
                   - МТС-Касса: instructions/lk-robokassa/fz-54/external-integration/mts.md
       - Работа через Мобильное Приложение (pwa.robokassa.ru):
-          - Выставление разовой ссылки на оплату: instructions/app-robokassa/app-paylink.md
+          - instructions/app-robokassa/index.md
+          - Выставление ссылок на оплату: instructions/app-robokassa/app-paylink.md
           - Как оформить возврат средств покупателю: instructions/app-robokassa/app-vozvrat.md
           - Как отслеживать поступления платежей: instructions/app-robokassa/app-paynotify.md
           
@@ -101,6 +104,3 @@ nav:
           - RobokassaShopBot в Telegram: instructions/rk-shops/rkshop-bot.md
 
   - Готовые интеграции и API: integratsii/index.md
-
-  - Мобильное приложение Robokassa: mobile-app/index.md
-
