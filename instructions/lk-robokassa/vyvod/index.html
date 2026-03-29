@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://rk-sales.github.io/docs/instructions/lk-robokassa/vyvod/">
       
       
-        <link rel="prev" href="../../../podklyuchenie/trebovaniya/mobile-app/">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../dynamic-link/">
@@ -1556,8 +1556,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1571,8 +1572,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1">
@@ -2327,8 +2334,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../app-robokassa/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2342,8 +2350,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
@@ -2370,7 +2384,7 @@
   <span class="md-ellipsis">
     
   
-    Выставление разовой ссылки на оплату
+    Выставление ссылок на оплату
   
 
     
@@ -2621,33 +2635,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../mobile-app/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Мобильное приложение Robokassa
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -2751,7 +2738,11 @@
 <ul>
 <li>Клиент оплачивает заказ на платёжной странице Robokassa.</li>
 <li>Средства поступают в расчётный банк Robokassa и отображаются на балансе в личном кабинете.</li>
-<li>При выводе деньги приходят с назначением «Перечисление по договору»:</li>
+<li>Далее, автоматически или вручную, создаётся запрос на вывод денежных средств.</li>
+<li>Деньги поступают на банковский счёт, указанный в реквизитах по магазину.</li>
+</ul>
+<p>При выводе деньги приходят с назначением «Перечисление по договору»:</p>
+<ul>
 <li>ИП и юрлицам — на расчётный счёт;</li>
 <li>самозанятым — на счёт физического лица.</li>
 </ul>
@@ -2778,7 +2769,7 @@
    -- <strong>по датам</strong> — в определённые дни (например, раз в неделю или раз в месяц);<br />
    -- <strong>по сумме</strong> — при достижении заданного остатка на балансе.</li>
 </ol>
-<p>Пример настроек:</p>
+<p><strong>Пример настроек:</strong></p>
 <ul>
 <li>«Выводить все доступные средства каждый понедельник»;  </li>
 <li>«Выводить средства при достижении баланса от 50 000 ₽».</li>
@@ -2794,7 +2785,7 @@
 <li>Подтвердите создание заявки.</li>
 </ol>
 <p>После создания заявки её статус можно посмотреть в истории операций.<br />
-Для этого перейдите в раздел "Главная" в меню и на откровшейся странице пролистайте вниз до "Заявки в поддержку".</p>
+Для этого перейдите в раздел "Главная" в меню, и на открывшейся странице пролистайте вниз до "Заявки в поддержку".</p>
 <hr />
 <h2 id="_6">Вопросы и ответы</h2>
 <details class="question">
@@ -2811,7 +2802,7 @@
 <details class="question">
 <summary>Могу ли я изменить реквизиты для вывода средств?</summary>
 <p>Да, вы можете изменить реквизиты в личном кабинете.<br />
-- Перейдите в раздел <strong>«Мои магазины» → по вашему магазинун нажмите на «Настройки» - в открывшемся окне добавьте новый «Способ вывода средств»</strong>.<br />
+- Перейдите в раздел <strong>«Мои магазины» → по вашему магазину нажмите на «Настройки» → в открывшемся окне добавьте новый «Способ вывода средств»</strong>.<br />
 - Сохраните изменения.<br />
 - Дождитесь проверки новых реквизитов специалистами.<br />
 До завершения проверки вывод может временно выполняться на старые реквизиты или быть недоступен — это нормальная мера безопасности.</p>
