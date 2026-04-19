@@ -1,27 +1,45 @@
-site_name: Robokassa Docs
+site_name: "База знаний"
 site_url: https://rk-sales.github.io/docs/
 
 theme:
   name: material
   language: ru
+  logo: img/logo_robokassa_black.png   # Логотип в хедере
+  logo_dark: img/logo_robokassa_white.png
   palette:
-    - scheme: default
+    # Светлая тема
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: white
       accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Переключить на тёмную тему
+    # Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Переключить на светлую тему
 
 extra_css:
   - extra.css
   
+extra_javascript:
+  - custom.js
+
 plugins:
   - search
   - section-index
-  
+
 markdown_extensions:
   - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - md_in_html 
+  - md_in_html
 
 nav:
   - Главная: index.md
