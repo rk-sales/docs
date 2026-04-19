@@ -1,36 +1,10 @@
-/* Белый хедер и чёрный текст */
-.md-header {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
-/* Логотип/название в хедере чёрным */
-.md-header__title,
-.md-header__topic,
-.md-header__button,
-.md-header__button .md-icon {
-  color: #000000 !important;
-}
-
-/* Светлый футер и тёмный текст */
-.md-footer {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
-/* Ссылки в футере потемнее */
-.md-footer a {
-  color: #000000 !important;
-}
-
-/* Подключаем TildaSans из локальных файлов */
+/* ===== ПОДКЛЮЧЕНИЕ ШРИФТОВ ===== */
 @font-face {
   font-family: "TildaSans";
   src: url("fonts/TildaSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
   font-family: "TildaSans";
   src: url("fonts/TildaSans-Bold.woff2") format("woff2");
@@ -38,31 +12,43 @@
   font-style: normal;
 }
 
-/* Обычный текст 16px TildaSans */
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 html, body {
   font-family: "TildaSans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 18px;
 }
 
-/* Заголовок страницы крупный (около 45px) */
-.md-typeset h1 {
-  font-family: "TildaSans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* Хедер и футер – светлая тема (по умолчанию) */
+.md-header,
+.md-footer {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-header__button .md-icon,
+.md-footer a {
+  color: #000000 !important;
+}
+
+/* Основной контент */
+.md-typeset {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.md-typeset h1,
+.about-title {
+  font-family: "TildaSans", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   font-size: 45px;
   color: #000000;
   margin-bottom: 0.5em;
-}
-
-.about-title {
-  font-size: 45px !important;
-  font-weight: 700 !important;
-  margin-bottom: 0.75rem !important;
-  color: #000000;
   position: relative;
   padding-bottom: 0.5rem;
 }
-
-.about-title::after {
+.about-title::after,
+.md-typeset h1::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -72,27 +58,26 @@ html, body {
   background: #000000;
   border-radius: 2px;
 }
-
-/* Подзаголовки поменьше для иерархии */
-.md-typeset h2 {
+.md-typeset h2,
+.why-title,
+.requisites-title {
   font-size: 30px;
   margin-top: 0.8em;
   margin-bottom: 0.6em;
+  font-weight: 700;
+  color: #000000;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
-
-.md-typeset__scrollwrap {
-  margin-bottom: 0 !important;
+.why-title::after,
+.requisites-title::after {
+  display: none; /* управляется отдельно */
 }
-
 .md-typeset h3 {
   font-size: 22px;
 }
 
-.md-typeset {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
+/* Кнопки */
 .md-typeset .md-button--black {
   background-color: #000000 !important;
   color: #ffffff !important;
@@ -100,20 +85,18 @@ html, body {
   padding: 0.6rem 1.1rem;
   font-size: 0.95rem;
   line-height: 1.2;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s, color 0.2s;
 }
-
 .md-typeset .md-button--black:hover {
   background-color: #333333 !important;
   border-color: #333333 !important;
-  color: #ffffff !important;
 }
 
+/* Вспомогательные элементы */
 .demo-button-wrap {
   text-align: center;
   margin: 1.2rem 0 0.4rem;
 }
-
 .demo-hint {
   text-align: center;
   font-size: 0.95rem;
@@ -121,140 +104,231 @@ html, body {
   color: #555555;
 }
 
-/* Левое меню навигации */
+/* ===== ЛЕВОЕ МЕНЮ (ОБЩИЕ СТИЛИ) ===== */
 .md-nav {
   font-size: 16px;
 }
 
-/* Правая панель содержания (оглавление) */
+/* Ховер поверх активного пункта — работает для любой вложенности */
+.md-nav--primary .md-nav__item--active .md-nav__link:hover {
+  background-color: #dcdcdc !important;
+}
+
+/* Ховер на label внутри активного пункта */
+.md-nav--primary .md-nav__item--active label.md-nav__link:hover {
+  background-color: #dcdcdc !important;
+}
+
+/* Ховер на иконке стрелки внутри активного пункта */
+.md-nav--primary .md-nav__item--active .md-nav__icon:hover {
+  background-color: #dcdcdc !important;
+}
+
+/* Полный сброс паддингов и маргинов для всех элементов внутри ссылок */
+.md-nav--primary .md-nav__link,
+.md-nav--primary .md-nav__container,
+.md-nav--primary .md-nav__link .md-ellipsis {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Сама ссылка — фоновый контейнер */
+.md-nav--primary .md-nav__link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;                /* высота плашки */
+  margin: 0.15rem 0 !important;
+  border-radius: 6px !important;
+  color: #000000 !important;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+/* Контейнер внутри ссылки (появляется у пунктов с вложенностью) */
+.md-nav--primary .md-nav__link .md-nav__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+}
+
+/* Текстовый блок — вот где будут отступы! */
+.md-nav--primary .md-nav__link .md-ellipsis {
+  flex: 1;
+  padding: 0.35rem 0.75rem !important;   /* единый отступ вокруг текста */
+}
+
+/* Стрелка прижата вправо */
+.md-nav--primary .md-nav__link .md-nav__icon {
+  margin-left: auto !important;
+  padding: 0 0.5rem 0 0 !important;       /* небольшой отступ справа */
+}
+
+/* Ховер и активный пункт */
+.md-nav--primary .md-nav__link:hover {
+  background-color: #f2f2f2 !important;
+}
+.md-nav--primary .md-nav__item--active > .md-nav__link {
+  background-color: #e8e8e8 !important;  /* чуть темнее ховера, без жирного */
+}
+
+/* Для пунктов с вложенным меню — текст не должен заходить под стрелку */
+.md-nav--primary .md-nav__item--nested > .md-nav__link .md-ellipsis {
+  padding-right: 2rem !important;        /* место под стрелку */
+}
+
+/* Вложенные пункты второго уровня — возвращаем обычный правый отступ */
+.md-nav--primary .md-nav__item .md-nav__item .md-nav__link .md-ellipsis {
+  padding-right: 0.75rem !important;
+}
+
+.md-nav--primary .md-nav__item {
+  line-height: 1.3;
+}
+
+/* Заголовок "База знаний" над пунктами меню */
+.md-nav--primary > .md-nav__title {
+  display: block !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem !important;
+  margin-bottom: 0.5rem;
+  color: #000000 !important;
+  border-bottom: 1px solid #eaeef2;
+}
+
+/* Правая панель (оглавление) */
 .md-nav--secondary {
   font-size: 15px;
 }
 
-/* Убираем жёсткое ограничение центральной колонки */
+/* Ширина сетки */
 .md-grid {
   max-width: 1400px;
 }
-
-/* Чуть уменьшить внутренние поля у левого сайдбара */
 .md-sidebar--primary {
   padding-left: 0.2rem;
 }
-
 .md-content {
   line-height: 1.2;
 }
-
-/* ТАБЛИЦА - ГЛАВНЫЙ БЛОК СРАВНЕНИЯ */
-.comparison-title {
-  font-size: 28px !important;
-  font-weight: 600 !important;
-  margin-bottom: 1rem !important;
-  color: #000000;
-  letter-spacing: -0.01em;
-  position: relative;
-  padding-bottom: 0.5rem;
+.md-typeset__scrollwrap {
+  margin-bottom: 0 !important;
 }
 
-.comparison-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: #000000;
-  border-radius: 2px;
-}
+/* ===== ТАБЛИЦЫ ===== */
 
+/* Общие стили таблиц */
 .md-typeset table {
   width: 100% !important;
-  display: table !important;
-  table-layout: fixed !important;
-  font-size: 16px !important;
-  line-height: 1.4 !important;
-  margin: 0 0 !important;
-  border-collapse: collapse !important;
-  overflow-x: visible !important;
+  display: table;
+  table-layout: fixed;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0;
+  border-collapse: collapse;
+  overflow-x: visible;
 }
-
 .md-typeset table th {
-  font-size: 16px !important;
-  font-weight: 700 !important;
-  background-color: #f5f5f5 !important;
-  padding: 0.6rem 0.35rem !important;
-  vertical-align: middle !important;
-  white-space: normal !important;
-  word-break: break-word !important;
+  font-weight: 700;
+  background-color: #f5f5f5;
+  padding: 0.6rem 0.35rem;
+  vertical-align: middle;
+  white-space: normal;
+  word-break: break-word;
 }
-
 .md-typeset table td {
-  font-size: 16px !important;
-  padding: 0.5rem 0.35rem !important;
-  vertical-align: middle !important;
+  padding: 0.5rem 0.35rem;
+  vertical-align: middle;
 }
-
+/* Первый столбец (названия) */
 .md-typeset table td:first-child,
 .md-typeset table th:first-child {
-  width: 180px !important;
-  max-width: 180px !important;
-  min-width: 140px !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  text-align: left !important;
-  white-space: normal !important;
-  word-break: break-word !important;
-  hyphens: auto !important;
-  padding-left: 0.8rem !important;
-  padding-right: 0.8rem !important;
-  background-color: #fafafa !important;
-  line-height: 1.3 !important;
+  width: 180px;
+  min-width: 140px;
+  font-weight: 500;
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  background-color: #fafafa;
+  line-height: 1.3;
 }
-
+/* Остальные столбцы (значения) */
 .md-typeset table td:not(:first-child),
 .md-typeset table th:not(:first-child) {
-  font-size: 16px !important;
-  text-align: center !important;
-  width: auto !important;
-  min-width: 70px !important;
-  padding: 0.5rem 0.25rem !important;
-  white-space: nowrap !important;
+  text-align: center;
+  min-width: 70px;
+  padding: 0.5rem 0.25rem;
+  white-space: nowrap;
 }
-
 .md-typeset table td:not(:first-child) {
-  font-size: 20px !important;
-  line-height: 1 !important;
-  letter-spacing: 2px !important;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 2px;
 }
 
-@media screen and (max-width: 76.2344em) {
-  .md-nav--primary .md-nav__item,
-  .md-nav--primary .md-nav__title {
-    font-size: 16px !important;
-    line-height: 1.6;
-  }
+/* Тарифная таблица (равные столбцы) */
+.md-typeset .standard-table table {
+  table-layout: fixed;
+  width: 100%;
+  margin: 0 0;
+}
+.md-typeset .standard-table table th,
+.md-typeset .standard-table table td {
+  width: 33.333%;
+  min-width: 33.333%;
+  max-width: 33.333%;
+  padding: 0.5rem 0.35rem;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+  text-align: left;
+  vertical-align: middle;
+}
+.md-typeset .standard-table table th {
+  font-weight: 700;
+  background-color: #f5f5f5;
+}
+.md-typeset .standard-table table td:first-child,
+.md-typeset .standard-table table th:first-child {
+  width: 33.333%;
+  min-width: 33.333%;
+  max-width: 33.333%;
+  background-color: #f5f5f5;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.md-typeset .standard-table table td:not(:first-child),
+.md-typeset .standard-table table th:not(:first-child) {
+  font-size: 16px;
+  letter-spacing: normal;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
 }
 
-/* БЛОК "ПОЧЕМУ ROBOKASSA" */
+/* ===== БЛОК "ПОЧЕМУ ROBOKASSA" ===== */
 .why-robokassa {
   margin: 0 0;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 1rem 2rem 2rem;
   background: #ffffff;
   border: 1px solid #eaeef2;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
-
 .why-robokassa h2 {
-  font-size: 36px !important;
-  font-weight: 700 !important;
-  margin-top: 0 !important;
-  margin-bottom: 2rem !important;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem;
   color: #000000;
-  position: relative;
-  padding-bottom: 0.5rem;
 }
-
 .why-robokassa h2::after {
   content: '';
   position: absolute;
@@ -265,17 +339,13 @@ html, body {
   background: #000000;
   border-radius: 2px;
 }
-
 .why-title {
-  font-size: 30px !important;
-  font-weight: 700 !important;
-  margin-top: 0 !important;
-  margin-bottom: 2rem !important;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 2rem;
   color: #000000;
-  position: relative;
-  padding-bottom: 0.5rem;
 }
-
 .why-title::after {
   content: '';
   position: absolute;
@@ -286,19 +356,16 @@ html, body {
   background: #000000;
   border-radius: 2px;
 }
-
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-
 .feature {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
 }
-
 .feature-icon {
   font-size: 32px;
   line-height: 1;
@@ -309,279 +376,115 @@ html, body {
   justify-content: center;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
-
 .feature-content {
   flex: 1;
 }
-
 .feature-content h3 {
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  margin: 0 0 0.5rem 0 !important;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
   color: #000000;
 }
-
-.feature-content p {
-  font-size: 16px !important;
-  line-height: 1.6 !important;
-  margin: 0 !important;
-  color: #333333;
-}
-
-.feature-list {
-  margin: 0 !important;
-  padding-left: 1.2rem !important;
-}
-
-.feature-list li {
-  font-size: 16px !important;
-  line-height: 1.6 !important;
-  margin-bottom: 0.5rem !important;
-  color: #333333;
-}
-
-.feature-list li:last-child {
-  margin-bottom: 0 !important;
-}
-
-@media screen and (max-width: 76.2344em) {
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .why-robokassa {
-    padding: 1.5rem;
-  }
-  
-  .why-robokassa h2 {
-    font-size: 30px !important;
-  }
-}
-
-.feature-lead {
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  margin: 0 0 0.75rem 0 !important;
-  color: #000000 !important;
-}
-
-.feature-sublist {
-  margin: 0 !important;
-  padding-left: 1.2rem !important;
-  list-style-type: disc !important;
-}
-
+.feature-content p,
+.feature-list li,
 .feature-sublist li {
-  font-size: 16px !important;
-  line-height: 1.6 !important;
-  margin-bottom: 0.5rem !important;
+  font-size: 16px;
+  line-height: 1.6;
   color: #333333;
 }
-
-.feature-sublist li:last-child {
-  margin-bottom: 0 !important;
+.feature-list {
+  margin: 0;
+  padding-left: 1.2rem;
 }
-
+.feature-list li {
+  margin-bottom: 0.5rem;
+}
+.feature-list li:last-child {
+  margin-bottom: 0;
+}
+.feature-lead {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: #000000;
+}
+.feature-sublist {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+.feature-sublist li {
+  margin-bottom: 0.5rem;
+}
+.feature-sublist li:last-child {
+  margin-bottom: 0;
+}
 .feature-sublist strong {
-  font-weight: 700 !important;
+  font-weight: 700;
   color: #000000;
 }
 
-/* ЗАГОЛОВОК РЕКВИЗИТОВ */
+/* ===== БЛОК РЕКВИЗИТОВ ===== */
 .requisites-title {
-  font-size: 36px !important;
-  font-weight: 700 !important;
-  margin-top: 4rem !important;
-  margin-bottom: 1.5rem !important;
-  color: #000000 !important;
-  letter-spacing: normal !important;
-  text-align: center !important;
-  position: relative;
-  padding-top: 1.75rem !important;
-  border-top: none !important;
-  background: linear-gradient(to right, 
-    transparent 0%, 
-    transparent 30%,
-    #000000 40%, 
-    #000000 60%, 
-    transparent 70%,
-    transparent 100%
-  ) !important;
-  background-size: 100% 4px !important;
-  background-position: top !important;
-  background-repeat: no-repeat !important;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-align: center;
+  padding-top: 1.75rem;
+  background: linear-gradient(to right, transparent 0%, transparent 30%, #000000 40%, #000000 60%, transparent 70%, transparent 100%);
+  background-size: 100% 4px;
+  background-position: top;
+  background-repeat: no-repeat;
 }
-
-.requisites-title::after {
-  display: none !important;
-}
-
-/* БЛОК РЕКВИЗИТОВ */
 .requisites {
-  margin: 0 0 2rem 0 !important;
-  padding: 2rem 2rem !important;
-  background: #ffffff !important;
-  border: 1px solid #eaeef2 !important;
-  border-radius: 20px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  margin: 0 0 2rem;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #eaeef2;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
-
-.requisite-value {
-  font-size: 18px !important;
-  font-weight: 400 !important;
-  color: #000000 !important;
-  line-height: 1.5 !important;
-  font-family: "TildaSans", -apple-system, BlinkMacSystemFont, sans-serif !important;
-}
-
-.requisite-label {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: #666666 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  font-family: "TildaSans", -apple-system, BlinkMacSystemFont, sans-serif !important;
-}
-
-.requisite-value a {
-  color: #000000 !important;
-  text-decoration: underline !important;
-  text-decoration-color: #cccccc !important;
-  text-underline-offset: 4px !important;
-  border-bottom: none !important;
-}
-
-.requisite-value a:hover {
-  text-decoration-color: #000000 !important;
-}
-
 .requisites-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem 2rem;
 }
-
 .requisite-item {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
-
 .requisite-full {
   grid-column: span 2;
   margin-top: 0.75rem;
   padding-top: 1.25rem;
   border-top: 1px solid #eaeef2;
 }
-
-@media screen and (max-width: 76.2344em) {
-  .requisites-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-  
-  .requisite-full {
-    grid-column: span 1;
-  }
-  
-  .requisites {
-    padding: 1.5rem !important;
-  }
+.requisite-value {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.5;
 }
-
-/* ПОДСКАЗКА СКРЫТА НА ВСЕХ УСТРОЙСТВАХ */
-p.table-mobile-hint {
-  display: none !important;
+.requisite-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
-/* МОБИЛЬНАЯ ТАБЛИЦА — ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ */
-@media screen and (max-width: 76.2344em) {
-  .md-typeset table {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    white-space: nowrap !important;
-  }
-  
-  .md-typeset table td,
-  .md-typeset table th {
-    white-space: nowrap !important;
-  }
-  
-  .md-typeset table td:first-child,
-  .md-typeset table th:first-child {
-    position: sticky !important;
-    left: 0 !important;
-    background-color: #fafafa !important;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.02) !important;
-    z-index: 10 !important;
-  }
-  
-  p.table-mobile-hint {
-    display: block !important;
-  }
+.requisite-value a {
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-color: #cccccc;
+  text-underline-offset: 4px;
 }
-
-/* МОБИЛЬНЫЕ ШРИФТЫ */
-@media screen and (max-width: 76.2344em) {
-  html, body, .md-typeset {
-    font-size: 16px !important;
-  }
-  
-  .md-typeset h1,
-  .about-title {
-    font-size: 36px !important;
-    line-height: 1.2 !important;
-  }
-  
-  .md-typeset h2,
-  .why-title,
-  .requisites-title {
-    font-size: 28px !important;
-    margin-bottom: 1.25rem !important;
-  }
-  
-  .comparison-title {
-    font-size: 24px !important;
-  }
-  
-  .feature-content p,
-  .feature-list li,
-  .feature-sublist li,
-  .feature-lead {
-    font-size: 15px !important;
-    line-height: 1.5 !important;
-  }
-  
-  .feature-content h3 {
-    font-size: 18px !important;
-  }
-  
-  .requisite-value {
-    font-size: 16px !important;
-  }
-  
-  .requisite-label {
-    font-size: 12px !important;
-  }
-  
-  .md-typeset table {
-    font-size: 14px !important;
-  }
-  
-  .md-typeset table th,
-  .md-typeset table td {
-    font-size: 14px !important;
-    padding: 0.35rem 0.2rem !important;
-  }
-  
-  .md-typeset table td:not(:first-child) {
-    font-size: 18px !important;
-  }
+.requisite-value a:hover {
+  text-decoration-color: #000000;
 }
 
 /* ===== РАСКРЫВАЮЩИЕСЯ БЛОКИ ===== */
@@ -589,56 +492,34 @@ p.table-mobile-hint {
 .md-typeset details.question {
   font-size: 18px;
 }
-
 .md-typeset .admonition.question > .admonition-title,
 .md-typeset details.question > summary {
   font-size: 18px;
   font-weight: 600;
 }
-
 .md-typeset .admonition.question > *:not(.admonition-title),
 .md-typeset details.question > *:not(summary) {
   font-size: 16px;
   line-height: 1.6;
 }
 
-.md-typeset .question .admonition-title,
-.md-typeset .question summary {
-  font-size: 18px !important;
-}
-
+/* Полный сброс цвета рамки и свечения для .question */
 .md-typeset .question {
-  font-size: 18px;
+  border-color: #000000 !important;
+  border-top-color: #000000 !important;
+  border-right-color: #000000 !important;
+  border-bottom-color: #000000 !important;
+  border-left-color: #000000 !important;
+  border-left-width: 4px;
+  background-color: #ffffff;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.md-typeset .question p,
-.md-typeset .question li {
-  font-size: 16px;
-}
-
-.md-typeset .admonition,
-.md-typeset details {
-  font-size: 16px;
-}
-
-.md-typeset .admonition-title,
-.md-typeset summary {
-  font-size: 17px;
-  font-weight: 600;
-}
-
-/* ===== ЦВЕТ ВОПРОСОВ ===== */
 .md-typeset .question > .admonition-title,
 .md-typeset .question > summary {
-  color: #000000 !important;
-  background-color: #f5f5f5 !important;
-}
-
-.md-typeset .question {
-  border-color: #eaeef2 !important;
-  border-left-width: 4px !important;
-  border-left-color: #000000 !important;
-  background-color: #ffffff !important;
+  color: #000000;
+  background-color: #f5f5f5;
 }
 
 .md-typeset .question > .admonition-title::before,
@@ -648,166 +529,419 @@ p.table-mobile-hint {
 }
 
 .md-typeset .question > summary {
-  list-style: none !important;
-  position: relative !important;
+  list-style: none;
+  position: relative;
 }
-
 .md-typeset .question > summary::-webkit-details-marker {
-  display: none !important;
+  display: none;
 }
-
 .md-typeset .question > summary::after {
-  content: "▶" !important;
+  content: "▶";
   color: #000000 !important;
-  font-size: 0.8rem !important;
-  position: absolute !important;
-  right: 1rem !important;
-  top: 50% !important;
-  transform: translateY(-50%) rotate(0deg) !important;
-  transition: transform 0.2s !important;
-  line-height: 1 !important;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
 }
-
 .md-typeset .question[open] > summary::after {
-  transform: translateY(-50%) rotate(90deg) !important;
+  transform: translateY(-50%) rotate(90deg);
 }
-
 .md-typeset .question[open] {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
-
 .md-typeset .question > summary:hover {
-  background-color: #fafafa !important;
+  background-color: #fafafa;
 }
 
+/* Убираем любое свечение при фокусе на вопросе */
 .md-typeset .question:focus,
 .md-typeset .question:focus-visible,
 .md-typeset .question:focus-within,
 .md-typeset .question summary:focus,
-.md-typeset .question summary:focus-visible {
+.md-typeset .question summary:focus-visible,
+.md-typeset .question .admonition-title:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 
-/* ===== ПРИМЕРЫ (example) ===== */
+/* Блок "Пример" */
 .md-typeset .example {
-  border-color: #000000 !important;
-  background-color: #ffffff !important;
-  border-width: 1px !important;
-  border-style: solid !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  border-color: #000000;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
-
 .md-typeset .example > .admonition-title,
 .md-typeset .example > summary {
-  background-color: #f5f5f5 !important;
-  color: #000000 !important;
-  border-bottom: 1px solid #eaeef2 !important;
+  background-color: #f5f5f5;
+  color: #000000;
+  border-bottom: 1px solid #eaeef2;
 }
-
 .md-typeset .example > .admonition-title::before,
 .md-typeset .example > summary::before {
-  display: none !important;
+  display: none;
 }
-
 .md-typeset .example > summary::after {
-  color: #000000 !important;
+  color: #000000;
 }
-
 .md-typeset .example > *:not(.admonition-title):not(summary) {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  background-color: #ffffff;
+  color: #000000;
 }
-
 .md-typeset .example:hover,
 .md-typeset .example:focus,
-.md-typeset .example:focus-within {
-  border-color: #000000 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-}
-
-.md-typeset .example > summary:hover {
-  background-color: #fafafa !important;
-}
-
+.md-typeset .example:focus-within,
 .md-typeset .example[open] {
-  border-color: #000000 !important;
+  border-color: #000000;
 }
-
 .md-typeset .example[open] > summary {
-  border-bottom: 1px solid #eaeef2 !important;
-  background-color: #f5f5f5 !important;
+  border-bottom: 1px solid #eaeef2;
+  background-color: #f5f5f5;
 }
 
-/* ===== ТАРИФНАЯ ТАБЛИЦА — РАВНЫЕ СТОЛБЦЫ ===== */
-.md-typeset .standard-table table {
-  table-layout: fixed !important;
-  width: 100% !important;
-  margin: 0 0 !important;
-  border-collapse: collapse !important;
-}
-
-.md-typeset .standard-table table th,
-.md-typeset .standard-table table td {
-  width: 33.333% !important;
-  min-width: 33.333% !important;
-  max-width: 33.333% !important;
-  padding: 0.5rem 0.35rem !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  letter-spacing: normal !important;
-  white-space: normal !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  line-height: 1.4 !important;
-  text-align: left !important;
-  vertical-align: middle !important;
-}
-
-.md-typeset .standard-table table th {
-  font-weight: 700 !important;
-  background-color: #f5f5f5 !important;
-}
-
-/* Отменяем глобальный стиль для первого столбца */
-.md-typeset .standard-table table td:first-child,
-.md-typeset .standard-table table th:first-child {
-  width: 33.333% !important;
-  min-width: 33.333% !important;
-  max-width: 33.333% !important;
-  background-color: #f5f5f5 !important;
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
-  font-size: 16px !important;
-  letter-spacing: normal !important;
-  line-height: 1.4 !important;
-}
-
-/* Принудительно отменяем глобальный стиль для 2-го и 3-го столбцов */
-.md-typeset .standard-table table td:not(:first-child),
-.md-typeset .standard-table table th:not(:first-child) {
-  font-size: 16px !important;
-  letter-spacing: normal !important;
-  line-height: 1.4 !important;
-  white-space: normal !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-/* ===== ИКОНКИ В ТЕКСТЕ (inline) ===== */
+/* ===== ИКОНКИ В ТЕКСТЕ ===== */
 .icon-inline {
-  display: inline-block !important;
-  width: 20px !important;
-  height: 20px !important;
-  vertical-align: middle !important;
-  margin: 0 2px !important;
-  object-fit: contain !important;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 2px;
+  object-fit: contain;
 }
 
-/* Для списков и заголовков можно чуть крупнее */
-.md-typeset li .icon-inline,
-.md-typeset h3 .icon-inline,
-.md-typeset h4 .icon-inline {
-  width: 20px !important;
-  height: 20px !important;
+/* ===== АДАПТИВНОСТЬ ===== */
+p.table-mobile-hint {
+  display: none;
+}
+
+@media screen and (max-width: 76.2344em) {
+  /* Мобильная типографика */
+  html, body, .md-typeset {
+    font-size: 16px;
+  }
+  .md-typeset h1,
+  .about-title {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  .md-typeset h2,
+  .why-title,
+  .requisites-title {
+    font-size: 28px;
+    margin-bottom: 1.25rem;
+  }
+  .comparison-title {
+    font-size: 24px;
+  }
+  .feature-content p,
+  .feature-list li,
+  .feature-sublist li,
+  .feature-lead {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .feature-content h3 {
+    font-size: 18px;
+  }
+  .requisite-value {
+    font-size: 16px;
+  }
+  .requisite-label {
+    font-size: 12px;
+  }
+
+  /* Таблицы с горизонтальной прокруткой */
+  .md-typeset table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .md-typeset table td,
+  .md-typeset table th {
+    white-space: nowrap;
+  }
+  .md-typeset table td:first-child,
+  .md-typeset table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fafafa;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.02);
+    z-index: 10;
+  }
+  .md-typeset table {
+    font-size: 14px;
+  }
+  .md-typeset table th,
+  .md-typeset table td {
+    font-size: 14px;
+    padding: 0.35rem 0.2rem;
+  }
+  .md-typeset table td:not(:first-child) {
+    font-size: 18px;
+  }
+  p.table-mobile-hint {
+    display: block;
+  }
+
+  /* Сетка преимуществ в одну колонку */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .why-robokassa {
+    padding: 1.5rem;
+  }
+  .why-robokassa h2 {
+    font-size: 30px;
+  }
+
+  /* Реквизиты */
+  .requisites-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .requisite-full {
+    grid-column: span 1;
+  }
+  .requisites {
+    padding: 1.5rem;
+  }
+
+  /* Меню */
+  .md-nav--primary .md-nav__item,
+  .md-nav--primary .md-nav__title {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* ===== ДЕСКТОП – РАСШИРЕНИЕ САЙДБАРА ===== */
+@media screen and (min-width: 76.25em) {
+  .md-main__inner.md-grid {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* Увеличенная ширина сайдбара */
+  .md-sidebar--primary {
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    flex: 0 0 320px;
+    padding-left: 0.25rem;
+  }
+
+   /* Убираем правый внутренний отступ, чтобы текст занимал всю ширину */
+  .md-sidebar--primary .md-sidebar__inner {
+    padding-right: 0.5rem !important;
+  }
+
+  /* НОВОЕ: резервируем место под скроллбар */
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    scrollbar-gutter: stable;
+  }
+}
+
+/* ===== ТЁМНАЯ ТЕМА ===== */
+[data-md-color-scheme="slate"] {
+  /* Переопределение базовых цветов */
+  --md-default-bg-color: #1e1e1e;
+  --md-default-fg-color: #e0e0e0;
+  
+  /* Инверсия логотипа для тёмной темы */
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    filter: invert(1) brightness(2);
+  }
+  
+  /* Заголовок "База знаний" в тёмной теме */
+  .md-nav--primary > .md-nav__title {
+    color: #e0e0e0 !important;
+    border-bottom-color: #444 !important;
+  }
+  
+  /* Хедер и футер */
+  .md-header,
+  .md-footer {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+  }
+  .md-header__title,
+  .md-header__topic,
+  .md-header__button,
+  .md-header__button .md-icon,
+  .md-footer a {
+    color: #e0e0e0 !important;
+  }
+
+  /* Основной текст */
+  .md-typeset {
+    color: #e0e0e0;
+  }
+  .md-typeset h1,
+  .about-title,
+  .md-typeset h2,
+  .why-title,
+  .requisites-title,
+  .feature-content h3,
+  .feature-lead,
+  .feature-sublist strong {
+    color: #ffffff;
+  }
+  .about-title::after,
+  .md-typeset h1::after,
+  .why-title::after,
+  .requisites-title::after {
+    background: #ffffff;
+  }
+  .demo-hint,
+  .feature-content p,
+  .feature-list li,
+  .feature-sublist li {
+    color: #cccccc;
+  }
+
+  /* Кнопки */
+  .md-typeset .md-button--black {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+  }
+  .md-typeset .md-button--black:hover {
+    background-color: #cccccc !important;
+    border-color: #cccccc !important;
+  }
+
+  /* ===== МЕНЮ (ТЁМНАЯ ТЕМА) ===== */
+  .md-nav--primary .md-nav__link {
+    color: #e0e0e0 !important;
+  }
+  
+  /* Обычный ховер */
+  .md-nav--primary .md-nav__link:hover {
+    background-color: #3a3a3a !important;
+  }
+  
+  /* Активный пункт (без жирного шрифта) */
+  .md-nav--primary .md-nav__item--active > .md-nav__link {
+    background-color: #4a4a4a !important;
+  }
+  
+  /* Ховер поверх активного пункта */
+  .md-nav--primary .md-nav__item--active .md-nav__link:hover {
+    background-color: #555555 !important;
+  }
+  
+  /* Ховер на label внутри активного пункта */
+  .md-nav--primary .md-nav__item--active label.md-nav__link:hover {
+    background-color: #555555 !important;
+  }
+  
+  /* Ховер на иконке стрелки внутри активного пункта */
+  .md-nav--primary .md-nav__item--active .md-nav__icon:hover {
+    background-color: #555555 !important;
+  }
+
+  /* Таблицы */
+  .md-typeset table th {
+    background-color: #2a2a2a;
+  }
+  .md-typeset table td:first-child,
+  .md-typeset table th:first-child {
+    background-color: #252525;
+  }
+  .md-typeset .standard-table table th,
+  .md-typeset .standard-table table td:first-child {
+    background-color: #2a2a2a;
+  }
+
+  /* Блок "Почему Robokassa" */
+  .why-robokassa {
+    background: #2d2d2d;
+    border-color: #444;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .feature-icon {
+    background: #3a3a3a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Реквизиты */
+  .requisites {
+    background: #2d2d2d;
+    border-color: #444;
+  }
+  .requisite-value {
+    color: #ffffff;
+  }
+  .requisite-label {
+    color: #aaaaaa;
+  }
+  .requisite-value a {
+    color: #ffffff;
+    text-decoration-color: #666;
+  }
+  .requisite-full {
+    border-top-color: #444;
+  }
+
+  /* Раскрывающиеся блоки */
+  .md-typeset .question {
+    border-color: #ffffff !important;
+    border-top-color: #ffffff !important;
+    border-right-color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+    border-left-color: #ffffff !important;
+    background-color: #2d2d2d;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .md-typeset .question > .admonition-title,
+  .md-typeset .question > summary {
+    color: #ffffff;
+    background-color: #3a3a3a;
+  }
+  .md-typeset .question > summary::after {
+    color: #ffffff !important;
+  }
+  .md-typeset .question[open] {
+    background-color: #2d2d2d;
+  }
+  .md-typeset .question > summary:hover {
+    background-color: #4a4a4a;
+  }
+  .md-typeset .question:focus,
+  .md-typeset .question:focus-visible,
+  .md-typeset .question:focus-within,
+  .md-typeset .question summary:focus,
+  .md-typeset .question summary:focus-visible,
+  .md-typeset .question .admonition-title:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .md-typeset .example {
+    border-color: #ffffff;
+    background-color: #2d2d2d;
+  }
+  .md-typeset .example > .admonition-title,
+  .md-typeset .example > summary {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border-bottom-color: #444;
+  }
+  .md-typeset .example > *:not(.admonition-title):not(summary) {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+  }
+}
+
+/* Скрываем текст site_name в хедере (оставляем логотип) */
+.md-header__topic:first-child .md-ellipsis {
+  display: none;
 }
