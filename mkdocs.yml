@@ -28,6 +28,7 @@ extra_css:
   - extra.css
   
 extra_javascript:
+  - https://cdn.jsdelivr.net/npm/html3pdf@0.12.2/dist/html3pdf.bundle.min.js
   - custom.js
 
 plugins:
@@ -40,6 +41,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - md_in_html
+  - toc:
+      permalink: true
 
 nav:
   - Главная: index.md
