@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
           useCORS: true, 
           backgroundColor: '#ffffff',
           enableLinks: true,
-          // МАГИЯ ЗДЕСЬ: меняем стили только для картинки, чтобы ссылки не пересекались
           onclone: function(clonedDoc) {
              const style = clonedDoc.createElement('style');
              style.innerHTML = `
@@ -86,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       html3pdf().from(originalBlock).set(options).toPdf().get('pdf').then(function (pdf) {
         
-        // Добавляем вторую страницу с контактами
         if (linksData.length > 0) {
           pdf.addPage();
           pdf.setFontSize(16);
@@ -97,17 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
           pdf.setFontSize(11);
           
           linksData.forEach(function (item) {
-            // Текст-описание (латиницей)
             pdf.setTextColor(80, 80, 80);
             pdf.text(item.label + ':', 14, y);
             
-            // Сама ссылка (синим)
             pdf.setTextColor(37, 99, 235);
             pdf.text(item.url, 14, y + 5);
             
-            // ЖЕЛЕЗОБЕТОННЫЙ СПОСОБ СДЕЛАТЬ ССЫЛКУ КЛИКАБЕЛЬНОЙ:
             const textWidth = pdf.getTextWidth(item.url);
-            // Рисуем невидимый прямоугольник (x, y, ширина, высота) поверх текста
             pdf.link(14, y + 1, textWidth + 2, 6, { url: item.url }); 
             
             y += 15; 
@@ -128,4 +122,32 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }, 100);
   });
+});
+
+// ===== 3. МАРКЕТИНГОВЫЙ ВИДЖЕТ ВМЕСТО СОДЕРЖАНИЯ (Только для Платёжных методов) =====
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.querySelector('.payments-page')) return;
+
+  var sidebar = document.querySelector('.md-sidebar--secondary');
+  if (!sidebar) return;
+
+  var inner = sidebar.querySelector('.md-sidebar__inner') || sidebar;
+
+  inner.innerHTML =
+    '<div class="aside-sticky">' +
+      '<div class="aside-icon">💳</div>' +
+      '<h3>Нужна помощь с выбором?</h3>' +
+      '<p class="aside-text">Подключите Robokassa, и мы поможем настроить доступные методы под ваш бизнес и тип задач.</p>' +
+      '<div class="aside-divider"></div>' +
+      '<div class="aside-feature">' +
+        '<span class="aside-feature__icon">⚡</span>' +
+        '<div><strong>Быстрый старт</strong><p>Подключение за 1 день</p></div>' +
+      '</div>' +
+      '<div class="aside-feature">' +
+        '<span class="aside-feature__icon">🛡</span>' +
+        '<div><strong>Без абонентской платы</strong><p>Платите только за успешные платежи</p></div>' +
+      '</div>' +
+      '<a class="md-button md-button--primary aside-btn" href="/docs/podklyuchenie/ip/">Подключить сервис →</a>' +
+      '<a class="aside-link" href="https://docs.robokassa.ru/demoshop/" target="_blank" rel="noopener noreferrer">Посмотреть демо ↗</a>' +
+    '</div>';
 });
