@@ -1,0 +1,746 @@
+/* =========================================================
+   SBERPAY ROBOKASSA — единый стиль страницы
+   ========================================================= */
+
+.sberpay-page {
+  --sber-green: #21A038;
+  --sber-green-dark: #168832;
+  --sber-green-deep: #0F6B28;
+  --sber-green-light: #4ADE80;
+  --sber-green-soft: #EAF8EE;
+  --sber-green-border: #BBF7D0;
+  --sber-ink: #142747;
+  --sber-text: #35445e;
+  --sber-muted: #74829a;
+  --sber-border: #e2e8f0;
+  color: var(--sber-text);
+}
+
+/* ===== Заголовки из Markdown ===== */
+.md-typeset .sberpay-page h2 {
+  text-align: left;
+  margin: 0 0 .9rem !important;
+  color: var(--sber-ink) !important;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.9px !important;
+}
+.md-typeset .sberpay-page h2::after { display: none !important; }
+
+.sberpay-page .sberpay-section__description {
+  margin: 0 0 1.5rem !important;
+  padding: 0 !important;
+  color: #64748b;
+  font-size: .92rem;
+  line-height: 1.7;
+  text-align: left !important;
+}
+
+/* ===== Заголовки карточек (не в TOC) ===== */
+.md-typeset .sberpay-page .sberpay-title {
+  margin: 0 0 .35rem !important;
+  color: var(--sber-ink) !important;
+  font-size: .98rem !important;
+  font-weight: 750 !important;
+  line-height: 1.4 !important;
+}
+.md-typeset .sberpay-page .sberpay-title--lg {
+  margin: 0 0 .5rem !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+.md-typeset .sberpay-page .sberpay-title--sm {
+  margin: 0 0 .25rem !important;
+  font-size: .9rem !important;
+  font-weight: 750 !important;
+  line-height: 1.4 !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.md-typeset .sberpay-page .sberpay-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  align-items: center;
+  gap: 1.75rem;
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+  margin: 1rem 0 2.25rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 85% 15%, rgba(74, 222, 128, .28), transparent 38%),
+              linear-gradient(120deg, #0E7A2C 0%, #21A038 55%, #2DB84A 100%) !important;
+  border: 1px solid #21A038 !important;
+  border-radius: 22px;
+  box-shadow: 0 14px 36px rgba(33, 160, 56, .22) !important;
+}
+.sberpay-page .sberpay-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, .22) .8px, transparent .8px);
+  background-size: 22px 22px;
+  opacity: .16;
+}
+.sberpay-page .sberpay-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 280px;
+  height: 280px;
+  right: -120px;
+  bottom: -180px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, .045), 0 0 0 60px rgba(255, 255, 255, .03);
+}
+.sberpay-page .sberpay-hero__content { position: relative; z-index: 2; min-width: 0; }
+
+.sberpay-page .sberpay-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 1.1rem;
+  color: #DCFCE7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.sberpay-page .sberpay-eyebrow__dot {
+  width: 7px; height: 7px; flex: 0 0 7px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+.md-typeset .sberpay-page .sberpay-hero__title {
+  margin: 0 0 1rem !important;
+  color: #fff !important;
+  font-size: clamp(1.9rem, 3.6vw, 3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -1.4px !important;
+}
+.sberpay-page .sberpay-hero__title span { color: #DCFCE7; }
+
+.md-typeset .sberpay-page .sberpay-hero__lead {
+  max-width: 500px;
+  margin: 0 0 .7rem !important;
+  color: #F0FDF4 !important;
+  font-size: .92rem !important;
+  font-weight: 600;
+  line-height: 1.65 !important;
+}
+.md-typeset .sberpay-page .sberpay-hero__description {
+  max-width: 500px;
+  margin: 0 !important;
+  color: #DCFCE7 !important;
+  font-size: .85rem !important;
+  line-height: 1.7 !important;
+}
+.sberpay-page .sberpay-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.15rem;
+}
+.sberpay-page .sberpay-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .4rem .7rem;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+  font-size: .7rem;
+  font-weight: 650;
+  line-height: 1.4;
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   HERO — визуал: мокап телефона СберБанк Онлайн
+   ========================================================= */
+.sberpay-page .sberpay-hero__visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 400px;
+  place-items: center;
+  isolation: isolate;
+}
+
+.sberpay-page .sberpay-orbit {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.sberpay-page .sberpay-orbit--one {
+  width: 290px; height: 290px;
+  box-shadow: 0 0 0 26px rgba(255, 255, 255, .035), 0 0 0 54px rgba(255, 255, 255, .025);
+}
+.sberpay-page .sberpay-orbit--two { width: 200px; height: 200px; }
+
+/* Телефон */
+.sberpay-page .sberpay-phone {
+  position: relative;
+  z-index: 1;
+  width: 220px;
+  padding: 8px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #1c1c1e, #2c2c2e);
+  box-shadow: 0 26px 55px rgba(8, 30, 10, .32), inset 0 1px 0 rgba(255,255,255,.08);
+  transform: rotate(-3deg);
+}
+.sberpay-page .sberpay-phone__screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 10px;
+  border-radius: 24px;
+  background: #f5f6f8;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+}
+.sberpay-page .sberpay-phone__notch {
+  position: absolute;
+  top: 6px; left: 50%;
+  width: 72px; height: 16px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background: #1c1c1e;
+  z-index: 3;
+}
+.sberpay-page .sberpay-phone__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px 6px;
+  color: #0f172a;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.sberpay-page .sberpay-phone__status-icons {
+  display: inline-flex;
+  gap: 2px;
+}
+.sberpay-page .sberpay-phone__status-icons span {
+  display: inline-block;
+  width: 8px; height: 4px;
+  border-radius: 1px;
+  background: #0f172a;
+}
+
+/* Шапка приложения */
+.sberpay-page .sberpay-app-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 6px 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.sberpay-page .sberpay-app-logo {
+  width: 24px; height: 24px;
+  flex: 0 0 24px;
+}
+.sberpay-page .sberpay-app-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.sberpay-page .sberpay-app-title strong {
+  color: #0f172a;
+  font-size: 10px;
+  font-weight: 800;
+}
+.sberpay-page .sberpay-app-title small {
+  color: #64748b;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+/* Тело приложения */
+.sberpay-page .sberpay-app-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  padding: 12px 6px;
+  text-align: center;
+}
+.sberpay-page .sberpay-app-label {
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: .35rem;
+}
+.sberpay-page .sberpay-app-amount {
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.6px;
+  margin-bottom: .25rem;
+}
+.sberpay-page .sberpay-app-merchant {
+  color: #334155;
+  font-size: 9px;
+  font-weight: 600;
+  margin-bottom: .15rem;
+}
+.sberpay-page .sberpay-app-order {
+  color: #94a3b8;
+  font-size: 7px;
+  font-weight: 600;
+}
+
+/* Кнопка «Оплатить» */
+.sberpay-page .sberpay-app-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  padding: .55rem .75rem;
+  border: 0;
+  border-radius: 10px;
+  background: #21A038;
+  color: #fff;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: default;
+}
+.sberpay-page .sberpay-app-btn__icon {
+  width: 14px; height: 14px;
+  flex: 0 0 14px;
+}
+
+.sberpay-page .sberpay-phone__home {
+  width: 62px;
+  height: 3px;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  background: #1c1c1e;
+  opacity: .8;
+}
+
+/* Плавающие карточки */
+.sberpay-page .sberpay-float {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem .85rem;
+  border: 1px solid rgba(255, 255, 255, .8);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 10px 26px rgba(15, 35, 20, .18);
+}
+.sberpay-page .sberpay-float--confirmed { top: 10%; right: -2%; }
+.sberpay-page .sberpay-float--secure { bottom: 8%; left: -2%; }
+
+.sberpay-page .sberpay-float__check,
+.sberpay-page .sberpay-float__shield {
+  display: grid;
+  width: 32px; height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border-radius: 9px;
+  font-size: .95rem;
+  font-weight: 800;
+}
+.sberpay-page .sberpay-float__check { color: #15803d; background: #dcfce7; }
+.sberpay-page .sberpay-float__shield { color: #21A038; background: #EAF8EE; }
+
+.sberpay-page .sberpay-float > span:last-child {
+  color: #0f172a;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.sberpay-page .sberpay-float small {
+  display: block;
+  margin-bottom: .1rem;
+  color: #8290a4;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .7px;
+  line-height: 1.4;
+}
+.sberpay-page .sberpay-float strong {
+  display: block;
+  color: #0f172a;
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   Преимущества (2x2)
+   ========================================================= */
+.sberpay-page .sberpay-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  margin: 1rem 0 2.25rem;
+}
+.sberpay-page .sberpay-benefit {
+  position: relative;
+  min-width: 0;
+  padding: 1.15rem 1.25rem 1.15rem 1.15rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, .03);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+}
+.sberpay-page .sberpay-benefit:hover {
+  transform: translateY(-3px);
+  border-color: var(--sber-green-border);
+  box-shadow: 0 10px 26px rgba(33, 160, 56, .08);
+}
+.sberpay-page .sberpay-benefit__icon {
+  display: grid;
+  width: 42px; height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--sber-green);
+  background: var(--sber-green-soft);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.sberpay-page .sberpay-benefit__icon svg { width: 20px; height: 20px; }
+.sberpay-page .sberpay-benefit__body { min-width: 0; }
+.md-typeset .sberpay-page .sberpay-benefit p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .84rem !important;
+  line-height: 1.65 !important;
+}
+
+/* =========================================================
+   Подключение — зелёный callout
+   ========================================================= */
+.sberpay-page .sberpay-connect {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  overflow: hidden;
+  padding: 1.5rem 1.6rem;
+  margin: 1rem 0 2.25rem;
+  border: 1px solid var(--sber-green-border);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 100% 0%, rgba(187, 247, 208, .55), transparent 50%),
+              linear-gradient(145deg, #F7FDF9, #EAF8EE);
+}
+.sberpay-page .sberpay-connect::after {
+  content: "";
+  position: absolute;
+  top: -70px; right: -70px;
+  width: 200px; height: 200px;
+  border: 1px solid rgba(33, 160, 56, .12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(33, 160, 56, .035), 0 0 0 40px rgba(33, 160, 56, .025);
+  pointer-events: none;
+}
+.sberpay-page .sberpay-connect > * { position: relative; z-index: 1; }
+.sberpay-page .sberpay-connect__icon {
+  display: grid;
+  width: 52px; height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--sber-green);
+  border: 1px solid var(--sber-green-border);
+  box-shadow: 0 4px 12px rgba(33, 160, 56, .1);
+}
+.sberpay-page .sberpay-connect__icon svg { width: 24px; height: 24px; }
+.sberpay-page .sberpay-connect__body { flex: 1; min-width: 0; }
+.md-typeset .sberpay-page .sberpay-connect p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: .9rem !important;
+  line-height: 1.75 !important;
+}
+
+/* =========================================================
+   Как платит клиент — 4 шага
+   ========================================================= */
+.sberpay-page .sberpay-process {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  margin: 1rem 0 2.25rem;
+}
+.sberpay-page .sberpay-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .6rem;
+  min-width: 0;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, .03);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.sberpay-page .sberpay-step:hover {
+  transform: translateY(-2px);
+  border-color: var(--sber-green-border);
+  box-shadow: 0 8px 22px rgba(33, 160, 56, .08);
+}
+.sberpay-page .sberpay-step--last {
+  border-color: var(--sber-green-border);
+  background: linear-gradient(145deg, #F0FDF4, #fff);
+}
+.sberpay-page .sberpay-step__top {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .4rem;
+}
+.sberpay-page .sberpay-step__icon {
+  display: grid;
+  width: 38px; height: 38px;
+  place-items: center;
+  border: 1px solid var(--sber-green-border);
+  border-radius: 11px;
+  color: var(--sber-green);
+  background: var(--sber-green-soft);
+  font-size: 1rem;
+  font-weight: 800;
+}
+.sberpay-page .sberpay-step__icon svg { width: 18px; height: 18px; }
+.sberpay-page .sberpay-step__number {
+  color: #cbd5e1;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.md-typeset .sberpay-page .sberpay-step p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .84rem !important;
+  line-height: 1.65 !important;
+}
+
+/* =========================================================
+   FAQ — стилистика как в cards-foreign
+   ========================================================= */
+
+.sberpay-page .sberpay-faq {
+  margin: 1.75rem 0 2.25rem;
+}
+
+.sberpay-page .sberpay-faq__intro {
+  margin-bottom: .85rem;
+}
+
+.md-typeset .sberpay-page .sberpay-faq__intro p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .9rem !important;
+  line-height: 1.65 !important;
+}
+
+.sberpay-page .sberpay-faq__list {
+  min-width: 0;
+}
+
+.sberpay-page .sberpay-faq__item {
+  margin: 10px 0 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left-width: 1px !important;
+  border-radius: 13px !important;
+  background: #fff !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, .035) !important;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.sberpay-page .sberpay-faq__item:hover {
+  border-color: var(--sber-green-border) !important;
+  box-shadow: 0 4px 14px rgba(33, 160, 56, .08) !important;
+}
+
+.sberpay-page .sberpay-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 15px 48px 15px 20px !important;
+  color: #0f172a !important;
+  font-size: .93rem !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.sberpay-page .sberpay-faq__item summary::-webkit-details-marker,
+.sberpay-page .sberpay-faq__item summary::marker,
+.sberpay-page .sberpay-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+
+.sberpay-page .sberpay-faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #64748b;
+  border-bottom: 2px solid #64748b;
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .2s ease;
+}
+
+.sberpay-page .sberpay-faq__item[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+}
+
+.sberpay-page .sberpay-faq__item[open] summary {
+  padding-bottom: 10px !important;
+}
+
+.md-typeset .sberpay-page .sberpay-faq__answer {
+  margin: 0 !important;
+  padding: 0 20px 16px !important;
+  color: #475569 !important;
+  font-size: .88rem !important;
+  line-height: 1.7 !important;
+}
+
+.md-typeset .sberpay-page .sberpay-faq__answer p {
+  margin: 0 0 .55rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.md-typeset .sberpay-page .sberpay-faq__answer p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.md-typeset .sberpay-page .sberpay-faq__answer a {
+  color: var(--sber-green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(33, 160, 56, .35);
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-benefit,
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-step,
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-connect {
+  border-color: #e2e8f0 !important;
+  background: #fff !important;
+}
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-step--last {
+  border-color: var(--sber-green-border) !important;
+  background: linear-gradient(145deg, #F0FDF4, #fff) !important;
+}
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-connect {
+  border-color: var(--sber-green-border) !important;
+  background: radial-gradient(ellipse at 100% 0%, rgba(187, 247, 208, .55), transparent 50%),
+              linear-gradient(145deg, #F7FDF9, #EAF8EE) !important;
+}
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-benefit p,
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-step p,
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-connect p {
+  color: #475569 !important;
+}
+[data-md-color-scheme="slate"] .sberpay-page .sberpay-faq__item {
+  border-color: #e2e8f0 !important;
+  background: #fff !important;
+}
+
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .sberpay-page .sberpay-hero__visual { min-height: 380px; }
+  .sberpay-page .sberpay-float--confirmed { right: 0; }
+  .sberpay-page .sberpay-float--secure { left: 0; }
+}
+
+@media screen and (max-width: 900px) {
+  .sberpay-page .sberpay-hero { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .sberpay-page .sberpay-connect { flex-direction: column; gap: .85rem; }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .sberpay-page .sberpay-hero {
+    padding: 1.2rem !important;
+    margin-bottom: 1.75rem;
+    border-radius: 18px;
+  }
+  .md-typeset .sberpay-page .sberpay-hero__title {
+    font-size: clamp(1.7rem, 8vw, 2.3rem) !important;
+    letter-spacing: -1px !important;
+  }
+  .sberpay-page .sberpay-hero__visual { min-height: 420px; margin-top: .5rem; }
+  .sberpay-page .sberpay-orbit--one { width: 240px; height: 240px; }
+  .sberpay-page .sberpay-orbit--two { width: 170px; height: 170px; }
+  .sberpay-page .sberpay-phone { width: 200px; }
+  .sberpay-page .sberpay-float--confirmed { top: 6%; right: -2%; }
+  .sberpay-page .sberpay-float--secure { bottom: 4%; left: -2%; }
+
+  .sberpay-page .sberpay-benefits,
+  .sberpay-page .sberpay-process { grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+
+  .sberpay-page .sberpay-connect { padding: 1.1rem 1.2rem; }
+}
+
+@media screen and (max-width: 480px) {
+  .md-typeset .sberpay-page .sberpay-hero__title { font-size: 1.65rem !important; }
+  .md-typeset .sberpay-page .sberpay-hero__lead { font-size: .88rem !important; }
+  .md-typeset .sberpay-page .sberpay-hero__description { font-size: .82rem !important; }
+  .sberpay-page .sberpay-hero__tags { gap: .4rem; margin-top: 1rem; }
+  .sberpay-page .sberpay-tag { padding: .35rem .55rem; font-size: .66rem; }
+  .sberpay-page .sberpay-hero__visual { min-height: 400px; }
+  .sberpay-page .sberpay-phone { width: 185px; transform: rotate(-2deg); }
+  .sberpay-page .sberpay-float { padding: .55rem .65rem; gap: .5rem; }
+  .sberpay-page .sberpay-float__check,
+  .sberpay-page .sberpay-float__shield { width: 28px; height: 28px; flex-basis: 28px; }
+  .sberpay-page .sberpay-float strong,
+  .sberpay-page .sberpay-float > span:last-child { font-size: .72rem; }
+  .sberpay-page .sberpay-benefit { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sberpay-page .sberpay-benefit,
+  .sberpay-page .sberpay-step { transition: none; }
+  .sberpay-page .sberpay-benefit:hover,
+  .sberpay-page .sberpay-step:hover { transform: none; }
+}

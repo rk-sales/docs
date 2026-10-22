@@ -953,3 +953,1476 @@ p.table-mobile-hint { display: none; }
 }
 [data-md-color-scheme="slate"] .cards-page .question summary::after { border-color: #94a3b8; }
 [data-md-color-scheme="slate"] .cards-page .question > p { color: #cbd5e1 !important; }
+
+
+/* ==========================================
+   МЕЖДУНАРОДНЫЕ КАРТЫ — HERO
+   ========================================== */
+
+.cards-page .cards-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  align-items: center;
+  gap: 2rem;
+  min-height: 370px;
+  padding: clamp(1.8rem, 4vw, 3.5rem);
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(147,197,253,.28), transparent 35%),
+    linear-gradient(120deg, #1746b8 0%, #2563eb 52%, #3982f6 100%) !important;
+  border: 1px solid #3b82f6 !important;
+  border-radius: 26px;
+  box-shadow: 0 18px 45px rgba(37,99,235,.19) !important;
+}
+
+.cards-page .cards-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    rgba(255,255,255,.2) .8px,
+    transparent .8px
+  );
+  background-size: 22px 22px;
+  opacity: .16;
+  pointer-events: none;
+}
+
+.cards-page .cards-hero::after {
+  width: 320px;
+  height: 320px;
+  right: -140px;
+  bottom: -210px;
+  border-color: rgba(255,255,255,.2);
+  box-shadow:
+    0 0 0 35px rgba(255,255,255,.045),
+    0 0 0 70px rgba(255,255,255,.03);
+}
+
+.cards-hero__content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.cards-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.3rem;
+  color: #dbeafe;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.cards-hero__eyebrow > span {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #bfdbfe;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.13);
+}
+
+.md-typeset .cards-page .cards-hero__title {
+  margin: 0 0 1.25rem !important;
+  color: #fff !important;
+  font-size: clamp(2.5rem, 4.4vw, 4rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -2px !important;
+}
+
+.cards-hero__title span {
+  color: #bfdbfe;
+}
+
+.md-typeset .cards-page .cards-hero__text {
+  max-width: 510px;
+  margin: 0 !important;
+  color: #eff6ff !important;
+  font-size: .98rem !important;
+  line-height: 1.8 !important;
+}
+
+.cards-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: 1.6rem;
+}
+
+.cards-hero__chips span {
+  padding: .48rem .75rem;
+  border: 1px solid rgba(255,255,255,.23);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255,255,255,.1);
+  font-size: .72rem;
+  font-weight: 650;
+  backdrop-filter: blur(8px);
+}
+
+/* Визуализация карты */
+
+.cards-hero__visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 280px;
+  place-items: center;
+  isolation: isolate;
+}
+
+.cards-hero__orbit {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cards-hero__orbit--outer {
+  width: 300px;
+  height: 300px;
+  box-shadow:
+    0 0 0 28px rgba(255,255,255,.035),
+    0 0 0 58px rgba(255,255,255,.025);
+}
+
+.cards-hero__orbit--inner {
+  width: 215px;
+  height: 215px;
+}
+
+.cards-hero__payment-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 340px);
+  min-height: 195px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(96,165,250,.55), transparent 40%),
+    linear-gradient(145deg, #fff, #eaf2ff);
+  box-shadow: 0 25px 55px rgba(8,30,90,.27);
+  transform: rotate(-5deg);
+}
+
+.cards-hero__card-top,
+.cards-hero__card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .7rem;
+}
+
+.cards-hero__card-top > span:first-child {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.cards-hero__card-symbol {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  color: #fff;
+  background: #2563eb;
+  font-size: 1.1rem;
+}
+
+.cards-hero__card-chip {
+  display: flex;
+  width: 35px;
+  height: 26px;
+  overflow: hidden;
+  border: 1px solid #c2d2eb;
+  border-radius: 6px;
+  background: #dbeafe;
+}
+
+.cards-hero__card-chip span {
+  width: 33.33%;
+  border-right: 1px solid #b6c8e5;
+}
+
+.cards-hero__card-bottom small,
+.cards-hero__floating small {
+  display: block;
+  margin-bottom: .3rem;
+  color: #8290a4;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+
+.cards-hero__card-bottom strong {
+  color: #0f172a;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.cards-hero__card-circles {
+  display: flex;
+  align-items: center;
+}
+
+.cards-hero__card-circles i {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: .9;
+}
+
+.cards-hero__card-circles i + i {
+  margin-left: -10px;
+  background: #60a5fa;
+  opacity: .9;
+}
+
+.cards-hero__floating {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding: .8rem .95rem;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 13px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 12px 30px rgba(15,35,85,.16);
+}
+
+.cards-hero__floating--top {
+  top: 12%;
+  right: -2%;
+}
+
+.cards-hero__floating--bottom {
+  bottom: 8%;
+  left: -1%;
+}
+
+.cards-hero__floating strong {
+  color: #0f172a;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.cards-hero__floating-icon,
+.cards-hero__floating-check {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 10px;
+  color: #2563eb;
+  background: #eff5ff;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.cards-hero__floating-check {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+/* ==========================================
+   ПРОЦЕСС ОПЛАТЫ — КОМПАКТНЫЕ ШАГИ
+   ========================================== */
+
+.cards-page .steps-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.cards-page .step-item {
+  position: relative;
+  min-width: 0;
+  min-height: 150px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 16px;
+}
+
+.cards-page .step-number {
+  border-radius: 11px;
+}
+
+.md-typeset .cards-page .step-text {
+  font-size: .86rem;
+  line-height: 1.65;
+}
+
+@media screen and (max-width: 1100px) {
+  .cards-page .steps-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .cards-page .cards-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .5rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .md-typeset .cards-page .cards-hero__title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem) !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .cards-hero__visual {
+    min-height: 265px;
+    margin-top: .5rem;
+  }
+
+  .cards-hero__orbit--outer {
+    width: 240px;
+    height: 240px;
+  }
+
+  .cards-hero__orbit--inner {
+    width: 175px;
+    height: 175px;
+  }
+
+  .cards-hero__payment-card {
+    max-width: 300px;
+    min-height: 175px;
+    transform: rotate(-3deg);
+  }
+
+  .cards-hero__floating--top {
+    right: 0;
+    top: 5%;
+  }
+
+  .cards-hero__floating--bottom {
+    left: 0;
+    bottom: 3%;
+  }
+
+  .cards-page .steps-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-page .step-item {
+    min-height: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Тёмная тема */
+
+[data-md-color-scheme="slate"] .cards-page .cards-hero {
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(96,165,250,.2), transparent 35%),
+    linear-gradient(120deg, #173b91, #1d4ed8 55%, #2563eb) !important;
+}
+
+[data-md-color-scheme="slate"] .cards-hero__payment-card {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(96,165,250,.3), transparent 40%),
+    linear-gradient(145deg, #f1f5f9, #dbeafe);
+}
+
+[data-md-color-scheme="slate"] .cards-hero__floating {
+  background: rgba(30,41,59,.97);
+  border-color: #475569;
+}
+
+[data-md-color-scheme="slate"] .cards-hero__floating strong {
+  color: #f8fafc;
+}
+
+[data-md-color-scheme="slate"] .cards-hero__floating small {
+  color: #94a3b8;
+}
+
+```css
+/* ==========================================
+   ROBOKASSA — СБП
+   ========================================== */
+
+.sbp-page {
+  --sbp-blue: #1769f5;
+  --sbp-blue-dark: #1052d5;
+  --sbp-navy: #142747;
+  --sbp-text: #35445e;
+  --sbp-muted: #74829a;
+  --sbp-border: #e7edf6;
+  --sbp-bg: #f5f8fd;
+
+  color: var(--sbp-navy);
+  font-family: inherit;
+  line-height: 1.65;
+}
+
+.sbp-page *,
+.sbp-page *::before,
+.sbp-page *::after {
+  box-sizing: border-box;
+}
+
+.sbp-page p,
+.sbp-page h2,
+.sbp-page h3 {
+  margin-top: 0;
+}
+
+.sbp-page p {
+  margin-bottom: 0;
+}
+
+.sbp-page h2,
+.sbp-page h3 {
+  color: var(--sbp-navy);
+  line-height: 1.3;
+}
+
+.sbp-page svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+.sbp-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 32px;
+  overflow: hidden;
+  padding: 56px 54px;
+  margin-bottom: 66px;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(112, 174, 255, 0.5),
+      transparent 30%
+    ),
+    linear-gradient(125deg, #1261ed 0%, #2879f8 54%, #438bff 100%);
+  color: #fff;
+  box-shadow: 0 18px 45px rgba(31, 101, 230, 0.15);
+}
+
+.sbp-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+}
+
+.sbp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.6px;
+}
+
+.sbp-eyebrow__dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #9ef2d0;
+  box-shadow: 0 0 0 5px rgba(158, 242, 208, 0.15);
+}
+
+.sbp-hero .sbp-hero__title {
+  margin-bottom: 22px;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.12;
+}
+
+.sbp-hero__lead {
+  max-width: 510px;
+  margin-bottom: 13px !important;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.sbp-hero__description {
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.79);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.sbp-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.sbp-tag {
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+
+/* Визуальная карточка оплаты */
+
+.sbp-hero__visual {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sbp-visual-orb {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.sbp-visual-orb--one {
+  width: 350px;
+  height: 350px;
+}
+
+.sbp-visual-orb--two {
+  width: 270px;
+  height: 270px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sbp-payment-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 300px);
+  padding: 23px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.97);
+  color: var(--sbp-navy);
+  box-shadow: 0 24px 65px rgba(8, 38, 103, 0.28);
+  transform: rotate(-3deg);
+}
+
+.sbp-payment-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #66758c;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sbp-payment-card__status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #15865b;
+  font-size: 10px;
+}
+
+.sbp-payment-card__status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #26bc83;
+}
+
+.sbp-payment-card__amount {
+  margin-top: 17px;
+  font-size: 33px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.sbp-payment-card__caption {
+  margin-top: 5px;
+  color: #8490a4;
+  font-size: 11px;
+}
+
+.sbp-payment-card__qr {
+  display: flex;
+  justify-content: center;
+  padding: 21px 0 15px;
+}
+
+.sbp-qr {
+  position: relative;
+  display: flex;
+  width: 116px;
+  height: 116px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 8px solid #fff;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, #152747 10%, transparent 10%) 0 0 / 18px 18px,
+    linear-gradient(#152747 10%, transparent 10%) 0 0 / 18px 18px,
+    linear-gradient(90deg, transparent 50%, #152747 50%) 0 0 / 13px 13px,
+    linear-gradient(transparent 50%, #152747 50%) 0 0 / 13px 13px,
+    #fff;
+  box-shadow: 0 0 0 1px #e9eef7;
+}
+
+.sbp-qr::before,
+.sbp-qr::after {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 5px solid #152747;
+  background: #fff;
+  content: "";
+}
+
+.sbp-qr::before {
+  top: 0;
+  left: 0;
+  box-shadow: 69px 0 0 -5px #fff, 69px 0 0 0 #152747,
+              0 69px 0 -5px #fff, 0 69px 0 0 #152747;
+}
+
+.sbp-qr::after {
+  right: 0;
+  bottom: 0;
+  width: 13px;
+  height: 13px;
+  border-width: 3px;
+}
+
+.sbp-qr__pattern {
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(
+    #152747 0% 25%,
+    transparent 0% 50%
+  ) 0 0 / 10px 10px;
+  opacity: 0.42;
+}
+
+.sbp-qr__center {
+  position: relative;
+  z-index: 2;
+  padding: 5px 4px;
+  border-radius: 5px;
+  background: #fff;
+  color: #1769f5;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.sbp-payment-card__hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #edf1f7;
+  color: #5f6f88;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.sbp-payment-card__icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eaf2ff;
+  color: var(--sbp-blue);
+  font-size: 18px;
+}
+
+.sbp-float {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--sbp-navy);
+  box-shadow: 0 12px 35px rgba(12, 43, 102, 0.18);
+}
+
+.sbp-float--check {
+  right: -4px;
+  bottom: 38px;
+}
+
+.sbp-float--speed {
+  top: 35px;
+  left: -7px;
+  padding: 10px 13px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sbp-float__check {
+  display: flex;
+  width: 31px;
+  height: 31px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #dcf9eb;
+  color: #0c9b61;
+  font-weight: 800;
+}
+
+.sbp-float strong,
+.sbp-float small {
+  display: block;
+}
+
+.sbp-float strong {
+  font-size: 11px;
+}
+
+.sbp-float small {
+  margin-top: 2px;
+  color: #8994a6;
+  font-size: 9px;
+}
+
+.sbp-float__bolt {
+  display: flex;
+  width: 27px;
+  height: 27px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #e8f1ff;
+  color: var(--sbp-blue);
+  font-size: 18px;
+}
+
+
+/* ==========================================
+   ОБЩИЕ СЕКЦИИ
+   ========================================== */
+
+.sbp-section {
+  margin-bottom: 68px;
+}
+
+.sbp-section__heading {
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+
+.sbp-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--sbp-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.sbp-page .sbp-section__title,
+.sbp-page .sbp-faq__intro h2 {
+  margin-bottom: 12px;
+  font-size: clamp(25px, 3vw, 33px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.sbp-section__description {
+  color: var(--sbp-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   КАРТОЧКИ ПРЕИМУЩЕСТВ
+   ========================================== */
+
+.sbp-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.sbp-benefit {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: 27px 25px 29px;
+  border: 1px solid var(--sbp-border);
+  border-radius: 19px;
+  background: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.sbp-benefit:hover {
+  transform: translateY(-4px);
+  border-color: #d4e3ff;
+  box-shadow: 0 15px 35px rgba(25, 70, 140, 0.07);
+}
+
+.sbp-benefit__icon {
+  display: flex;
+  width: 49px;
+  height: 49px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+}
+
+.sbp-benefit__icon--blue {
+  background: #eaf2ff;
+  color: #1769f5;
+}
+
+.sbp-benefit__icon--violet {
+  background: #f0ecff;
+  color: #7957df;
+}
+
+.sbp-benefit__icon--cyan {
+  background: #e5f9fa;
+  color: #1596a5;
+}
+
+.sbp-page .sbp-benefit h3 {
+  margin-bottom: 11px;
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.sbp-benefit p {
+  max-width: 310px;
+  color: #748198;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sbp-benefit__number {
+  position: absolute;
+  right: 20px;
+  bottom: 9px;
+  color: #f0f4fa;
+  font-size: 37px;
+  font-weight: 850;
+  letter-spacing: -2px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+
+/* ==========================================
+   ОСОБЕННОСТИ И ЛИМИТЫ
+   ========================================== */
+
+.sbp-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 72px;
+}
+
+.sbp-details__card {
+  min-width: 0;
+  padding: 29px;
+  border: 1px solid var(--sbp-border);
+  border-radius: 21px;
+  background: #fff;
+}
+
+.sbp-details__card--attention {
+  background: linear-gradient(145deg, #fffdf9, #fff);
+  border-color: #f2e9d8;
+}
+
+.sbp-details__heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 27px;
+}
+
+.sbp-details__icon {
+  display: flex;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #fff1d8;
+  color: #c48219;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.sbp-details__icon--blue {
+  background: #eaf2ff;
+  color: var(--sbp-blue);
+}
+
+.sbp-details__heading .sbp-kicker {
+  margin-bottom: 4px;
+  font-size: 9px;
+}
+
+.sbp-page .sbp-details__heading h2 {
+  margin-bottom: 0;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.sbp-detail-row {
+  display: grid;
+  grid-template-columns: 25px minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px 0;
+  border-top: 1px solid #f0e9dd;
+}
+
+.sbp-detail-row__marker {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff0d9;
+  color: #bc7915;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sbp-page .sbp-detail-row h3 {
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.sbp-detail-row p,
+.sbp-details__text {
+  color: #748198;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.sbp-limit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #dfeaff;
+  border-radius: 15px;
+  background: linear-gradient(120deg, #f0f6ff, #f9fbff);
+}
+
+.sbp-limit__label {
+  color: #71819b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sbp-limit__value {
+  margin-top: 4px;
+  color: var(--sbp-blue);
+  font-size: 29px;
+  font-weight: 850;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+
+.sbp-limit__badge {
+  padding: 8px 11px;
+  border: 1px solid #d5e4ff;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sbp-blue);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.sbp-details__text {
+  margin-top: 13px;
+}
+
+.sbp-connection {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 11px;
+  padding-top: 21px;
+  margin-top: 21px;
+  border-top: 1px solid var(--sbp-border);
+}
+
+.sbp-connection__check {
+  display: flex;
+  width: 27px;
+  height: 27px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #e4f8ed;
+  color: #15955d;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.sbp-connection strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--sbp-navy);
+  font-size: 13px;
+}
+
+.sbp-connection p {
+  color: #748198;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   ЭТАПЫ ОПЛАТЫ
+   ========================================== */
+
+.sbp-process-section {
+  padding: 37px;
+  margin-bottom: 72px;
+  border: 1px solid #e9eff8;
+  border-radius: 24px;
+  background: #f7f9fd;
+}
+
+.sbp-process-section .sbp-section__heading {
+  margin-bottom: 35px;
+}
+
+.sbp-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.sbp-process__step {
+  position: relative;
+  min-width: 0;
+  padding: 22px 19px;
+  border: 1px solid #e6edf8;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.sbp-process__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 23px;
+}
+
+.sbp-process__icon {
+  display: flex;
+  width: 43px;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  border-radius: 13px;
+  background: #eaf2ff;
+  color: var(--sbp-blue);
+}
+
+.sbp-process__icon--success {
+  background: #e3f8ed;
+  color: #14955d;
+}
+
+.sbp-process__number {
+  color: #b5c2d6;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sbp-page .sbp-process__step h3 {
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.sbp-process__step p {
+  color: #7a879c;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.sbp-process-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  margin-top: 20px;
+  border: 1px solid #e0eaff;
+  border-radius: 13px;
+  background: #edf4ff;
+}
+
+.sbp-process-note__icon {
+  display: flex;
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d7e7ff;
+  color: var(--sbp-blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sbp-process-note p {
+  color: #516986;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   FAQ
+   ========================================== */
+
+.sbp-faq {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: start;
+  gap: 50px;
+  padding-bottom: 24px;
+}
+
+.sbp-faq__intro {
+  position: sticky;
+  top: 24px;
+}
+
+.sbp-page .sbp-faq__intro h2 {
+  font-size: 29px;
+}
+
+.sbp-faq__intro p {
+  max-width: 280px;
+  color: var(--sbp-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sbp-faq__list {
+  border-top: 1px solid var(--sbp-border);
+}
+
+.sbp-faq__item {
+  border-bottom: 1px solid var(--sbp-border);
+}
+
+.sbp-faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 21px 0;
+  color: var(--sbp-navy);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  list-style: none;
+  cursor: pointer;
+}
+
+.sbp-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.sbp-faq__plus {
+  position: relative;
+  display: block;
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border: 1px solid #e5ebf5;
+  border-radius: 9px;
+  background: #f8faff;
+}
+
+.sbp-faq__plus::before,
+.sbp-faq__plus::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--sbp-blue);
+  content: "";
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+
+.sbp-faq__plus::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.sbp-faq__item[open] .sbp-faq__plus::after {
+  transform: translate(-50%, -50%);
+}
+
+.sbp-faq__answer {
+  padding: 0 45px 22px 0;
+  color: #728098;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.sbp-faq__item[open] summary {
+  color: var(--sbp-blue-dark);
+}
+
+
+/* ==========================================
+   АДАПТИВНОСТЬ
+   ========================================== */
+
+@media (max-width: 1050px) {
+  .sbp-hero {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 15px;
+    padding: 42px 35px;
+  }
+
+  .sbp-hero__visual {
+    min-height: 350px;
+  }
+
+  .sbp-payment-card {
+    width: 260px;
+    padding: 19px;
+  }
+
+  .sbp-float--check {
+    right: -8px;
+  }
+
+  .sbp-benefits {
+    gap: 13px;
+  }
+
+  .sbp-benefit {
+    padding: 23px 20px;
+  }
+
+  .sbp-process-section {
+    padding: 27px;
+  }
+
+  .sbp-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sbp-faq {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sbp-hero {
+    grid-template-columns: 1fr;
+    padding: 34px 25px 20px;
+    margin-bottom: 48px;
+    border-radius: 22px;
+  }
+
+  .sbp-hero .sbp-hero__title {
+    font-size: 36px;
+  }
+
+  .sbp-hero__lead {
+    font-size: 17px;
+  }
+
+  .sbp-hero__visual {
+    min-height: 365px;
+    margin-top: 8px;
+  }
+
+  .sbp-payment-card {
+    width: min(270px, 82%);
+  }
+
+  .sbp-float--speed {
+    top: 20px;
+    left: 0;
+  }
+
+  .sbp-float--check {
+    right: 0;
+    bottom: 18px;
+  }
+
+  .sbp-section {
+    margin-bottom: 49px;
+  }
+
+  .sbp-benefits {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .sbp-benefit {
+    padding: 22px;
+  }
+
+  .sbp-benefit__icon {
+    margin-bottom: 15px;
+  }
+
+  .sbp-details {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  .sbp-details__card {
+    padding: 23px;
+  }
+
+  .sbp-process-section {
+    padding: 25px 18px;
+    margin-bottom: 50px;
+    border-radius: 19px;
+  }
+
+  .sbp-process {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sbp-process__step {
+    padding: 19px;
+  }
+
+  .sbp-process__top {
+    margin-bottom: 15px;
+  }
+
+  .sbp-faq {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .sbp-faq__intro {
+    position: static;
+  }
+
+  .sbp-page .sbp-faq__intro h2 {
+    font-size: 26px;
+  }
+
+  .sbp-faq__answer {
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sbp-hero {
+    padding: 28px 20px 15px;
+  }
+
+  .sbp-hero .sbp-hero__title {
+    font-size: 31px;
+  }
+
+  .sbp-hero__visual {
+    min-height: 330px;
+  }
+
+  .sbp-payment-card {
+    padding: 17px;
+  }
+
+  .sbp-float {
+    gap: 7px;
+    padding: 9px 10px;
+  }
+
+  .sbp-float--speed {
+    font-size: 10px;
+  }
+
+  .sbp-float strong {
+    font-size: 10px;
+  }
+
+  .sbp-details__card {
+    padding: 19px;
+  }
+
+  .sbp-limit {
+    padding: 15px;
+  }
+
+  .sbp-limit__value {
+    font-size: 25px;
+  }
+
+  .sbp-process-section {
+    padding: 22px 14px;
+  }
+}

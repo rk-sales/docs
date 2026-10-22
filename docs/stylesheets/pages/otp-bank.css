@@ -1,0 +1,769 @@
+/* =========================================================
+   OTP BANK — Credit Terminal
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+.otp-page {
+  /* Бренд OTP */
+  --otp-green: #52ae30;
+  --otp-green-dark: #3d8a22;
+  --otp-green-deep: #2f7909;
+  --otp-teal: #04684d;
+  --otp-teal-soft: #e6f2ee;
+  --otp-green-soft: #edf7e8;
+  --otp-lime: #b2dba1;
+
+  /* Нейтральные */
+  --otp-white: #ffffff;
+  --otp-bg: #f7f9f6;
+  --otp-surface: #ffffff;
+  --otp-ink: #0f1a14;
+  --otp-text: #3b4a42;
+  --otp-muted: #7a8b82;
+  --otp-border: #e2e8e4;
+  --otp-border-strong: #cdd6d0;
+
+  /* Акцент режима */
+  --otp-accent: var(--otp-green);
+  --otp-accent-dark: var(--otp-green-dark);
+  --otp-accent-soft: var(--otp-green-soft);
+
+  /* Шрифты */
+  --otp-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --otp-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  font-family: var(--otp-sans);
+  color: var(--otp-text);
+  background: var(--otp-bg);
+  padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  counter-reset: otp-sec;
+}
+
+.otp-page.is-credit {
+  --otp-accent: var(--otp-teal);
+  --otp-accent-dark: #034f3a;
+  --otp-accent-soft: var(--otp-teal-soft);
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .otp-page h2 {
+  text-align: left;
+  margin: 0 0 1rem !important;
+  color: var(--otp-ink) !important;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: otp-sec;
+  padding-top: 1rem;
+  border-top: 2px solid var(--otp-border-strong);
+  position: relative;
+}
+.md-typeset .otp-page h2::after { display: none !important; }
+.md-typeset .otp-page h2::before {
+  content: "0" counter(otp-sec);
+  display: block;
+  font-family: var(--otp-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--otp-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset .otp-page p {
+  margin: 0 0 1rem;
+  color: var(--otp-text);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.otp-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--otp-border);
+  margin-bottom: 2rem;
+}
+
+.md-typeset .otp-page .otp-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--otp-ink) !important;
+  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.5px !important;
+}
+.otp-hero__title span { color: var(--otp-accent); }
+
+.md-typeset .otp-page .otp-hero__lead {
+  max-width: 520px;
+  margin: 0 0 0.75rem !important;
+  color: var(--otp-ink) !important;
+  font-size: 1.05rem !important;
+  font-weight: 500;
+  line-height: 1.6 !important;
+}
+.md-typeset .otp-page .otp-hero__desc {
+  max-width: 520px;
+  margin: 0 !important;
+  color: var(--otp-muted) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+}
+
+.otp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.otp-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.1rem;
+  font-family: var(--otp-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+/* ИСПРАВЛЕНИЕ СИНЕГО ТЕКСТА */
+.md-typeset .otp-page .otp-hero__btn--primary {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1.5px solid #1a1a1a !important;
+  text-decoration: none !important;
+}
+.md-typeset .otp-page .otp-hero__btn--primary:hover {
+  background: var(--otp-accent) !important;
+  border-color: var(--otp-accent) !important;
+  color: #ffffff !important;
+}
+.md-typeset .otp-page .otp-hero__btn--ghost {
+  background: transparent !important;
+  color: var(--otp-ink) !important;
+  border: 1.5px solid var(--otp-border-strong) !important;
+}
+.md-typeset .otp-page .otp-hero__btn--ghost:hover {
+  border-color: var(--otp-ink) !important;
+}
+
+/* Мини-виджет в hero */
+.otp-hero__widget {
+  background: var(--otp-surface);
+  border: 1px solid var(--otp-border);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  box-shadow: 0 10px 30px rgba(15, 26, 20, 0.05);
+}
+.otp-hero__widget-label {
+  font-family: var(--otp-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--otp-muted);
+  margin-bottom: 0.5rem;
+}
+.otp-hero__widget-value {
+  font-family: var(--otp-mono);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--otp-ink);
+  margin-bottom: 0.25rem;
+}
+.otp-hero__widget-sub {
+  font-size: 0.8rem;
+  color: var(--otp-muted);
+  margin-bottom: 1rem;
+}
+.otp-hero__widget-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--otp-border);
+  font-size: 0.82rem;
+}
+.otp-hero__widget-row span:first-child { color: var(--otp-muted); }
+.otp-hero__widget-row span:last-child {
+  font-family: var(--otp-mono);
+  font-weight: 700;
+  color: var(--otp-ink);
+}
+.otp-hero__widget-row--accent span:last-child { color: var(--otp-accent); }
+
+/* =========================================================
+   КАЛЬКУЛЯТОР
+   ========================================================= */
+.otp-calc {
+  margin: 1.5rem 0 2rem;
+  background: var(--otp-surface);
+  border: 1px solid var(--otp-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.otp-calc__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--otp-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.otp-calc__title {
+  font-family: var(--otp-sans);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--otp-ink);
+}
+.otp-calc__mode {
+  display: inline-flex;
+  border: 1.5px solid var(--otp-border-strong);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.otp-calc__mode-btn {
+  padding: 0.45rem 0.9rem;
+  background: transparent;
+  border: 0;
+  font-family: var(--otp-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--otp-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.otp-calc__mode-btn--active {
+  background: var(--otp-accent);
+  color: var(--otp-white);
+}
+
+.otp-calc__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 1.5rem;
+  padding: 1.5rem 1.4rem;
+}
+.otp-calc__controls { min-width: 0; }
+
+.otp-control {
+  margin-bottom: 1.5rem;
+}
+.otp-control__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+}
+.otp-control__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--otp-text);
+}
+.otp-control__value {
+  font-family: var(--otp-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--otp-ink);
+}
+
+/* Ползунки */
+.otp-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--otp-border);
+  outline: none;
+  cursor: pointer;
+}
+.otp-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--otp-accent);
+  border: 3px solid var(--otp-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.1s;
+}
+.otp-range::-webkit-slider-thumb:hover { transform: scale(1.1); }
+.otp-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--otp-accent);
+  border: 3px solid var(--otp-white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.otp-control__limits {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+  font-family: var(--otp-mono);
+  font-size: 0.6rem;
+  color: var(--otp-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Результаты */
+.otp-calc__result {
+  background: var(--otp-bg);
+  border: 1px solid var(--otp-border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.otp-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.otp-result-item__label {
+  font-size: 0.78rem;
+  color: var(--otp-muted);
+}
+.otp-result-item__value {
+  font-family: var(--otp-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--otp-ink);
+  text-align: right;
+}
+.otp-result-item--main {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--otp-border);
+}
+.otp-result-item--main .otp-result-item__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--otp-ink);
+}
+.otp-result-item--main .otp-result-item__value {
+  font-size: 1.4rem;
+  color: var(--otp-accent);
+}
+.otp-result-badge {
+  display: inline-flex;
+  padding: 0.2rem 0.5rem;
+  background: var(--otp-accent-soft);
+  color: var(--otp-accent-dark);
+  border-radius: 4px;
+  font-family: var(--otp-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+/* Дисклеймер */
+.otp-calc__disclaimer {
+  padding: 0.75rem 1.4rem 1.25rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--otp-muted);
+  border-top: 1px dashed var(--otp-border);
+}
+
+/* =========================================================
+   ГРАФИК ПЛАТЕЖЕЙ
+   ========================================================= */
+.otp-chart {
+  margin: 1.5rem 0 2rem;
+  background: var(--otp-surface);
+  border: 1px solid var(--otp-border);
+  border-radius: 16px;
+  padding: 1.5rem 1.4rem;
+}
+.otp-chart__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.otp-chart__title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--otp-ink);
+}
+.otp-chart__legend {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--otp-mono);
+  font-size: 0.6rem;
+  color: var(--otp-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.otp-chart__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.otp-chart__legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.otp-chart__legend i:first-child { background: var(--otp-accent); }
+.otp-chart__legend i:last-child { background: var(--otp-lime); }
+
+.otp-chart__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 180px;
+  padding-bottom: 2rem;
+  position: relative;
+  border-bottom: 1px solid var(--otp-border);
+  overflow-x: auto;
+}
+.otp-chart__bar-wrap {
+  flex: 1;
+  min-width: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.otp-chart__bar {
+  width: 100%;
+  background: var(--otp-accent);
+  border-radius: 3px 3px 0 0;
+  transition: height 0.3s ease;
+  min-height: 4px;
+}
+.otp-chart__bar--last {
+  background: var(--otp-lime);
+}
+.otp-chart__bar-value {
+  font-family: var(--otp-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--otp-ink);
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+}
+.otp-chart__bar-label {
+  position: absolute;
+  bottom: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--otp-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--otp-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   УСЛОВИЯ
+   ========================================================= */
+.otp-terms {
+  margin: 1.5rem 0 2rem;
+  background: var(--otp-surface);
+  border: 1px solid var(--otp-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.otp-terms__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.4rem;
+  border-bottom: 1px solid var(--otp-border);
+  background: var(--otp-bg);
+}
+.otp-terms__title {
+  font-family: var(--otp-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--otp-ink);
+  text-transform: uppercase;
+}
+.otp-terms__badge {
+  padding: 0.2rem 0.55rem;
+  background: var(--otp-accent);
+  color: var(--otp-white);
+  border-radius: 4px;
+  font-family: var(--otp-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.otp-terms__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 1.4rem;
+  border-bottom: 1px solid var(--otp-border);
+  font-size: 0.85rem;
+}
+.otp-terms__row:last-child { border-bottom: 0; }
+.otp-terms__row:nth-child(even) { background: var(--otp-bg); }
+.otp-terms__label { color: var(--otp-muted); }
+.otp-terms__value {
+  font-family: var(--otp-mono);
+  font-weight: 700;
+  color: var(--otp-ink);
+  text-align: right;
+}
+.otp-terms__value--accent { color: var(--otp-accent); }
+
+/* =========================================================
+   ПРЕИМУЩЕСТВА
+   ========================================================= */
+.otp-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.otp-benefit {
+  background: var(--otp-surface);
+  border: 1px solid var(--otp-border);
+  border-radius: 14px;
+  padding: 1.4rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.otp-benefit__icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--otp-accent-soft);
+  color: var(--otp-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.otp-benefit__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--otp-ink);
+  line-height: 1.3;
+}
+.otp-benefit__text {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--otp-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   ПОДКЛЮЧЕНИЕ
+   ========================================================= */
+.otp-connect {
+  margin: 1.5rem 0 2rem;
+  background: var(--otp-surface) !important;
+  border: 1px solid var(--otp-border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.otp-connect__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--otp-ink) !important;
+  margin: 0 0 0.35rem;
+}
+.otp-connect__text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--otp-muted) !important;
+  margin: 0;
+}
+
+/* ИСПРАВЛЕНИЕ СИНЕГО ТЕКСТА КНОПКИ */
+.md-typeset .otp-page .otp-connect__btn {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-family: var(--otp-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.md-typeset .otp-page .otp-connect__btn:hover {
+  background: var(--otp-accent) !important;
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   FAQ — Стиль как в foreign-cards
+   ========================================================= */
+.otp-faq {
+  margin: 2rem 0 2.5rem;
+}
+.otp-faq__item {
+  margin: 12px 0 !important;
+  border: 1px solid var(--otp-border) !important;
+  border-radius: 14px !important;
+  background: var(--otp-surface) !important;
+  box-shadow: 0 2px 8px rgba(15, 26, 20, 0.03) !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.otp-faq__item:hover {
+  border-color: var(--otp-accent) !important;
+  box-shadow: 0 4px 14px rgba(82, 174, 48, 0.08) !important;
+}
+.otp-faq__item[open] {
+  border-color: var(--otp-accent) !important;
+  box-shadow: 0 4px 14px rgba(82, 174, 48, 0.08) !important;
+}
+.otp-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 20px 52px 20px 22px !important;
+  color: var(--otp-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.otp-faq__item summary::-webkit-details-marker,
+.otp-faq__item summary::marker,
+.otp-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.otp-faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--otp-muted);
+  border-bottom: 2px solid var(--otp-muted);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.otp-faq__item[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+  border-color: var(--otp-accent);
+}
+.otp-faq__item[open] summary {
+  padding-bottom: 14px !important;
+}
+.md-typeset .otp-page .otp-faq__answer {
+  margin: 0 !important;
+  padding: 0 22px 22px !important;
+  color: var(--otp-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+.md-typeset .otp-page .otp-faq__answer p {
+  margin: 0 0 0.75rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.md-typeset .otp-page .otp-faq__answer p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .otp-page {
+  --otp-bg: #0f1512;
+  --otp-surface: #161d19;
+  --otp-ink: #eaf0ec;
+  --otp-text: #b8c4bc;
+  --otp-muted: #7a8b82;
+  --otp-border: #28322c;
+  --otp-border-strong: #38443c;
+  --otp-green-soft: #14240e;
+  --otp-teal-soft: #0a1f18;
+}
+[data-md-color-scheme="slate"] .otp-page .otp-hero__widget,
+[data-md-color-scheme="slate"] .otp-page .otp-calc,
+[data-md-color-scheme="slate"] .otp-page .otp-chart,
+[data-md-color-scheme="slate"] .otp-page .otp-terms,
+[data-md-color-scheme="slate"] .otp-page .otp-benefit,
+[data-md-color-scheme="slate"] .otp-page .otp-connect,
+[data-md-color-scheme="slate"] .otp-page .otp-faq__item {
+  background: var(--otp-surface) !important;
+  border-color: var(--otp-border) !important;
+}
+[data-md-color-scheme="slate"] .otp-page .otp-calc__result {
+  background: var(--otp-bg);
+}
+[data-md-color-scheme="slate"] .otp-page .otp-range::-webkit-slider-runnable-track {
+  background: var(--otp-border);
+}
+[data-md-color-scheme="slate"] .otp-page .otp-range::-webkit-slider-thumb {
+  border-color: var(--otp-surface);
+}
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .otp-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .otp-calc__body { grid-template-columns: 1fr; gap: 1rem; }
+  .otp-benefits { grid-template-columns: 1fr 1fr; }
+  .otp-connect { grid-template-columns: 1fr; text-align: center; }
+  .otp-connect__btn { margin: 0 auto; }
+}
+@media screen and (max-width: 767px) {
+  .otp-page { padding: 1rem 0.75rem 1.5rem; }
+  .md-typeset .otp-page .otp-hero__title { font-size: clamp(1.9rem, 8vw, 2.5rem) !important; }
+  .otp-benefits { grid-template-columns: 1fr; }
+  .otp-chart__bars { height: 150px; }
+  .otp-calc__head { flex-direction: column; align-items: flex-start; }
+  
+  /* Адаптив для FAQ как в foreign-cards */
+  .otp-faq__item summary { padding: 17px 42px 17px 16px !important; font-size: 0.95rem !important; }
+  .otp-faq__item summary::after { right: 18px; }
+  .md-typeset .otp-page .otp-faq__answer { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .otp-page, .otp-range::-webkit-slider-thumb, .otp-chart__bar { transition: none; }
+}

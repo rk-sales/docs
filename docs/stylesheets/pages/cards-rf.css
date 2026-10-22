@@ -1,0 +1,769 @@
+/* =========================================================
+   CARDS RF — Card Showcase
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+.cards-rf {
+  /* Синий бренд Robokassa */
+  --cards-blue: #2563eb;
+  --cards-blue-dark: #1d4ed8;
+  --cards-blue-deep: #1e3a8a;
+  --cards-blue-soft: #eff6ff;
+  --cards-blue-border: #bfdbfe;
+
+  /* Нейтральные */
+  --cards-ink: #0f172a;
+  --cards-text: #475569;
+  --cards-muted: #94a3b8;
+  --cards-border: #e2e8f0;
+  --cards-border-strong: #cbd5e1;
+  --cards-bg: #f8fafc;
+  --cards-surface: #ffffff;
+
+  /* Служебное */
+  --cards-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --cards-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  font-family: var(--cards-sans);
+  color: var(--cards-text);
+  counter-reset: cards-sec;
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .cards-rf h2 {
+  text-align: left;
+  margin: 0 0 1rem !important;
+  color: var(--cards-ink) !important;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: cards-sec;
+  padding-top: 1rem;
+  border-top: 2px solid var(--cards-border-strong);
+  position: relative;
+}
+.md-typeset .cards-rf h2::after { display: none !important; }
+.md-typeset .cards-rf h2::before {
+  content: "0" counter(cards-sec);
+  display: block;
+  font-family: var(--cards-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--cards-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset .cards-rf p {
+  margin: 0 0 1rem;
+  color: var(--cards-text);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO — витрина карт
+   ========================================================= */
+.md-typeset .cards-rf .hero-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: clamp(2rem, 4vw, 3rem);
+  margin: 1rem 0 2.5rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 55%, #eff6ff 100%) !important;
+  border: 1px solid var(--cards-border) !important;
+  border-radius: 24px;
+}
+.md-typeset .cards-rf .hero-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cards-blue) 0%, #60a5fa 100%);
+  z-index: 2;
+}
+.md-typeset .cards-rf .hero-card::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.06), transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.cards-rf .hero-content {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.md-typeset .cards-rf .hero-content p:first-of-type,
+.md-typeset .cards-rf .hero-content .cards-hero-lead {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  color: var(--cards-ink) !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+}
+.cards-rf .hero-content > p:not(.cards-hero-lead):not(:first-of-type) {
+  color: var(--cards-text) !important;
+  line-height: 1.7;
+  margin: 0 !important;
+  font-size: 0.95rem;
+  max-width: 480px;
+}
+
+/* Бейдж комиссии */
+.cards-rf .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.1rem;
+  background: #ffffff;
+  border: 1px solid var(--cards-blue-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+.cards-rf .hero-badge__label {
+  font-family: var(--cards-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cards-muted);
+}
+.cards-rf .hero-badge__value {
+  font-family: var(--cards-mono);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--cards-blue);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+/* ── 3D-мокап карты ── */
+.cards-rf .hero-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+  perspective: 1000px;
+}
+
+.cards-rf .card-3d {
+  position: relative;
+  width: 300px;
+  height: 190px;
+  border-radius: 18px;
+  padding: 1.25rem 1.35rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);
+  color: #ffffff;
+  box-shadow: 0 25px 50px rgba(30, 58, 138, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotateY(-12deg) rotateX(6deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.cards-rf .card-3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.25), transparent 45%);
+  pointer-events: none;
+}
+.cards-rf .card-3d::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.4), transparent 60%);
+  pointer-events: none;
+}
+.cards-rf .hero-visual:hover .card-3d {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-6px);
+}
+
+.cards-rf .card-3d__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+.cards-rf .card-3d__brand {
+  font-family: var(--cards-sans);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+.cards-rf .card-3d__brand small {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+.cards-rf .card-3d__chip {
+  width: 34px;
+  height: 26px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #ffd700 0%, #c99b00 100%);
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.cards-rf .card-3d__chip::before,
+.cards-rf .card-3d__chip::after {
+  content: "";
+  position: absolute;
+  left: 5px; right: 5px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.cards-rf .card-3d__chip::before { top: 8px; }
+.cards-rf .card-3d__chip::after { bottom: 8px; }
+
+.cards-rf .card-3d__number {
+  font-family: var(--cards-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  position: relative;
+  z-index: 1;
+}
+
+.cards-rf .card-3d__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+.cards-rf .card-3d__holder {
+  font-family: var(--cards-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.cards-rf .card-3d__system {
+  font-family: var(--cards-sans);
+  font-size: 0.85rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* Бейджи платёжных систем */
+.cards-rf .card-systems {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #ffffff;
+  border: 1px solid var(--cards-border);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  z-index: 3;
+}
+.cards-rf .card-systems span {
+  font-family: var(--cards-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--cards-ink);
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--cards-bg);
+}
+.cards-rf .card-systems span:nth-child(1) { color: #1a1f71; }
+.cards-rf .card-systems span:nth-child(2) { color: #eb001b; }
+.cards-rf .card-systems span:nth-child(3) { color: #009f3d; }
+.cards-rf .card-systems span:nth-child(4) { color: #e21836; }
+
+/* =========================================================
+   ПОДДЕРЖИВАЕМЫЕ КАРТЫ
+   ========================================================= */
+.cards-rf .systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.5rem 0 2rem;
+}
+.cards-rf .system-card {
+  position: relative;
+  background: var(--cards-surface);
+  border: 1px solid var(--cards-border);
+  border-radius: 16px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+.cards-rf .system-card:hover {
+  border-color: var(--cards-blue);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+  transform: translateY(-3px);
+}
+.cards-rf .system-card__logo {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  font-family: var(--cards-sans);
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.35rem;
+}
+.cards-rf .system-card[data-system="visa"] .system-card__logo { color: #1a1f71; }
+.cards-rf .system-card[data-system="mastercard"] .system-card__logo { color: #eb001b; }
+.cards-rf .system-card[data-system="mir"] .system-card__logo { color: #009f3d; }
+.cards-rf .system-card[data-system="unionpay"] .system-card__logo { color: #e21836; }
+
+.cards-rf .system-card__title {
+  font-family: var(--cards-sans);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--cards-ink);
+  line-height: 1.3;
+}
+.cards-rf .system-card__desc {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--cards-muted);
+  margin: 0;
+}
+.cards-rf .system-card__tag {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--cards-blue-soft);
+  color: var(--cards-blue);
+  font-family: var(--cards-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ПРЕИМУЩЕСТВА — Bento
+   ========================================================= */
+.cards-rf .bento {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(140px, auto);
+  gap: 0.85rem;
+  margin: 1.5rem 0 2rem;
+}
+.cards-rf .bento-card {
+  position: relative;
+  background: var(--cards-surface);
+  border: 1px solid var(--cards-border);
+  border-radius: 16px;
+  padding: 1.3rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.cards-rf .bento-card:hover {
+  border-color: var(--cards-blue-border);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+}
+.cards-rf .bento-card--hero {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: linear-gradient(160deg, var(--cards-blue-deep) 0%, var(--cards-blue) 100%);
+  color: #ffffff;
+  border-color: var(--cards-blue-deep);
+  justify-content: space-between;
+}
+.cards-rf .bento-card--hero::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px rgba(255, 255, 255, 0.04),
+              0 0 0 48px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+.cards-rf .bento-card--wide {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+.cards-rf .bento-card__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--cards-blue-soft);
+  color: var(--cards-blue);
+  font-size: 1.2rem;
+}
+.cards-rf .bento-card--hero .bento-card__icon {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  width: 52px;
+  height: 52px;
+}
+.cards-rf .bento-card__title {
+  font-family: var(--cards-sans);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--cards-ink);
+  line-height: 1.3;
+  margin: 0 0 0.3rem;
+}
+.cards-rf .bento-card--hero .bento-card__title {
+  color: #ffffff;
+  font-size: 1.35rem;
+  letter-spacing: -0.3px;
+}
+.cards-rf .bento-card__text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--cards-text);
+  margin: 0;
+}
+.cards-rf .bento-card--hero .bento-card__text {
+  color: #dbeafe;
+  font-size: 0.9rem;
+}
+.cards-rf .bento-card__stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.cards-rf .bento-card__stat-value {
+  font-family: var(--cards-mono);
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+}
+.cards-rf .bento-card__stat-label {
+  font-family: var(--cards-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #93c5fd;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ПРОЦЕСС — горизонтальный flow
+   ========================================================= */
+.cards-rf .process-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+  position: relative;
+}
+.cards-rf .process-flow::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background-image: linear-gradient(to right, var(--cards-blue-border) 50%, transparent 50%);
+  background-size: 8px 2px;
+  background-repeat: repeat-x;
+  z-index: 0;
+}
+.cards-rf .process-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 0.4rem;
+}
+.cards-rf .process-step__num {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 0.9rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--cards-blue);
+  color: var(--cards-blue);
+  font-family: var(--cards-mono);
+  font-size: 1.2rem;
+  font-weight: 900;
+  box-shadow: 0 0 0 6px var(--cards-blue-soft);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cards-rf .process-step:hover .process-step__num {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 8px var(--cards-blue-soft), 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+.cards-rf .process-step--last .process-step__num {
+  background: var(--cards-blue);
+  color: #ffffff;
+}
+.cards-rf .process-step__title {
+  font-family: var(--cards-sans);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--cards-ink);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+.cards-rf .process-step__desc {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--cards-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   АУДИТОРИЯ — пилюли
+   ========================================================= */
+.cards-rf .audience-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 2rem;
+}
+.cards-rf .audience-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--cards-surface);
+  border: 1px solid var(--cards-border);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--cards-ink);
+  transition: border-color 0.2s, background 0.2s;
+}
+.cards-rf .audience-tag:hover {
+  border-color: var(--cards-blue);
+  background: var(--cards-blue-soft);
+}
+.cards-rf .audience-tag::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cards-blue);
+}
+
+/* =========================================================
+   FAQ — как в foreign-cards
+   ========================================================= */
+.cards-rf .question {
+  margin: 12px 0 !important;
+  border: 1px solid var(--cards-border) !important;
+  border-left-width: 1px !important;
+  border-radius: 14px !important;
+  background: var(--cards-surface) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cards-rf .question:hover {
+  border-color: var(--cards-blue) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important;
+}
+.cards-rf .question[open] {
+  border-color: var(--cards-blue) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important;
+}
+.cards-rf .question summary {
+  position: relative;
+  display: block;
+  padding: 20px 52px 20px 22px !important;
+  color: var(--cards-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.cards-rf .question summary::-webkit-details-marker,
+.cards-rf .question summary::marker,
+.cards-rf .question summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.cards-rf .question summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--cards-muted);
+  border-bottom: 2px solid var(--cards-muted);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.cards-rf .question[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+  border-color: var(--cards-blue);
+}
+.cards-rf .question[open] summary {
+  padding-bottom: 14px !important;
+}
+.cards-rf .question > p {
+  margin: 0 !important;
+  padding: 0 22px 22px !important;
+  color: var(--cards-text) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .cards-rf {
+  --cards-bg: #121826;
+  --cards-surface: #1a2030;
+  --cards-ink: #f1f5f9;
+  --cards-text: #cbd5e1;
+  --cards-muted: #94a3b8;
+  --cards-border: #2a3346;
+  --cards-border-strong: #3a4559;
+  --cards-blue-soft: #1a2b4a;
+  --cards-blue-border: #2e4a7d;
+}
+[data-md-color-scheme="slate"] .md-typeset .cards-rf .hero-card {
+  background: linear-gradient(135deg, #0f1a2e 0%, #121826 55%, #14263f 100%) !important;
+  border-color: var(--cards-border) !important;
+}
+[data-md-color-scheme="slate"] .md-typeset .cards-rf .hero-content p:first-of-type,
+[data-md-color-scheme="slate"] .md-typeset .cards-rf .hero-content .cards-hero-lead {
+  color: #ffffff !important;
+}
+[data-md-color-scheme="slate"] .cards-rf .hero-content > p:not(.cards-hero-lead):not(:first-of-type) {
+  color: var(--cards-text) !important;
+}
+[data-md-color-scheme="slate"] .cards-rf .hero-badge {
+  background: #1a2030;
+  border-color: var(--cards-blue-border);
+}
+[data-md-color-scheme="slate"] .cards-rf .card-systems {
+  background: #1a2030;
+  border-color: var(--cards-border);
+}
+[data-md-color-scheme="slate"] .cards-rf .system-card,
+[data-md-color-scheme="slate"] .cards-rf .bento-card,
+[data-md-color-scheme="slate"] .cards-rf .audience-tag,
+[data-md-color-scheme="slate"] .cards-rf .question {
+  background: var(--cards-surface) !important;
+  border-color: var(--cards-border) !important;
+}
+[data-md-color-scheme="slate"] .cards-rf .bento-card--hero {
+  background: linear-gradient(160deg, #1e3a8a, #2563eb) !important;
+}
+[data-md-color-scheme="slate"] .cards-rf .process-step__num {
+  background: #1a2030;
+  border-color: var(--cards-blue);
+  box-shadow: 0 0 0 6px var(--cards-blue-soft);
+}
+[data-md-color-scheme="slate"] .cards-rf .question summary { color: var(--cards-ink) !important; }
+[data-md-color-scheme="slate"] .cards-rf .question > p { color: var(--cards-text) !important; }
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .md-typeset .cards-rf .hero-card { grid-template-columns: 1fr; gap: 2rem; }
+  .cards-rf .hero-visual { order: -1; min-height: 200px; }
+  .cards-rf .systems-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards-rf .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards-rf .bento-card--hero { grid-column: span 2; grid-row: span 1; }
+  .cards-rf .bento-card--wide { grid-column: span 2; }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .cards-rf .hero-card { padding: 1.4rem !important; border-radius: 20px; }
+  .md-typeset .cards-rf .hero-content p:first-of-type,
+  .md-typeset .cards-rf .hero-content .cards-hero-lead { font-size: 1rem !important; }
+  .cards-rf .card-3d { width: 250px; height: 158px; padding: 1rem 1.15rem; }
+  .cards-rf .card-3d__number { font-size: 0.78rem; }
+  .cards-rf .card-3d__brand { font-size: 0.85rem; }
+  .cards-rf .card-3d__system { font-size: 0.75rem; }
+
+  .cards-rf .systems-grid { grid-template-columns: minmax(0, 1fr); }
+  .cards-rf .bento { grid-template-columns: minmax(0, 1fr); }
+  .cards-rf .bento-card--hero,
+  .cards-rf .bento-card--wide { grid-column: span 1; }
+  .cards-rf .bento-card--wide { grid-template-columns: 1fr; }
+  .cards-rf .bento-card__stat-value { font-size: 2.2rem; }
+
+  .cards-rf .process-flow { grid-template-columns: 1fr; gap: 0.9rem; }
+  .cards-rf .process-flow::before { display: none; }
+  .cards-rf .process-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    column-gap: 0.9rem;
+    text-align: left;
+    padding: 0;
+    align-items: center;
+  }
+  .cards-rf .process-step__num { margin: 0; width: 56px; height: 56px; font-size: 1rem; }
+  .cards-rf .process-step__title,
+  .cards-rf .process-step__desc { text-align: left; }
+
+  .cards-rf .question summary { padding: 17px 42px 17px 16px !important; font-size: 0.95rem !important; }
+  .cards-rf .question summary::after { right: 18px; }
+  .cards-rf .question > p { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-rf .card-3d,
+  .cards-rf .system-card,
+  .cards-rf .bento-card,
+  .cards-rf .process-step__num { transition: none; }
+  .cards-rf .hero-visual:hover .card-3d,
+  .cards-rf .system-card:hover,
+  .cards-rf .process-step:hover .process-step__num { transform: none; }
+}

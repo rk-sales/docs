@@ -1,0 +1,802 @@
+/* =========================================================
+   MIR PAY ROBOKASSA — Mir Ledger
+   ========================================================= */
+
+.mirpay-page {
+  --mir-green: #0f754e;          /* основной фирменный зелёный «Мир» */
+  --mir-green-dark: #0a5c3d;
+  --mir-green-deep: #063d28;
+  --mir-green-soft: #e6f4ef;
+  --mir-green-glow: rgba(15, 117, 78, .18);
+  --mir-blue: #2fa8d8;            /* голубой «лепесток» */
+  --mir-blue-soft: #e8f6fb;
+  --mir-ink: #0b1f17;
+  --mir-text: #3f4a45;
+  --mir-border: #d9e3df;
+  --mir-mono: 'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace;
+  color: var(--mir-text);
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .mirpay-page h2 {
+  text-align: left;
+  margin: 0 0 .9rem !important;
+  color: var(--mir-ink) !important;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+}
+.md-typeset .mirpay-page h2::after { display: none !important; }
+
+.mirpay-page .mirpay-section__description {
+  margin: 0 0 1.5rem !important;
+  padding: 0 !important;
+  color: #64748b;
+  font-size: .92rem;
+  line-height: 1.7;
+  text-align: left !important;
+}
+
+/* ===== Заголовки карточек ===== */
+.md-typeset .mirpay-page .mirpay-title {
+  margin: 0 0 .35rem !important;
+  color: var(--mir-ink) !important;
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.2px !important;
+}
+.md-typeset .mirpay-page .mirpay-title--lg {
+  margin: 0 0 .55rem !important;
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+
+/* =========================================================
+   HERO — асимметрия, «реестр», зелёный #0F754E
+   ========================================================= */
+.md-typeset .mirpay-page .mirpay-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  align-items: stretch;
+  gap: 0;
+  margin: 1rem 0 2.5rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #fff !important;
+  border: 1.5px solid var(--mir-green) !important;
+  border-radius: 6px;
+}
+/* Левая зелёная полоса-корешок */
+.mirpay-page .mirpay-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 8px;
+  background: linear-gradient(180deg, var(--mir-green), var(--mir-green-deep));
+  z-index: 3;
+}
+/* Голубой градиентный «лепесток» — вторичный акцент */
+.mirpay-page .mirpay-hero::after {
+  content: "";
+  position: absolute;
+  right: -120px; top: -120px;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(47, 168, 216, .28), transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.mirpay-page .mirpay-hero__content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  padding: clamp(1.6rem, 3.2vw, 2.6rem);
+  padding-left: calc(clamp(1.6rem, 3.2vw, 2.6rem) + 8px);
+}
+
+.mirpay-page .mirpay-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 1.2rem;
+  color: var(--mir-green);
+  font-family: var(--mir-mono);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.mirpay-page .mirpay-eyebrow__dot {
+  width: 7px; height: 7px; flex: 0 0 7px;
+  border-radius: 1px;
+  background: var(--mir-green);
+}
+
+.md-typeset .mirpay-page .mirpay-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--mir-ink) !important;
+  font-size: clamp(2rem, 3.8vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.8px !important;
+}
+.mirpay-page .mirpay-hero__title span {
+  color: var(--mir-green);
+  background: linear-gradient(180deg, transparent 62%, var(--mir-green-soft) 62%);
+}
+.md-typeset .mirpay-page .mirpay-hero__lead {
+  max-width: 520px;
+  margin: 0 0 .7rem !important;
+  color: var(--mir-ink) !important;
+  font-size: .95rem !important;
+  font-weight: 600;
+  line-height: 1.6 !important;
+}
+.md-typeset .mirpay-page .mirpay-hero__description {
+  max-width: 520px;
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .86rem !important;
+  line-height: 1.7 !important;
+}
+.mirpay-page .mirpay-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.3rem;
+}
+.mirpay-page .mirpay-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .7rem;
+  border: 1px solid var(--mir-border);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--mir-text);
+  font-family: var(--mir-mono);
+  font-size: .68rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .2px;
+}
+.mirpay-page .mirpay-tag--green {
+  border-color: var(--mir-green);
+  background: var(--mir-green-soft);
+  color: var(--mir-green-deep);
+}
+
+/* ── Hero visual: «реестр» из двух источников ── */
+.mirpay-page .mirpay-hero__visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(1.2rem, 2.4vw, 1.8rem);
+  background: linear-gradient(135deg, var(--mir-green-soft) 0%, #f7faf9 55%, var(--mir-blue-soft) 100%);
+  border-left: 1px solid var(--mir-border);
+  overflow: hidden;
+}
+/* Тонкая сетка-«миллиметровка» на фоне */
+.mirpay-page .mirpay-hero__visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 117, 78, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 117, 78, .06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.mirpay-page .mp-ledger {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid var(--mir-border);
+  border-radius: 4px;
+  box-shadow: 0 14px 40px rgba(15, 117, 78, .12);
+  font-family: var(--mir-mono);
+  overflow: hidden;
+}
+.mirpay-page .mp-ledger__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .7rem .9rem;
+  background: var(--mir-green);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.mirpay-page .mp-ledger__head span:last-child {
+  color: #a7f3d0;
+  font-weight: 600;
+}
+.mirpay-page .mp-ledger__body { padding: .5rem .9rem .8rem; }
+.mirpay-page .mp-ledger__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem;
+  align-items: baseline;
+  padding: .65rem 0;
+  border-bottom: 1px solid #edf2f0;
+  font-size: .78rem;
+}
+.mirpay-page .mp-ledger__row:last-of-type { border-bottom: 0; }
+.mirpay-page .mp-ledger__label {
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+.mirpay-page .mp-ledger__value {
+  color: var(--mir-green-deep);
+  font-weight: 800;
+  font-size: .92rem;
+  white-space: nowrap;
+}
+.mirpay-page .mp-ledger__value--blue { color: var(--mir-blue); }
+.mirpay-page .mp-ledger__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .4rem;
+  padding: .85rem .9rem;
+  background: var(--mir-green-soft);
+  border-top: 1.5px solid var(--mir-green);
+  font-family: var(--mir-mono);
+}
+.mirpay-page .mp-ledger__total-label {
+  color: var(--mir-green-deep);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.mirpay-page .mp-ledger__total-value {
+  color: var(--mir-green-deep);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/* =========================================================
+   «В чём выгода» — две колонки-«ордера» + финальная строка
+   ========================================================= */
+.mirpay-page .mirpay-cashback {
+  margin: 1rem 0 2.5rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  background: #fff;
+  border: 1px solid var(--mir-border);
+  border-radius: 8px;
+  position: relative;
+  isolation: isolate;
+}
+.mirpay-page .mp-orders {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--mir-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.mirpay-page .mp-order {
+  position: relative;
+  padding: 1.3rem 1.35rem;
+  background: #fff;
+}
+.mirpay-page .mp-order:first-child { border-right: 1px dashed var(--mir-border); }
+.mirpay-page .mp-order__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: .85rem;
+  padding: .28rem .6rem;
+  border-radius: 3px;
+  background: var(--mir-green-soft);
+  color: var(--mir-green-deep);
+  font-family: var(--mir-mono);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.mirpay-page .mp-order:last-child .mp-order__tag {
+  background: var(--mir-blue-soft);
+  color: #1a6d8f;
+}
+.mirpay-page .mp-order__value {
+  color: var(--mir-ink);
+  font-size: 1.9rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: .45rem;
+}
+.mirpay-page .mp-order:last-child .mp-order__value {
+  color: #1a6d8f;
+}
+.md-typeset .mirpay-page .mp-order p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .8rem !important;
+  line-height: 1.6 !important;
+}
+.mirpay-page .mp-order__index {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  color: #cbd5e1;
+  font-family: var(--mir-mono);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+/* Финальная строка — «итог реестра» */
+.mirpay-page .mp-receipt-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  border: 1.5px solid var(--mir-green);
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--mir-green-soft), #fff 70%, var(--mir-blue-soft));
+  position: relative;
+  overflow: hidden;
+}
+.mirpay-page .mp-receipt-total::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--mir-green);
+}
+.mirpay-page .mp-receipt-total__left {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding-left: .6rem;
+}
+.mirpay-page .mp-receipt-total__label {
+  color: var(--mir-ink);
+  font-size: .9rem;
+  font-weight: 800;
+}
+.mirpay-page .mp-receipt-total__note {
+  color: #64748b;
+  font-family: var(--mir-mono);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+.mirpay-page .mp-receipt-total__value {
+  color: var(--mir-green-deep);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   Преимущества — асимметричный «регистр» (2 + 2, но разной ширины)
+   ========================================================= */
+.mirpay-page .mirpay-benefits {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-auto-rows: minmax(130px, auto);
+  gap: .85rem;
+  margin: 1rem 0 2.5rem;
+}
+.mirpay-page .mp-benefit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: .9rem;
+  padding: 1.2rem 1.3rem;
+  background: #fff;
+  border: 1px solid var(--mir-border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.mirpay-page .mp-benefit:hover {
+  border-color: var(--mir-green);
+  box-shadow: 0 8px 24px var(--mir-green-glow);
+}
+.mirpay-page .mp-benefit--large {
+  grid-row: span 2;
+  background: linear-gradient(160deg, var(--mir-green-deep) 0%, var(--mir-green) 100%);
+  color: #fff;
+  border-color: var(--mir-green-deep);
+  justify-content: flex-start;
+  gap: 1.1rem;
+}
+.mirpay-page .mp-benefit--large::after {
+  content: "";
+  position: absolute;
+  right: -60px; bottom: -60px;
+  width: 180px; height: 180px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, .04),
+              0 0 0 40px rgba(255, 255, 255, .02);
+  pointer-events: none;
+}
+.mirpay-page .mp-benefit__index {
+  font-family: var(--mir-mono);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--mir-green);
+}
+.mirpay-page .mp-benefit--large .mp-benefit__index {
+  color: #a7f3d0;
+}
+.md-typeset .mirpay-page .mp-benefit--large .mirpay-title {
+  color: #fff !important;
+  font-size: 1.3rem !important;
+}
+.md-typeset .mirpay-page .mp-benefit--large p {
+  color: #d1fae5 !important;
+  font-size: .88rem !important;
+}
+.md-typeset .mirpay-page .mp-benefit p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .84rem !important;
+  line-height: 1.65 !important;
+}
+.mirpay-page .mp-benefit__foot {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.mirpay-page .mp-benefit__icon {
+  display: grid;
+  width: 34px; height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 4px;
+  background: var(--mir-green-soft);
+  color: var(--mir-green-deep);
+}
+.mirpay-page .mp-benefit--large .mp-benefit__icon {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  width: 42px; height: 42px;
+  flex-basis: 42px;
+  border-radius: 8px;
+}
+.mirpay-page .mp-benefit__icon svg { width: 18px; height: 18px; }
+.mirpay-page .mp-benefit--large .mp-benefit__icon svg { width: 22px; height: 22px; }
+.mirpay-page .mp-benefit__tag {
+  font-family: var(--mir-mono);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .8px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   Подключение — «одобрено», зелёная печать
+   ========================================================= */
+.mirpay-page .mirpay-connect {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 1rem 0 2.5rem;
+  padding: 1.4rem 1.5rem;
+  background: #fff;
+  border: 1.5px solid var(--mir-green);
+  border-radius: 6px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.mirpay-page .mirpay-connect::before {
+  content: "";
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-8deg);
+  padding: .45rem .9rem;
+  border: 2px solid var(--mir-green);
+  border-radius: 4px;
+  color: var(--mir-green);
+  font-family: var(--mir-mono);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  opacity: .22;
+  pointer-events: none;
+  content: "APPROVED";
+  z-index: 0;
+}
+.mirpay-page .mirpay-connect > * { position: relative; z-index: 1; }
+.mirpay-page .mirpay-connect__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--mir-green);
+  color: #fff;
+}
+.mirpay-page .mirpay-connect__icon svg { width: 22px; height: 22px; }
+.md-typeset .mirpay-page .mirpay-connect .mirpay-title--lg {
+  margin: 0 0 .35rem !important;
+  color: var(--mir-green-deep) !important;
+}
+.md-typeset .mirpay-page .mirpay-connect p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: .88rem !important;
+  line-height: 1.7 !important;
+}
+
+/* =========================================================
+   Как платит клиент — вертикальный «журнал транзакций»
+   ========================================================= */
+.mirpay-page .mirpay-process {
+  position: relative;
+  margin: 1rem 0 2.5rem;
+  padding-left: 1.75rem;
+}
+.mirpay-page .mirpay-process::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--mir-green), var(--mir-blue));
+  border-radius: 1px;
+}
+.mirpay-page .mp-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: .9rem 0;
+  border-bottom: 1px dashed var(--mir-border);
+}
+.mirpay-page .mp-entry:last-child { border-bottom: 0; }
+.mirpay-page .mp-entry::before {
+  content: "";
+  position: absolute;
+  left: -1.75rem;
+  top: 1.15rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: #fff;
+  border: 2px solid var(--mir-green);
+  transform: translateX(3px);
+  z-index: 1;
+}
+.mirpay-page .mp-entry--last::before {
+  background: var(--mir-green);
+  border-color: var(--mir-green);
+  box-shadow: 0 0 0 4px var(--mir-green-soft);
+}
+.mirpay-page .mp-entry__code {
+  font-family: var(--mir-mono);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--mir-green);
+  padding-top: .15rem;
+}
+.mirpay-page .mp-entry__body { min-width: 0; }
+.md-typeset .mirpay-page .mp-entry .mirpay-title {
+  margin: 0 0 .25rem !important;
+  font-size: .95rem !important;
+}
+.md-typeset .mirpay-page .mp-entry p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .84rem !important;
+  line-height: 1.6 !important;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.mirpay-page .mirpay-faq {
+  margin: 1.75rem 0 2.25rem;
+}
+.mirpay-page .mirpay-faq__intro { margin-bottom: .85rem; }
+.md-typeset .mirpay-page .mirpay-faq__intro p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .9rem !important;
+  line-height: 1.65 !important;
+}
+.mirpay-page .mirpay-faq__list { min-width: 0; }
+.mirpay-page .mirpay-faq__item {
+  margin: 10px 0 !important;
+  border: 1px solid var(--mir-border) !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.mirpay-page .mirpay-faq__item:hover {
+  border-color: var(--mir-green) !important;
+  box-shadow: 0 4px 14px var(--mir-green-glow) !important;
+}
+.mirpay-page .mirpay-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 15px 52px 15px 20px !important;
+  color: var(--mir-ink) !important;
+  font-size: .93rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.mirpay-page .mirpay-faq__item summary::-webkit-details-marker,
+.mirpay-page .mirpay-faq__item summary::marker,
+.mirpay-page .mirpay-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.mirpay-page .mirpay-faq__item summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: var(--mir-green-soft);
+  color: var(--mir-green-deep);
+  font-family: var(--mir-mono);
+  font-size: .9rem;
+  font-weight: 900;
+  line-height: 1;
+  border-radius: 4px;
+  transform: translateY(-50%);
+  transition: transform .2s ease;
+}
+.mirpay-page .mirpay-faq__item[open] summary::after {
+  content: "−";
+}
+.mirpay-page .mirpay-faq__item[open] summary { padding-bottom: 10px !important; }
+.md-typeset .mirpay-page .mirpay-faq__answer {
+  margin: 0 !important;
+  padding: 0 20px 16px !important;
+  color: #475569 !important;
+  font-size: .88rem !important;
+  line-height: 1.7 !important;
+}
+.md-typeset .mirpay-page .mirpay-faq__answer p {
+  margin: 0 0 .55rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.md-typeset .mirpay-page .mirpay-faq__answer p:last-child { margin-bottom: 0 !important; }
+.md-typeset .mirpay-page .mirpay-faq__answer a {
+  color: var(--mir-green-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 117, 78, .3);
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .mirpay-page .mirpay-hero {
+  background: #0b1f17 !important;
+  border-color: var(--mir-green) !important;
+}
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mirpay-hero__title { color: #fff !important; }
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mirpay-hero__lead { color: #d1fae5 !important; }
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mirpay-hero__description { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .mirpay-page .mirpay-hero__visual {
+  background: linear-gradient(135deg, #0a2e20 0%, #0b1f17 55%, #0a2a35 100%);
+  border-left-color: #1e3a2e;
+}
+[data-md-color-scheme="slate"] .mirpay-page .mp-ledger {
+  background: #0f2a1e;
+  border-color: #1e3a2e;
+}
+[data-md-color-scheme="slate"] .mirpay-page .mp-ledger__row { border-color: #1e3a2e; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-ledger__label { color: #94a3b8; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-ledger__total { background: #0a2e20; }
+[data-md-color-scheme="slate"] .mirpay-page .mirpay-cashback { background: #0b1f17; border-color: #1e3a2e; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-orders { border-color: #1e3a2e; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-order { background: #0f2a1e; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-order__value { color: #fff; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-receipt-total {
+  background: linear-gradient(135deg, #0a2e20, #0f2a1e 70%, #0a2a35);
+  border-color: var(--mir-green);
+}
+[data-md-color-scheme="slate"] .mirpay-page .mp-receipt-total__label { color: #fff; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-benefit { background: #0f2a1e; border-color: #1e3a2e; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-benefit--large { background: linear-gradient(160deg, #063d28, #0f754e); }
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mp-benefit p { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .mirpay-page .mirpay-connect { background: #0f2a1e; border-color: var(--mir-green); }
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mirpay-connect .mirpay-title--lg { color: #a7f3d0 !important; }
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mirpay-connect p { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-entry { border-color: #1e3a2e; }
+[data-md-color-scheme="slate"] .mirpay-page .mp-entry::before { background: #0f2a1e; }
+[data-md-color-scheme="slate"] .mirpay-page .mirpay-faq__item { background: #0f2a1e !important; border-color: #1e3a2e !important; }
+[data-md-color-scheme="slate"] .mirpay-page .mirpay-faq__item summary { color: #fff !important; }
+[data-md-color-scheme="slate"] .md-typeset .mirpay-page .mirpay-faq__answer { color: #cbd5e1 !important; }
+
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .mirpay-page .mirpay-hero { grid-template-columns: minmax(0, 1fr); }
+  .mirpay-page .mirpay-hero__visual { border-left: 0; border-top: 1px solid var(--mir-border); min-height: 280px; }
+}
+@media screen and (max-width: 900px) {
+  .mirpay-page .mirpay-benefits { grid-template-columns: 1fr 1fr; }
+  .mirpay-page .mp-benefit--large { grid-row: span 1; }
+  .mirpay-page .mirpay-connect { flex-direction: column; align-items: flex-start; }
+  .mirpay-page .mirpay-connect::before { display: none; }
+}
+@media screen and (max-width: 767px) {
+  .md-typeset .mirpay-page .mirpay-hero { border-radius: 4px; }
+  .md-typeset .mirpay-page .mirpay-hero__title { font-size: clamp(1.75rem, 8vw, 2.4rem) !important; letter-spacing: -1.2px !important; }
+  .md-typeset .mirpay-page .mirpay-hero__content { padding: 1.25rem 1.1rem 1.25rem 1.2rem; }
+  .mirpay-page .mirpay-hero__visual { padding: 1rem; min-height: 260px; }
+  .mirpay-page .mp-ledger { max-width: 100%; }
+
+  .mirpay-page .mp-orders { grid-template-columns: 1fr; }
+  .mirpay-page .mp-order:first-child { border-right: 0; border-bottom: 1px dashed var(--mir-border); }
+  .mirpay-page .mp-receipt-total { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  .mirpay-page .mp-receipt-total__value { font-size: 1.7rem; }
+
+  .mirpay-page .mirpay-benefits { grid-template-columns: 1fr; }
+  .mirpay-page .mp-benefit--large { min-height: 200px; }
+
+  .mirpay-page .mirpay-connect { padding: 1.2rem 1.1rem; }
+
+  .mirpay-page .mirpay-process { padding-left: 1.4rem; }
+  .mirpay-page .mp-entry::before { left: -1.4rem; }
+
+  .mirpay-page .mirpay-faq { margin: 1.5rem 0 2rem; }
+  .mirpay-page .mirpay-faq__item summary { padding: 13px 46px 13px 16px !important; font-size: .9rem !important; }
+  .md-typeset .mirpay-page .mirpay-faq__answer { padding: 0 16px 14px !important; font-size: .86rem !important; }
+}
+@media screen and (max-width: 480px) {
+  .md-typeset .mirpay-page .mirpay-hero__title { font-size: 1.65rem !important; }
+  .md-typeset .mirpay-page .mirpay-hero__lead { font-size: .9rem !important; }
+  .md-typeset .mirpay-page .mirpay-hero__description { font-size: .82rem !important; }
+  .mirpay-page .mirpay-hero__tags { gap: .35rem; margin-top: 1rem; }
+  .mirpay-page .mirpay-tag { padding: .32rem .55rem; font-size: .64rem; }
+  .mirpay-page .mp-order__value { font-size: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mirpay-page .mp-benefit,
+  .mirpay-page .mirpay-faq__item { transition: none; }
+}

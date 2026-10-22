@@ -1,0 +1,48 @@
+/* ===== ШРИФТЫ ===== */
+@font-face {
+  font-family: "TildaSans";
+  src: url("../fonts/TildaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "TildaSans";
+  src: url("../fonts/TildaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* ===== БАЗА ===== */
+html, body {
+  font-family: "TildaSans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+}
+
+.md-main { background-color: #f8fafc !important; }
+.md-typeset .headerlink { display: none !important; }
+.md-typeset { font-size: 1rem; line-height: 1.7; color: #334155; }
+
+/* Типографика */
+.md-typeset h1 {
+  font-weight: 800; font-size: 45px; color: #0f172a;
+  margin-bottom: 0.5em; position: relative; padding-bottom: 0.5rem;
+}
+.md-typeset h1::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 60px; height: 4px; background: #2563eb; border-radius: 2px;
+}
+.md-typeset h2 {
+  font-size: 1.9rem !important; margin-top: 0.5rem !important; margin-bottom: 1.5rem !important;
+  font-weight: 800 !important; color: #0f172a !important; letter-spacing: -0.7px !important;
+}
+.md-typeset h2::after { display: none; }
+.md-typeset h3 { font-size: 22px; }
+
+/* Кнопки */
+.md-typeset .md-button--black {
+  background-color: #0f172a !important; color: #ffffff !important; border-color: #0f172a !important;
+  padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: 10px; transition: all 0.2s ease;
+}
+.md-typeset .md-button--black:hover {
+  background-color: #1e293b !important; border-color: #1e293b !important;
+  transform: translateY(-2px); box-shadow: 0 4px 12px rgba(15,23,42,0.2);
+}
+.demo-hint { font-size: 0.9rem; margin-left: 1rem; color: #64748b; }

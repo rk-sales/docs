@@ -25,7 +25,35 @@ theme:
         name: Переключить на светлую тему
 
 extra_css:
-  - extra.css
+  # 1. Базовые стили (шрифты, кнопки)
+  - stylesheets/base.css
+  # 2. Каркас сайта (меню, сетка, хедер)
+  - stylesheets/layout.css
+  # 3. Общие компоненты (таблицы, реквизиты, вопросы)
+  - stylesheets/components/content.css
+  # 4. Баннер справа
+  - stylesheets/components/banner.css
+  # 5. Стили страниц
+  - stylesheets/pages/home.css
+  - stylesheets/pages/payments.css
+  - stylesheets/pages/cards-rf.css
+  - stylesheets/pages/foreign-cards.css
+  - stylesheets/pages/cards-common.css
+  - stylesheets/pages/sberpay.css
+  - stylesheets/pages/sbp.css
+  - stylesheets/pages/tpay.css
+  - stylesheets/pages/mtspay.css
+  - stylesheets/pages/alfapay.css
+  - stylesheets/pages/yandexpay.css
+  - stylesheets/pages/mirpay.css
+  - stylesheets/pages/podeli.css
+  - stylesheets/pages/yandex-split.css
+  - stylesheets/pages/mokka.css
+  - stylesheets/pages/otp-bank.css
+  - stylesheets/pages/halva.css
+  - stylesheets/pages/yoomoney.css
+  # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
+  - stylesheets/dark-theme.css
   
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/html3pdf@0.12.2/dist/html3pdf.bundle.min.js
@@ -55,7 +83,7 @@ nav:
           - СБП: priem-platezhey/platezhnye-metody/sbp.md
           - Sber Pay: priem-platezhey/platezhnye-metody/sberpay.md
           - T-Pay: priem-platezhey/platezhnye-metody/tpay.md
-          - MTS Pay: priem-platezhey/platezhnye-metody/mts-pay.md
+          - MTS Pay: priem-platezhey/platezhnye-metody/mtspay.md
           - Alfa Pay: priem-platezhey/platezhnye-metody/alfa-pay.md
           - Yandex Pay (с двойным кэшбэком): priem-platezhey/platezhnye-metody/yandex-pay.md
           - Mir Pay (с двойным кэшбэком): priem-platezhey/platezhnye-metody/mir-pay.md
