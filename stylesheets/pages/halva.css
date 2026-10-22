@@ -1,0 +1,634 @@
+/* =========================================================
+   HALVA — Card Deck Concept
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+.halva-page {
+  /* Базовые цвета */
+  --halva-black: #111111;
+  --halva-white: #ffffff;
+  --halva-ink: #1a1a1a;
+  --halva-text: #4b5563;
+  --halva-muted: #9ca3af;
+  --halva-border: #e5e7eb;
+  --halva-bg: #fafafa;
+  --halva-surface: #ffffff;
+
+  /* Акцент (меняется при выборе карты) */
+  --halva-accent: #ff3b7f;
+  --halva-accent-dark: #e62e6b;
+  --halva-accent-soft: #fff0f5;
+
+  /* Шрифты */
+  --halva-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --halva-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  font-family: var(--halva-sans);
+  color: var(--halva-text);
+  background: var(--halva-bg);
+  padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  counter-reset: halva-sec;
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .halva-page h2 {
+  text-align: left;
+  margin: 0 0 1rem !important;
+  color: var(--halva-ink) !important;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: halva-sec;
+  padding-top: 1rem;
+  border-top: 2px solid var(--halva-border);
+  position: relative;
+}
+.md-typeset .halva-page h2::after { display: none !important; }
+.md-typeset .halva-page h2::before {
+  content: "0" counter(halva-sec);
+  display: block;
+  font-family: var(--halva-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--halva-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset .halva-page p {
+  margin: 0 0 1rem;
+  color: var(--halva-text);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.halva-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--halva-border);
+  margin-bottom: 2rem;
+}
+
+.md-typeset .halva-page .halva-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--halva-ink) !important;
+  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.5px !important;
+}
+.halva-hero__title span { color: var(--halva-accent); }
+
+.md-typeset .halva-page .halva-hero__lead {
+  max-width: 520px;
+  margin: 0 0 0.75rem !important;
+  color: var(--halva-ink) !important;
+  font-size: 1.05rem !important;
+  font-weight: 500;
+  line-height: 1.6 !important;
+}
+.md-typeset .halva-page .halva-hero__desc {
+  max-width: 520px;
+  margin: 0 !important;
+  color: var(--halva-muted) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+}
+
+.halva-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.md-typeset .halva-page .halva-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.1rem;
+  font-family: var(--halva-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+.md-typeset .halva-page .halva-hero__btn--primary {
+  background: var(--halva-black) !important;
+  color: var(--halva-white) !important;
+  border: 1.5px solid var(--halva-black) !important;
+}
+.md-typeset .halva-page .halva-hero__btn--primary:hover {
+  background: var(--halva-accent) !important;
+  border-color: var(--halva-accent) !important;
+}
+.md-typeset .halva-page .halva-hero__btn--ghost {
+  background: transparent !important;
+  color: var(--halva-ink) !important;
+  border: 1.5px solid var(--halva-border) !important;
+}
+.md-typeset .halva-page .halva-hero__btn--ghost:hover {
+  border-color: var(--halva-ink) !important;
+}
+
+/* ── Мокап карты ── */
+.halva-hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.halva-card {
+  position: relative;
+  width: 300px;
+  height: 190px;
+  border-radius: 18px;
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.halva-card:hover {
+  transform: translateY(-5px) rotateX(3deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.halva-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.halva-card__brand {
+  font-family: var(--halva-sans);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.halva-card__chip {
+  width: 34px;
+  height: 26px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #e0b800, #c99b00);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.halva-card__num {
+  font-family: var(--halva-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+.halva-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.halva-card__holder {
+  font-family: var(--halva-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.halva-card__mir {
+  font-family: var(--halva-sans);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+/* 4 дизайна карты */
+.halva-card[data-design="white"] {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #111111;
+}
+.halva-card[data-design="white"] .halva-card__brand { color: #111; }
+.halva-card[data-design="white"] .halva-card__chip { background: linear-gradient(135deg, #ffd700, #e6b800); }
+
+.halva-card[data-design="black"] {
+  background: #111111;
+  color: #ffffff;
+}
+.halva-card[data-design="black"] .halva-card__brand { color: #fff; }
+
+.halva-card[data-design="black-pink"] {
+  background: #111111;
+  color: #ffffff;
+  border: 1.5px solid #ff3b7f;
+  box-shadow: 0 0 0 3px rgba(255, 59, 127, 0.15), 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.halva-card[data-design="black-pink"] .halva-card__brand { color: #ff3b7f; }
+
+.halva-card[data-design="gradient"] {
+  background: linear-gradient(135deg, #ff3b7f 0%, #8b5cf6 50%, #3b82f6 100%);
+  color: #ffffff;
+}
+.halva-card[data-design="gradient"] .halva-card__brand { color: #fff; }
+.halva-card[data-design="gradient"] .halva-card__chip { background: rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.4); }
+
+/* Переключатель дизайнов */
+.halva-card-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+.halva-card-switcher__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--halva-border);
+  background: var(--halva-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+.halva-card-switcher__dot[data-design="white"] { background: #ffffff; border-color: #d1d5db; }
+.halva-card-switcher__dot[data-design="black"] { background: #111111; border-color: #111; }
+.halva-card-switcher__dot[data-design="black-pink"] { background: #111111; border-color: #ff3b7f; }
+.halva-card-switcher__dot[data-design="gradient"] { background: linear-gradient(135deg, #ff3b7f, #8b5cf6); border-color: #8b5cf6; }
+.halva-card-switcher__dot--active {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px var(--halva-surface), 0 0 0 4px var(--halva-accent);
+}
+
+/* =========================================================
+   «ХАЛВА.ДЕСЯТКА» — Блок с цифрой 10
+   ========================================================= */
+.halva-ten {
+  margin: 1.5rem 0 2rem;
+  background: var(--halva-surface);
+  border: 1px solid var(--halva-border);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.halva-ten::before {
+  content: "10";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--halva-sans);
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--halva-accent-soft);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+.halva-ten__badge {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--halva-accent);
+  color: #fff;
+  font-family: var(--halva-sans);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 8px 20px rgba(255, 59, 127, 0.25);
+}
+.halva-ten__badge small {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+.halva-ten__body {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+.md-typeset .halva-page .halva-ten__title {
+  margin: 0 0 0.5rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: var(--halva-ink) !important;
+  line-height: 1.3 !important;
+}
+.md-typeset .halva-page .halva-ten__text {
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.65 !important;
+  color: var(--halva-muted) !important;
+}
+.halva-ten__list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+}
+.halva-ten__list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--halva-text);
+}
+.halva-ten__list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--halva-accent);
+  font-weight: 900;
+}
+
+/* =========================================================
+   ПРОЦЕСС
+   ========================================================= */
+.halva-process {
+  margin: 1.5rem 0 2rem;
+}
+.halva-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--halva-border);
+}
+.halva-step:last-child { border-bottom: 0; }
+.halva-step__num {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--halva-accent-soft);
+  color: var(--halva-accent-dark);
+  font-family: var(--halva-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.halva-step__body { min-width: 0; }
+.halva-step__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--halva-ink);
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.halva-step__desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--halva-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   ПРЕИМУЩЕСТВА
+   ========================================================= */
+.halva-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.halva-benefit {
+  background: var(--halva-surface);
+  border: 1px solid var(--halva-border);
+  border-radius: 14px;
+  padding: 1.4rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.halva-benefit:hover {
+  border-color: var(--halva-accent);
+  box-shadow: 0 4px 16px rgba(255, 59, 127, 0.08);
+}
+.halva-benefit__icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--halva-accent-soft);
+  color: var(--halva-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.halva-benefit__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--halva-ink);
+  line-height: 1.3;
+}
+.halva-benefit__text {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--halva-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   ПОДКЛЮЧЕНИЕ
+   ========================================================= */
+.halva-connect {
+  margin: 1.5rem 0 2rem;
+  background: var(--halva-surface) !important;
+  border: 1px solid var(--halva-border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.halva-connect__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--halva-ink) !important;
+  margin: 0 0 0.35rem;
+}
+.halva-connect__text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--halva-muted) !important;
+  margin: 0;
+}
+.md-typeset .halva-page .halva-connect__btn {
+  background: var(--halva-black) !important;
+  color: var(--halva-white) !important;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-family: var(--halva-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.md-typeset .halva-page .halva-connect__btn:hover {
+  background: var(--halva-accent) !important;
+}
+
+/* =========================================================
+   FAQ — как в foreign-cards
+   ========================================================= */
+.halva-faq {
+  margin: 2rem 0 2.5rem;
+}
+.halva-faq__item {
+  margin: 12px 0 !important;
+  border: 1px solid var(--halva-border) !important;
+  border-radius: 14px !important;
+  background: var(--halva-surface) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.halva-faq__item:hover {
+  border-color: var(--halva-accent) !important;
+  box-shadow: 0 4px 14px rgba(255, 59, 127, 0.08) !important;
+}
+.halva-faq__item[open] {
+  border-color: var(--halva-accent) !important;
+  box-shadow: 0 4px 14px rgba(255, 59, 127, 0.08) !important;
+}
+.halva-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 20px 52px 20px 22px !important;
+  color: var(--halva-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.halva-faq__item summary::-webkit-details-marker,
+.halva-faq__item summary::marker,
+.halva-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.halva-faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--halva-muted);
+  border-bottom: 2px solid var(--halva-muted);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.halva-faq__item[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+  border-color: var(--halva-accent);
+}
+.halva-faq__item[open] summary {
+  padding-bottom: 14px !important;
+}
+.md-typeset .halva-page .halva-faq__answer {
+  margin: 0 !important;
+  padding: 0 22px 22px !important;
+  color: var(--halva-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+.md-typeset .halva-page .halva-faq__answer p {
+  margin: 0 0 0.75rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.md-typeset .halva-page .halva-faq__answer p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .halva-page {
+  --halva-bg: #0f0f0f;
+  --halva-surface: #1a1a1a;
+  --halva-ink: #f3f4f6;
+  --halva-text: #b8c4bc;
+  --halva-muted: #7a8b82;
+  --halva-border: #2a2a2a;
+}
+[data-md-color-scheme="slate"] .halva-page .halva-card[data-design="white"] {
+  background: #1a1a1a;
+  border-color: #333;
+  color: #fff;
+}
+[data-md-color-scheme="slate"] .halva-page .halva-card[data-design="white"] .halva-card__brand { color: #fff; }
+[data-md-color-scheme="slate"] .halva-page .halva-ten::before { color: rgba(255, 59, 127, 0.1); }
+[data-md-color-scheme="slate"] .halva-page .halva-benefit:hover {
+  border-color: var(--halva-accent);
+  box-shadow: 0 4px 16px rgba(255, 59, 127, 0.15);
+}
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .halva-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .halva-hero__visual { order: -1; }
+  .halva-benefits { grid-template-columns: 1fr; }
+  .halva-ten { grid-template-columns: 1fr; text-align: center; }
+  .halva-ten__list { grid-template-columns: 1fr; text-align: left; }
+  .halva-connect { grid-template-columns: 1fr; text-align: center; }
+  .halva-connect__btn { margin: 0 auto; }
+}
+@media screen and (max-width: 767px) {
+  .halva-page { padding: 1rem 0.75rem 1.5rem; }
+  .md-typeset .halva-page .halva-hero__title { font-size: clamp(1.9rem, 8vw, 2.5rem) !important; }
+  .halva-card { width: 260px; height: 165px; }
+  .halva-ten::before { font-size: 8rem; }
+  .halva-ten__badge { width: 64px; height: 64px; font-size: 1.6rem; }
+  .halva-faq__item summary { padding: 17px 42px 17px 16px !important; font-size: 0.95rem !important; }
+  .halva-faq__item summary::after { right: 18px; }
+  .md-typeset .halva-page .halva-faq__answer { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .halva-page, .halva-card, .halva-benefit, .halva-faq__item { transition: none; }
+  .halva-card:hover { transform: none; }
+}

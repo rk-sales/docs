@@ -1,0 +1,596 @@
+/* =========================================================
+   PAYMENTS INDEX — Payment Ecosystem
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+.payments-page {
+  /* Бренд Robokassa */
+  --pk-blue: #2563eb;
+  --pk-blue-dark: #1d4ed8;
+  --pk-blue-deep: #1e3a8a;
+  --pk-blue-soft: #eff6ff;
+  --pk-blue-border: #bfdbfe;
+
+  /* Нейтральные */
+  --pk-ink: #0f172a;
+  --pk-text: #475569;
+  --pk-muted: #94a3b8;
+  --pk-border: #e2e8f0;
+  --pk-border-strong: #cbd5e1;
+  --pk-bg: #f8fafc;
+  --pk-surface: #ffffff;
+
+  /* Шрифты */
+  --pk-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --pk-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  font-family: var(--pk-sans);
+  color: var(--pk-text);
+  counter-reset: pk-sec;
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .payments-page h2 {
+  text-align: left;
+  margin: 0 0 1rem !important;
+  color: var(--pk-ink) !important;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: pk-sec;
+  padding-top: 1rem;
+  border-top: 2px solid var(--pk-border-strong);
+  position: relative;
+}
+.md-typeset .payments-page h2::after { display: none !important; }
+.md-typeset .payments-page h2::before {
+  content: "0" counter(pk-sec);
+  display: block;
+  font-family: var(--pk-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--pk-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+/* =========================================================
+   HERO — Колода карточек
+   ========================================================= */
+.md-typeset .payments-page .payments-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  align-items: center;
+  gap: 2.5rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  margin: 1rem 0 2.5rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 55%, #eff6ff 100%) !important;
+  border: 1px solid var(--pk-border) !important;
+  border-radius: 24px;
+}
+.md-typeset .payments-page .payments-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pk-blue) 0%, #60a5fa 100%);
+  z-index: 2;
+}
+.md-typeset .payments-page .payments-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.06), transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.payments-page .payments-hero__content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+.payments-page .payments-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--pk-blue-soft);
+  border-radius: 999px;
+  color: var(--pk-blue);
+  font-family: var(--pk-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.payments-page .payments-eyebrow__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pk-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.md-typeset .payments-page .payments-hero__title {
+  margin: 0 0 1.1rem !important;
+  color: var(--pk-ink) !important;
+  font-size: clamp(2.2rem, 4vw, 3.4rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.8px !important;
+}
+.payments-page .payments-hero__title span { color: var(--pk-blue); }
+
+.md-typeset .payments-page .payments-hero__text {
+  max-width: 520px;
+  margin: 0 !important;
+  color: var(--pk-text) !important;
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+}
+
+.payments-page .payments-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.md-typeset .payments-page .payments-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  font-family: var(--pk-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: background 0.15s, border-color 0.15s;
+}
+.md-typeset .payments-page .payments-hero__btn--primary {
+  background: var(--pk-blue) !important;
+  color: #ffffff !important;
+  border: 1.5px solid var(--pk-blue) !important;
+}
+.md-typeset .payments-page .payments-hero__btn--primary:hover {
+  background: var(--pk-blue-dark) !important;
+  border-color: var(--pk-blue-dark) !important;
+}
+.md-typeset .payments-page .payments-hero__btn--ghost {
+  background: #ffffff !important;
+  color: var(--pk-ink) !important;
+  border: 1.5px solid var(--pk-border-strong) !important;
+}
+.md-typeset .payments-page .payments-hero__btn--ghost:hover {
+  border-color: var(--pk-ink) !important;
+}
+
+/* ── Hero Visual: Колода карт ── */
+.payments-page .payments-hero__visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}
+
+.payments-page .payments-deck {
+  position: relative;
+  width: 280px;
+  height: 190px;
+}
+
+.payments-page .payments-deck__card {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.payments-page .payments-deck__card--bnpl {
+  background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+  color: #111;
+  transform: rotate(-8deg) translateY(-15px) translateX(-20px);
+  z-index: 1;
+}
+.payments-page .payments-deck__card--sbp {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: #fff;
+  transform: rotate(-3deg) translateY(-5px) translateX(-10px);
+  z-index: 2;
+}
+.payments-page .payments-deck__card--card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #fff;
+  z-index: 3;
+}
+
+.payments-page .payments-hero__visual:hover .payments-deck__card--card {
+  transform: translateY(-10px) rotate(2deg);
+}
+.payments-page .payments-hero__visual:hover .payments-deck__card--sbp {
+  transform: rotate(-6deg) translateY(-15px) translateX(-30px);
+}
+.payments-page .payments-hero__visual:hover .payments-deck__card--bnpl {
+  transform: rotate(-12deg) translateY(-25px) translateX(-50px);
+}
+
+.payments-page .payments-deck__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.payments-page .payments-deck__label {
+  font-family: var(--pk-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.payments-page .payments-deck__icon {
+  font-size: 1.2rem;
+}
+.payments-page .payments-deck__title {
+  font-family: var(--pk-sans);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.payments-page .payments-deck__num {
+  font-family: var(--pk-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+/* =========================================================
+   КАТАЛОГ — Bento Grid (6-column)
+   ========================================================= */
+.md-typeset .payments-page .payments-section {
+  margin-bottom: 3rem;
+}
+.payments-page .payments-section__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.md-typeset .payments-page .payments-section__heading p {
+  margin: 0.35rem 0 0 !important;
+  color: var(--pk-muted) !important;
+  font-size: 0.92rem !important;
+}
+.payments-page .payments-section__count {
+  flex-shrink: 0;
+  padding: 0.35rem 0.75rem;
+  background: var(--pk-surface);
+  border: 1px solid var(--pk-border);
+  border-radius: 999px;
+  font-family: var(--pk-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--pk-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Bento Grid — 6 колонок */
+.payments-page .payments-bento {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Размеры через CSS-переменную */
+.payments-page .bento-card {
+  --span: 1;
+  grid-column: span var(--span);
+  position: relative;
+  background: var(--pk-surface);
+  border: 1px solid var(--pk-border);
+  border-radius: 20px;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+  text-decoration: none !important;
+}
+.payments-page .bento-card:hover {
+  border-color: var(--pk-blue-border);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Half — 3 из 6 колонок */
+.payments-page .bento-card--half {
+  --span: 3;
+}
+/* Third — 2 из 6 колонок */
+.payments-page .bento-card--third {
+  --span: 2;
+}
+
+/* Feature — синий градиент (Карты) */
+.payments-page .bento-card--featured {
+  background: linear-gradient(135deg, var(--pk-blue-deep) 0%, var(--pk-blue) 100%);
+  border-color: var(--pk-blue-deep);
+  color: #ffffff;
+}
+.payments-page .bento-card--featured:hover {
+  border-color: var(--pk-blue);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+}
+.payments-page .bento-card--featured .bento-card__title { color: #ffffff; }
+.payments-page .bento-card--featured .bento-card__text { color: #dbeafe; }
+.payments-page .bento-card--featured .bento-card__icon { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+.payments-page .bento-card--featured .bento-card__tag { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+.payments-page .bento-card--featured .bento-card__link { color: #bfdbfe; border-top-color: rgba(255, 255, 255, 0.15); }
+.payments-page .bento-card--featured .bento-card__link:hover { color: #ffffff; }
+
+/* Dark — тёмная тема (СБП) */
+.payments-page .bento-card--dark {
+  background: var(--pk-ink);
+  border-color: var(--pk-ink);
+  color: #ffffff;
+}
+.payments-page .bento-card--dark:hover {
+  border-color: var(--pk-blue);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+}
+.payments-page .bento-card--dark .bento-card__title { color: #ffffff; }
+.payments-page .bento-card--dark .bento-card__text { color: #cbd5e1; }
+.payments-page .bento-card--dark .bento-card__icon { background: rgba(255,255,255,0.1); color: #ffffff; }
+.payments-page .bento-card--dark .bento-card__tag { background: rgba(255,255,255,0.1); color: #ffffff; }
+.payments-page .bento-card--dark .bento-card__link { color: #93c5fd; border-top-color: rgba(255,255,255,0.1); }
+.payments-page .bento-card--dark .bento-card__link:hover { color: #ffffff; }
+
+/* Внутренняя структура */
+.payments-page .bento-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.payments-page .bento-card__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--pk-blue-soft);
+  color: var(--pk-blue);
+  font-size: 1.2rem;
+}
+.payments-page .bento-card__tag {
+  padding: 0.25rem 0.6rem;
+  background: var(--pk-bg);
+  border-radius: 4px;
+  font-family: var(--pk-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--pk-muted);
+  text-transform: uppercase;
+}
+.payments-page .bento-card__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--pk-ink);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+.payments-page .bento-card__text {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--pk-text);
+  margin: 0 0 1rem;
+}
+.payments-page .bento-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: auto;
+  border-top: 1px solid var(--pk-border);
+  padding-top: 0.8rem;
+}
+.payments-page .bento-card__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--pk-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  padding: 0.25rem 0;
+  transition: color 0.15s;
+}
+.payments-page .bento-card__link::after {
+  content: "↗";
+  font-size: 0.9rem;
+  color: var(--pk-muted);
+  transition: transform 0.2s, color 0.2s;
+}
+.payments-page .bento-card__link:hover { color: var(--pk-blue-dark); }
+.payments-page .bento-card__link:hover::after {
+  color: var(--pk-blue);
+  transform: translate(2px, -2px);
+}
+
+/* =========================================================
+   ПРЕИМУЩЕСТВА
+   ========================================================= */
+.payments-page .payments-benefits {
+  margin: 2rem 0 2.5rem;
+}
+.payments-page .payments-benefits__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.payments-page .payments-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--pk-surface);
+  border: 1px solid var(--pk-border);
+  border-radius: 16px;
+}
+.payments-page .payments-benefit__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: var(--pk-blue-soft);
+  color: var(--pk-blue);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.md-typeset .payments-page .payments-benefit h3 {
+  margin: 0 0 0.4rem !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: var(--pk-ink) !important;
+}
+.md-typeset .payments-page .payments-benefit p {
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.6 !important;
+  color: var(--pk-text) !important;
+}
+
+/* =========================================================
+   BOTTOM CTA — добавлен отступ сверху
+   ========================================================= */
+.payments-page .payments-bottom-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--pk-blue-soft);
+  border: 1px solid var(--pk-blue-border);
+  border-radius: 16px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.md-typeset .payments-page .payments-bottom-cta h3 {
+  margin: 0 0 0.35rem !important;
+  color: var(--pk-blue-deep) !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+}
+.md-typeset .payments-page .payments-bottom-cta p {
+  margin: 0 !important;
+  color: var(--pk-blue-dark) !important;
+  font-size: 0.9rem !important;
+}
+.md-typeset .payments-page .payments-bottom-cta .md-button {
+  flex-shrink: 0;
+  background: var(--pk-blue) !important;
+  border-color: var(--pk-blue) !important;
+  color: #ffffff !important;
+  padding: 0.75rem 1.2rem !important;
+  border-radius: 8px !important;
+  font-family: var(--pk-mono) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.md-typeset .payments-page .payments-bottom-cta .md-button:hover {
+  background: var(--pk-blue-dark) !important;
+  border-color: var(--pk-blue-dark) !important;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .payments-page {
+  --pk-bg: #121826;
+  --pk-surface: #1a2030;
+  --pk-ink: #f1f5f9;
+  --pk-text: #cbd5e1;
+  --pk-muted: #94a3b8;
+  --pk-border: #2a3346;
+  --pk-border-strong: #3a4559;
+  --pk-blue-soft: #1a2b4a;
+  --pk-blue-border: #2e4a7d;
+}
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-hero {
+  background: linear-gradient(135deg, #0f1a2e 0%, #121826 55%, #14263f 100%) !important;
+  border-color: var(--pk-border) !important;
+}
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-hero__title,
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-hero__text {
+  color: #ffffff !important;
+}
+[data-md-color-scheme="slate"] .payments-page .bento-card,
+[data-md-color-scheme="slate"] .payments-page .payments-benefit {
+  background: var(--pk-surface);
+  border-color: var(--pk-border);
+}
+[data-md-color-scheme="slate"] .payments-page .bento-card--dark {
+  background: #000000;
+  border-color: #333333;
+}
+[data-md-color-scheme="slate"] .payments-page .bento-card--featured {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+}
+[data-md-color-scheme="slate"] .payments-page .payments-bottom-cta {
+  background: #1a2b4a;
+  border-color: #2e4a7d;
+}
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-bottom-cta h3 { color: #bfdbfe !important; }
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-bottom-cta p { color: #93c5fd !important; }
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .md-typeset .payments-page .payments-hero { grid-template-columns: 1fr; gap: 2rem; }
+  .payments-page .payments-hero__visual { order: -1; min-height: 280px; }
+  .payments-page .payments-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .payments-page .bento-card { --span: 1; }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .payments-page .payments-hero { padding: 1.4rem !important; border-radius: 20px; }
+  .md-typeset .payments-page .payments-hero__title { font-size: clamp(1.9rem, 9vw, 2.5rem) !important; }
+  
+  .payments-page .payments-deck { width: 240px; height: 160px; }
+  .payments-page .payments-deck__card { padding: 1rem; }
+  
+  .payments-page .payments-bento { grid-template-columns: 1fr; }
+  .payments-page .bento-card { --span: 1; }
+  
+  .payments-page .payments-benefits__grid { grid-template-columns: 1fr; }
+  .payments-page .payments-bottom-cta { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .payments-page .payments-bottom-cta .md-button { width: 100%; }
+}

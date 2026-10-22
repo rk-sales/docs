@@ -1,0 +1,164 @@
+/* HERO */
+.cards-foreign .cards-hero {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); align-items: center; gap: 2rem;
+  min-height: 370px; padding: clamp(1.8rem, 4vw, 3.5rem);
+  background: radial-gradient(ellipse at 85% 15%, rgba(147,197,253,.28), transparent 35%), linear-gradient(120deg, #1746b8 0%, #2563eb 52%, #3982f6 100%) !important;
+  border: 1px solid #3b82f6 !important; border-radius: 26px; box-shadow: 0 18px 45px rgba(37,99,235,.19) !important;
+  position: relative; isolation: isolate; overflow: hidden; margin: 1.25rem 0 3rem;
+}
+.cards-foreign .cards-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: radial-gradient(rgba(255,255,255,.2) .8px, transparent .8px);
+  background-size: 22px 22px; opacity: .16; pointer-events: none;
+}
+.cards-foreign .cards-hero::after {
+  content: ""; position: absolute; z-index: -1; width: 320px; height: 320px; right: -140px; bottom: -210px;
+  border: 1px solid rgba(255,255,255,.2); border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(255,255,255,.045), 0 0 0 70px rgba(255,255,255,.03);
+}
+.cards-hero__content { position: relative; z-index: 2; min-width: 0; }
+.cards-hero__eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 1.3rem; color: #dbeafe; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; }
+.cards-hero__eyebrow > span { width: 7px; height: 7px; flex-shrink: 0; border-radius: 50%; background: #bfdbfe; box-shadow: 0 0 0 4px rgba(255,255,255,.13); }
+.md-typeset .cards-foreign .cards-hero__title { margin: 0 0 1.25rem !important; color: #fff !important; font-size: clamp(2.5rem, 4.4vw, 4rem) !important; font-weight: 800 !important; line-height: 1.04 !important; letter-spacing: -2px !important; }
+.cards-hero__title span { color: #bfdbfe; }
+.md-typeset .cards-foreign .cards-hero__text { max-width: 510px; margin: 0 !important; color: #eff6ff !important; font-size: .98rem !important; line-height: 1.8 !important; }
+.cards-hero__chips { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.6rem; }
+.cards-hero__chips span { padding: .48rem .75rem; border: 1px solid rgba(255,255,255,.23); border-radius: 8px; color: #fff; background: rgba(255,255,255,.1); font-size: .72rem; font-weight: 650; backdrop-filter: blur(8px); }
+
+/* Визуал */
+.cards-hero__visual { position: relative; display: grid; min-width: 0; min-height: 280px; place-items: center; isolation: isolate; }
+.cards-hero__orbit { position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.17); border-radius: 50%; pointer-events: none; }
+.cards-hero__orbit--outer { width: 300px; height: 300px; box-shadow: 0 0 0 28px rgba(255,255,255,.035), 0 0 0 58px rgba(255,255,255,.025); }
+.cards-hero__orbit--inner { width: 215px; height: 215px; }
+.cards-hero__payment-card {
+  position: relative; z-index: 1; width: min(100%, 340px); min-height: 195px; padding: 1.3rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 1px solid rgba(255,255,255,.65); border-radius: 19px;
+  background: radial-gradient(circle at 90% 0%, rgba(96,165,250,.55), transparent 40%), linear-gradient(145deg, #fff, #eaf2ff);
+  box-shadow: 0 25px 55px rgba(8,30,90,.27); transform: rotate(-5deg);
+}
+.cards-hero__card-top, .cards-hero__card-bottom { display: flex; justify-content: space-between; align-items: center; gap: .7rem; }
+.cards-hero__card-top > span:first-child { color: #64748b; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; }
+.cards-hero__card-symbol { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 9px; color: #fff; background: #2563eb; font-size: 1.1rem; }
+.cards-hero__card-chip { display: flex; width: 35px; height: 26px; overflow: hidden; border: 1px solid #c2d2eb; border-radius: 6px; background: #dbeafe; }
+.cards-hero__card-chip span { width: 33.33%; border-right: 1px solid #b6c8e5; }
+.cards-hero__card-bottom small, .cards-hero__floating small { display: block; margin-bottom: .3rem; color: #8290a4; font-size: 8px; font-weight: 800; letter-spacing: .8px; }
+.cards-hero__card-bottom strong { color: #0f172a; font-size: .9rem; font-weight: 800; }
+.cards-hero__card-circles { display: flex; align-items: center; }
+.cards-hero__card-circles i { width: 27px; height: 27px; border-radius: 50%; background: #2563eb; opacity: .9; }
+.cards-hero__card-circles i + i { margin-left: -10px; background: #60a5fa; opacity: .9; }
+.cards-hero__floating { position: absolute; z-index: 2; display: flex; align-items: center; gap: .7rem; padding: .8rem .95rem; border: 1px solid rgba(255,255,255,.75); border-radius: 13px; background: rgba(255,255,255,.96); box-shadow: 0 12px 30px rgba(15,35,85,.16); }
+.cards-hero__floating--top { top: 12%; right: -2%; }
+.cards-hero__floating--bottom { bottom: 8%; left: -1%; }
+.cards-hero__floating strong { color: #0f172a; font-size: .82rem; font-weight: 800; }
+.cards-hero__floating-icon, .cards-hero__floating-check { display: grid; width: 35px; height: 35px; flex-shrink: 0; place-items: center; border-radius: 10px; color: #2563eb; background: #eff5ff; font-size: 1.1rem; font-weight: 800; }
+.cards-hero__floating-check { color: #15803d; background: #dcfce7; }
+
+/* Общие стили для карточек на этой странице (защита от переопределения) */
+.cards-foreign .cards-info-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(240px, .8fr); gap: 1rem; margin: 1.25rem 0 3rem; align-items: stretch; }
+.cards-foreign .features-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0 3rem; }
+
+/* Переопределение шагов на сетку 4 колонки */
+.cards-foreign .steps-container { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: .8rem !important; }
+.cards-foreign .step-item { position: relative !important; min-width: 0 !important; min-height: 150px !important; flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; padding: 1.25rem !important; border-radius: 16px !important; }
+.cards-foreign .step-number { border-radius: 11px !important; }
+.md-typeset .cards-foreign .step-text { font-size: .86rem !important; line-height: 1.65 !important; }
+
+@media screen and (max-width: 1100px) {
+  .cards-foreign .steps-container { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media screen and (max-width: 767px) {
+  .md-typeset .cards-foreign .cards-hero { grid-template-columns: minmax(0, 1fr) !important; gap: .5rem !important; padding: 1.5rem !important; border-radius: 20px !important; }
+  .md-typeset .cards-foreign .cards-hero__title { font-size: clamp(2.4rem, 10vw, 3.2rem) !important; letter-spacing: -1.5px !important; }
+  .cards-hero__visual { min-height: 265px !important; margin-top: .5rem !important; }
+  .cards-hero__orbit--outer { width: 240px !important; height: 240px !important; }
+  .cards-hero__orbit--inner { width: 175px !important; height: 175px !important; }
+  .cards-hero__payment-card { max-width: 300px !important; min-height: 175px !important; transform: rotate(-3deg) !important; }
+  .cards-hero__floating--top { right: 0 !important; top: 5% !important; }
+  .cards-hero__floating--bottom { left: 0 !important; bottom: 3% !important; }
+  .cards-foreign .steps-container { grid-template-columns: minmax(0, 1fr) !important; }
+  .cards-foreign .step-item { min-height: 0 !important; flex-direction: row !important; align-items: center !important; }
+}
+
+/* ==========================================
+   FAQ — идентично странице Карты РФ
+   ========================================== */
+.cards-foreign .question { 
+  margin: 12px 0 !important; 
+  border: 1px solid #e2e8f0 !important; 
+  border-left-width: 1px !important; 
+  border-radius: 14px !important; 
+  background: #ffffff !important; 
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035) !important; 
+  overflow: hidden; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.cards-foreign .question:hover { 
+  border-color: #bfdbfe !important; 
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important; 
+}
+
+.cards-foreign .question summary { 
+  position: relative; 
+  display: block; 
+  padding: 20px 52px 20px 22px !important; 
+  color: #0f172a !important; 
+  font-size: 1rem !important; 
+  font-weight: 600 !important; 
+  line-height: 1.55 !important; 
+  cursor: pointer; 
+  list-style: none !important; 
+  background: transparent !important; 
+  border-radius: 0 !important; 
+}
+
+.cards-foreign .question summary::-webkit-details-marker, 
+.cards-foreign .question summary::marker, 
+.cards-foreign .question summary::before { 
+  display: none !important; 
+  content: "" !important; 
+}
+
+.cards-foreign .question summary::after { 
+  content: ""; 
+  position: absolute; 
+  right: 22px; 
+  top: 50%; 
+  width: 8px; 
+  height: 8px; 
+  border-right: 2px solid #64748b; 
+  border-bottom: 2px solid #64748b; 
+  transform: translateY(-70%) rotate(45deg); 
+  transition: transform 0.2s ease; 
+}
+
+.cards-foreign .question[open] summary::after { 
+  transform: translateY(-25%) rotate(225deg); 
+}
+
+.cards-foreign .question[open] summary { 
+  padding-bottom: 14px !important; 
+}
+
+.cards-foreign .question > p { 
+  margin: 0 !important; 
+  padding: 0 22px 22px !important; 
+  color: #475569 !important; 
+  font-size: 0.95rem !important; 
+  line-height: 1.8 !important; 
+}
+
+@media screen and (max-width: 767px) {
+  .cards-foreign .question summary { 
+    padding: 17px 42px 17px 16px !important; 
+    font-size: 0.95rem !important; 
+  }
+  .cards-foreign .question summary::after { 
+    right: 18px; 
+  }
+  .cards-foreign .question > p { 
+    padding: 0 16px 18px !important; 
+    font-size: 0.9rem !important; 
+  }
+}

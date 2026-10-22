@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   MOKKA — The Magazine
+   ========================================================= */
+
+.mk-page {
+  --mk-paper: #fbf8f3;
+  --mk-ink: #16120e;
+  --mk-orange: #ff5a00;
+  --mk-orange-soft: #ffe8db;
+  --mk-rule: #d9d1c5;
+  --mk-muted: #6b6457;
+  --mk-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --mk-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mk-mono: 'SF Mono', 'Menlo', 'Consolas', monospace;
+
+  font-family: var(--mk-sans);
+  color: var(--mk-ink);
+  background: var(--mk-paper);
+  padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+  margin: 0;
+  border-radius: 6px;
+  counter-reset: mk-section;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Бумажная текстура */
+.mk-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 90, 0, 0.035), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.02), transparent 45%);
+  z-index: 0;
+}
+.mk-page > * { position: relative; z-index: 1; }
+
+/* ===== Сброс markdown-стилей внутри .mk-page ===== */
+.md-typeset .mk-page h2 {
+  text-align: left;
+  margin: 0 0 .75rem !important;
+  color: var(--mk-ink) !important;
+  font-family: var(--mk-serif) !important;
+  font-size: clamp(1.9rem, 3vw, 2.6rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -1px !important;
+  text-transform: uppercase;
+  counter-increment: mk-section;
+  padding-top: 0.9rem;
+  border-top: 2px solid var(--mk-ink);
+  position: relative;
+}
+.md-typeset .mk-page h2::after { display: none !important; }
+.md-typeset .mk-page h2::before {
+  content: counter(mk-section, decimal-leading-zero) " — " attr(data-kicker, "");
+  display: block;
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  color: var(--mk-orange);
+  font-weight: 800;
+  letter-spacing: .15em;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+
+.md-typeset .mk-page p {
+  margin: 0 0 1rem;
+  color: var(--mk-ink);
+  line-height: 1.7;
+}
+
+.md-typeset .mk-page em {
+  font-family: var(--mk-serif);
+  font-style: italic;
+}
+
+/* =========================================================
+   MAGAZINE COVER (Hero)
+   ========================================================= */
+.mk-cover {
+  margin: 0 0 2.5rem;
+  border-bottom: 1px solid var(--mk-ink);
+  padding-bottom: 1.5rem;
+}
+
+.mk-cover__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--mk-ink);
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.mk-cover__top span:last-child { color: var(--mk-orange); }
+
+.mk-cover__masthead {
+  font-family: var(--mk-serif);
+  font-size: clamp(3.5rem, 11vw, 8rem);
+  font-weight: 900;
+  line-height: .82;
+  letter-spacing: -.05em;
+  color: var(--mk-ink);
+  margin: 0 0 .5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.mk-cover__masthead::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: var(--mk-ink);
+  margin: .5rem 0 0;
+}
+
+.mk-cover__tagline {
+  text-align: center;
+  font-family: var(--mk-serif);
+  font-style: italic;
+  font-size: clamp(.9rem, 1.5vw, 1.1rem);
+  color: var(--mk-muted);
+  margin: 0 0 1.75rem;
+}
+
+.mk-cover__grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: 1.75rem;
+  align-items: stretch;
+  margin-bottom: 1.5rem;
+}
+
+/* Обложка-«фото» */
+.mk-cover__image {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--mk-orange);
+  border: 2px solid var(--mk-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 280px;
+}
+.mk-cover__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 55%),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,.15), transparent 55%);
+}
+.mk-cover__photo-mark {
+  position: relative;
+  z-index: 1;
+  font-family: var(--mk-serif);
+  font-size: clamp(8rem, 20vw, 14rem);
+  font-weight: 900;
+  font-style: italic;
+  line-height: .8;
+  color: var(--mk-paper);
+  text-shadow: 3px 3px 0 var(--mk-ink);
+}
+.mk-cover__sticker {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  background: var(--mk-paper);
+  border: 2px solid var(--mk-ink);
+  border-radius: 999px;
+  padding: .4rem .85rem;
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+}
+.mk-cover__caption {
+  position: absolute;
+  bottom: .75rem;
+  left: .9rem;
+  z-index: 2;
+  font-family: var(--mk-mono);
+  font-size: .6rem;
+  color: var(--mk-paper);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+/* Заголовок обложки */
+.mk-cover__headline {
+  font-family: var(--mk-serif);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 900;
+  line-height: .98;
+  letter-spacing: -.02em;
+  color: var(--mk-ink);
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+.mk-cover__headline em {
+  color: var(--mk-orange);
+  font-style: italic;
+}
+.mk-cover__deck {
+  font-family: var(--mk-sans);
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--mk-ink);
+  margin: 0 0 1.25rem;
+  max-width: 420px;
+}
+.mk-cover__deck strong {
+  background: linear-gradient(transparent 55%, var(--mk-orange-soft) 55%);
+  padding: 0 .2em;
+  font-weight: 700;
+}
+
+.mk-cover__strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: 1rem;
+}
+.mk-cover__strip span {
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .3rem .55rem;
+  border: 1px solid var(--mk-ink);
+  text-transform: uppercase;
+  background: var(--mk-paper);
+  color: var(--mk-ink);
+}
+.mk-cover__strip span:first-child {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+}
+
+/* Штрих-код */
+.mk-cover__barcode {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 44px;
+  padding-top: .5rem;
+  border-top: 1px solid var(--mk-ink);
+  margin-top: 1rem;
+}
+.mk-cover__barcode i {
+  display: block;
+  width: 2px;
+  background: var(--mk-ink);
+  height: 100%;
+}
+.mk-cover__barcode i:nth-child(2n) { height: 60%; }
+.mk-cover__barcode i:nth-child(3n) { height: 40%; }
+.mk-cover__barcode i:nth-child(5n) { height: 85%; }
+.mk-cover__barcode i:nth-child(7n) { height: 30%; }
+.mk-cover__barcode-label {
+  margin-left: auto;
+  align-self: flex-end;
+  font-family: var(--mk-mono);
+  font-size: .55rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--mk-ink);
+}
+
+/* =========================================================
+   EDITORIAL INTRO (with drop cap + pull quote)
+   ========================================================= */
+.mk-article {
+  margin: 2.5rem 0;
+}
+.mk-article__lede {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.md-typeset .mk-page .mk-article__text {
+  font-family: var(--mk-sans);
+  font-size: .95rem;
+  line-height: 1.75;
+  color: var(--mk-ink);
+  margin: 0;
+  column-count: 2;
+  column-gap: 1.75rem;
+  column-rule: 1px solid var(--mk-rule);
+}
+.md-typeset .mk-page .mk-article__text::first-letter {
+  font-family: var(--mk-serif);
+  font-size: 3.5rem;
+  font-weight: 900;
+  float: left;
+  line-height: .85;
+  margin: .2rem .5rem 0 0;
+  color: var(--mk-orange);
+}
+
+/* Pull quote */
+.mk-pullquote {
+  border-top: 2px solid var(--mk-ink);
+  border-bottom: 2px solid var(--mk-ink);
+  padding: 1.5rem 0;
+  margin: 0;
+  text-align: left;
+  position: relative;
+}
+.mk-pullquote::before {
+  content: "\201C";
+  font-family: var(--mk-serif);
+  font-size: 5rem;
+  line-height: .5;
+  color: var(--mk-orange);
+  display: block;
+  margin-bottom: -.3rem;
+}
+.mk-pullquote blockquote {
+  font-family: var(--mk-serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  font-style: italic;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--mk-ink);
+  font-weight: 700;
+}
+.mk-pullquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  color: var(--mk-muted);
+  font-style: normal;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FLIPBOOK — «Как это работает» как журнальный разворот
+   ========================================================= */
+.mk-book {
+  margin: 2rem 0 2.5rem;
+}
+.mk-book__stage {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  perspective: 2400px;
+  transform-style: preserve-3d;
+}
+.mk-book__page {
+  position: absolute;
+  inset: 0;
+  background: var(--mk-paper);
+  border: 2px solid var(--mk-ink);
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform-origin: left center;
+  transition: transform .8s cubic-bezier(.4,0,.2,1);
+  backface-visibility: hidden;
+  will-change: transform;
+  overflow: hidden;
+}
+.mk-book__page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--mk-rule);
+  margin: .4rem;
+  pointer-events: none;
+}
+.mk-book__page.is-flipped {
+  transform: rotateY(-180deg);
+  pointer-events: none;
+}
+
+/* Страницы со слоями (z-index сверху вниз) */
+.mk-book__page:nth-child(1) { z-index: 4; }
+.mk-book__page:nth-child(2) { z-index: 3; }
+.mk-book__page:nth-child(3) { z-index: 2; }
+.mk-book__page:nth-child(4) { z-index: 1; }
+
+/* Колонтитул страницы */
+.mk-book__running {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mk-mono);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--mk-muted);
+  border-bottom: 1px solid var(--mk-rule);
+  padding-bottom: .6rem;
+  margin-bottom: 1rem;
+}
+.mk-book__running strong { color: var(--mk-orange); }
+
+.mk-book__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 620px;
+}
+.mk-book__num {
+  font-family: var(--mk-serif);
+  font-style: italic;
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--mk-orange);
+  letter-spacing: -.03em;
+}
+.mk-book__title {
+  font-family: var(--mk-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--mk-ink);
+  margin: 0;
+  text-transform: uppercase;
+}
+.mk-book__text {
+  font-family: var(--mk-sans);
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--mk-ink);
+  margin: 0;
+  max-width: 480px;
+}
+.mk-book__folio {
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--mk-muted);
+  border-top: 1px solid var(--mk-rule);
+  padding-top: .6rem;
+  text-align: right;
+}
+
+/* Навигация книги */
+.mk-book__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.mk-book__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1rem;
+  background: transparent;
+  border: 1.5px solid var(--mk-ink);
+  color: var(--mk-ink);
+  font-family: var(--mk-mono);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.mk-book__btn:hover:not(:disabled) {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+}
+.mk-book__btn:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+.mk-book__counter {
+  font-family: var(--mk-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mk-muted);
+}
+.mk-book__counter span {
+  color: var(--mk-orange);
+  font-weight: 900;
+}
+
+/* =========================================================
+   SCHEDULE — Инфографика (Fig. 1)
+   ========================================================= */
+.mk-chart {
+  margin: 2rem 0 2.5rem;
+  border: 2px solid var(--mk-ink);
+  padding: 1.5rem;
+  background: var(--mk-paper);
+  position: relative;
+}
+.mk-chart__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: .75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--mk-ink);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.mk-chart__title {
+  font-family: var(--mk-serif);
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+  margin: 0;
+}
+.mk-chart__tabs {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+.mk-tab {
+  padding: .35rem .65rem;
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--mk-ink);
+  color: var(--mk-ink);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.mk-tab:hover {
+  background: var(--mk-orange-soft);
+}
+.mk-tab--active {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+}
+
+.mk-chart__body {
+  display: flex;
+  align-items: flex-end;
+  gap: .4rem;
+  height: 220px;
+  padding-bottom: 2rem;
+  position: relative;
+  border-bottom: 1px solid var(--mk-ink);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.mk-chart__bar {
+  flex: 1;
+  min-width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .3rem;
+  position: relative;
+  height: 100%;
+}
+.mk-chart__bar-fill {
+  width: 100%;
+  background: var(--mk-orange);
+  border: 1px solid var(--mk-ink);
+  transition: height .4s ease;
+  height: 60%;
+  position: relative;
+}
+.mk-chart__bar-fill::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed rgba(255, 255, 255, .5);
+}
+.mk-chart__bar--first .mk-chart__bar-fill {
+  background: var(--mk-ink);
+}
+.mk-chart__value {
+  font-family: var(--mk-mono);
+  font-size: .6rem;
+  font-weight: 800;
+  color: var(--mk-ink);
+  white-space: nowrap;
+  margin-bottom: .1rem;
+}
+.mk-chart__label {
+  position: absolute;
+  bottom: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mk-mono);
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--mk-muted);
+  white-space: nowrap;
+}
+.mk-chart__caption {
+  margin-top: 1rem;
+  font-family: var(--mk-sans);
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--mk-muted);
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--mk-rule);
+}
+.mk-chart__caption strong {
+  font-family: var(--mk-serif);
+  font-style: italic;
+  color: var(--mk-ink);
+  font-weight: 900;
+  margin-right: .3rem;
+}
+.mk-chart__caption em {
+  color: var(--mk-orange);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* =========================================================
+   LETTERS TO THE EDITOR (FAQ)
+   ========================================================= */
+.mk-letters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+.mk-letter {
+  position: relative;
+  background: var(--mk-paper);
+  border: 1.5px solid var(--mk-ink);
+  padding: 1.5rem 1.4rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mk-letter::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--mk-rule);
+  pointer-events: none;
+}
+.mk-letter__stamp {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px dashed var(--mk-orange);
+  background: var(--mk-paper);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: var(--mk-mono);
+  font-size: .45rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--mk-orange);
+  transform: rotate(8deg);
+  z-index: 2;
+}
+.mk-letter__from {
+  font-family: var(--mk-mono);
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--mk-muted);
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--mk-rule);
+}
+.mk-letter__q {
+  font-family: var(--mk-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--mk-ink);
+  margin: 0;
+  position: relative;
+  padding-left: 1.2rem;
+}
+.mk-letter__q::before {
+  content: "Q";
+  position: absolute;
+  left: 0;
+  top: -.15em;
+  font-family: var(--mk-mono);
+  font-style: normal;
+  font-size: .8rem;
+  font-weight: 900;
+  color: var(--mk-orange);
+}
+.mk-letter__a {
+  font-family: var(--mk-sans);
+  font-size: .88rem;
+  line-height: 1.65;
+  color: var(--mk-ink);
+  margin: 0;
+  position: relative;
+  padding-left: 1.2rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--mk-rule);
+}
+.mk-letter__a::before {
+  content: "A";
+  position: absolute;
+  left: 0;
+  top: .75rem;
+  font-family: var(--mk-mono);
+  font-size: .8rem;
+  font-weight: 900;
+  color: var(--mk-ink);
+}
+.mk-letter__sign {
+  margin-top: auto;
+  padding-top: .5rem;
+  text-align: right;
+  font-family: var(--mk-serif);
+  font-style: italic;
+  font-size: .8rem;
+  color: var(--mk-muted);
+}
+
+/* =========================================================
+   CTA — «Следующий выпуск»
+   ========================================================= */
+.mk-subscribe {
+  margin: 2rem 0 0;
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+  padding: 2rem clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.mk-subscribe::before {
+  content: "NEXT";
+  position: absolute;
+  right: -20px;
+  bottom: -60px;
+  font-family: var(--mk-serif);
+  font-size: 12rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  color: var(--mk-orange);
+  opacity: .12;
+  pointer-events: none;
+}
+.mk-subscribe > * { position: relative; z-index: 1; }
+.mk-subscribe__label {
+  font-family: var(--mk-mono);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--mk-orange);
+  margin-bottom: .5rem;
+}
+.mk-subscribe__title {
+  font-family: var(--mk-serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--mk-paper);
+  margin: 0 0 .35rem;
+}
+.mk-subscribe__deck {
+  font-family: var(--mk-sans);
+  font-size: .9rem;
+  line-height: 1.5;
+  color: rgba(251, 248, 243, .75);
+  margin: 0;
+}
+.mk-subscribe__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .85rem 1.25rem;
+  background: var(--mk-orange);
+  color: var(--mk-ink);
+  font-family: var(--mk-mono);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  white-space: nowrap;
+  transition: transform .15s;
+}
+.mk-subscribe__btn:hover {
+  transform: translate(-2px, -2px);
+  color: var(--mk-ink);
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .mk-page {
+  --mk-paper: #17140f;
+  --mk-ink: #f3ede1;
+  --mk-orange: #ff7a2a;
+  --mk-orange-soft: #3a1c08;
+  --mk-rule: #3a342c;
+  --mk-muted: #9a9184;
+}
+[data-md-color-scheme="slate"] .mk-page .mk-cover__sticker {
+  background: var(--mk-paper);
+  color: var(--mk-ink);
+}
+[data-md-color-scheme="slate"] .mk-page .mk-book__page,
+[data-md-color-scheme="slate"] .mk-page .mk-letter,
+[data-md-color-scheme="slate"] .mk-page .mk-chart {
+  background: var(--mk-paper);
+}
+[data-md-color-scheme="slate"] .mk-page .mk-subscribe {
+  background: #000;
+}
+[data-md-color-scheme="slate"] .mk-page .mk-chart__bar-fill {
+  background: var(--mk-orange);
+}
+[data-md-color-scheme="slate"] .mk-page .mk-chart__bar--first .mk-chart__bar-fill {
+  background: var(--mk-paper);
+}
+[data-md-color-scheme="slate"] .mk-page .mk-cover__photo-mark {
+  color: var(--mk-paper);
+  text-shadow: 3px 3px 0 var(--mk-ink);
+}
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .mk-cover__grid { grid-template-columns: 1fr; }
+  .mk-cover__image { aspect-ratio: 16 / 9; min-height: 240px; }
+  .mk-article__lede { grid-template-columns: 1fr; }
+  .md-typeset .mk-page .mk-article__text { column-count: 1; }
+  .mk-letters { grid-template-columns: 1fr; }
+  .mk-subscribe { grid-template-columns: 1fr; text-align: left; }
+  .mk-subscribe__btn { justify-self: start; }
+}
+
+@media screen and (max-width: 767px) {
+  .mk-page { padding: 1rem .75rem 1.5rem; }
+  .mk-cover__masthead { font-size: clamp(2.8rem, 15vw, 4rem); }
+  .mk-cover__photo-mark { font-size: 8rem; }
+
+  /* Flipbook в мобильном — простая вертикальная лента */
+  .mk-book__stage {
+    position: static;
+    perspective: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .mk-book__page {
+    position: static !important;
+    transform: none !important;
+    display: flex;
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+  .mk-book__nav { display: none; }
+
+  .mk-chart__body { height: 180px; }
+  .mk-chart__value { font-size: .5rem; }
+
+  .mk-subscribe { padding: 1.5rem 1.25rem; }
+  .mk-subscribe::before { font-size: 8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-book__page { transition: none; }
+  .mk-chart__bar-fill { transition: none; }
+}

@@ -1,0 +1,519 @@
+/* =========================================================
+   YOOMONEY — Digital Wallet Interface
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+.ym-page {
+  /* Бренд ЮMoney */
+  --ym-purple: #8b3ffd;
+  --ym-purple-dark: #7326e0;
+  --ym-purple-deep: #5a1cb8;
+  --ym-purple-soft: #f3e8ff;
+  --ym-yellow: #fedd2c;
+  --ym-yellow-dark: #e6c400;
+  --ym-yellow-soft: #fffbe6;
+
+  /* Нейтральные */
+  --ym-white: #ffffff;
+  --ym-bg: #f7f5ff;
+  --ym-surface: #ffffff;
+  --ym-ink: #1a1a1a;
+  --ym-text: #4b5563;
+  --ym-muted: #9ca3af;
+  --ym-border: #e5e7eb;
+  --ym-border-strong: #d1d5db;
+
+  /* Акцент */
+  --ym-accent: var(--ym-purple);
+  --ym-accent-dark: var(--ym-purple-dark);
+  --ym-accent-soft: var(--ym-purple-soft);
+
+  /* Шрифты */
+  --ym-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ym-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  font-family: var(--ym-sans);
+  color: var(--ym-text);
+  background: var(--ym-bg);
+  padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  counter-reset: ym-sec;
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .ym-page h2 {
+  text-align: left;
+  margin: 0 0 1rem !important;
+  color: var(--ym-ink) !important;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: ym-sec;
+  padding-top: 1rem;
+  border-top: 2px solid var(--ym-border-strong);
+  position: relative;
+}
+.md-typeset .ym-page h2::after { display: none !important; }
+.md-typeset .ym-page h2::before {
+  content: "0" counter(ym-sec);
+  display: block;
+  font-family: var(--ym-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--ym-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset .ym-page p {
+  margin: 0 0 1rem;
+  color: var(--ym-text);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.ym-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--ym-border);
+  margin-bottom: 2rem;
+}
+
+.md-typeset .ym-page .ym-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--ym-ink) !important;
+  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.5px !important;
+}
+.ym-hero__title span { color: var(--ym-accent); }
+
+.md-typeset .ym-page .ym-hero__lead {
+  max-width: 520px;
+  margin: 0 0 0.75rem !important;
+  color: var(--ym-ink) !important;
+  font-size: 1.05rem !important;
+  font-weight: 500;
+  line-height: 1.6 !important;
+}
+.md-typeset .ym-page .ym-hero__desc {
+  max-width: 520px;
+  margin: 0 !important;
+  color: var(--ym-muted) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+}
+
+.ym-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.md-typeset .ym-page .ym-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.1rem;
+  font-family: var(--ym-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.md-typeset .ym-page .ym-hero__btn--primary {
+  background: var(--ym-accent) !important;
+  color: #fff !important;
+  border: 1.5px solid var(--ym-accent) !important;
+}
+.md-typeset .ym-page .ym-hero__btn--primary:hover {
+  background: var(--ym-accent-dark) !important;
+  border-color: var(--ym-accent-dark) !important;
+}
+.md-typeset .ym-page .ym-hero__btn--ghost {
+  background: transparent !important;
+  color: var(--ym-ink) !important;
+  border: 1.5px solid var(--ym-border-strong) !important;
+}
+.md-typeset .ym-page .ym-hero__btn--ghost:hover {
+  border-color: var(--ym-ink) !important;
+}
+
+/* ── Мокап кошелька ── */
+.ym-hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.ym-wallet {
+  width: 100%;
+  max-width: 340px;
+  background: var(--ym-surface);
+  border: 1px solid var(--ym-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(139, 63, 253, 0.12);
+}
+
+.ym-wallet__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.ym-wallet__label {
+  font-family: var(--ym-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ym-muted);
+}
+.ym-wallet__balance {
+  font-family: var(--ym-mono);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+  color: var(--ym-ink);
+  margin-bottom: 0.25rem;
+}
+.ym-wallet__sub {
+  font-size: 0.8rem;
+  color: var(--ym-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Переключатель источника средств */
+.ym-source {
+  display: flex;
+  border: 1.5px solid var(--ym-border-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+.ym-source__btn {
+  flex: 1;
+  padding: 0.6rem 0.5rem;
+  background: transparent;
+  border: 0;
+  font-family: var(--ym-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ym-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.ym-source__btn--active {
+  background: var(--ym-accent);
+  color: #fff;
+}
+.ym-source__btn:not(.ym-source__btn--active):hover {
+  background: var(--ym-purple-soft);
+}
+
+/* Список операций */
+.ym-history {
+  border-top: 1px solid var(--ym-border);
+  padding-top: 0.75rem;
+}
+.ym-history__title {
+  font-family: var(--ym-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ym-muted);
+  margin-bottom: 0.6rem;
+}
+.ym-history__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--ym-border);
+  font-size: 0.78rem;
+}
+.ym-history__row:last-child { border-bottom: 0; }
+.ym-history__name { color: var(--ym-text); }
+.ym-history__amount {
+  font-family: var(--ym-mono);
+  font-weight: 700;
+  color: var(--ym-ink);
+}
+.ym-history__amount--plus { color: #059669; }
+.ym-history__amount--minus { color: var(--ym-accent); }
+
+/* =========================================================
+   ПРОЦЕСС
+   ========================================================= */
+.ym-process {
+  margin: 1.5rem 0 2rem;
+}
+.ym-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--ym-border);
+}
+.ym-step:last-child { border-bottom: 0; }
+.ym-step__num {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ym-accent-soft);
+  color: var(--ym-accent-dark);
+  font-family: var(--ym-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.ym-step__body { min-width: 0; }
+.ym-step__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--ym-ink);
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.ym-step__desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ym-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   ПРЕИМУЩЕСТВА
+   ========================================================= */
+.ym-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.ym-benefit {
+  background: var(--ym-surface);
+  border: 1px solid var(--ym-border);
+  border-radius: 14px;
+  padding: 1.4rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ym-benefit:hover {
+  border-color: var(--ym-accent);
+  box-shadow: 0 4px 16px rgba(139, 63, 253, 0.08);
+}
+.ym-benefit__icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--ym-accent-soft);
+  color: var(--ym-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.ym-benefit__title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--ym-ink);
+  line-height: 1.3;
+}
+.ym-benefit__text {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ym-muted);
+  margin: 0;
+}
+
+/* =========================================================
+   ПОДКЛЮЧЕНИЕ
+   ========================================================= */
+.ym-connect {
+  margin: 1.5rem 0 2rem;
+  background: var(--ym-surface);
+  border: 1px solid var(--ym-border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.ym-connect__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ym-ink);
+  margin: 0 0 0.35rem;
+}
+.ym-connect__text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ym-muted);
+  margin: 0;
+}
+.md-typeset .ym-page .ym-connect__btn {
+  background: var(--ym-accent) !important;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-family: var(--ym-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.md-typeset .ym-page .ym-connect__btn:hover {
+  background: var(--ym-accent-dark) !important;
+}
+
+/* =========================================================
+   FAQ — как в foreign-cards
+   ========================================================= */
+.ym-faq {
+  margin: 2rem 0 2.5rem;
+}
+.ym-faq__item {
+  margin: 12px 0 !important;
+  border: 1px solid var(--ym-border) !important;
+  border-radius: 14px !important;
+  background: var(--ym-surface) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.ym-faq__item:hover {
+  border-color: var(--ym-accent) !important;
+  box-shadow: 0 4px 14px rgba(139, 63, 253, 0.08) !important;
+}
+.ym-faq__item[open] {
+  border-color: var(--ym-accent) !important;
+  box-shadow: 0 4px 14px rgba(139, 63, 253, 0.08) !important;
+}
+.ym-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 20px 52px 20px 22px !important;
+  color: var(--ym-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.ym-faq__item summary::-webkit-details-marker,
+.ym-faq__item summary::marker,
+.ym-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.ym-faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--ym-muted);
+  border-bottom: 2px solid var(--ym-muted);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.ym-faq__item[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+  border-color: var(--ym-accent);
+}
+.ym-faq__item[open] summary {
+  padding-bottom: 14px !important;
+}
+.md-typeset .ym-page .ym-faq__answer {
+  margin: 0 !important;
+  padding: 0 22px 22px !important;
+  color: var(--ym-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+.md-typeset .ym-page .ym-faq__answer p {
+  margin: 0 0 0.75rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.md-typeset .ym-page .ym-faq__answer p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .ym-page {
+  --ym-bg: #121016;
+  --ym-surface: #1a1721;
+  --ym-ink: #f3f4f6;
+  --ym-text: #b8c4bc;
+  --ym-muted: #7a8b82;
+  --ym-border: #2a2632;
+  --ym-border-strong: #3a3446;
+  --ym-purple-soft: #1f1630;
+  --ym-yellow-soft: #2a2410;
+}
+[data-md-color-scheme="slate"] .ym-page .ym-wallet,
+[data-md-color-scheme="slate"] .ym-page .ym-benefit,
+[data-md-color-scheme="slate"] .ym-page .ym-connect,
+[data-md-color-scheme="slate"] .ym-page .ym-faq__item {
+  background: var(--ym-surface);
+  border-color: var(--ym-border);
+}
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .ym-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ym-hero__visual { order: -1; }
+  .ym-benefits { grid-template-columns: 1fr; }
+  .ym-connect { grid-template-columns: 1fr; text-align: center; }
+  .ym-connect__btn { margin: 0 auto; }
+}
+@media screen and (max-width: 767px) {
+  .ym-page { padding: 1rem 0.75rem 1.5rem; }
+  .md-typeset .ym-page .ym-hero__title { font-size: clamp(1.9rem, 8vw, 2.5rem) !important; }
+  .ym-wallet { padding: 1.25rem; }
+  .ym-faq__item summary { padding: 17px 42px 17px 16px !important; font-size: 0.95rem !important; }
+  .ym-faq__item summary::after { right: 18px; }
+  .md-typeset .ym-page .ym-faq__answer { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ym-page, .ym-benefit, .ym-faq__item { transition: none; }
+}

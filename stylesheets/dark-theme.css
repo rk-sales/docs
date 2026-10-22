@@ -1,0 +1,214 @@
+/* ===== БАЗОВЫЕ ЦВЕТА ===== */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0f172a;
+  --md-default-fg-color: #e2e8f0;
+}
+[data-md-color-scheme="slate"] .md-main { background-color: #0f172a !important; }
+
+/* ===== ХЕДЕР И ФУТЕР ===== */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img, 
+[data-md-color-scheme="slate"] .md-header__button.md-logo svg { filter: invert(1) brightness(2); }
+[data-md-color-scheme="slate"] .md-header, 
+[data-md-color-scheme="slate"] .md-footer { 
+  background-color: #1e293b !important; 
+  color: #e2e8f0 !important; 
+  border-bottom: 1px solid #334155; 
+}
+[data-md-color-scheme="slate"] .md-header__title, 
+[data-md-color-scheme="slate"] .md-header__topic, 
+[data-md-color-scheme="slate"] .md-header__button, 
+[data-md-color-scheme="slate"] .md-header__button .md-icon, 
+[data-md-color-scheme="slate"] .md-footer a { color: #e2e8f0 !important; }
+
+/* ===== ТИПОГРАФИКА ===== */
+[data-md-color-scheme="slate"] .md-typeset { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .md-typeset h1, 
+[data-md-color-scheme="slate"] .md-typeset h2, 
+[data-md-color-scheme="slate"] .md-typeset h3, 
+[data-md-color-scheme="slate"] .feature-content h3, 
+[data-md-color-scheme="slate"] .metric-value { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .md-typeset h1::after { background: #3b82f6; }
+[data-md-color-scheme="slate"] .demo-hint, 
+[data-md-color-scheme="slate"] .feature-content p, 
+[data-md-color-scheme="slate"] .hero-content p, 
+[data-md-color-scheme="slate"] .metric-label, 
+[data-md-color-scheme="slate"] .requisite-label { color: #94a3b8; }
+
+/* ===== БАЗОВЫЕ КАРТОЧКИ ===== */
+[data-md-color-scheme="slate"] .hero-card, 
+[data-md-color-scheme="slate"] .metric-card, 
+[data-md-color-scheme="slate"] .feature-card, 
+[data-md-color-scheme="slate"] .requisites-card, 
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .metric-card:hover, 
+[data-md-color-scheme="slate"] .feature-card:hover { border-color: #475569; }
+[data-md-color-scheme="slate"] .feature-icon { background: #0f172a; color: #60a5fa; }
+
+/* ===== ТАБЛИЦЫ ===== */
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper th { background-color: #0f172a; border-bottom-color: #334155; color: #94a3b8; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper td { border-bottom-color: #334155; color: #cbd5e1; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper tbody tr:nth-child(even) td { background-color: #1a2436; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper tbody tr:hover td { background-color: #27354a !important; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper td:first-child, 
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper th:first-child { background-color: #1e293b; border-right-color: #334155; color: #f8fafc; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper th:first-child { background-color: #0f172a; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper th:nth-child(2), 
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper td:nth-child(2) { background-color: #1a2b49 !important; border-left-color: #2e4a7d; border-right-color: #2e4a7d; }
+[data-md-color-scheme="slate"] .md-typeset .table-wrapper th:nth-child(2) { color: #60a5fa; border-bottom-color: #2e4a7d; }
+[data-md-color-scheme="slate"] .md-typeset .comparison-legend { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .md-typeset .comparison-legend__title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .md-typeset .comparison-legend p { color: #94a3b8; }
+[data-md-color-scheme="slate"] .md-typeset .legend-symbol { background: #334155; }
+
+/* ===== ЛЕВОЕ МЕНЮ (Тёмная тема) ===== */
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__title {
+  color: #f8fafc !important;
+  border-bottom-color: #334155;
+}
+
+/* Уровень 1 (Все элементы белые) */
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link {
+  color: #ffffff !important;
+}
+
+/* Вложенные уровни (Тоже белые, убрали серый) */
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item .md-nav__item .md-nav__link .md-ellipsis {
+  color: #e2e8f0 !important; /* Светло-серый вместо темного */
+}
+
+/* Hover */
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover { 
+  background-color: #1e293b !important; 
+}
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover .md-ellipsis {
+  color: #ffffff !important;
+}
+
+/* Active */
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--active > .md-nav__link { 
+  background-color: rgba(59, 130, 246, 0.15) !important; 
+  border-left-color: #3b82f6 !important;
+}
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--active > .md-nav__link .md-ellipsis {
+  color: #60a5fa !important;
+}
+
+/* ===== ПРАВОЕ МЕНЮ (TOC) ===== */
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link { color: #94a3b8; }
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover { color: #60a5fa; }
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active { color: #60a5fa; border-left-color: #60a5fa; }
+
+/* ===== ВОПРОСЫ ===== */
+[data-md-color-scheme="slate"] .md-typeset .question { border-color: #334155 !important; border-left-color: #3b82f6 !important; background-color: #1e293b; }
+[data-md-color-scheme="slate"] .md-typeset .question > .admonition-title, 
+[data-md-color-scheme="slate"] .md-typeset .question > summary { color: #f8fafc; background-color: #0f172a; }
+[data-md-color-scheme="slate"] .md-typeset .question > summary::after { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .md-typeset .question > summary:hover { background-color: #334155; }
+
+/* ===== ГЛАВНАЯ ===== */
+[data-md-color-scheme="slate"] .home-hero { background: radial-gradient(ellipse at 90% 0%, rgba(59,130,246,.17), transparent 38%), linear-gradient(135deg, #172338, #111c30); border-color: #334155; }
+[data-md-color-scheme="slate"] .home-hero__title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .home-hero__text, 
+[data-md-color-scheme="slate"] .home-nav-card__description, 
+[data-md-color-scheme="slate"] .comparison-intro { color: #a9b7ca; }
+[data-md-color-scheme="slate"] .home-nav-card { background: #1e293b; border-color: #334155; color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .home-nav-card--featured { background: linear-gradient(145deg, #1e293b, #1a2b49); border-color: #3b5280; }
+[data-md-color-scheme="slate"] .home-nav-card strong { color: #f8fafc; }
+[data-md-color-scheme="slate"] .home-nav-card__icon { background: #263b5c; color: #93c5fd; }
+[data-md-color-scheme="slate"] .home-nav-card__link { border-color: #334155; color: #93c5fd; }
+[data-md-color-scheme="slate"] .home-tip { background: #172338; border-color: #334b70; color: #b7c5d9; }
+[data-md-color-scheme="slate"] .home-tip strong { color: #e2e8f0; }
+[data-md-color-scheme="slate"] .home-tip__icon { background: #263b5c; color: #93c5fd; }
+
+/* ===== РЕКВИЗИТЫ ===== */
+[data-md-color-scheme="slate"] .requisite-item { border-bottom-color: #334155 !important; border-right-color: #334155 !important; }
+[data-md-color-scheme="slate"] .requisite-item:hover { background-color: #27354a !important; }
+[data-md-color-scheme="slate"] .requisite-value { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .requisite-label { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .requisite-value a { color: #60a5fa !important; border-bottom-color: #3b82f6 !important; }
+[data-md-color-scheme="slate"] .requisite-value a:hover { color: #93c5fd !important; }
+[data-md-color-scheme="slate"] .requisites-footer { background: #1e293b !important; border-top-color: #334155 !important; }
+[data-md-color-scheme="slate"] .requisite-value a[href^="tel:"],
+[data-md-color-scheme="slate"] .requisite-value a[href^="mailto:"] { color: #60a5fa; border-bottom-color: #3b82f6; }
+
+/* ===== ФУТЕР ===== */
+[data-md-color-scheme="slate"] .site-footer { border-top-color: #334155; }
+[data-md-color-scheme="slate"] .site-footer__links a { color: #94a3b8; }
+[data-md-color-scheme="slate"] .site-footer__links a:hover { color: #60a5fa; }
+[data-md-color-scheme="slate"] .site-footer__copy { color: #64748b; }
+
+/* ===== СТРАНИЦА ПЛАТЕЖНЫХ МЕТОДОВ ===== */
+[data-md-color-scheme="slate"] .payments-page { --pk-bg: #121826; --pk-surface: #1a2030; --pk-ink: #f1f5f9; --pk-text: #cbd5e1; --pk-muted: #94a3b8; --pk-border: #2a3346; --pk-border-strong: #3a4559; --pk-blue-soft: #1a2b4a; --pk-blue-border: #2e4a7d; }
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-hero { background: linear-gradient(135deg, #0f1a2e 0%, #121826 55%, #14263f 100%) !important; border-color: #2a3346 !important; }
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-hero__title, 
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-hero__text { color: #ffffff !important; }
+[data-md-color-scheme="slate"] .payments-page .bento-card, 
+[data-md-color-scheme="slate"] .payments-page .payments-benefit { background: #1a2030; border-color: #2a3346; }
+[data-md-color-scheme="slate"] .payments-page .bento-card--dark { background: #000000; border-color: #333333; }
+[data-md-color-scheme="slate"] .payments-page .bento-card--featured { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
+[data-md-color-scheme="slate"] .payments-page .payments-bottom-cta { background: #1a2b4a; border-color: #2e4a7d; }
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-bottom-cta h3 { color: #bfdbfe !important; }
+[data-md-color-scheme="slate"] .md-typeset .payments-page .payments-bottom-cta p { color: #93c5fd !important; }
+
+/* ===== БАННЕР СПРАВА ===== */
+[data-md-color-scheme="slate"] .aside-sticky { background: linear-gradient(145deg, #1e293b, #172338); border-color: #334155; }
+[data-md-color-scheme="slate"] .aside-sticky h3 { color: #f8fafc; }
+[data-md-color-scheme="slate"] .aside-text, 
+[data-md-color-scheme="slate"] .aside-feature p { color: #94a3b8; }
+[data-md-color-scheme="slate"] .aside-divider { background: #334155; }
+[data-md-color-scheme="slate"] .aside-feature strong { color: #f8fafc; }
+[data-md-color-scheme="slate"] .aside-feature__icon { background: #263b5c; color: #93c5fd; }
+[data-md-color-scheme="slate"] .aside-link { color: #93c5fd; }
+[data-md-color-scheme="slate"] .aside-link:hover { color: #bfdbfe; }
+
+/* ===== КАРТЫ РФ ===== */
+[data-md-color-scheme="slate"] .cards-page { --cards-ink: #f8fafc; --cards-muted: #94a3b8; --cards-border: #334155; --cards-surface: #1e293b; --cards-soft: #172338; --cards-blue: #60a5fa; --cards-blue-soft: #1e3a5f; --cards-blue-border: #2e4a7d; }
+[data-md-color-scheme="slate"] .cards-page .hero-card { background: linear-gradient(120deg, #1e40af 0%, #1d4ed8 55%, #2563eb 100%) !important; border-color: #3b82f6 !important; box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22) !important; }
+[data-md-color-scheme="slate"] .cards-page .cards-hero-lead,
+[data-md-color-scheme="slate"] .md-typeset .cards-page .hero-content p:first-of-type { color: #ffffff !important; }
+[data-md-color-scheme="slate"] .cards-page .hero-content > p:not(.cards-hero-lead):not(:first-of-type) { color: #dbeafe !important; }
+[data-md-color-scheme="slate"] .cards-page .hero-content p:first-child,
+[data-md-color-scheme="slate"] .cards-page .info-block h3,
+[data-md-color-scheme="slate"] .cards-page .feature-content h3 { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .cards-page .hero-content p:last-child,
+[data-md-color-scheme="slate"] .cards-page .feature-content p,
+[data-md-color-scheme="slate"] .cards-page .info-block-note,
+[data-md-color-scheme="slate"] .cards-page .step-text { color: #a9b7ca !important; }
+[data-md-color-scheme="slate"] .cards-page .info-block,
+[data-md-color-scheme="slate"] .cards-page .feature-card,
+[data-md-color-scheme="slate"] .cards-page .step-item,
+[data-md-color-scheme="slate"] .cards-page .audience-item { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .cards-page .info-block:hover,
+[data-md-color-scheme="slate"] .cards-page .feature-card:hover,
+[data-md-color-scheme="slate"] .cards-page .step-item:hover,
+[data-md-color-scheme="slate"] .cards-page .audience-item:hover { border-color: #475f88; background: #223149; }
+[data-md-color-scheme="slate"] .cards-page .highlight-block { background: radial-gradient(circle at 100% 0%, rgba(59, 130, 246, .13), transparent 55%), linear-gradient(145deg, #1a2b49, #1e293b); border-color: #2e4a7d; }
+
+/* =======================================================
+   ФИКС: Убираем ложный "ховер" у родительских папок
+   ======================================================= */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link {
+  background-color: transparent !important;
+  border-left: none !important;
+  padding-left: 0.75rem !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item .md-nav__item--nested.md-nav__item--active > .md-nav__link {
+  background-color: transparent !important;
+  border-left: none !important;
+  padding-left: 1.5rem !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link .md-nav__icon {
+  transform: none !important;
+}
+
+/* Подсвечиваем голубым текстом ВСЕ родительские папки в тёмной теме */
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link .md-ellipsis {
+  color: #60a5fa !important;
+  font-weight: 600 !important;
+}

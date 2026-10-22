@@ -1,0 +1,594 @@
+/* =========================================================
+   ALFA PAY ROBOKASSA — Alpha Platinum Editorial
+   ========================================================= */
+
+.alfapay-page {
+  --alfa-red: #ef3124;
+  --alfa-red-dark: #c4241a;
+  --alfa-red-deep: #9e1d15;
+  --alfa-red-soft: #fff0ee;
+  --alfa-red-border: #ffc9c4;
+  --alfa-platinum: #d1d5d8;
+  --alfa-platinum-light: #f4f5f6;
+  --alfa-platinum-dark: #a8afb5;
+  --alfa-ink: #1a1d20;
+  --alfa-text: #4b5563;
+  --alfa-border: #e5e7eb;
+  color: var(--alfa-text);
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .alfapay-page h2 {
+  text-align: left;
+  margin: 0 0 .9rem !important;
+  color: var(--alfa-ink) !important;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+}
+.md-typeset .alfapay-page h2::after { display: none !important; }
+
+.alfapay-page .alfapay-section__description {
+  margin: 0 0 1.5rem !important;
+  padding: 0 !important;
+  color: #64748b;
+  font-size: .92rem;
+  line-height: 1.7;
+  text-align: left !important;
+}
+
+/* ===== Заголовки карточек (не в TOC) ===== */
+.md-typeset .alfapay-page .alfapay-title {
+  margin: 0 0 .35rem !important;
+  color: var(--alfa-ink) !important;
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.2px !important;
+}
+.md-typeset .alfapay-page .alfapay-title--lg {
+  margin: 0 0 .5rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+}
+
+/* =========================================================
+   HERO — асимметричный, платиновый фон + красные акценты
+   ========================================================= */
+.md-typeset .alfapay-page .alfapay-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.8rem, 3.8vw, 3.2rem);
+  margin: 1rem 0 2.5rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--alfa-platinum-light) 0%, #ffffff 55%, #eef0f2 100%) !important;
+  border: 1px solid var(--alfa-platinum) !important;
+  border-radius: 4px;
+}
+/* Тонкая красная линия сверху — фирменная черта под «А» */
+.alfapay-page .alfapay-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--alfa-red);
+}
+/* Огромная «А» на фоне */
+.alfapay-page .alfapay-hero::after {
+  content: "A";
+  position: absolute;
+  right: -30px; bottom: -110px;
+  font-size: 22rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--alfa-platinum);
+  opacity: .25;
+  pointer-events: none;
+  z-index: 0;
+}
+.alfapay-page .alfapay-hero__content { position: relative; z-index: 2; min-width: 0; }
+
+.alfapay-page .alfapay-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+  color: var(--alfa-red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.alfapay-page .alfapay-eyebrow__dot {
+  width: 6px; height: 6px; flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--alfa-red);
+}
+
+.md-typeset .alfapay-page .alfapay-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--alfa-ink) !important;
+  font-size: clamp(2rem, 4vw, 3.4rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.8px !important;
+}
+.alfapay-page .alfapay-hero__title span {
+  color: var(--alfa-red);
+}
+.md-typeset .alfapay-page .alfapay-hero__lead {
+  max-width: 520px;
+  margin: 0 0 .7rem !important;
+  color: var(--alfa-ink) !important;
+  font-size: .95rem !important;
+  font-weight: 600;
+  line-height: 1.6 !important;
+}
+.md-typeset .alfapay-page .alfapay-hero__description {
+  max-width: 520px;
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .86rem !important;
+  line-height: 1.7 !important;
+}
+.alfapay-page .alfapay-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.3rem;
+}
+.alfapay-page .alfapay-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: .35rem .7rem;
+  border: 1px solid var(--alfa-border);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--alfa-ink);
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .1px;
+}
+.alfapay-page .alfapay-tag:nth-child(2) {
+  border-color: var(--alfa-red-border);
+  background: var(--alfa-red-soft);
+  color: var(--alfa-red-deep);
+}
+
+/* =========================================================
+   HERO — визуал: абстрактная геометрия
+   ========================================================= */
+.alfapay-page .alfapay-hero__visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 340px;
+  place-items: center;
+  isolation: isolate;
+}
+
+/* Композиция из кругов и линий */
+.alfapay-page .alfapay-geometry {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  z-index: 1;
+}
+.alfapay-page .alfapay-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--alfa-platinum-dark);
+}
+.alfapay-page .alfapay-circle--outer {
+  inset: 0;
+  border-color: var(--alfa-platinum);
+}
+.alfapay-page .alfapay-circle--middle {
+  inset: 40px;
+  border-color: var(--alfa-red-border);
+}
+.alfapay-page .alfapay-circle--inner {
+  inset: 80px;
+  background: var(--alfa-red);
+  border-color: var(--alfa-red);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 12px rgba(239, 49, 36, .08),
+              0 0 0 24px rgba(239, 49, 36, .04);
+}
+.alfapay-page .alfapay-circle--inner svg {
+  width: 42px;
+  height: 42px;
+  color: #fff;
+}
+.alfapay-page .alfapay-line {
+  position: absolute;
+  background: var(--alfa-red);
+  opacity: .7;
+}
+.alfapay-page .alfapay-line--h {
+  left: -20px; right: -20px;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+.alfapay-page .alfapay-line--v {
+  top: -20px; bottom: -20px;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+/* Плавающие подписи */
+.alfapay-page .alfapay-float {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border: 1px solid var(--alfa-border);
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, .06);
+  color: var(--alfa-ink);
+  font-size: .72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.alfapay-page .alfapay-float--top { top: 8%; right: -2%; }
+.alfapay-page .alfapay-float--bottom { bottom: 6%; left: -2%; }
+.alfapay-page .alfapay-float__dot {
+  width: 7px; height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--alfa-red);
+}
+.alfapay-page .alfapay-float strong {
+  color: var(--alfa-red-deep);
+  font-weight: 800;
+}
+
+/* =========================================================
+   Преимущества — редакционный список с крупными номерами
+   ========================================================= */
+.alfapay-page .alfapay-list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 2.5rem;
+  border-top: 1px solid var(--alfa-platinum);
+  border-bottom: 1px solid var(--alfa-platinum);
+}
+.alfapay-page .alfapay-list__item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--alfa-border);
+  transition: background .2s ease, padding .2s ease;
+}
+.alfapay-page .alfapay-list__item:last-child { border-bottom: 0; }
+.alfapay-page .alfapay-list__item:hover {
+  background: var(--alfa-platinum-light);
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+.alfapay-page .alfapay-list__num {
+  color: var(--alfa-red);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -1.5px;
+  font-variant-numeric: tabular-nums;
+}
+.alfapay-page .alfapay-list__body { min-width: 0; }
+.md-typeset .alfapay-page .alfapay-list__body p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .88rem !important;
+  line-height: 1.65 !important;
+}
+
+/* =========================================================
+   Подключение — «платиновая карточка» с цитатой
+   ========================================================= */
+.alfapay-page .alfapay-connect {
+  position: relative;
+  margin: 1rem 0 2.5rem;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  background: var(--alfa-platinum-light);
+  border-left: 4px solid var(--alfa-red);
+  border-radius: 4px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.alfapay-page .alfapay-connect::before {
+  content: "“";
+  position: absolute;
+  right: 10px; top: -40px;
+  font-size: 12rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--alfa-platinum);
+  opacity: .6;
+  pointer-events: none;
+  z-index: 0;
+}
+.alfapay-page .alfapay-connect > * { position: relative; z-index: 1; }
+.alfapay-page .alfapay-connect__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: .75rem;
+  color: var(--alfa-red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.md-typeset .alfapay-page .alfapay-connect .alfapay-title--lg {
+  margin: 0 0 .5rem !important;
+}
+.md-typeset .alfapay-page .alfapay-connect p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: .9rem !important;
+  line-height: 1.75 !important;
+}
+
+/* =========================================================
+   Как платит клиент — горизонтальный таймлайн
+   ========================================================= */
+.alfapay-page .alfapay-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 1.5rem 0 2.5rem;
+}
+.alfapay-page .alfapay-timeline::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--alfa-platinum);
+  z-index: 0;
+}
+.alfapay-page .alfapay-timeline__step {
+  position: relative;
+  z-index: 1;
+  padding: 0 .75rem;
+  text-align: center;
+}
+.alfapay-page .alfapay-timeline__dot {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid var(--alfa-platinum);
+  color: var(--alfa-red);
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, .04);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.alfapay-page .alfapay-timeline__step:hover .alfapay-timeline__dot {
+  border-color: var(--alfa-red);
+  transform: translateY(-2px);
+}
+.alfapay-page .alfapay-timeline__step--last .alfapay-timeline__dot {
+  background: var(--alfa-red);
+  border-color: var(--alfa-red);
+  color: #fff;
+}
+.md-typeset .alfapay-page .alfapay-timeline .alfapay-title {
+  margin: 0 0 .4rem !important;
+  font-size: .95rem !important;
+  text-align: center;
+}
+.md-typeset .alfapay-page .alfapay-timeline__step p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .82rem !important;
+  line-height: 1.55 !important;
+  text-align: center;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.alfapay-page .alfapay-faq {
+  margin: 1.75rem 0 2.25rem;
+}
+.alfapay-page .alfapay-faq__intro {
+  margin-bottom: .85rem;
+}
+.md-typeset .alfapay-page .alfapay-faq__intro p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .9rem !important;
+  line-height: 1.65 !important;
+}
+.alfapay-page .alfapay-faq__list { min-width: 0; }
+.alfapay-page .alfapay-faq__item {
+  margin: 10px 0 !important;
+  border: 1px solid var(--alfa-border) !important;
+  border-left-width: 1px !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.alfapay-page .alfapay-faq__item:hover {
+  border-color: var(--alfa-red-border) !important;
+  box-shadow: 0 4px 14px rgba(239, 49, 36, .07) !important;
+}
+.alfapay-page .alfapay-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 15px 48px 15px 20px !important;
+  color: var(--alfa-ink) !important;
+  font-size: .93rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.alfapay-page .alfapay-faq__item summary::-webkit-details-marker,
+.alfapay-page .alfapay-faq__item summary::marker,
+.alfapay-page .alfapay-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.alfapay-page .alfapay-faq__item summary::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #64748b;
+  border-bottom: 2px solid #64748b;
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .2s ease;
+}
+.alfapay-page .alfapay-faq__item[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+}
+.alfapay-page .alfapay-faq__item[open] summary {
+  padding-bottom: 10px !important;
+}
+.md-typeset .alfapay-page .alfapay-faq__answer {
+  margin: 0 !important;
+  padding: 0 20px 16px !important;
+  color: #475569 !important;
+  font-size: .88rem !important;
+  line-height: 1.7 !important;
+}
+.md-typeset .alfapay-page .alfapay-faq__answer p {
+  margin: 0 0 .55rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.md-typeset .alfapay-page .alfapay-faq__answer p:last-child { margin-bottom: 0 !important; }
+.md-typeset .alfapay-page .alfapay-faq__answer a {
+  color: var(--alfa-red-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(239, 49, 36, .3);
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-list,
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-faq__item {
+  border-color: #374151 !important;
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-faq__item {
+  background: #1a1d20 !important;
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-faq__item summary {
+  color: #fff !important;
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-list__body p,
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-faq__answer {
+  color: #cbd5e1 !important;
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-connect {
+  background: #262b30;
+  border-left-color: var(--alfa-red);
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-connect p {
+  color: #cbd5e1 !important;
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-timeline__dot {
+  background: #1a1d20;
+  border-color: #374151;
+}
+[data-md-color-scheme="slate"] .alfapay-page .alfapay-timeline__step--last .alfapay-timeline__dot {
+  background: var(--alfa-red);
+  border-color: var(--alfa-red);
+}
+
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .alfapay-page .alfapay-hero__visual { min-height: 320px; }
+  .alfapay-page .alfapay-float--top { right: 0; }
+  .alfapay-page .alfapay-float--bottom { left: 0; }
+}
+
+@media screen and (max-width: 900px) {
+  .alfapay-page .alfapay-hero { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .alfapay-page .alfapay-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 0; }
+  .alfapay-page .alfapay-timeline::before { display: none; }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .alfapay-page .alfapay-hero {
+    padding: 1.3rem !important;
+    margin-bottom: 1.75rem;
+  }
+  .md-typeset .alfapay-page .alfapay-hero__title {
+    font-size: clamp(1.75rem, 8vw, 2.4rem) !important;
+    letter-spacing: -1.2px !important;
+  }
+  .alfapay-page .alfapay-hero__visual { min-height: 300px; margin-top: .5rem; }
+  .alfapay-page .alfapay-geometry { width: 240px; height: 240px; }
+  .alfapay-page .alfapay-circle--middle { inset: 34px; }
+  .alfapay-page .alfapay-circle--inner { inset: 68px; }
+  .alfapay-page .alfapay-circle--inner svg { width: 36px; height: 36px; }
+  .alfapay-page .alfapay-float--top { top: 4%; right: -2%; }
+  .alfapay-page .alfapay-float--bottom { bottom: 2%; left: -2%; }
+
+  .alfapay-page .alfapay-list__item { grid-template-columns: 64px 1fr; gap: 1rem; }
+  .alfapay-page .alfapay-list__num { font-size: 2rem; }
+
+  .alfapay-page .alfapay-connect { padding: 1.2rem; }
+
+  .alfapay-page .alfapay-faq { margin: 1.5rem 0 2rem; }
+  .alfapay-page .alfapay-faq__item summary { padding: 13px 44px 13px 16px !important; font-size: .9rem !important; }
+  .md-typeset .alfapay-page .alfapay-faq__answer { padding: 0 16px 14px !important; font-size: .86rem !important; }
+}
+
+@media screen and (max-width: 480px) {
+  .md-typeset .alfapay-page .alfapay-hero__title { font-size: 1.7rem !important; }
+  .md-typeset .alfapay-page .alfapay-hero__lead { font-size: .9rem !important; }
+  .md-typeset .alfapay-page .alfapay-hero__description { font-size: .82rem !important; }
+  .alfapay-page .alfapay-hero__tags { gap: .35rem; margin-top: 1rem; }
+  .alfapay-page .alfapay-tag { padding: .3rem .55rem; font-size: .66rem; }
+  .alfapay-page .alfapay-hero__visual { min-height: 280px; }
+  .alfapay-page .alfapay-timeline { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .alfapay-page .alfapay-timeline__step { display: grid; grid-template-columns: 48px 1fr; column-gap: .85rem; text-align: left; padding: 0; }
+  .alfapay-page .alfapay-timeline__dot { margin: 0; grid-row: span 2; width: 48px; height: 48px; font-size: .95rem; }
+  .md-typeset .alfapay-page .alfapay-timeline .alfapay-title,
+  .md-typeset .alfapay-page .alfapay-timeline__step p { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alfapay-page .alfapay-list__item,
+  .alfapay-page .alfapay-timeline__dot,
+  .alfapay-page .alfapay-faq__item { transition: none; }
+  .alfapay-page .alfapay-timeline__step:hover .alfapay-timeline__dot { transform: none; }
+}

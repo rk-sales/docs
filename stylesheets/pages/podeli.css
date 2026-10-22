@@ -1,0 +1,1028 @@
+/* =========================================================
+   ПОДЕЛИ ROBOKASSA — Split Infographic
+   ========================================================= */
+
+.pd-page {
+  --pd-red: #ee3124;
+  --pd-red-dark: #c4241a;
+  --pd-red-deep: #8f1a12;
+  --pd-red-soft: #fee2e2;
+  --pd-red-border: #fca5a5;
+  --pd-ink: #0f0f0f;
+  --pd-text: #4b5563;
+  --pd-border: #e5e7eb;
+  --pd-cream: #fef8f7;
+  --pd-gray: #f9fafb;
+  --pd-mono: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  color: var(--pd-text);
+}
+
+/* ===== Заголовки h2 ===== */
+.md-typeset .pd-page h2 {
+  text-align: left;
+  margin: 0 0 .9rem !important;
+  color: var(--pd-ink) !important;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+}
+.md-typeset .pd-page h2::after { display: none !important; }
+
+.pd-page .pd-section__description {
+  margin: 0 0 1.5rem !important;
+  padding: 0 !important;
+  color: #64748b;
+  font-size: .92rem;
+  line-height: 1.7;
+  text-align: left !important;
+}
+
+/* ===== Заголовки карточек ===== */
+.md-typeset .pd-page .pd-title {
+  margin: 0 0 .35rem !important;
+  color: var(--pd-ink) !important;
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.2px !important;
+}
+.md-typeset .pd-page .pd-title--lg {
+  margin: 0 0 .55rem !important;
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+
+/* =========================================================
+   HERO — Split Infographic
+   ========================================================= */
+.md-typeset .pd-page .pd-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 1fr);
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.75rem, 3.5vw, 2.8rem);
+  margin: 1rem 0 2.5rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--pd-cream) 0%, #fff 55%, var(--pd-red-soft) 100%) !important;
+  border: 1px solid var(--pd-border) !important;
+  border-radius: 24px;
+}
+.pd-page .pd-hero__content { position: relative; z-index: 2; min-width: 0; }
+
+.pd-page .pd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+  padding: .35rem .7rem;
+  border: 1px solid var(--pd-red-border);
+  border-radius: 999px;
+  background: var(--pd-red-soft);
+  color: var(--pd-red-deep);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.pd-page .pd-eyebrow__dot {
+  width: 6px; height: 6px; flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--pd-red);
+}
+
+.md-typeset .pd-page .pd-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--pd-ink) !important;
+  font-size: clamp(2rem, 3.8vw, 3.2rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -1.8px !important;
+}
+.pd-page .pd-hero__title span {
+  color: var(--pd-red);
+  position: relative;
+  display: inline-block;
+}
+.pd-page .pd-hero__title span::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: .06em;
+  height: .28em;
+  background: var(--pd-red-soft);
+  z-index: -1;
+  border-radius: 2px;
+}
+.md-typeset .pd-page .pd-hero__lead {
+  max-width: 520px;
+  margin: 0 0 .7rem !important;
+  color: var(--pd-ink) !important;
+  font-size: .95rem !important;
+  font-weight: 600;
+  line-height: 1.6 !important;
+}
+.md-typeset .pd-page .pd-hero__description {
+  max-width: 520px;
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .86rem !important;
+  line-height: 1.7 !important;
+}
+.pd-page .pd-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.3rem;
+}
+.pd-page .pd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .7rem;
+  border: 1px solid var(--pd-border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--pd-text);
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.pd-page .pd-tag--red {
+  border-color: var(--pd-red-border);
+  background: var(--pd-red-soft);
+  color: var(--pd-red-deep);
+}
+
+/* =========================================================
+   HERO VISUAL — Телефон с экранами оплаты
+   ========================================================= */
+.pd-page .pd-hero__visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.pd-page .pd-phone {
+  position: relative;
+  width: 290px;
+  max-width: 100%;
+  perspective: 1200px;
+}
+.pd-page .pd-phone__frame {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 36px;
+  padding: 10px;
+  box-shadow: 0 24px 60px rgba(238, 49, 36, .18), 0 0 0 1px rgba(255, 255, 255, .1) inset;
+  transform: rotateY(-6deg) rotateX(2deg);
+  transition: transform .4s ease;
+}
+.pd-page .pd-phone:hover .pd-phone__frame {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+.pd-page .pd-phone__notch {
+  position: absolute;
+  top: 16px; left: 50%;
+  width: 80px; height: 18px;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  border-radius: 12px;
+  z-index: 10;
+}
+.pd-page .pd-phone__screen {
+  position: relative;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Статус-бар */
+.pd-page .pd-screen__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px 6px;
+  color: #111;
+  font-size: 9px;
+  font-weight: 700;
+}
+.pd-page .pd-screen__status-icons {
+  display: inline-flex;
+  gap: 3px;
+}
+.pd-page .pd-screen__status-icons span {
+  display: block;
+  width: 8px; height: 4px;
+  border-radius: 1px;
+  background: #111;
+}
+
+/* Шапка экрана */
+.pd-page .pd-screen__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.pd-page .pd-screen__back {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 6px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 2px;
+  font-family: inherit;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.pd-page .pd-screen__back:hover {
+  background: var(--pd-red-soft);
+  border-color: var(--pd-red-border);
+  color: var(--pd-red-deep);
+}
+.pd-page .pd-screen__logo {
+  width: 22px; height: 22px;
+  flex: 0 0 22px;
+  border-radius: 6px;
+  background: var(--pd-red);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+}
+.pd-page .pd-screen__title {
+  font-size: 10px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.2;
+}
+.pd-page .pd-screen__subtitle {
+  font-size: 7px;
+  font-weight: 600;
+  color: #999;
+}
+
+/* Экран — тело */
+.pd-page .pd-screen__body {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  background: #fafafa;
+}
+
+/* Экран 1: Выбор способа */
+.pd-page .pd-screen__hero-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+.pd-page .pd-screen__amount {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pd-page .pd-screen__caption {
+  font-size: 8px;
+  color: #999;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.pd-page .pd-screen__options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pd-page .pd-screen__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1.5px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  color: #333;
+}
+.pd-page .pd-screen__option--active {
+  border-color: var(--pd-red);
+  background: var(--pd-red-soft);
+  color: var(--pd-red-deep);
+}
+.pd-page .pd-screen__option-icon {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  background: #f0f0f0;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+}
+.pd-page .pd-screen__option--active .pd-screen__option-icon {
+  background: #fff;
+}
+
+/* CTA-кнопки */
+.pd-page .pd-screen__cta {
+  margin-top: auto;
+  padding: 12px;
+  background: var(--pd-red);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(238, 49, 36, .3);
+  transition: background .2s ease, transform .2s ease;
+}
+.pd-page .pd-screen__cta:hover {
+  background: var(--pd-red-dark);
+}
+.pd-page .pd-screen__cta:active {
+  transform: scale(.98);
+}
+
+/* Экран 2: Анкета */
+.pd-page .pd-form-field {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 9px;
+  color: #999;
+  font-weight: 600;
+}
+.pd-page .pd-form-field--filled {
+  color: #333;
+  border-color: #ddd;
+}
+.pd-page .pd-form-field--filled::after {
+  content: "✓";
+  float: right;
+  color: #22c55e;
+  font-weight: 900;
+}
+.pd-page .pd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+/* Экран 3: График платежей */
+.pd-page .pd-schedule {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.pd-page .pd-schedule__head {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  font-size: 8px;
+  font-weight: 800;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.pd-page .pd-schedule__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 9px;
+  font-weight: 700;
+}
+.pd-page .pd-schedule__row:last-child { border-bottom: 0; }
+.pd-page .pd-schedule__row--first {
+  background: var(--pd-red-soft);
+  color: var(--pd-red-deep);
+}
+.pd-page .pd-schedule__label { color: #666; }
+.pd-page .pd-schedule__value { font-weight: 900; }
+.pd-page .pd-schedule__value--red { color: var(--pd-red); }
+
+/* Индикатор шагов */
+.pd-page .pd-phone__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+.pd-page .pd-phone__dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition: background .2s ease, transform .2s ease;
+  cursor: pointer;
+}
+.pd-page .pd-phone__dot--active {
+  background: var(--pd-red);
+  transform: scale(1.2);
+}
+
+/* Подпись под телефоном */
+.pd-page .pd-phone__caption {
+  text-align: center;
+  margin-top: 16px;
+  font-size: .72rem;
+  font-weight: 700;
+  color: #64748b;
+}
+.pd-page .pd-phone__caption strong {
+  color: var(--pd-red-dark);
+  font-weight: 800;
+}
+
+/* =========================================================
+   Как это работает — Split Timeline
+   ========================================================= */
+.pd-page .pd-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 1rem 0 2.5rem;
+  position: relative;
+}
+.pd-page .pd-process::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pd-red) 0%, var(--pd-red) 25%, var(--pd-red-border) 25%, var(--pd-red-border) 100%);
+  opacity: .35;
+  z-index: 0;
+}
+.pd-page .pd-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 .35rem;
+}
+.pd-page .pd-step__num {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto .9rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--pd-red-border);
+  color: var(--pd-red-dark);
+  font-size: 1rem;
+  font-weight: 900;
+  box-shadow: 0 4px 12px rgba(238, 49, 36, .1);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pd-page .pd-step:hover .pd-step__num {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(238, 49, 36, .2);
+}
+.pd-page .pd-step__num--first {
+  background: var(--pd-red);
+  border-color: var(--pd-red-dark);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(238, 49, 36, .35);
+}
+.pd-page .pd-step:hover .pd-step__num--first {
+  box-shadow: 0 8px 22px rgba(238, 49, 36, .45);
+}
+.md-typeset .pd-page .pd-step .pd-title {
+  margin: 0 0 .35rem !important;
+  font-size: .92rem !important;
+  text-align: center;
+}
+.md-typeset .pd-page .pd-step p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .8rem !important;
+  line-height: 1.55 !important;
+  text-align: center;
+}
+
+/* =========================================================
+   Преимущества — шкала прогресса
+   ========================================================= */
+.pd-page .pd-advantages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+  margin: 1rem 0 2.5rem;
+}
+.pd-page .pd-advantage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  padding: 1.25rem 1.35rem;
+  background: #fff;
+  border: 1px solid var(--pd-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.pd-page .pd-advantage:hover {
+  border-color: var(--pd-red-border);
+  box-shadow: 0 8px 24px rgba(238, 49, 36, .07);
+}
+.pd-page .pd-advantage__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .75rem;
+}
+.md-typeset .pd-page .pd-advantage p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .84rem !important;
+  line-height: 1.6 !important;
+}
+.pd-page .pd-advantage__num {
+  flex-shrink: 0;
+  color: #cbd5e1;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+.pd-page .pd-advantage__meter {
+  display: flex;
+  gap: 4px;
+  margin-top: auto;
+}
+.pd-page .pd-advantage__seg {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+.pd-page .pd-advantage__seg--on {
+  background: var(--pd-red);
+}
+.pd-page .pd-advantage__seg--on-soft {
+  background: var(--pd-red-border);
+}
+.pd-page .pd-advantage__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .68rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+.pd-page .pd-advantage__meta strong {
+  color: var(--pd-red-dark);
+  font-weight: 800;
+}
+
+/* =========================================================
+   Подключение — 7-14 дней
+   ========================================================= */
+.pd-page .pd-connect {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1rem 0 2.5rem;
+  padding: 1.6rem 1.75rem;
+  background: linear-gradient(135deg, var(--pd-red-soft) 0%, #fff 55%, var(--pd-red-soft) 100%);
+  border: 1.5px solid var(--pd-border);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.pd-page .pd-connect__days {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--pd-red);
+  box-shadow: 0 8px 24px rgba(238, 49, 36, .15);
+  text-align: center;
+}
+.pd-page .pd-connect__days::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px dashed var(--pd-red-border);
+}
+.pd-page .pd-connect__days-num {
+  position: relative;
+  z-index: 1;
+  color: var(--pd-red-dark);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+.pd-page .pd-connect__days-label {
+  position: relative;
+  z-index: 1;
+  color: var(--pd-red-deep);
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: .3rem;
+}
+.pd-page .pd-connect__body { min-width: 0; }
+.md-typeset .pd-page .pd-connect p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: .88rem !important;
+  line-height: 1.7 !important;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.pd-page .pd-faq { margin: 1.75rem 0 2.25rem; }
+.pd-page .pd-faq__intro { margin-bottom: .85rem; }
+.md-typeset .pd-page .pd-faq__intro p {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: .9rem !important;
+  line-height: 1.65 !important;
+}
+.pd-page .pd-faq__list { min-width: 0; }
+.pd-page .pd-faq__item {
+  margin: 10px 0 !important;
+  border: 1px solid var(--pd-border) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.pd-page .pd-faq__item:hover {
+  border-color: var(--pd-red-border) !important;
+  box-shadow: 0 4px 14px rgba(238, 49, 36, .08) !important;
+}
+.pd-page .pd-faq__item summary {
+  position: relative;
+  display: block;
+  padding: 15px 52px 15px 20px !important;
+  color: var(--pd-ink) !important;
+  font-size: .93rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.pd-page .pd-faq__item summary::-webkit-details-marker,
+.pd-page .pd-faq__item summary::marker,
+.pd-page .pd-faq__item summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.pd-page .pd-faq__item summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: var(--pd-red-soft);
+  color: var(--pd-red-deep);
+  font-size: .95rem;
+  font-weight: 900;
+  line-height: 1;
+  border-radius: 5px;
+  transform: translateY(-50%);
+  transition: transform .2s ease;
+}
+.pd-page .pd-faq__item[open] summary::after { content: "−"; }
+.pd-page .pd-faq__item[open] summary { padding-bottom: 10px !important; }
+.md-typeset .pd-page .pd-faq__answer {
+  margin: 0 !important;
+  padding: 0 20px 16px !important;
+  color: #475569 !important;
+  font-size: .88rem !important;
+  line-height: 1.7 !important;
+}
+.md-typeset .pd-page .pd-faq__answer p {
+  margin: 0 0 .55rem !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.md-typeset .pd-page .pd-faq__answer p:last-child { margin-bottom: 0 !important; }
+.md-typeset .pd-page .pd-faq__answer a {
+  color: var(--pd-red-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(238, 49, 36, .3);
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .pd-page .pd-hero {
+  background: linear-gradient(135deg, #2a1210 0%, #1a1a1a 55%, #2a1210 100%) !important;
+  border-color: #374151 !important;
+}
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-hero__title { color: #fff !important; }
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-hero__lead { color: #d1d5db !important; }
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-hero__description { color: #9ca3af !important; }
+[data-md-color-scheme="slate"] .pd-page .pd-tag {
+  background: #1f2937;
+  border-color: #374151;
+  color: #d1d5db;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-tag--red {
+  background: rgba(238, 49, 36, .2);
+  border-color: var(--pd-red);
+  color: #fca5a5;
+}
+
+/* ── Телефон в тёмной теме ── */
+[data-md-color-scheme="slate"] .pd-page .pd-phone__screen {
+  background: #1a1a1a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__status {
+  color: #e5e7eb;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__status-icons span {
+  background: #e5e7eb;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__header {
+  border-bottom-color: #2a2a2a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__title {
+  color: #fff;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__subtitle {
+  color: #6b7280;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__back {
+  background: #1f2937;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__back:hover {
+  background: rgba(238, 49, 36, .2);
+  border-color: var(--pd-red);
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__body {
+  background: #111;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__hero-card {
+  background: #1f2937;
+  border-color: #2a2a2a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__amount {
+  color: #fff;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__caption {
+  color: #6b7280;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__option {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+  color: #d1d5db;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__option--active {
+  border-color: var(--pd-red);
+  background: rgba(238, 49, 36, .15);
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__option-icon {
+  background: #2a2a2a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-screen__option--active .pd-screen__option-icon {
+  background: #1a1a1a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-form-field {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+  color: #6b7280;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-form-field--filled {
+  color: #e5e7eb;
+  border-color: #374151;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule {
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule__head {
+  background: #111;
+  border-bottom-color: #2a2a2a;
+  color: #6b7280;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule__row {
+  border-bottom-color: #2a2a2a;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule__label {
+  color: #9ca3af;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule__value {
+  color: #e5e7eb;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule__row--first {
+  background: rgba(238, 49, 36, .18);
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-schedule__value--red {
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-phone__dot {
+  background: #374151;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-phone__dot--active {
+  background: var(--pd-red);
+}
+[data-md-color-scheme="slate"] .pd-page .pd-phone__caption {
+  color: #94a3b8;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-phone__caption strong {
+  color: #fca5a5;
+}
+
+/* ── Остальные блоки в тёмной теме ── */
+[data-md-color-scheme="slate"] .pd-page .pd-advantage {
+  background: #1a1a1a;
+  border-color: #374151;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-advantage:hover {
+  border-color: var(--pd-red);
+  box-shadow: 0 8px 24px rgba(238, 49, 36, .15);
+}
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-advantage p,
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-step p {
+  color: #cbd5e1 !important;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-advantage__num {
+  color: #6b7280;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-advantage__seg {
+  background: #374151;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-advantage__meta {
+  color: #94a3b8;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-advantage__meta strong {
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-step__num {
+  background: #1a1a1a;
+  border-color: #374151;
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-step__num--first {
+  background: var(--pd-red);
+  border-color: var(--pd-red-dark);
+  color: #fff;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-step .pd-title {
+  color: #fff !important;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-connect {
+  background: linear-gradient(135deg, #2a1210 0%, #1a1a1a 55%, #2a1210 100%);
+  border-color: #374151;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-connect__days {
+  background: #1f2937;
+}
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-connect p {
+  color: #cbd5e1 !important;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-connect .pd-title--lg {
+  color: #fff !important;
+}
+
+/* ── FAQ в тёмной теме — самое важное ── */
+[data-md-color-scheme="slate"] .pd-page .pd-faq__item {
+  background: #1a1a1a !important;
+  border-color: #374151 !important;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-faq__item:hover {
+  border-color: var(--pd-red) !important;
+  box-shadow: 0 4px 14px rgba(238, 49, 36, .15) !important;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-faq__item summary {
+  color: #fff !important;
+}
+[data-md-color-scheme="slate"] .pd-page .pd-faq__item summary::after {
+  background: rgba(238, 49, 36, .2);
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-faq__answer {
+  color: #cbd5e1 !important;
+}
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-faq__answer a {
+  color: #fca5a5;
+}
+[data-md-color-scheme="slate"] .md-typeset .pd-page .pd-faq__intro p {
+  color: #94a3b8 !important;
+}
+
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+@media screen and (max-width: 1100px) {
+  .pd-page .pd-hero { grid-template-columns: minmax(0, 1fr); }
+}
+@media screen and (max-width: 900px) {
+  .pd-page .pd-process { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem .75rem; }
+  .pd-page .pd-process::before { display: none; }
+  .pd-page .pd-advantages { grid-template-columns: 1fr; }
+  .pd-page .pd-connect { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+  .pd-page .pd-connect__days { margin: 0 auto; }
+}
+@media screen and (max-width: 767px) {
+  .md-typeset .pd-page .pd-hero { padding: 1.3rem !important; border-radius: 18px; }
+  .md-typeset .pd-page .pd-hero__title { font-size: clamp(1.75rem, 8vw, 2.4rem) !important; letter-spacing: -1.2px !important; }
+  .pd-page .pd-phone { width: 250px; }
+  .pd-page .pd-phone__frame { transform: none; }
+  .pd-page .pd-screen__amount { font-size: 1.7rem; }
+
+  .pd-page .pd-process { grid-template-columns: 1fr; gap: 1rem; }
+  .pd-page .pd-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    column-gap: 1rem;
+    text-align: left;
+    padding: 0;
+    align-items: center;
+  }
+  .pd-page .pd-step__num { margin: 0; }
+  .md-typeset .pd-page .pd-step .pd-title,
+  .md-typeset .pd-page .pd-step p { text-align: left; }
+
+  .pd-page .pd-advantage { padding: 1rem 1.1rem; }
+
+  .pd-page .pd-faq { margin: 1.5rem 0 2rem; }
+  .pd-page .pd-faq__item summary { padding: 13px 46px 13px 16px !important; font-size: .9rem !important; }
+  .md-typeset .pd-page .pd-faq__answer { padding: 0 16px 14px !important; font-size: .86rem !important; }
+}
+@media screen and (max-width: 480px) {
+  .md-typeset .pd-page .pd-hero__title { font-size: 1.65rem !important; }
+  .md-typeset .pd-page .pd-hero__lead { font-size: .9rem !important; }
+  .md-typeset .pd-page .pd-hero__description { font-size: .82rem !important; }
+  .pd-page .pd-hero__tags { gap: .35rem; margin-top: 1rem; }
+  .pd-page .pd-tag { padding: .32rem .55rem; font-size: .64rem; }
+  .pd-page .pd-phone { width: 230px; }
+  .pd-page .pd-screen__status,
+  .pd-page .pd-screen__header { padding-left: 12px; padding-right: 12px; }
+  .pd-page .pd-screen__body { padding: 12px; gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pd-page .pd-advantage,
+  .pd-page .pd-step__num,
+  .pd-page .pd-faq__item,
+  .pd-page .pd-phone__frame,
+  .pd-page .pd-screen__cta { transition: none; }
+  .pd-page .pd-advantage:hover { transform: none; }
+  .pd-page .pd-step:hover .pd-step__num { transform: none; }
+  .pd-page .pd-phone:hover .pd-phone__frame { transform: rotateY(-6deg) rotateX(2deg); }
+}

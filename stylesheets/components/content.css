@@ -1,0 +1,59 @@
+/* ===== ТАБЛИЦА ===== */
+.comparison-intro { margin: -.5rem 0 1rem; color: #64748b; font-size: .9rem; line-height: 1.6; }
+.md-typeset .table-wrapper { max-width: 100%; overflow-x: auto; margin: 0 0 1.5rem; border: 1px solid #e2e8f0; border-radius: 16px; background: #ffffff; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); }
+.md-typeset .table-wrapper table { width: 100% !important; min-width: 1080px; border-collapse: separate; border-spacing: 0; table-layout: auto; margin: 0 !important; font-size: 15px; line-height: 1.5; border: none; }
+.md-typeset .table-wrapper th { font-weight: 700; background-color: #f8fafc; color: #475569; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; padding: 1.2rem 1rem; border-bottom: 2px solid #e2e8f0; }
+.md-typeset .table-wrapper td { padding: 1rem; border-bottom: 1px solid #f1f5f9; color: #334155; font-weight: 500; white-space: nowrap; }
+.md-typeset .table-wrapper tbody tr:last-child td { border-bottom: none; }
+.md-typeset .table-wrapper tbody tr:nth-child(even) td { background-color: #fafbfc; }
+.md-typeset .table-wrapper tbody tr:hover td { background-color: #f1f5f9 !important; }
+.md-typeset .table-wrapper th:first-child,
+.md-typeset .table-wrapper td:first-child { width: 240px; min-width: 200px; text-align: left; white-space: normal; word-break: break-word; padding-left: 1.5rem; color: #0f172a; font-weight: 600; border-right: 1px solid #e2e8f0; position: sticky; left: 0; z-index: 2; background-color: inherit; }
+.md-typeset .table-wrapper th:first-child { background-color: #f8fafc; z-index: 3; }
+.md-typeset .table-wrapper td:not(:first-child),
+.md-typeset .table-wrapper th:not(:first-child) { text-align: center; white-space: nowrap; }
+.md-typeset .table-wrapper td:not(:first-child) { font-size: 20px; line-height: 1; }
+.md-typeset .table-wrapper th:nth-child(2),
+.md-typeset .table-wrapper td:nth-child(2) { background-color: #f0f7ff !important; border-left: 1px solid #dbeafe; border-right: 1px solid #dbeafe; font-weight: 700; }
+.md-typeset .table-wrapper th:nth-child(2) { color: #2563eb; border-bottom-color: #bfdbfe; }
+.md-typeset .table-wrapper td.availability--no { opacity: 0.35; filter: grayscale(100%); }
+.md-typeset .table-wrapper::-webkit-scrollbar { height: 8px; }
+.md-typeset .table-wrapper::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+.md-typeset .table-wrapper::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.md-typeset .table-wrapper::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.md-typeset .comparison-legend { margin: 1rem 0 3rem; padding: 1.25rem 1.5rem; border: 1px solid #e2e8f0; border-radius: 16px; background: #ffffff; font-size: 0.95rem; line-height: 1.6; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+.md-typeset .comparison-legend__title { display: block; margin-bottom: 0.75rem; color: #0f172a; font-size: 1.05rem; font-weight: 800; }
+.md-typeset .comparison-legend p { margin: 0 !important; padding: 0 !important; font-size: .92rem !important; line-height: 1.7; color: #475569; }
+.md-typeset .legend-symbol { display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 6px; font-size: 1rem; margin: 0 2px; }
+
+/* ===== ВОПРОСЫ (ГЛОБАЛЬНЫЕ) ===== */
+.md-typeset .question { border-color: #e2e8f0 !important; border-left-color: #0f172a !important; border-left-width: 4px; background-color: #ffffff; border-radius: 12px; margin-bottom: 1rem; }
+.md-typeset .question > .admonition-title, .md-typeset .question > summary { color: #0f172a; background-color: #f8fafc; border-radius: 8px; font-size: 18px; font-weight: 600; }
+.md-typeset .question > *:not(.admonition-title):not(summary) { font-size: 16px; line-height: 1.6; }
+.md-typeset .question > summary { list-style: none; position: relative; padding-right: 2rem; }
+.md-typeset .question > summary::-webkit-details-marker { display: none; }
+.md-typeset .question > summary::after { content: "▶"; color: #0f172a !important; font-size: 0.8rem; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); transition: transform 0.2s; }
+.md-typeset .question[open] > summary::after { transform: translateY(-50%) rotate(90deg); }
+.md-typeset .question > summary:hover { background-color: #f1f5f9; }
+
+/* ===== РЕКВИЗИТЫ ===== */
+.requisites-card { margin: 0 0 3rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); overflow: hidden; }
+.requisites-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+.requisite-item { display: flex; flex-direction: column; gap: 0.5rem; padding: 2rem; border-bottom: 1px solid #f1f5f9; border-right: 1px solid #f1f5f9; transition: background-color 0.2s ease; }
+.requisite-item:hover { background-color: #f8fafc; }
+.requisite-item:nth-child(2n) { border-right: none; }
+.requisite-full { grid-column: span 2; border-right: none; border-bottom: none; }
+.requisite-value { font-size: 18px; font-weight: 600; color: #0f172a; line-height: 1.5; }
+.requisite-label { font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+.requisite-value a { color: #2563eb; text-decoration: none; border-bottom: 1px dashed #93c5fd; transition: all 0.2s; }
+.requisite-value a:hover { color: #1d4ed8; border-bottom-color: #1d4ed8; }
+.requisite-value a[href^="tel:"], .requisite-value a[href^="mailto:"] { color: #2563eb; text-decoration: none; border-bottom: 1px dashed #93c5fd; }
+.requisites-footer { padding: 1.25rem 2rem; text-align: right; border-top: 1px solid #f1f5f9; background: #ffffff; }
+.pdf-btn { display: inline-flex !important; align-items: center; gap: 0.5rem; text-decoration: none !important; }
+
+/* ===== ФУТЕР ===== */
+.site-footer { margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0; text-align: center; }
+.site-footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin-bottom: 1.5rem; }
+.site-footer__links a { font-size: 0.9rem; font-weight: 600; color: #64748b; text-decoration: none; transition: color 0.2s; }
+.site-footer__links a:hover { color: #2563eb; text-decoration: underline; }
+.site-footer__copy { font-size: 0.8rem; color: #94a3b8; }

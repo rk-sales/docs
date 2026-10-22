@@ -51,7 +51,51 @@
       
     
     
-      <link rel="stylesheet" href="../../../extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/base.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/layout.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/components/content.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/components/banner.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/home.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/payments.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/cards-rf.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/foreign-cards.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/cards-common.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/sberpay.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/sbp.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/tpay.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/mtspay.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/alfapay.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/yandexpay.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/mirpay.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/podeli.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/yandex-split.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/mokka.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/otp-bank.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/halva.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/yoomoney.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/dark-theme.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -593,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mts-pay/" class="md-nav__link">
+      <a href="../mtspay/" class="md-nav__link">
         
   
   
@@ -2719,19 +2763,80 @@
 
   <h1>Иностранные карты</h1>
 
-<div class="cards-page">
-  <div class="hero-card">
-    <div class="hero-content">
-      <p class="cards-hero-lead">Принимайте оплату от клиентов из других стран.</p>
-      <p>Robokassa позволяет принимать платежи по международным картам с автоконвертацией валют, расширяя ваши продажи далеко за пределы России.</p>
+<div class="cards-page cards-foreign">
+  <section class="hero-card cards-hero">
+    <div class="cards-hero__content">
+      <div class="cards-hero__eyebrow">
+        <span></span>
+        МЕЖДУНАРОДНЫЕ ПЛАТЕЖИ
+      </div>
+
+      <h2 class="cards-hero__title">
+        Продавайте<br>
+        <span>по всему миру</span>
+      </h2>
+
+      <p class="cards-hero__text">
+        Принимайте оплату иностранными банковскими картами
+        из более чем 150 стран. Клиент платит в привычной
+        валюте, а вы получаете деньги в рублях.
+      </p>
+
+      <div class="cards-hero__chips">
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>Автоконвертация</span>
+      </div>
     </div>
-  </div>
+
+    <div class="cards-hero__visual">
+      <div class="cards-hero__orbit cards-hero__orbit--outer"></div>
+      <div class="cards-hero__orbit cards-hero__orbit--inner"></div>
+
+      <div class="cards-hero__payment-card">
+        <div class="cards-hero__card-top">
+          <span>ROBOKASSA</span>
+          <span class="cards-hero__card-symbol">↗</span>
+        </div>
+
+        <div class="cards-hero__card-chip">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="cards-hero__card-bottom">
+          <div>
+            <small>PAYMENTS WORLDWIDE</small>
+            <strong>Global payments</strong>
+          </div>
+          <div class="cards-hero__card-circles">
+            <i></i><i></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-hero__floating cards-hero__floating--top">
+        <span class="cards-hero__floating-icon">↗</span>
+        <div>
+          <small>ГЕОГРАФИЯ</small>
+          <strong>150+ стран</strong>
+        </div>
+      </div>
+
+      <div class="cards-hero__floating cards-hero__floating--bottom">
+        <span class="cards-hero__floating-check">✓</span>
+        <div>
+          <small>ЗАЧИСЛЕНИЕ</small>
+          <strong>В рублях ₽</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <div class="home-kicker" style="margin-top: 3rem;">ВОЗМОЖНОСТИ</div>
 
 <h2 id="supported-countries">Принимаемые карты и страны<a class="headerlink" href="#supported-countries" title="Permanent link">&para;</a></h2>
-<div class="cards-page">
+<div class="cards-page cards-foreign">
   <div class="cards-info-grid">
     <div class="info-block">
       <h3>Мы принимаем к оплате:</h3>
@@ -2756,7 +2861,7 @@
 <div class="home-kicker" style="margin-top: 3rem;">ПРЕИМУЩЕСТВА</div>
 
 <h2 id="advantages">Ключевые преимущества<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h2>
-<div class="cards-page">
+<div class="cards-page cards-foreign">
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">🌍</div>
@@ -2795,7 +2900,7 @@
 <div class="home-kicker" style="margin-top: 3rem;">ПРОЦЕСС ОПЛАТЫ</div>
 
 <h2 id="how-it-works">Как это работает для клиента<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<div class="cards-page">
+<div class="cards-page cards-foreign">
   <div class="steps-container">
     <div class="step-item">
       <div class="step-number">1</div>
@@ -2822,7 +2927,7 @@
 <div class="home-kicker" style="margin-top: 3rem;">FAQ</div>
 
 <h2 id="faq">Вопросы и ответы<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
-<div class="cards-page">
+<div class="cards-page cards-foreign">
   <details class="question">
     <summary>Какие иностранные карты можно принимать?</summary>
     <p>После подключения к Robokassa вы сможете принимать карты Mastercard, Visa и UnionPay, выпущенные за пределами РФ. Сервис постоянно работает над расширением географии. <br><br>
