@@ -1,0 +1,517 @@
+/* =========================================================
+   TREBOVANIYA VK — Site Audit / Pre-flight Checklist
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap');
+
+.audit-page {
+  --audit-bg: #f8fafc;
+  --audit-surface: #ffffff;
+  --audit-ink: #0f172a;
+  --audit-text: #475569;
+  --audit-muted: #94a3b8;
+  --audit-border: #e2e8f0;
+  --audit-primary: #2563eb;
+  --audit-success: #10b981;
+  --audit-warning: #f59e0b;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--audit-text);
+  background-color: var(--audit-bg);
+  padding-bottom: 6rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.audit-page *, .audit-page *::before, .audit-page *::after { box-sizing: border-box; }
+
+body:has(.audit-page) .md-nav--secondary { display: none !important; }
+body:has(.audit-page) .md-header__topic { display: none !important; }
+body:has(.audit-page) .md-content__inner > h1 { display: none !important; }
+
+body:has(.audit-page) .md-content__inner {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.audit-page .audit-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.audit-page .audit-hero {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-align: left;
+}
+
+.audit-page .audit-hero__badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+}
+
+.audit-page .audit-hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--audit-ink) !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.audit-page .audit-hero__desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 !important;
+  color: var(--audit-text);
+}
+
+/* =========================
+   ALERT (Совет)
+   ========================= */
+.audit-page .audit-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--audit-primary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+.audit-page .audit-alert__icon {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--audit-primary);
+  background: #fff;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--audit-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.audit-page .audit-alert__content {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1e3a8a;
+}
+.audit-page .audit-alert__content strong { font-weight: 700; }
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+.audit-page .audit-section-title {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+.audit-page .audit-section-title h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--audit-ink) !important;
+  margin: 0 0 0.5rem 0 !important;
+  letter-spacing: -0.02em;
+}
+.audit-page .audit-section-title p {
+  font-size: 1rem;
+  color: var(--audit-muted);
+  margin: 0 !important;
+}
+
+/* =========================
+   RULES (Три правила)
+   ========================= */
+.audit-page .audit-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.audit-page .audit-rule {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  background: var(--audit-surface);
+  border: 1px solid var(--audit-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.audit-page .audit-rule__num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--audit-primary);
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.audit-page .audit-rule__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.audit-page .audit-rule__body > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.audit-page .audit-rule__body > h3 {
+  margin-bottom: 0.75rem !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--audit-ink);
+  letter-spacing: -0.01em;
+}
+
+.audit-page .audit-rule__body > p {
+  margin-bottom: 1rem !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--audit-text);
+}
+
+.audit-page .audit-rule__body > .audit-rule__example {
+  margin-bottom: 1.5rem !important;
+  padding: 1rem 1.2rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--audit-ink);
+  border-left: 3px solid var(--audit-muted);
+}
+.audit-page .audit-rule__example strong { color: var(--audit-primary); }
+
+.audit-page .audit-rule__body > .audit-rule__important {
+  margin-bottom: 1.5rem !important;
+  padding: 1rem 1.2rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #92400e;
+}
+.audit-page .audit-rule__important b { font-weight: 700; }
+
+.audit-page .audit-rule__body > p.audit-rule__hint {
+  margin-bottom: 0.5rem !important;
+  font-size: 0.9rem;
+  color: var(--audit-muted);
+  font-weight: 600;
+  display: block;
+}
+
+/* =========================
+   Генератор оферты
+   ========================= */
+.audit-page .audit-generator {
+  position: relative;
+  margin-top: 2rem !important;
+  padding: 1.5rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+}
+
+.audit-page .audit-generator__badge {
+  position: absolute;
+  top: -10px; left: 1.5rem;
+  background: var(--audit-success);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.audit-page .audit-generator h4 {
+  margin: 0 0 0.5rem 0 !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.audit-page .audit-generator > p {
+  margin: 0 0 1rem 0 !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #047857;
+}
+
+.audit-page .audit-generator ol {
+  margin: 0 0 1rem 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #065f46;
+}
+.audit-page .audit-generator ol li { margin-bottom: 0.3rem; }
+.audit-page .audit-generator ol li b { color: #064e3b; }
+
+.audit-page .audit-generator__note {
+  margin: 0 !important;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #047857;
+  opacity: 0.8;
+}
+
+/* =========================
+   FAQ (Стиль question)
+   ========================= */
+.audit-page .question { 
+  margin: 0 0 1rem 0 !important; 
+  border: 1px solid #e2e8f0 !important; 
+  border-left-width: 1px !important; 
+  border-radius: 14px !important; 
+  background: #ffffff !important; 
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035) !important; 
+  overflow: hidden; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.audit-page .question:hover { 
+  border-color: #bfdbfe !important; 
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important; 
+}
+
+.audit-page .question summary { 
+  position: relative; 
+  display: block; 
+  padding: 16px 48px 16px 20px !important; 
+  color: #0f172a !important; 
+  font-size: 0.95rem !important; 
+  font-weight: 600 !important; 
+  line-height: 1.55 !important; 
+  cursor: pointer; 
+  list-style: none !important; 
+  background: transparent !important; 
+}
+
+.audit-page .question summary::-webkit-details-marker, 
+.audit-page .question summary::marker, 
+.audit-page .question summary::before { 
+  display: none !important; 
+  content: "" !important; 
+}
+
+.audit-page .question summary::after { 
+  content: ""; 
+  position: absolute; 
+  right: 20px; 
+  top: 50%; 
+  width: 8px; 
+  height: 8px; 
+  border-right: 2px solid #64748b; 
+  border-bottom: 2px solid #64748b; 
+  transform: translateY(-70%) rotate(45deg); 
+  transition: transform 0.2s ease; 
+}
+
+.audit-page .question[open] summary::after { 
+  transform: translateY(-25%) rotate(225deg); 
+}
+
+.audit-page .question[open] summary { padding-bottom: 10px !important; }
+
+.audit-page .question__content { 
+  margin: 0 !important; 
+  padding: 0 20px 20px !important; 
+  color: #475569 !important; 
+  font-size: 0.9rem !important; 
+  line-height: 1.7 !important; 
+}
+
+.audit-page .question__content p { margin: 0 0 0.8rem 0 !important; }
+.audit-page .question__content p:last-child { margin-bottom: 0 !important; }
+.audit-page .question__content ul { margin: 0; padding-left: 1.2rem; }
+.audit-page .question__content li { margin-bottom: 0.3rem; }
+.audit-page .question__content b { color: #0f172a; }
+
+/* =========================
+   CHECKLIST (Интерактивные чекбоксы)
+   ========================= */
+.audit-page .audit-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.audit-page .audit-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--audit-surface);
+  border: 1px solid var(--audit-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.audit-page .audit-check:hover {
+  border-color: #bfdbfe;
+  background: #f0f9ff;
+}
+
+.audit-page .audit-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.audit-page .audit-check__box {
+  width: 22px; height: 22px;
+  border: 2px solid var(--audit-border);
+  border-radius: 6px;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.2s ease;
+  background: #fff;
+  margin-top: 1px;
+}
+
+.audit-page .audit-check input:checked + .audit-check__box {
+  background: var(--audit-success);
+  border-color: var(--audit-success);
+}
+
+.audit-page .audit-check input:checked + .audit-check__box::after {
+  content: "";
+  position: absolute;
+  left: 6px; top: 2px;
+  width: 6px; height: 11px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.audit-page .audit-check__text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--audit-text);
+  transition: all 0.2s ease;
+}
+
+.audit-page .audit-check input:checked ~ .audit-check__text {
+  text-decoration: line-through;
+  color: var(--audit-muted);
+}
+
+/* =========================
+   NOTE (Заметка)
+   ========================= */
+.audit-page .audit-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.2rem 1.5rem;
+  background: #f8fafc;
+  border: 1px dashed var(--audit-border);
+  border-radius: 12px;
+}
+
+.audit-page .audit-note__icon {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--audit-primary);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.audit-page .audit-note__content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--audit-text);
+}
+
+/* =========================
+   VK MOCKUP (Пример сообщества)
+   ========================= */
+.audit-page .audit-vk-mockup {
+  margin-top: 1rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.audit-page .audit-vk-mockup:hover {
+  transform: scale(1.01);
+}
+
+/* =========================
+   ТЁМНАЯ ТЕМА
+   ========================= */
+[data-md-color-scheme="slate"] .audit-page {
+  --audit-bg: #0f172a;
+  --audit-surface: #1e293b;
+  --audit-ink: #f8fafc;
+  --audit-text: #cbd5e1;
+  --audit-muted: #94a3b8;
+  --audit-border: #334155;
+  --audit-primary: #3b82f6;
+}
+
+[data-md-color-scheme="slate"] .audit-page .audit-hero__badge { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
+[data-md-color-scheme="slate"] .audit-page .audit-alert { background: rgba(37, 99, 235, 0.1); border-color: rgba(37, 99, 235, 0.3); }
+[data-md-color-scheme="slate"] .audit-page .audit-alert__icon { background: #0f172a; }
+[data-md-color-scheme="slate"] .audit-page .audit-alert__content { color: #93c5fd; }
+[data-md-color-scheme="slate"] .audit-page .audit-rule__example { background: #0f172a; }
+[data-md-color-scheme="slate"] .audit-page .audit-rule__important { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: #fcd34d; }
+[data-md-color-scheme="slate"] .audit-page .audit-generator { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.3); }
+[data-md-color-scheme="slate"] .audit-page .audit-generator h4 { color: #6ee7b7; }
+[data-md-color-scheme="slate"] .audit-page .audit-generator > p,
+[data-md-color-scheme="slate"] .audit-page .audit-generator ol,
+[data-md-color-scheme="slate"] .audit-page .audit-generator__note { color: #a7f3d0; }
+[data-md-color-scheme="slate"] .audit-page .audit-generator ol li b { color: #d1fae5; }
+[data-md-color-scheme="slate"] .audit-page .audit-check { background: #1e293b; }
+[data-md-color-scheme="slate"] .audit-page .audit-check:hover { background: #223149; border-color: #3b5280; }
+[data-md-color-scheme="slate"] .audit-page .audit-check__box { background: #0f172a; border-color: #475569; }
+[data-md-color-scheme="slate"] .audit-page .audit-note { background: #172338; }
+[data-md-color-scheme="slate"] .audit-page .question { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .audit-page .question summary { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .audit-page .question__content { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .audit-page .question__content b { color: #f8fafc; }
+
+/* =========================
+   АДАПТИВ
+   ========================= */
+@media (max-width: 767px) {
+  .audit-page .audit-rule { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+  .audit-page .audit-rule__num { font-size: 2rem; }
+  .audit-page .audit-alert { flex-direction: column; gap: 0.8rem; padding: 1.2rem; }
+  .audit-page .audit-note { flex-direction: column; gap: 0.8rem; }
+  .audit-page .audit-generator { padding: 1.2rem; }
+  .audit-page .question summary { padding: 14px 40px 14px 16px !important; font-size: 0.9rem !important; }
+  .audit-page .question summary::after { right: 16px; }
+  .audit-page .question__content { padding: 0 16px 16px !important; }
+}

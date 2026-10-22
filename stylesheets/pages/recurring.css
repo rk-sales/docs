@@ -1,0 +1,506 @@
+/* =========================================================
+   RECURRING PAYMENTS — Subscription Hub
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+.rec-page {
+  --rec-bg: #f8fafc;
+  --rec-surface: #ffffff;
+  --rec-ink: #0f172a;
+  --rec-text: #475569;
+  --rec-muted: #94a3b8;
+  --rec-border: #e2e8f0;
+  
+  --rec-blue: #2563eb;
+  --rec-blue-soft: #eff6ff;
+  --rec-emerald: #10b981;
+  --rec-emerald-soft: #ecfdf5;
+  --rec-purple: #8b5cf6;
+  --rec-purple-soft: #f5f3ff;
+
+  --rec-mono: 'JetBrains Mono', monospace;
+  --rec-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: var(--rec-sans);
+  color: var(--rec-text);
+  counter-reset: rec-sec;
+  position: relative;
+  padding: 0 0 2rem;
+}
+
+.rec-page *,
+.rec-page *::before,
+.rec-page *::after { box-sizing: border-box; }
+
+/* Скрываем TOC и дублирующий заголовок */
+body:has(.rec-page) .md-nav--secondary { display: none !important; }
+body:has(.rec-page) .md-header__topic { display: none !important; }
+body:has(.rec-page) .md-content__inner > h1 { display: none !important; }
+
+/* =========================
+   H2 — Заголовки секций
+   ========================= */
+.md-typeset .rec-page h2 {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  margin: 4rem 0 2rem !important;
+  color: var(--rec-ink) !important;
+  font-size: clamp(1.6rem, 2.8vw, 2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: rec-sec;
+  border: 0 !important;
+  padding: 0 !important;
+}
+.md-typeset .rec-page .rec-hero + h2 { margin-top: 1rem !important; }
+.md-typeset .rec-page h2::after { display: none !important; }
+.md-typeset .rec-page h2::before {
+  content: "0" counter(rec-sec) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--rec-ink);
+  color: var(--rec-bg);
+  border-radius: 10px;
+  font-family: var(--rec-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.md-typeset .rec-page .rec-hero {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100% !important;
+}
+
+.rec-page .rec-hero__content { position: relative; z-index: 2; }
+
+.rec-page .rec-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--rec-emerald-soft);
+  color: var(--rec-emerald);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+.rec-page .rec-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.md-typeset .rec-page .rec-hero__title {
+  margin: 0 0 1rem !important;
+  color: var(--rec-ink) !important;
+  font-size: clamp(2.2rem, 4vw, 3rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+}
+
+.md-typeset .rec-page .rec-hero__desc {
+  max-width: 480px;
+  margin: 0 !important;
+  color: var(--rec-text) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ── Hero Visual (Subscription Card) ── */
+.rec-page .rec-hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.rec-page .rec-sub-card {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  background: var(--rec-ink);
+  border-radius: 24px;
+  padding: 2rem;
+  color: #fff;
+  box-shadow: 
+    0 30px 60px -15px rgba(15, 23, 42, 0.4),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+.rec-page .rec-sub-card:hover { transform: rotateY(0deg) rotateX(0deg) translateY(-5px); }
+
+/* Зеленое свечение внутри карточки */
+.rec-page .rec-sub-card__glow {
+  position: absolute;
+  top: -50%; right: -50%;
+  width: 200px; height: 200px;
+  background: var(--rec-emerald);
+  filter: blur(80px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.rec-page .rec-sub-card__header {
+  position: relative; z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rec-page .rec-sub-card__icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.rec-page .rec-sub-card__plan {
+  display: flex;
+  flex-direction: column;
+}
+.rec-page .rec-plan-name { font-weight: 800; font-size: 1.1rem; }
+.rec-page .rec-plan-status { 
+  font-size: 0.75rem; color: var(--rec-emerald); font-weight: 600; display: flex; align-items: center; gap: 4px;
+}
+.rec-page .rec-plan-status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--rec-emerald); }
+
+.rec-page .rec-sub-card__price {
+  position: relative; z-index: 1;
+  margin-bottom: 1.5rem;
+}
+.rec-page .rec-amount { font-size: 2rem; font-weight: 800; font-family: var(--rec-mono); }
+.rec-page .rec-period { font-size: 1rem; color: var(--rec-muted); }
+
+.rec-page .rec-sub-card__progress {
+  position: relative; z-index: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+.rec-page .rec-progress-bar {
+  height: 100%;
+  width: 65%;
+  background: var(--rec-emerald);
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--rec-emerald);
+}
+
+.rec-page .rec-sub-card__footer {
+  position: relative; z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--rec-muted);
+}
+.rec-page .rec-sub-card__footer strong { color: #fff; }
+
+/* =========================
+   PATHS — Два способа (API vs ЛК)
+   ========================= */
+.rec-page .rec-paths {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.rec-page .rec-path-card {
+  background: var(--rec-surface);
+  border: 1px solid var(--rec-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-page .rec-path-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(15, 23, 42, 0.1);
+}
+.rec-page .rec-path-card--dev:hover { border-color: var(--rec-blue); }
+.rec-page .rec-path-card--biz:hover { border-color: var(--rec-emerald); }
+
+.rec-page .rec-path-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.rec-page .rec-path-icon {
+  display: grid; place-items: center;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+.rec-page .rec-path-card--dev .rec-path-icon { background: var(--rec-blue-soft); color: var(--rec-blue); }
+.rec-page .rec-path-card--biz .rec-path-icon { background: var(--rec-emerald-soft); color: var(--rec-emerald); }
+
+.md-typeset .rec-page .rec-path-card h3 {
+  margin: 0 !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: var(--rec-ink) !important;
+}
+
+.md-typeset .rec-page .rec-path-desc {
+  margin: 0 0 1.5rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--rec-text) !important;
+}
+
+.rec-page .rec-path-list {
+  list-style: none;
+  padding: 0; margin: 0 0 2rem;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.rec-page .rec-path-list li {
+  position: relative; padding-left: 1.5rem;
+  font-size: 0.9rem; color: var(--rec-text);
+}
+.rec-page .rec-path-list li::before {
+  content: "•"; position: absolute; left: 0; top: 0;
+  color: var(--rec-muted); font-size: 1.2rem; line-height: 1;
+}
+.rec-page .rec-path-card--dev .rec-path-list li::before { color: var(--rec-blue); }
+.rec-page .rec-path-card--biz .rec-path-list li::before { color: var(--rec-emerald); }
+
+/* Мини-код в карточке API */
+.rec-page .rec-code-snippet {
+  margin-top: auto;
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 1rem;
+  font-family: var(--rec-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+.rec-page .c-key { color: #93c5fd; }
+.rec-page .c-url { color: #86efac; }
+.rec-page .c-str { color: #fca5a5; }
+
+/* Мини-UI в карточке ЛК */
+.rec-page .rec-ui-mockup {
+  margin-top: auto;
+  background: var(--rec-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--rec-border);
+}
+.rec-page .rec-ui-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.85rem; color: var(--rec-ink); font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.rec-page .rec-ui-row:last-child { margin-bottom: 0; }
+.rec-page .rec-ui-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rec-emerald);
+}
+
+/* =========================
+   LIFECYCLE — Жизненный цикл
+   ========================= */
+.rec-page .rec-lifecycle {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Соединительная линия */
+.rec-page .rec-lifecycle::before {
+  content: ""; position: absolute;
+  top: 24px; left: 10%; right: 10%; height: 2px;
+  background: var(--rec-border);
+  z-index: 0;
+}
+
+.rec-page .rec-step {
+  position: relative; z-index: 1;
+  text-align: center;
+  background: var(--rec-surface);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--rec-border);
+  transition: transform 0.3s ease;
+}
+.rec-page .rec-step:hover { transform: translateY(-4px); box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1); }
+
+.rec-page .rec-step__num {
+  width: 48px; height: 48px;
+  margin: -40px auto 1rem;
+  display: grid; place-items: center;
+  background: var(--rec-surface);
+  border: 2px solid var(--rec-border);
+  border-radius: 50%;
+  font-family: var(--rec-mono);
+  font-size: 1rem; font-weight: 800;
+  color: var(--rec-ink);
+  box-shadow: 0 0 0 6px var(--rec-bg);
+}
+
+.md-typeset .rec-page .rec-step h4 {
+  margin: 0 0 0.5rem !important;
+  font-size: 1rem !important; font-weight: 800 !important; color: var(--rec-ink) !important;
+}
+.md-typeset .rec-page .rec-step p {
+  margin: 0 !important; font-size: 0.85rem !important; line-height: 1.5 !important; color: var(--rec-text) !important;
+}
+
+/* =========================
+   CONNECT BOX — CTA
+   ========================= */
+.rec-page .rec-connect-box {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important;
+  gap: 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  color: #fff;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rec-page .rec-connect-box::before {
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.2), transparent 50%);
+  pointer-events: none;
+}
+
+.md-typeset .rec-page .rec-connect-content h3 {
+  margin: 0 0 0.75rem !important; font-size: 1.8rem !important; font-weight: 800 !important; color: #fff !important;
+}
+.md-typeset .rec-page .rec-connect-content p {
+  margin: 0 0 1.5rem !important; font-size: 1rem !important; line-height: 1.6 !important; color: #cbd5e1 !important;
+}
+
+.rec-page .rec-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.8rem 1.5rem;
+  background: var(--rec-emerald);
+  color: #fff !important; font-weight: 700; font-size: 0.95rem;
+  border-radius: 10px; text-decoration: none !important;
+  transition: background 0.2s, transform 0.2s;
+}
+.rec-page .rec-btn:hover { background: #059669; transform: translateY(-2px); }
+
+.rec-page .rec-connect-visual {
+  display: flex; flex-direction: column; gap: 0.75rem; position: relative; z-index: 1;
+}
+.rec-page .rec-check-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.75rem 1rem; border-radius: 12px;
+  font-size: 0.9rem; font-weight: 500;
+}
+.rec-page .rec-check-item span {
+  display: grid; place-items: center; width: 20px; height: 20px;
+  background: rgba(16, 185, 129, 0.2); color: var(--rec-emerald); border-radius: 50%; font-size: 0.7rem;
+}
+
+/* =========================
+   ТЁМНАЯ ТЕМА
+   ========================= */
+[data-md-color-scheme="slate"] .rec-page {
+  --rec-bg: #0f172a;
+  --rec-surface: #1e293b;
+  --rec-ink: #f8fafc;
+  --rec-text: #cbd5e1;
+  --rec-muted: #94a3b8;
+  --rec-border: #334155;
+  
+  --rec-blue-soft: rgba(37, 99, 235, 0.15);
+  --rec-emerald-soft: rgba(16, 185, 129, 0.15);
+}
+
+[data-md-color-scheme="slate"] .rec-page .rec-sub-card {
+  background: linear-gradient(135deg, #1e293b, #020617);
+  border: 1px solid #334155;
+}
+
+[data-md-color-scheme="slate"] .rec-page .rec-path-card {
+  background: #1e293b;
+}
+[data-md-color-scheme="slate"] .rec-page .rec-path-card--dev .rec-path-icon { background: rgba(37, 99, 235, 0.2); }
+[data-md-color-scheme="slate"] .rec-page .rec-path-card--biz .rec-path-icon { background: rgba(16, 185, 129, 0.2); }
+
+[data-md-color-scheme="slate"] .rec-page .rec-ui-mockup {
+  background: #0f172a;
+  border-color: #334155;
+}
+[data-md-color-scheme="slate"] .rec-page .rec-ui-row { color: #f8fafc; }
+
+[data-md-color-scheme="slate"] .rec-page .rec-step {
+  background: #1e293b;
+}
+[data-md-color-scheme="slate"] .rec-page .rec-step__num {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 0 0 6px var(--rec-bg);
+}
+
+[data-md-color-scheme="slate"] .rec-page .rec-connect-box {
+  background: linear-gradient(135deg, #020617 0%, #1e293b 100%);
+  border: 1px solid #334155;
+}
+
+/* =========================
+   АДАПТИВ
+   ========================= */
+@media screen and (max-width: 1100px) {
+  .md-typeset .rec-page .rec-hero { grid-template-columns: 1fr !important; text-align: center; }
+  .rec-page .rec-hero__visual { order: -1; margin-bottom: 2rem; }
+  .md-typeset .rec-page .rec-hero__desc { margin: 0 auto !important; }
+  
+  .rec-page .rec-paths { grid-template-columns: 1fr !important; }
+  
+  .rec-page .rec-lifecycle { grid-template-columns: repeat(2, 1fr) !important; }
+  .rec-page .rec-lifecycle::before { display: none; }
+  .rec-page .rec-step__num { margin-top: 0; }
+
+  .rec-page .rec-connect-box { grid-template-columns: 1fr !important; text-align: center; }
+  .rec-page .rec-connect-visual { align-items: center; }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .rec-page .rec-hero__title { font-size: 2rem !important; letter-spacing: -1px !important; }
+  .md-typeset .rec-page h2 { margin-top: 2.5rem !important; }
+  .md-typeset .rec-page .rec-hero + h2 { margin-top: 1rem !important; }
+
+  .rec-page .rec-lifecycle { grid-template-columns: 1fr !important; }
+  .rec-page .rec-path-card { padding: 1.75rem; }
+  .rec-page .rec-connect-box { padding: 2rem 1.5rem; }
+}

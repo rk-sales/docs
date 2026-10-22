@@ -1,0 +1,629 @@
+/* =========================================================
+   SPLIT PAYMENTS — Waterfall Concept
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+.sp-page {
+  --sp-bg: #fafafa;
+  --sp-surface: #ffffff;
+  --sp-ink: #09090b;
+  --sp-text: #52525b;
+  --sp-muted: #a1a1aa;
+  --sp-border: #e4e4e7;
+  
+  --sp-blue: #3b82f6;
+  --sp-emerald: #10b981;
+  --sp-violet: #8b5cf6;
+
+  --sp-mono: 'JetBrains Mono', monospace;
+  --sp-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: var(--sp-sans);
+  color: var(--sp-text);
+  background-color: var(--sp-bg);
+  background-image: radial-gradient(var(--sp-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  counter-reset: sp-sec;
+  position: relative;
+  padding: 0 0 2rem;
+}
+
+.sp-page *,
+.sp-page *::before,
+.sp-page *::after { box-sizing: border-box; }
+
+/* Скрываем TOC и дублирующий заголовок */
+body:has(.sp-page) .md-nav--secondary { display: none !important; }
+body:has(.sp-page) .md-header__topic { display: none !important; }
+body:has(.sp-page) .md-content__inner > h1 { display: none !important; }
+
+/* =========================
+   H2 — Заголовки секций
+   ========================= */
+.md-typeset .sp-page h2 {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  margin: 4rem 0 2rem !important;
+  color: var(--sp-ink) !important;
+  font-size: clamp(1.6rem, 2.8vw, 2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: sp-sec;
+  border: 0 !important;
+  padding: 0 !important;
+}
+.md-typeset .sp-page .sp-hero + h2 { margin-top: 2rem !important; }
+.md-typeset .sp-page h2::after { display: none !important; }
+.md-typeset .sp-page h2::before {
+  content: "0" counter(sp-sec) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--sp-ink);
+  color: var(--sp-bg);
+  border-radius: 4px;
+  font-family: var(--sp-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* =========================
+   HERO — Центрированный
+   ========================= */
+.md-typeset .sp-page .sp-hero {
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 3rem;
+  width: 100% !important;
+  background: var(--sp-bg);
+  border-bottom: 1px solid var(--sp-border);
+  overflow: hidden;
+}
+
+.sp-page .sp-hero__header {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.sp-page .sp-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-border);
+  border-radius: 999px;
+  font-family: var(--sp-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sp-text);
+  margin-bottom: 1.5rem;
+}
+.sp-page .sp-label-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--sp-blue);
+  box-shadow: 0 0 8px var(--sp-blue);
+}
+
+.md-typeset .sp-page .sp-hero__title {
+  margin: 0 0 1.25rem !important;
+  color: var(--sp-ink) !important;
+  font-size: clamp(2.4rem, 5.5vw, 4rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+}
+.md-typeset .sp-page .sp-hero__title em {
+  font-style: normal;
+  color: var(--sp-blue);
+}
+
+.md-typeset .sp-page .sp-hero__desc {
+  max-width: 560px;
+  margin: 0 auto !important;
+  color: var(--sp-text) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.65 !important;
+}
+
+/* ── Схема (Waterfall) ── */
+.sp-page .sp-diagram {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 3rem;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.sp-page .sp-diagram__source {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.sp-page .sp-coin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--sp-ink);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.25);
+  position: relative;
+}
+.sp-page .sp-coin::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--sp-ink);
+}
+.sp-page .sp-coin__value {
+  font-family: var(--sp-mono);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.sp-page .sp-coin__label {
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+.sp-page .sp-diagram__wires {
+  width: 100%;
+  height: 140px;
+  display: block;
+  margin-top: -2px;
+}
+
+.sp-page .sp-diagram__targets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: -2px;
+}
+
+.sp-page .sp-target {
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.sp-page .sp-target:hover {
+  transform: translateY(-3px);
+  border-color: var(--sp-ink);
+}
+
+.sp-page .sp-target__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--sp-text);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.sp-page .sp-target__dot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+}
+.sp-page .sp-target__value {
+  font-family: var(--sp-mono);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--sp-ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.sp-page .sp-target__value span {
+  font-size: 0.75rem;
+  color: var(--sp-muted);
+  font-weight: 600;
+}
+
+/* =========================
+   GRID — Сценарии (Строгая сетка)
+   ========================= */
+.sp-page .sp-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sp-page .sp-card {
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-border);
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+.sp-page .sp-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--sp-ink);
+}
+
+/* Техническая полоска сверху */
+.sp-page .sp-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--sp-border);
+  transition: background 0.2s;
+}
+.sp-page .sp-card:hover::before { background: var(--sp-ink); }
+
+.sp-page .sp-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sp-page .sp-card__num {
+  font-family: var(--sp-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--sp-muted);
+}
+
+.sp-page .sp-card__icon {
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.md-typeset .sp-page .sp-card h3 {
+  margin: 0 0 0.75rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: var(--sp-ink) !important;
+}
+.md-typeset .sp-page .sp-card p {
+  margin: 0 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+  color: var(--sp-text) !important;
+}
+
+/* =========================
+   TERMINAL — Схемы распределения
+   ========================= */
+.sp-page .sp-terminal {
+  background: #09090b;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: 1px solid #27272a;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
+}
+
+.sp-page .sp-terminal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sp-page .sp-terminal__title {
+  font-family: var(--sp-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sp-page .sp-terminal__amount {
+  font-family: var(--sp-mono);
+  font-size: 1rem;
+  color: #fafafa;
+  font-weight: 700;
+}
+
+.sp-page .sp-terminal__bar {
+  display: flex;
+  height: 48px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: #18181b;
+  border: 1px solid #27272a;
+}
+
+.sp-page .sp-terminal__segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity 0.2s;
+}
+.sp-page .sp-terminal__segment:hover { opacity: 0.9; }
+
+.sp-page .sp-terminal__segment--blue { 
+  background: rgba(59, 130, 246, 0.2); 
+  border-right: 1px solid #27272a;
+  box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.2);
+}
+.sp-page .sp-terminal__segment--emerald { 
+  background: rgba(16, 185, 129, 0.2); 
+  border-right: 1px solid #27272a;
+  box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.2);
+}
+.sp-page .sp-terminal__segment--violet { 
+  background: rgba(139, 92, 246, 0.2); 
+  box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.sp-page .sp-terminal__val {
+  font-family: var(--sp-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.sp-page .sp-terminal__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sp-page .sp-terminal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.75rem 1rem;
+  background: #18181b;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.sp-page .sp-terminal__row:hover {
+  border-color: #3f3f46;
+}
+
+.sp-page .sp-terminal__cell {
+  font-family: var(--sp-mono);
+  font-size: 0.85rem;
+  color: #a1a1aa;
+}
+.sp-page .sp-terminal__cell b {
+  color: #fafafa;
+  font-weight: 700;
+}
+
+.sp-page .sp-terminal__cell--name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fafafa;
+  font-weight: 600;
+}
+
+.sp-page .sp-dot {
+  width: 8px; height: 8px; border-radius: 2px;
+}
+.sp-page .sp-dot--blue { background: #3b82f6; box-shadow: 0 0 8px rgba(59, 130, 246, 0.5); }
+.sp-page .sp-dot--emerald { background: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+.sp-page .sp-dot--violet { background: #8b5cf6; box-shadow: 0 0 8px rgba(139, 92, 246, 0.5); }
+
+/* =========================
+   API — Два окна
+   ========================= */
+.sp-page .sp-api {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sp-page .sp-api__window {
+  background: var(--sp-ink);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+  border: 1px solid #27272a;
+}
+
+.sp-page .sp-api__header {
+  background: #18181b;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #27272a;
+}
+.sp-page .sp-api__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.sp-page .sp-api__tab {
+  margin-left: auto;
+  font-family: var(--sp-mono);
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sp-page .sp-api__window pre {
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  background: transparent !important;
+  border: 0 !important;
+  overflow-x: auto;
+}
+.sp-page .sp-api__window code {
+  font-family: var(--sp-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #e4e4e7;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.sp-page .c-key { color: #93c5fd; }
+.sp-page .c-str { color: #86efac; }
+.sp-page .c-num { color: #fca5a5; }
+
+/* =========================
+   PROGRESS STEPS — Подключение
+   ========================= */
+.sp-page .sp-progress-steps {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0;
+  position: relative;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.sp-page .sp-progress-steps::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background: var(--sp-border);
+  z-index: 0;
+}
+
+.sp-page .sp-progress-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.sp-page .sp-progress-step__circle {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--sp-surface);
+  border: 2px solid var(--sp-border);
+  display: grid;
+  place-items: center;
+  font-family: var(--sp-mono);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--sp-muted);
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+.sp-page .sp-progress-step:hover .sp-progress-step__circle {
+  border-color: var(--sp-ink);
+  color: var(--sp-ink);
+  transform: scale(1.05);
+}
+
+.md-typeset .sp-page .sp-progress-step__content h4 {
+  margin: 0 0 0.4rem !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: var(--sp-ink) !important;
+}
+.md-typeset .sp-page .sp-progress-step__content p {
+  margin: 0 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.55 !important;
+  color: var(--sp-text) !important;
+}
+
+/* =========================
+   ТЁМНАЯ ТЕМА
+   ========================= */
+[data-md-color-scheme="slate"] .sp-page {
+  --sp-bg: #09090b;
+  --sp-surface: #18181b;
+  --sp-ink: #fafafa;
+  --sp-text: #a1a1aa;
+  --sp-muted: #52525b;
+  --sp-border: #27272a;
+}
+
+[data-md-color-scheme="slate"] .sp-page .sp-coin {
+  background: #18181b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+}
+[data-md-color-scheme="slate"] .sp-page .sp-coin::after {
+  border-top-color: #18181b;
+}
+
+[data-md-color-scheme="slate"] .sp-page .sp-api__window {
+  background: #000;
+}
+
+/* =========================
+   АДАПТИВ
+   ========================= */
+@media screen and (max-width: 1100px) {
+  .sp-page .sp-api { grid-template-columns: 1fr !important; }
+  .sp-page .sp-diagram__targets { gap: 1rem; }
+}
+
+@media screen and (max-width: 767px) {
+  .md-typeset .sp-page .sp-hero__title { font-size: 2.2rem !important; letter-spacing: -1px !important; }
+  .md-typeset .sp-page .sp-hero__desc { font-size: 1rem !important; }
+  .md-typeset .sp-page h2 { margin-top: 2.5rem !important; }
+
+  /* Схема на мобильном */
+  .sp-page .sp-diagram__wires { display: none; }
+  .sp-page .sp-diagram__targets {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .sp-page .sp-target {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+  }
+  .sp-page .sp-target__head { margin-bottom: 0; }
+  .sp-page .sp-target__value { margin: 0; }
+
+  /* Сетка и терминал */
+  .sp-page .sp-grid { grid-template-columns: 1fr !important; }
+  .sp-page .sp-terminal__header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .sp-page .sp-terminal__val { font-size: 0.75rem; }
+  .sp-page .sp-terminal__row { grid-template-columns: 1fr; gap: 0.25rem; }
+
+  /* Прогресс вертикально */
+  .sp-page .sp-progress-steps { grid-template-columns: 1fr !important; gap: 2rem; }
+  .sp-page .sp-progress-steps::before { display: none; }
+}

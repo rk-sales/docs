@@ -151,3 +151,39 @@ document.addEventListener('DOMContentLoaded', function () {
       '<a class="aside-link" href="https://docs.robokassa.ru/demoshop/" target="_blank" rel="noopener noreferrer">Посмотреть демо ↗</a>' +
     '</div>';
 });
+
+// ===== 4. PAYMENT LINKS — Кнопка «Копировать» =====
+document.querySelectorAll('.pl-page .pl-pass-btn').forEach(function (btn) {
+  btn.addEventListener('click', async function () {
+    var urlEl = btn.parentElement.querySelector('span');
+    if (!urlEl) return;
+
+    var url = urlEl.textContent.trim();
+    var original = btn.textContent;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        // fallback для http / старых браузеров
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      btn.textContent = 'Скопировано ✓';
+      btn.classList.add('pl-pass-btn--copied');
+    } catch (err) {
+      btn.textContent = 'Ошибка';
+    }
+
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.classList.remove('pl-pass-btn--copied');
+    }, 1800);
+  });
+});

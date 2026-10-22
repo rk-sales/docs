@@ -1,0 +1,318 @@
+/* =========================================================
+   INSTRUKCIYA (DOCS) — Universal Modern Tech Docs
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.doc-page {
+  --doc-bg: #f8fafc;
+  --doc-surface: #ffffff;
+  --doc-ink: #0f172a;
+  --doc-text: #475569;
+  --doc-muted: #94a3b8;
+  --doc-border: #e2e8f0;
+  --doc-primary: #2563eb;
+  --doc-primary-hover: #1d4ed8;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--doc-text);
+  background-color: var(--doc-bg);
+  padding-bottom: 6rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.doc-page *, .doc-page *::before, .doc-page *::after { box-sizing: border-box; }
+
+body:has(.doc-page) .md-nav--secondary { display: none !important; }
+body:has(.doc-page) .md-header__topic { display: none !important; }
+body:has(.doc-page) .md-content__inner > h1 { display: none !important; }
+
+/* Убираем стандартный огромный отступ MkDocs сверху */
+body:has(.doc-page) .md-content__inner {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.doc-page .doc-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.doc-page .doc-hero {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  text-align: left;
+}
+
+.doc-page .doc-hero__badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: #e0e7ff;
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 99px;
+  margin-bottom: 1.5rem;
+}
+
+.doc-page .doc-hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--doc-ink) !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.doc-page .doc-hero__desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 0 3rem 0 !important;
+  color: var(--doc-text);
+}
+
+/* Карточка скачивания PDF */
+.doc-page .doc-download-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--doc-surface);
+  border: 1px solid var(--doc-border);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+  text-align: left;
+  max-width: 600px;
+  margin: 0;
+}
+
+.doc-page .doc-download-card__icon {
+  width: 48px; height: 48px;
+  background: #eff6ff;
+  color: var(--doc-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.doc-page .doc-download-card__icon svg { width: 24px; height: 24px; }
+
+.doc-page .doc-download-card__content {
+  flex-grow: 1;
+}
+.doc-page .doc-download-card__content h3 {
+  margin: 0 0 0.2rem 0 !important;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--doc-ink);
+}
+.doc-page .doc-download-card__content p {
+  margin: 0 !important;
+  font-size: 0.9rem;
+  color: var(--doc-muted);
+}
+
+.doc-page .doc-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  background: var(--doc-primary);
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border-radius: 8px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.doc-page .doc-download-btn:hover { background: var(--doc-primary-hover); }
+
+/* =========================
+   ALERT (Внимание) — Если понадобится на других страницах
+   ========================= */
+.doc-page .doc-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-left: 4px solid #f59e0b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 4rem;
+}
+
+.doc-page .doc-alert__icon {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #f59e0b;
+  background: #fff;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.doc-page .doc-alert__content {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #92400e;
+}
+.doc-page .doc-alert__content strong { font-weight: 700; }
+.doc-page .doc-alert__content b { font-weight: 700; text-decoration: underline; }
+
+/* =========================
+   FAQ (Стиль из foreign-cards)
+   ========================= */
+.doc-page .doc-faq__title {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--doc-ink) !important;
+  margin: 0 0 2rem 0 !important;
+  text-align: left;
+}
+
+.doc-page .question { 
+  margin: 12px 0 !important; 
+  border: 1px solid #e2e8f0 !important; 
+  border-left-width: 1px !important; 
+  border-radius: 14px !important; 
+  background: #ffffff !important; 
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035) !important; 
+  overflow: hidden; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.doc-page .question:hover { 
+  border-color: #bfdbfe !important; 
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important; 
+}
+
+.doc-page .question summary { 
+  position: relative; 
+  display: block; 
+  padding: 20px 52px 20px 22px !important; 
+  color: #0f172a !important; 
+  font-size: 1rem !important; 
+  font-weight: 600 !important; 
+  line-height: 1.55 !important; 
+  cursor: pointer; 
+  list-style: none !important; 
+  background: transparent !important; 
+  border-radius: 0 !important; 
+}
+
+.doc-page .question summary::-webkit-details-marker, 
+.doc-page .question summary::marker, 
+.doc-page .question summary::before { 
+  display: none !important; 
+  content: "" !important; 
+}
+
+.doc-page .question summary::after { 
+  content: ""; 
+  position: absolute; 
+  right: 22px; 
+  top: 50%; 
+  width: 8px; 
+  height: 8px; 
+  border-right: 2px solid #64748b; 
+  border-bottom: 2px solid #64748b; 
+  transform: translateY(-70%) rotate(45deg); 
+  transition: transform 0.2s ease; 
+}
+
+.doc-page .question[open] summary::after { 
+  transform: translateY(-25%) rotate(225deg); 
+}
+
+.doc-page .question[open] summary { 
+  padding-bottom: 14px !important; 
+}
+
+.doc-page .question__content { 
+  margin: 0 !important; 
+  padding: 0 22px 22px !important; 
+  color: #475569 !important; 
+  font-size: 0.95rem !important; 
+  line-height: 1.8 !important; 
+}
+
+.doc-page .question__content p { margin: 0 0 1rem 0 !important; }
+.doc-page .question__content p:last-child { margin-bottom: 0 !important; }
+.doc-page .question__content ul { margin: 0 0 1rem 0; padding-left: 1.2rem; }
+.doc-page .question__content li { margin-bottom: 0.4rem; }
+.doc-page .question__content a { color: var(--doc-primary); text-decoration: none; }
+.doc-page .question__content a:hover { text-decoration: underline; }
+.doc-page .question__content b { color: #0f172a; }
+
+/* =========================
+   ТЁМНАЯ ТЕМА
+   ========================= */
+[data-md-color-scheme="slate"] .doc-page {
+  --doc-bg: #0f172a;
+  --doc-surface: #1e293b;
+  --doc-ink: #f8fafc;
+  --doc-text: #cbd5e1;
+  --doc-muted: #94a3b8;
+  --doc-border: #334155;
+  --doc-primary: #3b82f6;
+  --doc-primary-hover: #2563eb;
+}
+
+[data-md-color-scheme="slate"] .doc-page .doc-hero__badge { background: rgba(67, 56, 202, 0.2); color: #a5b4fc; }
+[data-md-color-scheme="slate"] .doc-page .doc-download-card__icon { background: rgba(37, 99, 235, 0.15); }
+[data-md-color-scheme="slate"] .doc-page .doc-alert { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
+[data-md-color-scheme="slate"] .doc-page .doc-alert__icon { background: #0f172a; }
+[data-md-color-scheme="slate"] .doc-page .doc-alert__content { color: #fcd34d; }
+
+[data-md-color-scheme="slate"] .doc-page .question { 
+  background: #1e293b !important; 
+  border-color: #334155 !important; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important; 
+}
+[data-md-color-scheme="slate"] .doc-page .question:hover { 
+  border-color: #3b82f6 !important; 
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.1) !important; 
+}
+[data-md-color-scheme="slate"] .doc-page .question summary { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .doc-page .question summary::after { border-color: #94a3b8; }
+[data-md-color-scheme="slate"] .doc-page .question__content { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .doc-page .question__content b { color: #f8fafc; }
+[data-md-color-scheme="slate"] .doc-page .question__content a { color: #60a5fa; }
+
+/* =========================
+   АДАПТИВ
+   ========================= */
+@media (max-width: 767px) {
+  .doc-page .doc-hero { padding-top: 0; padding-bottom: 2rem; }
+  .doc-page .doc-hero__desc { margin-bottom: 2rem !important; }
+  .doc-page .doc-download-card { flex-direction: column; text-align: left; padding: 1.5rem 1rem; gap: 1rem; }
+  .doc-page .doc-download-card__icon { margin: 0; }
+  .doc-page .doc-download-btn { width: 100%; }
+  
+  .doc-page .doc-alert { flex-direction: column; gap: 0.8rem; padding: 1.2rem; }
+  
+  .doc-page .question summary { 
+    padding: 17px 42px 17px 16px !important; 
+    font-size: 0.95rem !important; 
+  }
+  .doc-page .question summary::after { right: 18px; }
+  .doc-page .question__content { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}
