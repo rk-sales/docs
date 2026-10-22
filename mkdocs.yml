@@ -52,6 +52,25 @@ extra_css:
   - stylesheets/pages/otp-bank.css
   - stylesheets/pages/halva.css
   - stylesheets/pages/yoomoney.css
+  - stylesheets/pages/functions.css
+  - stylesheets/pages/multibanking.css
+  - stylesheets/pages/payment-links.css
+  - stylesheets/pages/hold.css
+  - stylesheets/pages/recurring.css
+  - stylesheets/pages/split.css
+  - stylesheets/pages/multiaccount.css
+  - stylesheets/pages/branding.css
+  - stylesheets/pages/fz54.css
+  - stylesheets/pages/robocheki.css
+  - stylesheets/pages/robokassa-online.css
+  - stylesheets/pages/robocheki-smz.css
+  - stylesheets/pages/instrukciya-ip.css
+  - stylesheets/pages/ooo.css
+  - stylesheets/pages/smz.css
+  - stylesheets/pages/trebovaniya-sajt.css
+  - stylesheets/pages/trebovaniya-vk.css
+  - stylesheets/pages/trebovaniya-tg.css
+  - stylesheets/pages/trebovaniya-app.css
   # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
   - stylesheets/dark-theme.css
   
