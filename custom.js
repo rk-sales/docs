@@ -187,3 +187,26 @@ document.querySelectorAll('.pl-page .pl-pass-btn').forEach(function (btn) {
     }, 1800);
   });
 });
+
+// ===== 5. КНОПКА "НАВЕРХ" ДЛЯ СТРАНИЦЫ ВЫВОДА =====
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollBtn = document.getElementById('scrollToTopBtn');
+  if (!scrollBtn) return;
+
+  // Отслеживаем скролл
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('is-visible');
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  });
+
+  // Плавный скролл наверх при клике
+  scrollBtn.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});

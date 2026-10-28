@@ -133,6 +133,22 @@
     
       <link rel="stylesheet" href="../../../stylesheets/pages/trebovaniya-app.css">
     
+      <link rel="stylesheet" href="../../../stylesheets/pages/lk-robokassa.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/vyvod.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/dynamic-link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/static-link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/sub-link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/vozvrat.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/payment-notify.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/roles.css">
+    
       <link rel="stylesheet" href="../../../stylesheets/dark-theme.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -160,7 +176,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#robokassa" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -1921,10 +1937,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#roles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Что нужно до добавления сотрудников
+        1. Подготовка и роли
       
     </span>
   </a>
@@ -1932,10 +1948,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#manage-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Где управлять доступом сотрудников в ЛК
+        2. Где управлять доступом
       
     </span>
   </a>
@@ -1943,7 +1959,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#add-employee" class="md-nav__link">
     <span class="md-ellipsis">
       
         3. Добавление нового сотрудника
@@ -1954,10 +1970,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#manage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Управление существующими сотрудниками и ролями
+        4. Управление сотрудниками
       
     </span>
   </a>
@@ -1965,10 +1981,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#check" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Как проверить, что доступы выданы корректно
+        5. Проверка доступов
       
     </span>
   </a>
@@ -1976,7 +1992,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
         Вопросы и ответы
@@ -2767,10 +2783,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#roles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Что нужно до добавления сотрудников
+        1. Подготовка и роли
       
     </span>
   </a>
@@ -2778,10 +2794,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#manage-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Где управлять доступом сотрудников в ЛК
+        2. Где управлять доступом
       
     </span>
   </a>
@@ -2789,7 +2805,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#add-employee" class="md-nav__link">
     <span class="md-ellipsis">
       
         3. Добавление нового сотрудника
@@ -2800,10 +2816,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#manage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Управление существующими сотрудниками и ролями
+        4. Управление сотрудниками
       
     </span>
   </a>
@@ -2811,10 +2827,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#check" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Как проверить, что доступы выданы корректно
+        5. Проверка доступов
       
     </span>
   </a>
@@ -2822,7 +2838,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
         Вопросы и ответы
@@ -2849,79 +2865,284 @@
 
 
 
-<h1 id="robokassa">Как добавить сотрудников с доступом и выдать им роль через ЛК Robokassa<a class="headerlink" href="#robokassa" title="Permanent link">&para;</a></h1>
-<p>В личном кабинете Robokassa вы можете создавать отдельных сотрудников с разными уровнями доступа — от полного доступа до ограниченного просмотра операций. Это позволяет безопасно делегировать задачи команде без передачи основного пароля владельца аккаунта.</p>
-<p>Не передавайте свой пароль администратора третьим лицам — используйте систему ролей для всех сотрудников.</p>
-<h3 id="1">1. Что нужно до добавления сотрудников<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>Перед добавлением сотрудников убедитесь, что:</p>
-<ul>
-<li>у вас есть права <strong>Администратора</strong> (максимальный уровень доступа, который вы получаете при регистрации) ;</li>
-<li>вы определились с <strong>уровнями доступа</strong> для каждого сотрудника.</li>
+<div class="wd-page">
+<div class="wd-container">
+<header class="wd-hero">
+<div class="wd-hero__badge">Управление</div>
+<h1 class="wd-hero__title" id="_1">Как выдать персональный доступ для сотрудников к ЛК<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p class="wd-hero__desc">В личном кабинете Robokassa вы можете создавать отдельных сотрудников с разными уровнями доступа — от полного доступа до ограниченного просмотра операций. Это позволяет безопасно делегировать задачи команде без передачи основного пароля владельца аккаунта.</p>
+</header>
+</div>
+<h2 id="roles">1. Подготовка и роли<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Перед добавлением сотрудников убедитесь, что вы понимаете уровни доступа</div>
+<div class="wd-features">
+<div class="wd-feature">
+<div class="wd-card-title"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Администратор</div>
+<div class="wd-card-text">Полный доступ ко всему функционалу ЛК. <b>Только эта роль</b> может выводить деньги и настраивать баланс.</div>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Экономист</div>
+<div class="wd-card-text">Доступ к финансовой информации, настройка и просмотр отчетов.</div>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Программист</div>
+<div class="wd-card-text">Технические настройки магазинов (API, интеграции, Result URL).</div>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Поддержка</div>
+<div class="wd-card-text">Только просмотр операций и возвратов.</div>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Продавец</div>
+<div class="wd-card-text">Операции, возвраты, выставление счетов и работа с заказами.</div>
+</div>
+</div>
+<p style="text-align:center; margin-top: 1rem; color: var(--wd-muted); font-size: 0.9rem;"><i>Сотруднику можно назначить несколько ролей — функционал суммируется.</i></p>
+<h2 id="manage-access">2. Где управлять доступом<a class="headerlink" href="#manage-access" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Раздел «Сотрудники и доступ» в левом меню</div>
+<div class="wd-steps-guide">
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Переход в раздел</div>
+<p>Войдите в личный кабинет <b>login.robokassa.ru</b> под учетной записью <b>Администратора</b>.</p>
+<p>В левом меню в блоке <b>«Управление»</b> выберите пункт <b>«Сотрудники и доступ»</b>.</p>
+</div>
+<div class="wd-guide-visual">
+<div class="lk-mockup lk-mockup-sidebar">
+<aside class="lk-ui-sidebar">
+<div class="lk-ui-menu">
+<details open="open">
+<summary class="lk-ui-menu-title" style="color: #111827 !important;">Управление <span class="lk-ui-chevron" style="transform: rotate(-135deg); margin-bottom: -4px;"></span></summary>
+<div class="lk-ui-menu-item active lk-highlight" style="background: #eff6ff !important; color: #2563eb !important;">Сотрудники и доступ</div>
+<div class="lk-ui-menu-item">Документы и шаблоны</div>
+<div class="lk-ui-menu-item">Фискализация</div>
+<div class="lk-ui-menu-item">Операции и возвраты</div>
+</details>
+</div>
+</aside>
+<main class="lk-ui-main" style="background: #f8f9fa;"></main>
+</div>
+</div>
+</div>
+</div>
+<h2 id="add-employee">3. Добавление нового сотрудника<a class="headerlink" href="#add-employee" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Создание учетной записи и выдача прав</div>
+<div class="wd-steps-guide">
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Список сотрудников</div>
+<p>В открывшемся разделе вы увидите список всех сотрудников, их номера телефонов (логины) и назначенные роли.</p>
+<p>Нажмите зеленую кнопку <b>«+ Добавить»</b>. Чекбокс <b>«Показать неактивных»</b> поможет отфильтровать уволенных или заблокированных сотрудников.</p>
+</div>
+<div class="wd-guide-visual">
+<div class="lk-mockup">
+<div class="wd-employees-header">
+<div class="wd-employees-title">Сотрудники и доступ</div>
+<div class="wd-btn-group lk-highlight">
+<button class="wd-btn wd-btn--green">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+Добавить
+</button>
+<label class="wd-btn wd-btn--outline" style="cursor: pointer; padding-left: 12px;">
+<input type="checkbox" style="margin-right: 8px;"> Показать неактивных
+</label>
+</div>
+</div>
+<div class="wd-table-wrapper">
+<table class="wd-table">
+<thead>
+<tr>
+<th>Сотрудник</th>
+<th>Роли</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#">79954******</a></td>
+<td>Экономист, Продавец</td>
+</tr>
+<tr>
+<td><a href="#">79220******</a></td>
+<td>Программист</td>
+</tr>
+<tr>
+<td><a href="#">79627******</a></td>
+<td>Поддержка</td>
+</tr>
+<tr>
+<td><a href="#">79999******</a></td>
+<td>Администратор</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Заполнение формы</div>
+<p>В открывшемся окне заполните обязательные поля (отмечены красной звездочкой):</p>
+<ul style="margin-top: 10px; padding-left: 20px; font-size: 1.05rem; color: var(--wd-text);">
+<li><b>Телефон для авторизации</b> (по нему сотрудник будет входить в ЛК).</li>
+<li><b>ФИО</b>, <b>E-mail</b> и <b>Должность</b>.</li>
+<li>Отметьте нужные <b>Роли сотрудника</b>.</li>
+<li>Выберите <b>Доступ к магазинам</b> (какие магазины он будет видеть).</li>
 </ul>
-<p><strong>Стандартные роли в Robokassa</strong>:<br />
-- <strong>Администратор</strong> — полный доступ ко всему функционалу ЛК.<br />
-- <strong>Экономист</strong> — финансовая информация, настройка отчетов.<br />
-- <strong>Программист</strong> — технические настройки магазинов (API, интеграции).<br />
-- <strong>Поддержка</strong> — только просмотр операций и возвратов.<br />
-- <strong>Продавец</strong> — операции, возвраты, выставление счетов.</p>
-<p>Сотруднику можно назначить <strong>несколько ролей</strong> — функционал суммируется .</p>
-<h3 id="2">2. Где управлять доступом сотрудников в ЛК<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Войдите в личный кабинет <strong>login.robokassa.ru</strong> под учетной записью <strong>Администратора</strong>.</li>
-<li>В левом меню выберите <strong>«Сотрудники и доступ»</strong>.</li>
-<li>Здесь вы увидите список всех сотрудников, их статусы и уровни доступа.</li>
-</ol>
-<h3 id="3">3. Добавление нового сотрудника<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<ol>
-<li>В разделе <strong>«Сотрудники и доступ»</strong> нажмите кнопку <strong>«Добавить»</strong>.</li>
-<li>Заполните форму указав:<ul>
-<li><strong>Телефон для авторизации</strong>;</li>
-<li><strong>Полное ФИО или Имя сотрудника</strong>;</li>
-<li><strong>Основной e-mail</strong>;</li>
-<li><strong>Должность</strong>;</li>
-<li><strong>Роль сотрудника</strong>;</li>
-<li><strong>Доступ к магазинам (обязательно)</strong>.</li>
+<p style="margin-top: 15px;">Нажмите кнопку <b>«+ Создать»</b>. Статус сотрудника автоматически станет «Активен».</p>
+</div>
+<div class="wd-guide-visual">
+<div class="wd-modal">
+<div class="wd-modal-header">Создание нового сотрудника</div>
+<div class="wd-modal-body">
+<div class="wd-form-group">
+<label>Телефон для авторизации <span class="req">*</span></label>
+<div class="wd-form-control"><input type="text" placeholder=""></div>
+</div>
+<div class="wd-form-group">
+<label>Полное имя, ФИО <span class="req">*</span></label>
+<div class="wd-form-control"><input type="text" placeholder=""></div>
+</div>
+<div class="wd-form-group">
+<label>Основной e-mail <span class="req">*</span></label>
+<div class="wd-form-control"><input type="text" placeholder=""></div>
+</div>
+<div class="wd-form-group">
+<label>Должность <span class="req">*</span></label>
+<div class="wd-form-control"><input type="text" placeholder="Генеральный директор"></div>
+</div>
+<div class="wd-form-group">
+<label>Роли сотрудника</label>
+<div class="wd-form-control">
+<div class="wd-checkbox-group">
+<label class="wd-checkbox-label"><input type="checkbox"> Администратор</label>
+<label class="wd-checkbox-label"><input type="checkbox"> Экономист</label>
+<label class="wd-checkbox-label"><input type="checkbox"> Продавец</label>
+<label class="wd-checkbox-label"><input type="checkbox"> Программист</label>
+<label class="wd-checkbox-label"><input type="checkbox"> Поддержка</label>
+<a href="#roles" class="wd-link-roles">Подробнее о ролях</a>
+</div>
+</div>
+</div>
+<div class="wd-form-group">
+<label>Доступ к магазинам</label>
+<div class="wd-form-control">
+<select class="wd-select"><option></option></select>
+</div>
+</div>
+<div class="wd-form-group">
+<label>Сотрудник может</label>
+<div class="wd-form-control" style="padding-top: 10px;">
+<label class="wd-checkbox-label"><input type="checkbox" checked> Получать уведомления о заказах в магазинах, к которым ему предоставлен доступ</label>
+</div>
+</div>
+<div class="wd-modal-footer">
+<a href="#">Вернуться</a>
+<button class="wd-btn wd-btn--green">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+Создать
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="manage">4. Управление сотрудниками<a class="headerlink" href="#manage" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Как изменить права или заблокировать доступ</div>
+<div class="wd-steps-guide">
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Редактирование и блокировка</div>
+<p>В списке сотрудников нажмите на номер телефона нужного человека, чтобы открыть его карточку.</p>
+<p>Во вкладке <b>«Доступ сотрудника»</b> вы можете:</p>
+<ul style="margin-top: 10px; padding-left: 20px; font-size: 1.05rem; color: var(--wd-text);">
+<li>Изменить логин или пароль.</li>
+<li>Выдать или отозвать роли.</li>
+<li>Поставить галочку <b>«Заблокирован»</b>, чтобы мгновенно запретить вход (например, при увольнении).</li>
 </ul>
-</li>
-<li>Нажмите <strong>«Создать»</strong>. Статус по сотруднику автоматически станет <strong>«Активен»</strong>.</li>
-</ol>
-<p>Сотрудник сможет войти в ЛК по номеру телефона (через login.robokassa.ru).</p>
-<h3 id="4">4. Управление существующими сотрудниками и ролями<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<ol>
-<li>В списке сотрудников найдите нужного и откройте его карточку.</li>
-<li>Во вкладке <strong>«Доступ сотрудника»</strong>:</li>
-<li>Измените <strong>логин, пароль, роли</strong>;</li>
-<li><strong>Заблокируйте</strong> (поставьте галочку «Заблокирован») — сотрудник не сможет войти;.</li>
-<li>Лог действий сохраняется, изменения мгновенные.</li>
-</ol>
-<h3 id="5">5. Как проверить, что доступы выданы корректно<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Попросите сотрудника войти в ЛК по <strong>телефону</strong>.</li>
-<li>Убедитесь, что:<ul>
-<li>сотрудник видит <strong>только разрешенные разделы</strong> (например, программист — только тех. настройки магазинов);</li>
-</ul>
-</li>
-<li>Протестируйте права: попробуйте открыть магазин, отчет или операции.</li>
-</ol>
-<p>Если доступ не работает, проверьте блокировку или обратитесь в поддержку Robokassa.</p>
-<hr />
-<h2 id="_1">Вопросы и ответы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+</div>
+<div class="wd-guide-visual" style="display: flex; align-items: center; justify-content: center;">
+<div class="wd-feature" style="max-width: 400px; text-align: center;">
+<div class="wd-card-title" style="justify-content: center;">
+<svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+Мгновенная блокировка
+</div>
+<div class="wd-card-text">Лог действий сохраняется, а изменения вступают в силу мгновенно. Заблокированный сотрудник сразу потеряет доступ к системе.</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="check">5. Проверка доступов<a class="headerlink" href="#check" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Убедитесь, что сотрудник видит только то, что нужно</div>
+<div class="wd-steps-guide">
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Тестирование прав</div>
+<p>Попросите сотрудника войти в ЛК по своему <b>номеру телефона</b>.</p>
+<p>Проверьте, что он видит только разрешенные разделы. Например, если выдали роль «Программист», сотрудник не должен видеть финансы, но должен иметь доступ к техническим настройкам магазина.</p>
+<p>Если доступ не работает — проверьте, не стоит ли галочка «Заблокирован», или обратитесь в поддержку Robokassa.</p>
+</div>
+<div class="wd-guide-visual" style="display: flex; align-items: center; justify-content: center;">
+<div class="wd-feature" style="max-width: 400px; text-align: center;">
+<div class="wd-card-title" style="justify-content: center;">
+<svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+Все работает корректно
+</div>
+<div class="wd-card-text">Убедитесь, что сотрудник может открыть магазин и нужные ему операции, но не имеет доступа к выводу денег.</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="faq">Вопросы и ответы<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Ответы на частые вопросы</div>
 <details class="question">
 <summary>Сколько сотрудников можно добавить в ЛК Robokassa?</summary>
-<p>Количество сотрудников <strong>не ограничено</strong> — добавляйте сколько нужно. Все роли и доступы бесплатны, без лимитов по тарифам.</p>
+<div class="question__content">
+<p>Количество сотрудников <b>не ограничено</b> — добавляйте сколько нужно. Все роли и доступы бесплатны, без лимитов по тарифам.</p>
+</div>
 </details>
 <details class="question">
 <summary>Можно ли назначить несколько ролей одному сотруднику?</summary>
-<p>Да. Назначьте <strong>несколько уровней доступа</strong> — функционал каждой роли суммируется. Например, Экономист + Продавец получит доступ к финансам и счетам.</p>
+<div class="question__content">
+<p>Да. Назначьте <b>несколько уровней доступа</b> — функционал каждой роли суммируется. Например, Экономист + Продавец получит доступ к финансам и счетам.</p>
+</div>
 </details>
 <details class="question">
 <summary>Что делать, если сотрудник уволился или пароль скомпрометирован?</summary>
-<p>Откройте карточку сотрудника → <strong>«Заблокировать»</strong> (галочка в форме доступа). Сотрудник мгновенно теряет вход.</p>
+<div class="question__content">
+<p>Откройте карточку сотрудника → поставьте галочку <b>«Заблокирован»</b> в форме доступа. Сотрудник мгновенно теряет вход.</p>
+</div>
 </details>
 <details class="question">
 <summary>Получит ли сотрудник доступ к выводу денег или настройкам баланса?</summary>
-<p><strong>Нет</strong>. Деньги на балансе и вывод средств доступны <strong>только роли «Администратор»</strong>.</p>
+<div class="question__content">
+<p><b>Нет</b>. Деньги на балансе и вывод средств доступны <b>только роли «Администратор»</b>.</p>
+</div>
 </details>
+<p><button id="scrollToTopBtn" class="wd-scroll-top" aria-label="Вернуться наверх">
+<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="12" y1="19" x2="12" y2="5"></line>
+<polyline points="5 12 12 5 19 12"></polyline>
+</svg>
+</button></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollBtn = document.getElementById('scrollToTopBtn');
+  if (!scrollBtn) return;
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('is-visible');
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  });
+  scrollBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
 
 
 

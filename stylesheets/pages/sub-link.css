@@ -1,0 +1,130 @@
+/* =========================================================
+   SUBSCRIPTIONS PAGE — Дополнительные стили
+   ========================================================= */
+
+/* Переключатели (Toggle) */
+.wd-page .wd-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.wd-page .wd-switch input { opacity: 0; width: 0; height: 0; }
+.wd-page .wd-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.wd-page .wd-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 2px; bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+.wd-page .wd-switch input:checked + .wd-slider { background-color: #ef4444; }
+.wd-page .wd-switch input:checked + .wd-slider:before { transform: translateX(16px); }
+
+/* Плашка предупреждения */
+.wd-page .wd-warning-box {
+  background-color: #fefce8;
+  border: 1px solid #fef08a;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: #854d0e;
+  line-height: 1.5;
+}
+.wd-page .wd-warning-box svg {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  stroke: #854d0e;
+}
+
+/* Модальные окна (эмуляция) */
+.wd-page .wd-modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid var(--wd-border);
+  overflow: hidden;
+  width: 100%;
+}
+.wd-page .wd-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--wd-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #111827;
+}
+.wd-page .wd-modal-body { padding: 24px 20px; }
+.wd-page .wd-modal-step { font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
+.wd-page .wd-modal-title { font-size: 18px; font-weight: 600; color: #111827; margin-bottom: 20px; }
+
+/* Поля в модалке */
+.wd-page .wd-form-group { display: flex; align-items: flex-start; margin-bottom: 16px; gap: 15px; }
+.wd-page .wd-form-group label { width: 140px; flex-shrink: 0; font-size: 13px; color: #4b5563; padding-top: 8px; }
+.wd-page .wd-form-control { flex-grow: 1; }
+.wd-page .wd-form-control input[type="text"], 
+.wd-page .wd-form-control select,
+.wd-page .wd-form-control textarea {
+  width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; font-family: inherit;
+}
+.wd-page .wd-form-control textarea { resize: vertical; min-height: 80px; }
+
+/* Радиокнопки и чекбоксы в строку */
+.wd-page .wd-radio-inline { display: flex; gap: 20px; align-items: center; height: 34px; }
+.wd-page .wd-radio-inline label { width: auto; padding-top: 0; display: flex; align-items: center; gap: 6px; font-size: 13px; color: #4b5563; cursor: pointer; }
+
+/* Зона загрузки файла */
+.wd-page .wd-upload-zone {
+  border: 2px dashed #93c5fd;
+  background: #eff6ff;
+  border-radius: 6px;
+  padding: 30px 20px;
+  text-align: center;
+  color: #3b82f6;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.wd-page .wd-upload-zone:hover { background: #dbeafe; }
+
+/* Список подписок (Дашборд) */
+.wd-page .wd-sub-item {
+  display: flex; align-items: center; gap: 16px;
+  background: #fff; border: 1px solid var(--wd-border); border-radius: 8px;
+  padding: 16px; margin-bottom: 12px;
+}
+.wd-page .wd-sub-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: grid; place-items: center;
+  font-size: 20px; font-weight: 700; color: #fff;
+}
+.wd-page .wd-sub-info { flex-grow: 1; }
+.wd-page .wd-sub-name { font-weight: 600; font-size: 14px; color: #111827; margin-bottom: 4px; }
+.wd-page .wd-sub-meta { font-size: 12px; color: #6b7280; display: flex; gap: 12px; align-items: center; }
+.wd-page .wd-sub-badge { padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.wd-page .wd-sub-badge--active { background: #dcfce7; color: #15803d; }
+.wd-page .wd-sub-badge--inactive { background: #f3f4f6; color: #6b7280; }
+
+/* Улучшение отображения модалок в колонках */
+.wd-page .wd-modal { max-width: 100%; }
+@media (max-width: 1200px) {
+  .wd-page .wd-form-group { flex-direction: column; gap: 6px; }
+  .wd-page .wd-form-group label { width: 100%; padding-top: 0; }
+}

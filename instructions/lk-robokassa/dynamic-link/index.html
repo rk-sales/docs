@@ -133,6 +133,22 @@
     
       <link rel="stylesheet" href="../../../stylesheets/pages/trebovaniya-app.css">
     
+      <link rel="stylesheet" href="../../../stylesheets/pages/lk-robokassa.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/vyvod.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/dynamic-link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/static-link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/sub-link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/vozvrat.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/payment-notify.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pages/roles.css">
+    
       <link rel="stylesheet" href="../../../stylesheets/dark-theme.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -160,7 +176,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#robokassa" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -1781,22 +1797,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#kak-sozdat-ssylku" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Как создать разовую ссылку на оплату
+        Как создать ссылку
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Как создать разовую ссылку на оплату">
+    <nav class="md-nav" aria-label="Как создать ссылку">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Дополнительные необязательные параметры платёжной ссылки
+        Счет успешно выставлен!
       
     </span>
   </a>
@@ -1809,7 +1825,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#sposoby-otpravki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Способы отправки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dopolnitelnye-parametry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные параметры
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametry-cheka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметры в чеке
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
         Вопросы и ответы
@@ -2740,22 +2789,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#kak-sozdat-ssylku" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Как создать разовую ссылку на оплату
+        Как создать ссылку
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Как создать разовую ссылку на оплату">
+    <nav class="md-nav" aria-label="Как создать ссылку">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Дополнительные необязательные параметры платёжной ссылки
+        Счет успешно выставлен!
       
     </span>
   </a>
@@ -2768,7 +2817,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#sposoby-otpravki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Способы отправки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dopolnitelnye-parametry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные параметры
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametry-cheka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметры в чеке
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       
         Вопросы и ответы
@@ -2795,134 +2877,333 @@
 
 
 
-<h1 id="robokassa">Как создать разовую платёжную ссылку на оплату в ЛК Robokassa<a class="headerlink" href="#robokassa" title="Permanent link">&para;</a></h1>
-<p>Счёт‑ссылка (платёжная ссылка) позволяет принять оплату без сайта — вы отправляете клиенту ссылку, он оплачивает заказ на платёжной странице Robokassa.</p>
-<p>Платёжные ссылки бывают двух видов:</p>
-<ol>
-<li><strong>Динамические (разовые)</strong> — работают до первого покупателя. Когда оплата произведена, ссылка становится недоступной.  </li>
-<li><strong>Статические (постоянные)</strong> — можно использовать бессрочно на постоянной основе. Удобно, если услуга или товар имеют фиксированную стоимость.</li>
-</ol>
-<h2 id="_1">Как создать разовую ссылку на оплату<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Войдите в личный кабинет Robokassa.</li>
-<li>В левом меню перейдите в раздел <strong>«Выставление счетов»</strong>.</li>
-<li>Выберите магазин при необходимости (Справа от оглавления "Выставление счетов"). По умолчанию. установлен последний активированный.</li>
-<li>Укажите наименование товара/услуги и стоимость.</li>
-<li>При желании, вы можете "Добавить позицию", если клиенту нужно оплатить сразу несколько товаров/услуг.</li>
-<li>Нажмите кнопку <strong>«Выставить счёт»</strong> — откроется страница с готовой ссылкой, которую можно скопировать и отправить покупателю.</li>
-</ol>
-<p>Помимо копирования ссылки, в Robokassa доступны следующие формы её отправки:<br />
-1. <strong><code>Отправить по e-mail</code></strong>;<br />
-2. <strong><code>Выставить в VK</code></strong><br />
-<em>(Ссылка приходит от Бота Robokassa). Важно, чтобы телефон покупателя был привязан к аккаунту VK;</em><br />
-3. <strong><code>Через SMS</code></strong><br />
-<em>(Услуга платная - 7 руб. за смс). Списывается с баланса счёта продавца в ЛК Robokassa.</em></p>
-<h3 id="_2">Дополнительные необязательные параметры платёжной ссылки<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>При создании счёта можно заполнить дополнительные поля:</p>
-<ul>
-<li><strong><code>Маркировка</code></strong> — актуально для заполнения <strong>только</strong> если вы работаете с системой «Честный знак» и продаёте маркированные товары. Также, вам не нужно заполнять это поле, если к интернет-эквайрингу Robokassa не подключен кассовый аппарат (ККТ).</li>
-<li><strong><code>Номер заказа</code></strong> — любой ваш внутренний идентификатор (артикул, номер заказа, счёта). Помогает быстро найти оплату в истории операций. На платёжной форме не отображается.</li>
-<li><strong><code>Описание заказа</code></strong> — что именно оплачивает клиент (товар, услуга, период, номер договора и т.п.). Видно на платёжной странице.</li>
-<li><strong><code>Комментарий для сотрудников</code></strong> — внутренний комментарий, который виден только вам и сотрудникам в личном кабинете. Клиент его не видит.</li>
-<li><strong><code>Связать аванс или предоплату</code></strong> — отметьте, если оплата по ссылке является авансом или предоплатой по договору.</li>
-<li><strong><code>SuccessUrl2</code></strong> — дополнительный адрес, на который клиент будет перенаправлен после успешной оплаты (например, на личный кабинет или страницу с материалами).</li>
-<li><strong><code>FailUrl2</code></strong> — дополнительный адрес для перенаправления при неуспешной оплате (например, страницу с инструкцией по повторной оплате).</li>
-<li><strong><code>Опции оплаты</code></strong> — можно задать сколько дней будет действовать ссылка и выбрать интерфейс оплаты (Русский или Английский).</li>
-</ul>
-<p>Заполняйте только те поля, которые нужны для конкретного счёта‑ссылки.</p>
-<p><strong>Параметры платежа в чеке (справа):</strong>  </p>
-<details class="example">
-<summary><strong>Оплата</strong> — признак способа расчёта (тег 1214):</summary>
-<ol>
-<li><strong><code>Предоплата 100% (код 3)</code></strong> — полная оплата заранее за будущую поставку/услугу. Позже пробивается чек полного расчёта с зачётом.  </li>
-<li><strong><code>Предоплата (код 2)</code></strong> — частичная оплата за конкретный товар/услугу до передачи. Указывается предмет расчёта с деталями.  </li>
-<li><strong><code>Аванс (код 1)</code></strong> — деньги внесены заранее без указания конкретных товаров/услуг (депозит, залог).  </li>
-<li><strong><code>Полный расчёт (код 4)</code></strong> — <strong>самый популярный вид оплаты.</strong> Оплата в момент передачи товара/услуги. Детализация позиций.  </li>
-<li><strong><code>Частичный расчёт (код 6)</code></strong> — часть оплачена сразу, остаток в кредит. Распределяются способы оплаты.  </li>
-<li><strong><code>Передача в кредит (код 5)</code></strong> — товар/услуга переданы без оплаты. Позже пробиваются чеки оплаты кредита.  </li>
-<li><strong><code>Кредит (код 7)</code></strong> — последующие платежи по ранее выданному кредиту. Предмет — «платёж», сумма чека равна полной стоимости.</li>
-</ol>
+<div class="wd-page">
+<div class="wd-container">
+<header class="wd-hero">
+<div class="wd-hero__badge">Выставление счетов</div>
+<h1 class="wd-hero__title" id="_1">Как создать разовую платёжную ссылку<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p class="wd-hero__desc">Счёт-ссылка позволяет принять оплату без сайта — вы отправляете клиенту ссылку, он оплачивает заказ на платёжной странице Robokassa. Разовые (динамические) ссылки работают до первого покупателя.</p>
+</header>
+</div>
+<h2 id="kak-sozdat-ssylku">Как создать ссылку<a class="headerlink" href="#kak-sozdat-ssylku" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Пошаговая инструкция в личном кабинете (login.robokassa.ru)</div>
+<div class="wd-steps-guide">
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Шаг 1. Авторизация</div>
+<p>Войдите в личный кабинет Robokassa по адресу <b>login.robokassa.ru</b>. После входа вы окажетесь на главной странице.</p>
+</div>
+<div class="wd-guide-visual">
+<div class="lk-mockup" style="min-height: 200px;">
+<header class="lk-ui-header">
+<div class="lk-ui-logo">
+<img src="/docs/img/logo_robokassa_black.png" alt="Robokassa">
+</div>
+<nav class="lk-ui-nav">
+<span class="lk-ui-nav__item">Главная</span>
+<span class="lk-ui-nav__item">Центр продаж</span>
+</nav>
+<div class="lk-ui-profile">
+<div class="lk-ui-profile__avatar">A</div>
+</div>
+</header>
+<div style="padding: 40px; text-align: center; color: #94a3b8; font-size: 14px; font-weight: 500;">
+(Главный экран после входа)
+</div>
+</div>
+</div>
+</div>
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Шаг 2. Раздел «Сервисы»</div>
+<p>В левом боковом меню раскройте раздел <b>«Сервисы»</b> и выберите пункт <b>«Выставление счетов»</b>.</p>
+</div>
+<div class="wd-guide-visual">
+<div class="lk-mockup" style="min-height: 320px; display: grid; grid-template-columns: 230px 1fr;">
+<aside class="lk-ui-sidebar">
+<div class="lk-ui-menu">
+<details>
+<summary class="lk-ui-menu-title">Управление <span class="lk-ui-chevron"></span></summary>
 </details>
-<details class="example">
-<summary><strong>Тип</strong> — предмет расчёта для каждой позиции в чеке (тег 1212):</summary>
-<ol>
-<li><strong><code>Товар</code></strong> — физический товар, реализуемый продавцом.  </li>
-<li><strong><code>Подакцизный товар</code></strong> — товары с акцизами (алкоголь, табак и т.п.).  </li>
-<li><strong><code>Работа</code></strong> — выполненные работы (ремонт, строительство и т.п.).  </li>
-<li><strong><code>Услуга</code></strong> — оказанные услуги (консультации, транспорт и т.п.).  </li>
-<li><strong><code>Ставка азартной игры</code></strong> — приём ставок в казино, букмекерских конторах и т.п.  </li>
-<li><strong><code>Выигрыш азартной игры</code></strong> — выплата выигрыша по азартным играм.  </li>
-<li><strong><code>Лотерейный билет</code></strong> — продажа лотерейного билета.  </li>
-<li><strong><code>Выигрыш лотереи</code></strong> — выплата лотерейного выигрыша.  </li>
-<li><strong><code>Предоставление результатов интеллектуальной деятельности</code></strong> — лицензии, патенты, программное обеспечение.  </li>
-<li><strong><code>Платёж</code></strong> — денежные платежи (погашение кредитов, займов и т.п.).  </li>
-<li><strong><code>Агентское вознаграждение</code></strong> — комиссия агента за посредничество.  </li>
-<li><strong><code>Составной предмет расчёта</code></strong> — комбинация нескольких типов (например, товар + услуга).  </li>
-<li><strong><code>Иной предмет расчёта</code></strong> — всё, что не вошло в другие категории.  </li>
-<li><strong><code>Имущественное право</code></strong> — передача прав на имущество.  </li>
-<li><strong><code>Внереализационный доход</code></strong> — прочие доходы (штрафы, бонусы и т.п.).  </li>
-<li><strong><code>Страховые взносы</code></strong> — взносы в страховые фонды.  </li>
-<li><strong><code>Торговый сбор</code></strong> — сбор за торговую деятельность.  </li>
-<li><strong><code>Туристический налог</code></strong> — курортный/туристический сбор.  </li>
-<li><strong><code>Финансовый инструмент</code></strong> — ценные бумаги, вклады и другие финансовые инструменты.</li>
-</ol>
+<details open="open">
+<summary class="lk-ui-menu-title" style="color: #2563eb !important;">Сервисы <span class="lk-ui-chevron" style="border-color: #2563eb; transform: rotate(-135deg); margin-bottom: -4px;"></span></summary>
+<div class="lk-ui-menu-item active lk-highlight" style="background: #eff6ff !important; color: #2563eb !important;">Выставление счетов</div>
+<div class="lk-ui-menu-item">Платежный виджет</div>
+<div class="lk-ui-menu-item">Подписки</div>
+<div class="lk-ui-menu-item">Дополнительные сервисы</div>
+<div class="lk-ui-menu-item">Бонусы и акции</div>
+<div class="lk-ui-menu-item">Центр продаж</div>
 </details>
-<details class="example">
-<summary><strong>Налог</strong> — ставка НДС для позиции в чеке (тег 1191):</summary>
-<ol>
-<li><strong><code>Без НДС</code></strong> — операции, не облагаемые НДС (например, экспорт, льготные виды деятельности).  </li>
-<li><strong><code>НДС 0%</code></strong> — нулевая ставка НДС.  </li>
-<li><strong><code>НДС +10%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 10/110</code>.  </li>
-<li><strong><code>НДС 10/110</code></strong> — сумма НДС выделена отдельно и соответствует 10% от налогооблагаемой базы.  </li>
-<li><strong><code>НДС +20%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 20/120</code>.  </li>
-<li><strong><code>НДС 20/120</code></strong> — сумма НДС выделена отдельно и соответствует 20% от базы.  </li>
-<li><strong><code>НДС +5%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 5/105</code>.  </li>
-<li><strong><code>НДС 5/105</code></strong> — сумма НДС выделена отдельно и соответствует 5% от базы.  </li>
-<li><strong><code>НДС +7%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 7/107</code>.  </li>
-<li><strong><code>НДС 7/107</code></strong> — сумма НДС выделена отдельно и соответствует 7% от базы.  </li>
-<li><strong><code>НДС +22%</code></strong> — расчётная ставка (с 2026 года): сумма НДС входит в цену, считается как <code>цена * 22/122</code>.  </li>
-<li><strong><code>НДС 22/122</code></strong> — сумма НДС выделена отдельно и соответствует 22% от налогооблагаемой базы (нововведение 2026 года).</li>
-</ol>
+</div>
+</aside>
+<main class="lk-ui-main" style="background: #f8f9fa;"></main>
+</div>
+</div>
+</div>
+<div class="wd-guide-step">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Шаг 3. Заполнение данных</div>
+<p>Убедитесь, что выбран нужный магазин (справа от заголовка). По умолчанию установлен последний активированный. Укажите наименование товара и стоимость. При необходимости нажмите <b>«+ Добавить позицию»</b>.</p>
+</div>
+<div class="wd-guide-visual">
+<div class="lk-mockup" style="min-height: 320px; display: grid; grid-template-columns: 180px 1fr;">
+<aside class="lk-ui-sidebar">
+<div class="lk-ui-menu">
+<details open="open">
+<summary class="lk-ui-menu-title" style="color: #2563eb !important;">Сервисы <span class="lk-ui-chevron" style="border-color: #2563eb; transform: rotate(-135deg); margin-bottom: -4px;"></span></summary>
+<div class="lk-ui-menu-item active" style="background: #eff6ff !important; color: #2563eb !important;">Выставление счетов</div>
 </details>
-<hr />
-<h2 id="_3">Вопросы и ответы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+</div>
+</aside>
+<main class="lk-ui-main" style="padding: 0;">
+<div class="wd-dash-header">
+<div class="wd-dash-title">Новый счёт</div>
+<div class="wd-dash-store lk-highlight">Robokassa.com "Test 2" ▼</div>
+</div>
+<div class="wd-dash-content">
+<div class="wd-info-panel" style="flex-direction: column; align-items: stretch; padding: 15px;">
+<div class="wd-form-row">
+<div class="wd-form-label">Наименование товара/услуги</div>
+<div class="wd-form-input">Курс по вязанию</div>
+</div>
+<div class="wd-form-row">
+<div class="wd-form-label">Стоимость</div>
+<div class="wd-form-input">1 500 ₽</div>
+</div>
+<div style="margin-bottom: 15px;">
+<button class="wd-btn wd-btn--outline" style="font-size: 12px; padding: 6px 12px;">+ Добавить позицию</button>
+</div>
+<div class="lk-highlight" style="text-align: right; padding: 4px; border-radius: 6px; width: fit-content; margin-left: auto;">
+<button class="wd-btn wd-btn--green">Выставить счёт</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<div class="wd-guide-step wd-guide-step--full">
+<div class="wd-guide-text">
+<div class="wd-step-heading">Шаг 4. Готовая ссылка</div>
+<p>Счёт успешно выставлен. Теперь вы можете скопировать ссылку или отправить её клиенту прямо из интерфейса.</p>
+</div>
+<div class="wd-guide-visual">
+<div class="lk-mockup" style="max-width: 100%;">
+<header class="lk-ui-header">
+<div class="lk-ui-logo">
+<img src="/docs/img/logo_robokassa_black.png" alt="Robokassa">
+</div>
+</header>
+<div class="lk-ui-body" style="grid-template-columns: 1fr; min-height: 250px;">
+<main class="lk-ui-main" style="padding: 0;">
+<div class="wd-dash-header">
+<div class="wd-dash-title">Выставление счетов</div>
+</div>
+<div class="wd-dash-content" style="text-align: left; padding: 25px;">
+<h3 id="_2" style="color: #0f172a; font-weight: 600; font-size: 18px; margin-bottom: 20px;">Счет успешно выставлен!<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div style="font-size: 12px; color: #6b7280; margin-bottom: 5px;">Ссылка на оплату счета</div>
+<div class="wd-link-box">
+<span class="wd-link-text">https://auth.robokassa.ru/Merchant/Invoice/...</span>
+<button class="wd-btn wd-btn--outline">Скопировать</button>
+</div>
+<div class="wd-radio-group">
+<label class="wd-radio-label"><input type="radio" name="send-method" checked> Отправить на e-mail</label>
+<label class="wd-radio-label"><input type="radio" name="send-method"> Выставить в VK</label>
+<label class="wd-radio-label"><input type="radio" name="send-method"> Через SMS (услуга платная: 9.00 ₽ за SMS)</label>
+</div>
+<div style="display: flex; gap: 10px; align-items: stretch;">
+<input type="text" class="wd-form-input" placeholder="Введите e-mail" style="flex: 1;">
+<button class="wd-btn wd-btn--green">Отправить</button>
+</div>
+<div style="margin-top: 15px; font-size: 13px;">
+<a href="#" style="color: #2563eb; font-weight: 500; text-decoration: none;">Назад</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="sposoby-otpravki">Способы отправки<a class="headerlink" href="#sposoby-otpravki" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Помимо копирования ссылки, вы можете отправить её клиенту напрямую</div>
+<div class="wd-features">
+<div class="wd-feature">
+<div class="wd-card-title">📧 Отправить по e-mail</div>
+<p>Письмо со ссылкой на оплату придет на указанный адрес электронной почты покупателя.</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">👥 Выставить в VK</div>
+<p>Ссылка приходит от Бота Robokassa. Важно, чтобы телефон покупателя был привязан к его аккаунту VK.</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">📱 Через SMS</div>
+<p>Услуга платная — <b>7 руб. за смс</b>. Стоимость списывается с баланса счёта продавца в ЛК Robokassa.</p>
+</div>
+</div>
+<h2 id="dopolnitelnye-parametry">Дополнительные параметры<a class="headerlink" href="#dopolnitelnye-parametry" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">При создании счёта можно заполнить необязательные поля</div>
+<div class="wd-features">
+<div class="wd-feature">
+<div class="wd-card-title">Маркировка</div>
+<p>Актуально только если вы работаете с «Честный знак» и продаёте маркированные товары. Не нужно заполнять, если к эквайрингу не подключен кассовый аппарат (ККТ).</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">Номер заказа</div>
+<p>Любой ваш внутренний идентификатор (артикул, номер счёта). Помогает найти оплату в истории. На платёжной форме не отображается.</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">Описание заказа</div>
+<p>Что именно оплачивает клиент (товар, услуга, период). Видно на платёжной странице.</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">Комментарий для сотрудников</div>
+<p>Внутренний комментарий, который виден только вам и сотрудникам в ЛК. Клиент его не видит.</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">Связать аванс или предоплату</div>
+<p>Отметьте, если оплата по ссылке является авансом или предоплатой по договору.</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">SuccessUrl2 / FailUrl2</div>
+<p>Дополнительные адреса для перенаправления клиента после успешной или неуспешной оплаты (например, на страницу с материалами).</p>
+</div>
+<div class="wd-feature">
+<div class="wd-card-title">Опции оплаты</div>
+<p>Можно задать, сколько дней будет действовать ссылка, и выбрать язык интерфейса оплаты (Русский или Английский).</p>
+</div>
+</div>
+<h2 id="parametry-cheka">Параметры в чеке<a class="headerlink" href="#parametry-cheka" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Справочная информация для заполнения фискальных данных</div>
+<details class="question">
+<summary>Оплата — признак способа расчёта (тег 1214)</summary>
+<div class="question__content">
+<ol>
+<li><b>Предоплата 100% (код 3)</b> — полная оплата заранее за будущую поставку/услугу.</li>
+<li><b>Предоплата (код 2)</b> — частичная оплата за конкретный товар/услугу до передачи.</li>
+<li><b>Аванс (код 1)</b> — деньги внесены заранее без указания конкретных товаров/услуг.</li>
+<li><b>Полный расчёт (код 4)</b> — <b>самый популярный вид оплаты.</b> Оплата в момент передачи товара/услуги.</li>
+<li><b>Частичный расчёт (код 6)</b> — часть оплачена сразу, остаток в кредит.</li>
+<li><b>Передача в кредит (код 5)</b> — товар/услуга переданы без оплаты.</li>
+<li><b>Кредит (код 7)</b> — последующие платежи по ранее выданному кредиту.</li>
+</ol>
+</div>
+</details>
+<details class="question">
+<summary>Тип — предмет расчёта для каждой позиции в чеке (тег 1212)</summary>
+<div class="question__content">
+<ol>
+<li><b>Товар</b> — физический товар, реализуемый продавцом.</li>
+<li><b>Подакцизный товар</b> — товары с акцизами (алкоголь, табак и т.п.).</li>
+<li><b>Работа</b> — выполненные работы (ремонт, строительство и т.п.).</li>
+<li><b>Услуга</b> — оказанные услуги (консультации, транспорт и т.п.).</li>
+<li><b>Ставка азартной игры</b> — приём ставок в казино, букмекерских конторах.</li>
+<li><b>Выигрыш азартной игры</b> — выплата выигрыша по азартным играм.</li>
+<li><b>Лотерейный билет</b> — продажа лотерейного билета.</li>
+<li><b>Выигрыш лотереи</b> — выплата лотерейного выигрыша.</li>
+<li><b>Предоставление результатов интеллектуальной деятельности</b> — лицензии, патенты, ПО.</li>
+<li><b>Платёж</b> — денежные платежи (погашение кредитов, займов).</li>
+<li><b>Агентское вознаграждение</b> — комиссия агента за посредничество.</li>
+<li><b>Составной предмет расчёта</b> — комбинация нескольких типов (товар + услуга).</li>
+<li><b>Иной предмет расчёта</b> — всё, что не вошло в другие категории.</li>
+<li><b>Имущественное право</b> — передача прав на имущество.</li>
+<li><b>Внереализационный доход</b> — прочие доходы (штрафы, бонусы).</li>
+<li><b>Страховые взносы</b> — взносы в страховые фонды.</li>
+<li><b>Торговый сбор</b> — сбор за торговую деятельность.</li>
+<li><b>Туристический налог</b> — курортный/туристический сбор.</li>
+<li><b>Финансовый инструмент</b> — ценные бумаги, вклады и др.</li>
+</ol>
+</div>
+</details>
+<details class="question">
+<summary>Налог — ставка НДС для позиции в чеке (тег 1191)</summary>
+<div class="question__content">
+<ol>
+<li><b>Без НДС</b> — операции, не облагаемые НДС.</li>
+<li><b>НДС 0%</b> — нулевая ставка НДС.</li>
+<li><b>НДС +10%</b> — расчётная ставка: сумма НДС входит в цену (цена * 10/110).</li>
+<li><b>НДС 10/110</b> — сумма НДС выделена отдельно.</li>
+<li><b>НДС +20%</b> — расчётная ставка: сумма НДС входит в цену (цена * 20/120).</li>
+<li><b>НДС 20/120</b> — сумма НДС выделена отдельно.</li>
+<li><b>НДС +5%</b> — расчётная ставка: сумма НДС входит в цену (цена * 5/105).</li>
+<li><b>НДС 5/105</b> — сумма НДС выделена отдельно.</li>
+<li><b>НДС +7%</b> — расчётная ставка: сумма НДС входит в цену (цена * 7/107).</li>
+<li><b>НДС 7/107</b> — сумма НДС выделена отдельно.</li>
+<li><b>НДС +22%</b> — расчётная ставка (с 2026 года): сумма НДС входит в цену (цена * 22/122).</li>
+<li><b>НДС 22/122</b> — сумма НДС выделена отдельно (нововведение 2026 года).</li>
+</ol>
+</div>
+</details>
+<h2 id="faq">Вопросы и ответы<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<div class="wd-section-subtitle">Ответы на частые вопросы по платёжным ссылкам</div>
 <details class="question">
 <summary>Как узнать, что оплата по ссылке прошла успешно?</summary>
+<div class="question__content">
 <p>После оплаты:</p>
 <ul>
-<li>в ЛК, в разделе <strong>«Выставление счетов»</strong>, у счёта появится статус <strong>«Оплачен»</strong>;  </li>
-<li>в разделе <strong>«Баланс и вывод средств»</strong> сумма отобразится в доступном остатке (с учётом правил зачисления);  </li>
+<li>в ЛК, в разделе <b>«Выставление счетов»</b>, у счёта появится статус <b>«Оплачен»</b>;</li>
+<li>в разделе <b>«Баланс и вывод средств»</b> сумма отобразится в доступном остатке (с учётом правил зачисления);</li>
 <li>при настроенных у магазина <code>ResultURL</code> вы получите техническое уведомление (можно например передавать на e-mail).</li>
 </ul>
-<p>Также, вы можете подключить уведомления в VK или Telegram. Для этого зайдите в раздел "Центр продаж" в левом меню и найдите подраздел "Подключить уведомления для VK и Telegram".</p>
+<p>Также, вы можете подключить уведомления в VK или Telegram. Для этого зайдите в раздел «Центр продаж» в левом меню и найдите подраздел «Подключить уведомления для VK и Telegram».</p>
+</div>
 </details>
 <details class="question">
 <summary>Что делать, если клиент говорит, что оплатил, а у меня счёт всё ещё «ожидает оплаты»?</summary>
+<div class="question__content">
 <p>Проверьте:</p>
 <ul>
-<li>статус операции в разделе <strong>«Выставление счетов»</strong>;  </li>
-<li>уточните не было ли у клиента ошибки на платёжной странице (отмена, недостаточно средств, 3‑D Secure и т.п.);  </li>
+<li>статус операции в разделе <b>«Выставление счетов»</b>;</li>
+<li>уточните, не было ли у клиента ошибки на платёжной странице (отмена, недостаточно средств, 3-D Secure и т.п.).</li>
 </ul>
-<p>Если клиент утверждает, что оплата списалась, однако в ЛК у вас отображается статус счёта "Не оплачен" — попросите клиента сделать скриншот оплаты и обратитесь в поддержку в ЛК Robokassa - слева в меню "Поддержка" -- "Создать запрос" или напишите к нам в телеграм-бот: <a href="https://t.me/robosupport_bot" target="_blank">@robosupport_bot</a>.</p>
+<p>Если клиент утверждает, что оплата списалась, однако в ЛК у вас отображается статус счёта «Не оплачен» — попросите клиента сделать скриншот оплаты и обратитесь в поддержку в ЛК Robokassa (слева в меню «Поддержка» → «Создать запрос») или напишите в телеграм-бот: <a href="https://t.me/robosupport_bot" target="_blank">@robosupport_bot</a>.</p>
+</div>
 </details>
 <details class="question">
 <summary>Можно ли изменить сумму или описание уже созданной платёжной ссылки?</summary>
-<p>Для разовой ссылки после её создания параметры счёта менять нельзя.<br />
-Если вы ошиблись в сумме или описании:</p>
+<div class="question__content">
+<p>Для разовой ссылки после её создания параметры счёта менять нельзя.</p>
+<p>Если вы ошиблись в сумме или описании:</p>
 <ul>
-<li><strong>создайте новый счёт</strong> с корректными данными;  </li>
+<li><b>создайте новый счёт</b> с корректными данными;</li>
 <li>старую ссылку не используйте.</li>
 </ul>
+</div>
 </details>
 <details class="question">
 <summary>Сколько времени действует разовая платёжная ссылка?</summary>
-<p>Срок действия зависит от настроек в поле <strong><code>Опции оплаты</code></strong> (если вы его заполняли).<br />
-Если срок не задавался явно, ссылка действует по умолчанию до тех пор, пока:</p>
+<div class="question__content">
+<p>Срок действия зависит от настроек в поле <b>«Опции оплаты»</b> (если вы его заполняли).</p>
+<p>Если срок не задавался явно, ссылка действует по умолчанию до тех пор, пока:</p>
 <ul>
-<li>счёт не будет оплачен;  </li>
+<li>счёт не будет оплачен;</li>
 <li>или не будет отменён/деактивирован со стороны Robokassa или магазина.</li>
 </ul>
+</div>
 </details>
+<p><button id="scrollToTopBtn" class="wd-scroll-top" aria-label="Вернуться наверх">
+<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="12" y1="19" x2="12" y2="5"></line>
+<polyline points="5 12 12 5 19 12"></polyline>
+</svg>
+</button></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollBtn = document.getElementById('scrollToTopBtn');
+  if (!scrollBtn) return;
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('is-visible');
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  });
+  scrollBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
 
 
 
