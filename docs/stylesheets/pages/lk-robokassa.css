@@ -1,0 +1,600 @@
+/* =========================================================
+   LK ROBOKASSA — Interactive UI Mockup / SaaS Dashboard
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap');
+
+.lk-page {
+  --lk-bg: #f8fafc;
+  --lk-surface: #ffffff;
+  --lk-ink: #0f172a;
+  --lk-text: #475569;
+  --lk-muted: #94a3b8;
+  --lk-border: #e2e8f0;
+  --lk-primary: #2563eb;
+  --lk-primary-hover: #1d4ed8;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--lk-text);
+  background-color: var(--lk-bg);
+  padding-bottom: 6rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.lk-page *, .lk-page *::before, .lk-page *::after { box-sizing: border-box; }
+
+/* Иконки */
+.lk-svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px; /* Отступ для текста, идущего после иконки */
+  flex-shrink: 0;
+}
+.lk-ui-profile__bell .lk-svg,
+.lk-ui-profile__logout .lk-svg {
+  margin-right: 0;
+}
+
+/* =========================================================
+   ФИКС ЦЕНТРИРОВАНИЯ ИКОНОК В КРУЖКАХ
+   ========================================================= */
+.lk-page .lk-ui-icon-circle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.lk-page .lk-ui-icon-circle .lk-svg {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+/* =========================================================
+   РАЗБЛОКИРОВКА ШИРИНЫ MKDOCS (Убираем правую колонку)
+   ========================================================= */
+body:has(.lk-page) .md-nav--secondary { 
+  display: none !important; 
+}
+body:has(.lk-page) .md-header__topic { 
+  display: none !important; 
+}
+body:has(.lk-page) .md-content__inner > h1 { 
+  display: none !important; 
+}
+
+body:has(.lk-page) .md-sidebar--secondary,
+body:has(.lk-page) .md-sidebar--aside {
+  display: none !important;
+  flex: 0 0 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body:has(.lk-page) .md-content {
+  max-width: 100% !important;
+  flex-grow: 1 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+body:has(.lk-page) .md-content__inner {
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body:has(.lk-page) .md-main__inner {
+  max-width: 100% !important;
+}
+
+/* =========================
+   КОНТЕЙНЕРЫ (Широкий формат)
+   ========================= */
+.lk-page .lk-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.lk-page .lk-hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; padding-top: 2rem; padding-bottom: 4rem; max-width: 1000px; margin: 0 auto; }
+.lk-page .lk-hero__badge { display: inline-block; padding: 0.3rem 0.8rem; background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 99px; margin-bottom: 1.5rem; }
+.lk-page .lk-hero__title { font-size: clamp(2.4rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--lk-ink); margin: 0 0 1.2rem 0 !important; }
+.lk-page .lk-hero__desc { font-size: 1.1rem; line-height: 1.6; color: var(--lk-text); margin: 0 0 2rem 0 !important; }
+.lk-page .lk-hero__btn { display: inline-flex; align-items: center; padding: 0.8rem 1.5rem; background: var(--lk-primary); color: #fff !important; font-size: 1rem; font-weight: 600; text-decoration: none !important; border-radius: 10px; transition: background 0.2s, transform 0.2s; }
+.lk-page .lk-hero__btn:hover { background: var(--lk-primary-hover); transform: translateY(-2px); }
+
+.lk-page .lk-hero__stats { display: flex; flex-direction: column; gap: 1rem; }
+.lk-page .lk-stat-card { background: var(--lk-surface); border: 1px solid var(--lk-border); border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+.lk-page .lk-stat-card__val { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 700; color: var(--lk-ink); margin-bottom: 0.2rem; }
+.lk-page .lk-stat-card__label { font-size: 0.9rem; color: var(--lk-muted); }
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+.lk-page .lk-section-title { margin-top: 4rem; margin-bottom: 2rem; text-align: center; }
+.lk-page .lk-section-title h2 { font-size: clamp(1.8rem, 3vw, 2.2rem); font-weight: 800; color: var(--lk-ink) !important; margin: 0 0 0.5rem 0 !important; letter-spacing: -0.02em; }
+.lk-page .lk-section-title p { font-size: 1rem; color: var(--lk-muted); margin: 0 !important; }
+
+/* =========================
+   UI MOCKUP (Интерактивная копия ЛК)
+   ========================= */
+.lk-page .lk-mockup {
+  background: #f4f5f7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+  border: 1px solid var(--lk-border);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+}
+
+/* Шапка */
+.lk-page .lk-ui-header { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 64px; background: #fff; border-bottom: 1px solid var(--lk-border); }
+.lk-page .lk-ui-logo { display: flex; align-items: center; }
+.lk-page .lk-ui-logo img { height: 20px; width: auto; display: block; }
+.lk-page .lk-ui-nav { display: flex; gap: 24px; margin-left: 40px; }
+.lk-page .lk-ui-nav__item { color: #4b5563; text-decoration: none; font-weight: 500; padding: 20px 0; border-bottom: 2px solid transparent; cursor: pointer; }
+.lk-page .lk-ui-nav__item--active { color: #5b68df; border-bottom-color: #5b68df; }
+.lk-page .lk-ui-profile { display: flex; align-items: center; gap: 16px; }
+.lk-page .lk-ui-profile__bell { position: relative; display: flex; align-items: center; justify-content: center; color: #4b5563; cursor: pointer; }
+.lk-page .lk-ui-profile__bell span { position: absolute; top: -4px; right: -6px; background: #ef4444; color: #fff; font-size: 9px; font-weight: bold; width: 14px; height: 14px; display: grid; place-items: center; border-radius: 50%; }
+.lk-page .lk-ui-profile__avatar { width: 32px; height: 32px; background: #5b68df; color: #fff; border-radius: 50%; display: grid; place-items: center; font-weight: bold; font-size: 14px; }
+.lk-page .lk-ui-profile__logout { display: flex; align-items: center; justify-content: center; color: #4b5563; cursor: pointer; }
+
+/* Тело */
+.lk-page .lk-ui-body { display: grid; grid-template-columns: 280px 1fr; min-height: 800px; }
+
+/* Сайдбар */
+.lk-page .lk-ui-sidebar { background: #f8f9fb; border-right: 1px solid var(--lk-border); padding: 16px; overflow-y: auto; max-height: 800px; }
+.lk-page .lk-ui-store-active { background: #5b68df; border-radius: 12px; padding: 16px; color: #fff; margin-bottom: 16px; }
+.lk-page .lk-ui-store-active__name { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; }
+.lk-page .lk-ui-store-active__company { font-size: 11px; opacity: 0.8; margin-bottom: 12px; }
+.lk-page .lk-ui-store-active__balance { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; }
+.lk-page .lk-ui-store-active__balance span { font-size: 11px; opacity: 0.8; }
+.lk-page .lk-ui-store-active__balance b { font-size: 14px; opacity: 1; display: block; margin-top: 2px; }
+.lk-page .lk-ui-store-active__refresh { font-size: 18px; cursor: pointer; }
+
+/* Список магазинов */
+.lk-page .lk-ui-store-list { background: #fff; border-radius: 12px; padding: 8px; margin-bottom: 16px; border: 1px solid var(--lk-border); }
+.lk-page .lk-ui-store-item { display: flex; align-items: center; padding: 8px; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+.lk-page .lk-ui-store-item:hover { background: #f3f4f6; }
+.lk-page .lk-ui-avatar { width: 28px; height: 28px; border-radius: 6px; color: #fff; display: grid; place-items: center; font-weight: bold; font-size: 12px; margin-right: 12px; flex-shrink: 0; }
+.lk-page .lk-ui-store-info { flex-grow: 1; min-width: 0; }
+.lk-page .lk-ui-store-name { font-weight: 600; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; }
+.lk-page .lk-ui-store-balance { font-size: 11px; color: #6b7280; }
+.lk-page .lk-ui-store-balance--muted { color: #9ca3af; }
+.lk-page .lk-ui-dots { color: #9ca3af; font-size: 16px; font-weight: bold; padding: 0 8px; }
+.lk-page .lk-ui-store-add { display: flex; align-items: center; padding: 10px 8px; font-weight: 600; color: #4b5563; cursor: pointer; gap: 12px; }
+.lk-page .lk-ui-store-add span { width: 28px; height: 28px; background: #f3f4f6; border-radius: 6px; display: grid; place-items: center; font-size: 16px; }
+
+/* Меню (Сайдбар) */
+.lk-page .lk-ui-menu details { 
+  margin: 0 0 6px 0 !important; 
+  padding: 0 !important; 
+  border: none !important; 
+  background: transparent !important; 
+  box-shadow: none !important; 
+  outline: none !important; 
+}
+
+.lk-page .lk-ui-menu summary { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 14px 16px 14px 24px !important;
+  font-weight: 700; 
+  color: #111827 !important; 
+  font-size: 15px; 
+  cursor: pointer; 
+  list-style: none !important; 
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.lk-page .lk-ui-menu summary:hover {
+  background: #f3f4f6 !important;
+}
+
+/* Убираем стандартные маркеры и иконки */
+.lk-page .lk-ui-menu summary::-webkit-details-marker { display: none !important; }
+.lk-page .lk-ui-menu summary::before, 
+.lk-page .lk-ui-menu summary::after { display: none !important; }
+.lk-page .lk-ui-menu summary:focus, 
+.lk-page .lk-ui-menu summary:focus-visible { 
+  outline: none !important; 
+  box-shadow: none !important; 
+  background: transparent !important;
+}
+
+/* Кастомная стрелочка (Шеврон) */
+.lk-page .lk-ui-chevron {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border: solid #111827;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  margin-right: 8px;
+}
+.lk-page details[open] .lk-ui-chevron {
+  transform: rotate(-135deg);
+  margin-bottom: -4px;
+}
+
+/* Некликабельные пункты меню */
+.lk-page .lk-ui-menu-item { 
+  display: flex; 
+  align-items: center;
+  padding: 10px 16px 10px 40px !important;
+  color: #4b5563 !important; 
+  font-weight: 500; 
+  font-size: 13px;
+  cursor: default;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 6px;
+}
+.lk-page .lk-ui-menu-item:hover {
+  color: #111827 !important;
+  background: #f3f4f6;
+}
+.lk-page .lk-ui-menu-item.active { 
+  color: #111827 !important; 
+  font-weight: 600; 
+}
+
+/* Основной контент */
+.lk-page .lk-ui-main { background: #fff; padding: 32px 48px; overflow-y: auto; max-height: 800px; }
+.lk-page .lk-ui-view { display: none; animation: fadeIn 0.3s ease; }
+.lk-page .lk-ui-view.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+.lk-page .lk-ui-title { font-size: 28px; font-weight: 800; color: #111827; margin: 0 0 24px 0; }
+.lk-page .lk-ui-subtitle { font-size: 20px; font-weight: 700; color: #111827; margin: 0 0 8px 0; }
+.lk-page .lk-ui-desc { color: #6b7280; margin: 0 0 24px 0; }
+
+/* Вкладки внутри Центра продаж */
+.lk-page .lk-ui-tabs { display: flex; gap: 32px; border-bottom: 1px solid var(--lk-border); margin-bottom: 32px; }
+.lk-page .lk-ui-tab { padding: 12px 0; color: #6b7280; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; cursor: pointer; font-size: 14px; }
+.lk-page .lk-ui-tab.active { color: #5b68df; border-bottom-color: #5b68df; font-weight: 600; }
+
+/* Контент вкладок */
+.lk-page .lk-tab-content { display: none; animation: fadeIn 0.3s ease; }
+.lk-page .lk-tab-content.active { display: block; }
+
+.lk-page .lk-ui-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.lk-page .lk-ui-card { background: #f8f9fb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 32px; transition: border-color 0.2s, box-shadow 0.2s; cursor: pointer; }
+.lk-page .lk-ui-card:hover { border-color: #d1d5db; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+.lk-page .lk-ui-card__icons { display: flex; gap: 8px; margin-bottom: 32px; }
+.lk-page .lk-ui-icon-circle { width: 40px; height: 40px; background: #fff; border: 1px solid #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.lk-page .lk-ui-card__title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 16px; line-height: 1.3; }
+.lk-page .lk-ui-card__desc { font-size: 14px; color: #6b7280; line-height: 1.6; }
+
+/* Специфичные элементы для вкладок */
+.lk-page .lk-badge-new { font-size: 12px; font-weight: 600; color: #d97706; background: #fef3c7; padding: 4px 8px; border-radius: 6px; }
+.lk-page .lk-ui-btn-black { background: #111827; color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; transition: background 0.2s; }
+.lk-page .lk-ui-btn-black:hover { background: #374151; }
+
+/* ВЬЮ: ГЛАВНАЯ (Список магазинов) */
+.lk-page .lk-ui-store-card { border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+.lk-page .lk-ui-store-card__header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid #e5e7eb; background: #fcfcfd; }
+.lk-page .lk-ui-store-card__title { font-size: 16px; font-weight: 700; color: #111827; }
+.lk-page .lk-ui-store-card__actions { display: flex; gap: 16px; }
+
+/* Кликабельные ссылки в карточке магазина */
+.lk-page .lk-ui-store-card__action-link { 
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px; 
+  color: #5b68df; 
+  text-decoration: none; 
+  font-weight: 500; 
+  cursor: pointer; 
+}
+.lk-page .lk-ui-store-card__action-link:hover {
+  text-decoration: underline;
+}
+.lk-page .lk-ui-store-card__action-link.disabled { 
+  color: #d1d5db; 
+  pointer-events: none; 
+}
+
+.lk-page .lk-ui-store-card__body { display: flex; padding: 24px; gap: 64px; }
+.lk-page .lk-ui-store-card__col { display: flex; flex-direction: column; }
+.lk-page .lk-ui-label { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+.lk-page .lk-ui-value { font-size: 20px; font-weight: 700; color: #111827; }
+.lk-page .lk-ui-status { font-size: 15px; font-weight: 600; }
+.lk-page .lk-ui-status--success { color: #10b981; }
+.lk-page .lk-ui-status--warning { color: #f59e0b; }
+.lk-page .lk-ui-btn { padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+.lk-page .lk-ui-btn--green { background: #74b84a; color: #fff; }
+.lk-page .lk-ui-btn--outline { background: #fff; border: 1px solid #d1d5db; color: #5b68df; }
+
+/* ВЬЮ: ОПЕРАЦИИ (Поиск) */
+.lk-page .lk-ui-ops-header { background: #f8f9fa; padding: 16px 24px; border-bottom: 1px solid #e5e7eb; display: flex; gap: 32px; align-items: center; }
+.lk-page .lk-ui-ops-title { font-size: 16px; font-weight: 700; color: #111827; }
+.lk-page .lk-ui-ops-store { font-size: 14px; font-weight: 600; color: #111827; }
+.lk-page .lk-ui-ops-form { padding: 24px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 24px; }
+.lk-page .lk-ui-form-row { display: flex; gap: 24px; margin-bottom: 16px; }
+.lk-page .lk-ui-form-group { display: flex; flex-direction: column; flex: 1; }
+.lk-page .lk-ui-form-group label { font-size: 13px; color: #4b5563; margin-bottom: 8px; }
+.lk-page .lk-ui-form-group input[type="text"], .lk-page .lk-ui-form-group select { padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; color: #111827; background: #fff; width: 100%; }
+.lk-page .lk-ui-checkboxes { flex-direction: row; align-items: center; gap: 16px; }
+.lk-page .lk-ui-checkboxes label { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 0; }
+.lk-page .lk-ui-sum-group { flex: 1; }
+.lk-page .lk-ui-sum-inputs { display: flex; align-items: center; gap: 8px; }
+.lk-page .lk-ui-sum-inputs input { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; width: 0; }
+.lk-page .lk-ui-date-input { display: flex; align-items: center; border: 1px solid #d1d5db; border-radius: 4px; overflow: hidden; width: 250px; }
+.lk-page .lk-ui-date-input button { background: #f9fafb; border: none; padding: 10px 12px; cursor: pointer; color: #6b7280; }
+.lk-page .lk-ui-date-input input { border: none; flex: 1; padding: 10px; text-align: center; font-size: 14px; outline: none; }
+.lk-page .lk-ui-form-actions { display: flex; gap: 12px; margin-top: 24px; }
+.lk-page .lk-ui-ops-footer { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #e5e7eb; }
+.lk-page .lk-ui-ops-count { font-size: 13px; color: #6b7280; }
+.lk-page .lk-ui-ops-table { width: 100%; }
+.lk-page .lk-ui-table-header { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; text-align: center; }
+.lk-page .lk-ui-table-header div:nth-child(2) { color: #5b68df; font-weight: 600; }
+
+/* ВЬЮ 4: ВЫСТАВИТЬ СЧЕТ */
+.lk-page .lk-ui-invoice-header { background: #f8f9fa; padding: 16px 24px; border-bottom: 1px solid #e5e7eb; display: flex; gap: 16px; align-items: center; }
+.lk-page .lk-ui-invoice-title { font-size: 16px; font-weight: 700; color: #111827; }
+.lk-page .lk-ui-invoice-store { font-size: 14px; font-weight: 600; color: #2563eb; cursor: pointer; }
+
+.lk-page .lk-ui-invoice-form { padding: 24px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 24px; }
+.lk-page .lk-ui-invoice-add-links { display: flex; gap: 16px; font-size: 13px; color: #6b7280; margin-bottom: 24px; align-items: center; flex-wrap: wrap; }
+.lk-page .lk-ui-invoice-add-links a { color: #2563eb; text-decoration: none; font-weight: 500; }
+.lk-page .lk-ui-invoice-add-links a:hover { text-decoration: underline; }
+
+.lk-page .lk-ui-invoice-product-row { display: grid; grid-template-columns: 2fr 1fr; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+.lk-page .lk-ui-invoice-product-fields { padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #fcfcfd; }
+.lk-page .lk-ui-invoice-input-group { display: flex; align-items: center; gap: 8px; }
+.lk-page .lk-ui-invoice-input-group input { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; color: #111827; }
+.lk-page .lk-ui-invoice-qty-price { display: flex; align-items: center; gap: 8px; }
+.lk-page .lk-ui-invoice-qty-price input { padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; color: #111827; text-align: center; }
+.lk-page .lk-ui-invoice-marking { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px; background: #fff; font-size: 13px; color: #9ca3af; }
+.lk-page .lk-ui-help-icon { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #2563eb; color: #fff; font-weight: bold; font-size: 11px; cursor: help; }
+
+.lk-page .lk-ui-invoice-dropdowns { background: #e5e7eb; padding: 16px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+.lk-page .lk-ui-invoice-select-row { display: flex; justify-content: space-between; font-size: 13px; color: #6b7280; }
+.lk-page .lk-ui-invoice-select-val { color: #2563eb; font-weight: 600; cursor: pointer; }
+
+.lk-page .lk-ui-invoice-add-btn { display: inline-block; padding: 10px 16px; background: #dbeafe; color: #2563eb; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 24px; width: 100%; text-align: left; }
+.lk-page .lk-ui-invoice-add-btn:hover { background: #bfdbfe; }
+
+.lk-page .lk-ui-invoice-bottom { display: flex; justify-content: space-between; align-items: flex-start; border-top: 1px solid #e5e7eb; padding-top: 24px; }
+.lk-page .lk-ui-invoice-total { display: flex; flex-direction: column; gap: 8px; }
+.lk-page .lk-ui-invoice-total-row { display: flex; gap: 16px; align-items: baseline; }
+.lk-page .lk-ui-invoice-total-row span { font-size: 14px; color: #6b7280; width: 120px; }
+.lk-page .lk-ui-invoice-total-row b { font-size: 24px; font-weight: 700; color: #111827; }
+.lk-page .lk-ui-invoice-total-row--muted b { font-size: 14px; color: #9ca3af; }
+.lk-page .lk-ui-invoice-actions { display: flex; gap: 12px; }
+
+.lk-page .lk-ui-invoice-search { display: flex; gap: 16px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 24px; align-items: flex-end; }
+.lk-page .lk-ui-invoice-search .lk-ui-form-group { flex: 1; }
+.lk-page .lk-ui-invoice-search .lk-ui-date-input { width: 100%; }
+
+/* =========================
+   FEATURES (Восстановленный текст)
+   ========================= */
+.lk-page .lk-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.lk-page .lk-feature {
+  background: var(--lk-surface);
+  border: 1px solid var(--lk-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lk-page .lk-feature:hover {
+  border-color: var(--lk-primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+}
+.lk-page .lk-feature h4 {
+  margin: 0 0 0.5rem 0 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--lk-ink) !important;
+  display: flex;
+  align-items: center;
+}
+.lk-page .lk-feature p {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  color: var(--lk-text) !important;
+}
+
+/* =========================
+   STEPS (Вход)
+   ========================= */
+.lk-page .lk-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+.lk-page .lk-step { background: var(--lk-surface); border: 1px solid var(--lk-border); border-radius: 16px; padding: 1.5rem; }
+.lk-page .lk-step__num { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700; color: var(--lk-primary); margin-bottom: 1rem; }
+.lk-page .lk-step__content h4 { margin: 0 0 0.5rem 0 !important; font-size: 1rem; font-weight: 700; color: var(--lk-ink); }
+.lk-page .lk-step__content p { margin: 0 !important; font-size: 0.85rem; line-height: 1.5; color: var(--lk-text); }
+.lk-page .lk-step__content a { color: var(--lk-primary); text-decoration: none; font-weight: 600; }
+
+/* =========================
+   FOOTER NOTE
+   ========================= */
+.lk-page .lk-footer-note {
+  margin-top: 4rem; 
+  padding: 2.5rem 2rem; 
+  background: var(--lk-surface); 
+  border: 1px solid var(--lk-border); 
+  border-radius: 16px; 
+  text-align: center; 
+  font-size: 1rem; 
+  color: var(--lk-text); 
+  line-height: 1.6; 
+  max-width: 1000px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.lk-page .lk-footer-note p {
+  margin: 0 0 1.5rem 0 !important;
+  font-size: 1.05rem;
+}
+
+.lk-page .lk-footer-links { 
+  display: flex; 
+  justify-content: center; 
+  gap: 1rem; 
+  flex-wrap: wrap;
+}
+
+.lk-page .lk-footer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  background: var(--lk-primary);
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.lk-page .lk-footer-btn:hover {
+  background: var(--lk-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ТЁМНАЯ ТЕМА
+   ========================= */
+[data-md-color-scheme="slate"] .lk-page {
+  --lk-bg: #0f172a;
+  --lk-surface: #1e293b;
+  --lk-ink: #f8fafc;
+  --lk-text: #cbd5e1;
+  --lk-muted: #94a3b8;
+  --lk-border: #334155;
+  --lk-primary: #3b82f6;
+}
+
+[data-md-color-scheme="slate"] .lk-page .lk-hero__badge { background: rgba(67, 56, 202, 0.2); color: #a5b4fc; }
+[data-md-color-scheme="slate"] .lk-page .lk-stat-card { background: #1e293b; }
+[data-md-color-scheme="slate"] .lk-page .lk-mockup { background: #0f172a; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-header { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-logo img { filter: invert(1) brightness(2); } /* Инверсия логотипа для темной темы */
+[data-md-color-scheme="slate"] .lk-page .lk-ui-nav__item { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-nav__item--active { color: #60a5fa; border-color: #60a5fa; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-profile__avatar { background: #3b82f6; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-profile__logout { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-profile__bell { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-sidebar { background: #0f172a; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-active { background: #3b82f6; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-list { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-item:hover { background: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-name { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-balance { color: #94a3b8; }
+
+/* ТЁМНАЯ ТЕМА ДЛЯ МЕНЮ */
+[data-md-color-scheme="slate"] .lk-page .lk-ui-menu summary { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-menu summary:hover { background: #334155 !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-chevron { border-color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-menu-item { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-menu-item:hover { color: #f8fafc !important; background: #334155 !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-menu-item.active { color: #f8fafc !important; }
+
+[data-md-color-scheme="slate"] .lk-page .lk-ui-main { background: #1e293b; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-title, [data-md-color-scheme="slate"] .lk-page .lk-ui-subtitle { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-desc { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-tabs { border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-tab { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-tab.active { color: #60a5fa; border-color: #60a5fa; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-card { background: #0f172a; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-icon-circle { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-card__title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-card__desc { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-step { background: #1e293b; }
+[data-md-color-scheme="slate"] .lk-page .lk-feature { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-feature h4 { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-feature p { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .lk-page .lk-footer-note { background: #1e293b; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-btn-black { background: #f8fafc; color: #0f172a; }
+
+/* Темная тема для Главной и Операций */
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-card { border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-card__header { background: #0f172a; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-card__title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-store-card__body { background: #1e293b; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-label { color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-value { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-ops-header { background: #0f172a; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-ops-title, [data-md-color-scheme="slate"] .lk-page .lk-ui-ops-store { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-ops-form { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-form-group input[type="text"], [data-md-color-scheme="slate"] .lk-page .lk-ui-form-group select { background: #0f172a; border-color: #334155; color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-date-input { border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-date-input button { background: #0f172a; color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-date-input input { background: #1e293b; color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-ops-footer { border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-table-header { border-color: #334155; color: #94a3b8; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-table-header div:nth-child(2) { color: #60a5fa; }
+
+/* Темная тема для Счета */
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-header { background: #0f172a; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-form { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-product-row { border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-product-fields { background: #0f172a; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-input-group input,
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-qty-price input,
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-marking { background: #1e293b; border-color: #334155; color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-dropdowns { background: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-bottom { border-color: #334155; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-total-row b { color: #f8fafc; }
+[data-md-color-scheme="slate"] .lk-page .lk-ui-invoice-search { background: #1e293b; border-color: #334155; }
+
+/* =========================
+   АДАПТИВ
+   ========================= */
+@media (max-width: 900px) {
+  .lk-page .lk-hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .lk-page .lk-hero__desc { margin: 0 auto 2rem auto !important; }
+  .lk-page .lk-hero__stats { flex-direction: row; }
+  .lk-page .lk-ui-body { grid-template-columns: 1fr; }
+  .lk-page .lk-ui-sidebar { display: none; }
+  .lk-page .lk-ui-cards { grid-template-columns: 1fr; }
+  .lk-page .lk-ui-form-row { flex-direction: column; }
+  .lk-page .lk-ui-store-card__body { flex-direction: column; gap: 24px; }
+  .lk-page .lk-features { grid-template-columns: repeat(2, 1fr); }
+  .lk-page .lk-steps { grid-template-columns: repeat(2, 1fr); }
+  .lk-page .lk-ui-invoice-product-row { grid-template-columns: 1fr; }
+  .lk-page .lk-ui-invoice-search { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 600px) {
+  .lk-page .lk-hero__title { font-size: 2.2rem; }
+  .lk-page .lk-hero__stats { flex-direction: column; }
+  .lk-page .lk-features { grid-template-columns: 1fr; }
+  .lk-page .lk-steps { grid-template-columns: 1fr; }
+  .lk-page .lk-footer-links { flex-direction: column; gap: 0.5rem; }
+  .lk-page .lk-ui-tabs { flex-wrap: wrap; gap: 16px; }
+}

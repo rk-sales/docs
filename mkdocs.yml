@@ -71,6 +71,14 @@ extra_css:
   - stylesheets/pages/trebovaniya-vk.css
   - stylesheets/pages/trebovaniya-tg.css
   - stylesheets/pages/trebovaniya-app.css
+  - stylesheets/pages/lk-robokassa.css
+  - stylesheets/pages/vyvod.css
+  - stylesheets/pages/dynamic-link.css
+  - stylesheets/pages/static-link.css
+  - stylesheets/pages/sub-link.css
+  - stylesheets/pages/vozvrat.css
+  - stylesheets/pages/payment-notify.css
+  - stylesheets/pages/roles.css
   # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
   - stylesheets/dark-theme.css
   
