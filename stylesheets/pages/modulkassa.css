@@ -1,0 +1,298 @@
+/* =========================================================
+   MODULKASSA (FZ-54) — Стили для статьи
+   Корень: .mkassa-page — полностью изолирован
+   ========================================================= */
+
+.mkassa-page {
+  --mkassa-bg: #f8fafc;
+  --mkassa-surface: #ffffff;
+  --mkassa-ink: #0f172a;
+  --mkassa-text: #475569;
+  --mkassa-muted: #94a3b8;
+  --mkassa-border: #e2e8f0;
+  --mkassa-primary: #2563eb;
+  --mkassa-primary-hover: #1d4ed8;
+  --mkassa-green: #74b84a;
+  --mkassa-green-hover: #63a83e;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--mkassa-text);
+  background-color: var(--mkassa-bg);
+  padding-bottom: 6rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.mkassa-page *, .mkassa-page *::before, .mkassa-page *::after { box-sizing: border-box; }
+
+/* Скрываем стандартный хедер и H1 MkDocs */
+body:has(.mkassa-page) .md-header__topic { display: none !important; }
+body:has(.mkassa-page) .md-content__inner > h1 { display: none !important; }
+body:has(.mkassa-page) .md-content__inner { padding-top: 0 !important; margin-top: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
+
+/* КОНТЕЙНЕРЫ И ЗАГОЛОВКИ */
+.mkassa-page .mkassa-container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+
+.mkassa-page h1.mkassa-hero__title {
+  font-size: clamp(2.4rem, 4vw, 3.5rem) !important;
+  font-weight: 800 !important; line-height: 1.1 !important;
+  letter-spacing: -0.03em !important; color: var(--mkassa-ink) !important;
+  margin: 0 0 1.2rem 0 !important; border: none !important; padding: 0 !important;
+}
+.mkassa-page h1.mkassa-hero__title::after { display: none !important; }
+
+.mkassa-page h2 {
+  font-size: clamp(1.8rem, 3vw, 2.2rem) !important;
+  font-weight: 800 !important; color: var(--mkassa-ink) !important;
+  margin: 4rem 0 0.5rem 0 !important; letter-spacing: -0.02em !important;
+  text-align: center; border-top: none !important; padding-top: 0 !important;
+}
+.mkassa-page h2::before, .mkassa-page h2::after { display: none !important; }
+
+.mkassa-page .mkassa-section-subtitle {
+  font-size: 1rem; color: var(--mkassa-muted);
+  margin: 0 0 2rem 0; text-align: center;
+}
+
+/* HERO */
+.mkassa-page .mkassa-hero { padding: 2rem 0 1rem; max-width: 1000px; margin: 0 auto; }
+.mkassa-page .mkassa-hero__badge { display: inline-block; padding: 0.3rem 0.8rem; background: #e0e7ff; color: #4338ca; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 99px; margin-bottom: 1.5rem; }
+.mkassa-page .mkassa-hero__desc { font-size: 1.1rem; line-height: 1.6; color: var(--mkassa-text); margin: 0 !important; max-width: 700px; }
+.mkassa-page .mkassa-hero__desc a { color: var(--mkassa-primary); text-decoration: underline; }
+
+/* БЛОК "КАК ЭТО РАБОТАЕТ" — процесс-линия */
+.mkassa-page .mkassa-process-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1050px; margin: 2rem auto 3rem; position: relative; }
+.mkassa-page .mkassa-process-card { background: #fff; border: 1px solid var(--mkassa-border); border-radius: 16px; padding: 24px; position: relative; z-index: 1; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.mkassa-page .mkassa-process-card::before { content: attr(data-step); position: absolute; top: -10px; right: 15px; font-size: 100px; font-weight: 900; font-family: 'Inter', -apple-system, sans-serif; color: #eff6ff; line-height: 1; z-index: -1; pointer-events: none; transition: color 0.3s ease; }
+.mkassa-page .mkassa-process-card:hover::before { color: #dbeafe; }
+.mkassa-page .mkassa-process-title { font-size: 1.15rem; font-weight: 700; color: var(--mkassa-ink); margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.3; }
+.mkassa-page .mkassa-process-title svg { width: 24px; height: 24px; stroke: var(--mkassa-primary); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+.mkassa-page .mkassa-process-text { font-size: 0.95rem; line-height: 1.6; color: var(--mkassa-text); margin: 0; }
+.mkassa-page .mkassa-process-card:not(:last-child)::after { content: "→"; position: absolute; right: -24px; top: 50%; transform: translateY(-50%); font-size: 24px; color: #cbd5e1; font-weight: 300; z-index: 2; }
+
+/* ПОШАГОВАЯ ИНСТРУКЦИЯ */
+.mkassa-page .mkassa-steps-guide { display: flex; flex-direction: column; gap: 4rem; max-width: 1050px; margin: 0 auto 4rem; }
+.mkassa-page .mkassa-guide-step { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: center; }
+.mkassa-page .mkassa-guide-step:nth-child(even) { grid-template-columns: 1.3fr 1fr; }
+.mkassa-page .mkassa-guide-step:nth-child(even) .mkassa-guide-text { order: 2; }
+.mkassa-page .mkassa-guide-step--full { display: flex; flex-direction: column; gap: 1rem; align-items: stretch; text-align: center; }
+.mkassa-page .mkassa-step-heading { font-size: 1.4rem; color: var(--mkassa-ink); margin: 0 0 1rem 0 !important; font-weight: 700; }
+.mkassa-page .mkassa-guide-text p { font-size: 1.05rem; line-height: 1.6; color: var(--mkassa-text); margin: 0 0 1rem 0 !important; }
+.mkassa-page .mkassa-guide-text ul { margin: 0 0 1rem 0; padding-left: 1.5rem; font-size: 1.05rem; line-height: 1.6; }
+
+/* ИСПРАВЛЕННЫЙ Z-INDEX */
+.mkassa-page .mkassa-highlight {
+  position: relative; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4) !important;
+  border-radius: 6px; z-index: 1; animation: mkassa-pulse 2s infinite;
+}
+@keyframes mkassa-pulse {
+  0% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.6), 0 0 10px rgba(37,99,235,0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.1), 0 0 20px rgba(37,99,235,0.4); }
+  100% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.6), 0 0 10px rgba(37,99,235,0.3); }
+}
+
+/* UI MOCKUP COMMON */
+.mkassa-page .mkassa-mockup {
+  background: #f4f5f7; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); border: 1px solid var(--mkassa-border);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px; max-width: 100%; margin: 0 auto; color: #111827;
+}
+.mkassa-page .mkassa-ui-sidebar { background: #f8f9fb; border-right: 1px solid var(--mkassa-border); padding: 12px; }
+.mkassa-page .mkassa-ui-main { background: #fff; }
+.mkassa-page .mkassa-mockup-sidebar { display: grid; grid-template-columns: 230px 1fr; min-height: 350px; }
+
+/* ЖЁСТКИЙ СБРОС ДЛЯ <DETAILS> ВНУТРИ МОКАПА */
+.mkassa-page .mkassa-ui-menu details { margin: 0 !important; padding: 0 !important; border: none !important; background: transparent !important; box-shadow: none !important; outline: none !important; overflow: visible !important; }
+.mkassa-page .mkassa-ui-menu summary { display: flex !important; justify-content: space-between; align-items: center; padding: 10px 12px 10px 16px !important; font-weight: 700 !important; color: #111827 !important; font-size: 13px !important; cursor: pointer; list-style: none !important; outline: none !important; box-shadow: none !important; border: none !important; background: transparent !important; -webkit-tap-highlight-color: transparent !important; border-radius: 8px; position: relative !important; }
+.mkassa-page .mkassa-ui-menu summary::-webkit-details-marker { display: none !important; }
+.mkassa-page .mkassa-ui-menu summary::marker { display: none !important; content: none !important; }
+.mkassa-page .mkassa-ui-menu summary::before, .mkassa-page .mkassa-ui-menu summary::after { display: none !important; content: none !important; }
+
+.mkassa-page .mkassa-ui-chevron { display: inline-block; width: 7px; height: 7px; border: solid #111827; border-width: 0 2px 2px 0; transform: rotate(45deg); transition: transform 0.2s; }
+.mkassa-page details[open] .mkassa-ui-chevron { transform: rotate(-135deg); margin-bottom: -4px; }
+.mkassa-page .mkassa-ui-menu-item { display: flex; align-items: center; padding: 8px 12px 8px 36px; color: #4b5563; font-weight: 500; font-size: 13px; cursor: default; border-radius: 6px; margin-bottom: 2px; border: 1px solid transparent; }
+.mkassa-page .mkassa-ui-menu-item.active { color: #2563eb !important; font-weight: 600; background: #eff6ff !important; border: 1px solid #bfdbfe !important; }
+
+/* ШАГ 1: ВЕРХНЯЯ ПАНЕЛЬ */
+.mkassa-page .mkassa-topbar { background: #f8fafc; padding: 16px 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px; }
+.mkassa-page .mkassa-topbar-left { font-size: 14px; color: #111827; font-weight: 600; line-height: 1.4; }
+.mkassa-page .mkassa-topbar-left span { color: #2563eb; }
+.mkassa-page .mkassa-btn-outline { background: #fff; border: 1px solid #cbd5e1; color: #475569; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+
+/* ШАГ 2: КАРТОЧКИ РЕШЕНИЙ */
+.mkassa-page .mkassa-rc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; padding: 20px; background: #f8fafc; border-radius: 12px; }
+.mkassa-page .mkassa-rc-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; position: relative; }
+.mkassa-page .mkassa-rc-card--active { border: 2px solid var(--mkassa-green); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.mkassa-page .mkassa-rc-card-header { padding: 16px; border-bottom: 1px solid #e2e8f0; }
+.mkassa-page .mkassa-rc-card-title { font-weight: 700; font-size: 15px; margin-bottom: 12px; word-break: break-word; line-height: 1.3; }
+.mkassa-page .mkassa-rc-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.mkassa-page .mkassa-rc-badge--blue { background: #3b82f6; }
+.mkassa-page .mkassa-rc-badge--green { background: #10b981; }
+.mkassa-page .mkassa-rc-badge--yellow { background: #f59e0b; }
+.mkassa-page .mkassa-rc-card-body { padding: 16px; flex-grow: 1; font-size: 12px; color: #4b5563; line-height: 1.5; word-break: break-word; }
+.mkassa-page .mkassa-rc-card-links { padding: 0 16px 16px; font-size: 12px; }
+.mkassa-page .mkassa-rc-card-links a { display: block; color: #2563eb; text-decoration: none; margin-bottom: 4px; }
+.mkassa-page .mkassa-rc-card-footer { padding: 12px 16px; background: #f8fafc; text-align: center; border-top: 1px solid #e2e8f0; }
+.mkassa-page .mkassa-rc-card-footer button { width: 100%; padding: 8px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; background: #e2e8f0; color: #475569; }
+.mkassa-page .mkassa-rc-card--active .mkassa-rc-card-footer button { background: var(--mkassa-green); color: #fff; }
+
+/* ШАГ 3: ПАРТНЕРЫ */
+.mkassa-page .mkassa-partners { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; padding: 20px; background: #f8fafc; border-radius: 12px; }
+.mkassa-page .mkassa-partner-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; display: flex !important; flex-direction: column !important; align-items: center; justify-content: center; min-height: 100px; cursor: pointer; transition: all 0.2s; text-align: center; gap: 6px; }
+.mkassa-page .mkassa-partner-card:hover { border-color: #2563eb; box-shadow: 0 4px 12px rgba(37,99,235,0.1); }
+.mkassa-page .mkassa-partner-card.active { border-color: var(--mkassa-green); box-shadow: 0 0 0 1px var(--mkassa-green); }
+.mkassa-page .mkassa-partner-logo { font-size: 16px; font-weight: 800; color: #475569; line-height: 1.2; margin: 0 !important; }
+.mkassa-page .mkassa-partner-name { font-size: 12px; color: #6b7280; line-height: 1.4; margin: 0 !important; }
+
+/* ШАГ 4: НАСТРОЙКА ИНТЕГРАЦИИ */
+.mkassa-page .mkassa-setup-form { background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; text-align: left; }
+.mkassa-page .mkassa-setup-form > p { font-size: 14px; color: #111827; margin-bottom: 20px; line-height: 1.5; }
+.mkassa-page .mkassa-setup-form a { color: #2563eb; text-decoration: underline; }
+
+.mkassa-page .mkassa-input-row { display: flex; align-items: center; margin-bottom: 16px; gap: 20px; }
+.mkassa-page .mkassa-input-row label { width: 140px; flex-shrink: 0; font-size: 14px; color: #4b5563; text-align: right; }
+.mkassa-page .mkassa-input-row .req { color: #ef4444; margin-left: 2px; }
+.mkassa-page .mkassa-input-row input[type="text"] {
+  flex-grow: 1; max-width: 300px; padding: 10px 14px;
+  border: 1px solid #d1d5db; border-left: 3px solid #3b82f6;
+  border-radius: 4px; font-size: 14px; background: #f8fafc; color: #111827;
+}
+.mkassa-page .mkassa-checkbox-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4b5563; cursor: pointer; }
+.mkassa-page .mkassa-checkbox-row input { width: 16px; height: 16px; }
+
+/* Сетка предупреждений */
+.mkassa-page .mkassa-warning-grid { display: grid !important; grid-template-columns: 1.2fr 0.8fr !important; gap: 24px !important; margin-top: 30px !important; margin-bottom: 30px !important; text-align: left !important; }
+.mkassa-page .mkassa-warning-text h4 { font-size: 16px; font-weight: 600; color: #111827; margin: 0 0 10px 0; }
+.mkassa-page .mkassa-warning-text p { font-size: 13px; color: #4b5563; line-height: 1.6; margin-bottom: 10px; }
+.mkassa-page .mkassa-warning-text a { color: #2563eb; text-decoration: underline; }
+.mkassa-page .mkassa-warning-fines { background: #fff1f2; border-radius: 8px; padding: 16px; color: #881337; }
+.mkassa-page .mkassa-warning-fines h4 { font-size: 15px; font-weight: 600; margin: 0 0 8px 0; }
+.mkassa-page .mkassa-warning-fines p, .mkassa-page .mkassa-warning-fines ul { font-size: 12px; line-height: 1.5; margin: 0; }
+.mkassa-page .mkassa-warning-fines ul { padding-left: 16px; margin-top: 8px; }
+
+/* ТАБЛИЦА */
+.mkassa-page .mkassa-table-wrapper { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow-x: auto; max-width: 100%; }
+.mkassa-page .mkassa-table { width: 100%; border-collapse: collapse; min-width: 900px; }
+.mkassa-page .mkassa-table th { text-align: left; padding: 12px 8px; font-size: 11px; color: #6b7280; border-bottom: 1px solid #e2e8f0; font-weight: 600; background: #f8fafc; white-space: nowrap; }
+.mkassa-page .mkassa-table td { padding: 12px 8px; border-bottom: 1px solid #e2e8f0; font-size: 12px; color: #111827; vertical-align: middle; background: #fff; }
+.mkassa-page .mkassa-table tr:nth-child(even) td { background: #f8fafc; }
+.mkassa-page .mkassa-table tr:last-child td { border-bottom: none; }
+.mkassa-page .mkassa-table .mkassa-select { width: 100%; min-width: 80px; padding: 6px 4px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; background: #fff; color: #111827; }
+.mkassa-page .mkassa-table .mkassa-input { width: 100%; min-width: 80px; padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 12px; background: #fff; color: #111827; }
+.mkassa-page .mkassa-table .mkassa-tooltip-icon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; background: #3b82f6; color: #fff; border-radius: 50%; font-size: 10px; font-weight: bold; margin-left: 4px; cursor: help; vertical-align: middle; }
+
+/* Кнопки */
+.mkassa-page .mkassa-btn-block { display: block; width: 100%; padding: 12px; background: var(--mkassa-green); color: #fff; border: none; border-radius: 6px; font-weight: 600; font-size: 14px; margin-top: 20px; cursor: pointer; text-align: center; transition: background 0.2s; }
+.mkassa-page .mkassa-btn-block:hover { background: var(--mkassa-green-hover, #63a83e); }
+.mkassa-page .mkassa-btn-block--grey { background: #cbd5e1; color: #475569; margin-top: 10px; border: 1px solid #cbd5e1; }
+
+/* ИНФОРМАЦИОННЫЙ БЛОК */
+.mkassa-page .mkassa-info-box {
+  background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 20px;
+  margin: 2rem auto; max-width: 800px; display: flex; gap: 15px; align-items: flex-start;
+}
+.mkassa-page .mkassa-info-box svg { width: 24px; height: 24px; stroke: #2563eb; flex-shrink: 0; margin-top: 2px; }
+.mkassa-page .mkassa-info-box p { margin: 0 !important; font-size: 0.95rem; color: #1e3a8a; line-height: 1.6; }
+
+/* КАРТОЧКИ И FAQ */
+.mkassa-page .mkassa-features { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 1.5rem !important; max-width: 1050px !important; margin: 2rem auto 0 !important; }
+.mkassa-page .mkassa-feature { background: var(--mkassa-surface) !important; border: 1px solid var(--mkassa-border) !important; border-radius: 16px !important; padding: 1.5rem !important; }
+.mkassa-page .mkassa-card-title { margin: 0 0 0.85rem 0 !important; font-size: 1.05rem !important; font-weight: 700 !important; color: var(--mkassa-ink) !important; display: flex !important; align-items: center !important; gap: 10px !important; }
+.mkassa-page .mkassa-card-title svg { width: 20px; height: 20px; stroke: var(--mkassa-ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.mkassa-page .mkassa-feature p, .mkassa-page .mkassa-card-text { margin: 0 !important; padding-left: 0 !important; font-size: 0.92rem !important; line-height: 1.6 !important; color: var(--mkassa-text) !important; }
+
+.mkassa-page details.mkassa-question { margin: 12px 0 !important; border: 1px solid #e2e8f0 !important; border-left-width: 1px !important; border-radius: 14px !important; background: #ffffff !important; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035) !important; overflow: hidden !important; padding: 0 !important; }
+.mkassa-page details.mkassa-question summary { position: relative !important; display: block !important; padding: 20px 52px 20px 22px !important; color: #0f172a !important; font-size: 1rem !important; font-weight: 600 !important; line-height: 1.55 !important; cursor: pointer !important; list-style: none !important; background: transparent !important; border-radius: 0 !important; margin: 0 !important; }
+.mkassa-page details.mkassa-question summary::-webkit-details-marker, .mkassa-page details.mkassa-question summary::marker, .mkassa-page details.mkassa-question summary::before { display: none !important; content: "" !important; }
+.mkassa-page details.mkassa-question summary::after { content: "" !important; position: absolute !important; right: 22px !important; top: 50% !important; width: 8px !important; height: 8px !important; border-right: 2px solid #64748b !important; border-bottom: 2px solid #64748b !important; transform: translateY(-70%) rotate(45deg) !important; transition: transform 0.2s ease !important; }
+.mkassa-page details.mkassa-question[open] summary::after { transform: translateY(-25%) rotate(225deg) !important; }
+.mkassa-page details.mkassa-question[open] summary { padding-bottom: 14px !important; }
+.mkassa-page details.mkassa-question .mkassa-question__content { margin: 0 !important; padding: 0 22px 22px !important; color: #475569 !important; font-size: 0.95rem !important; line-height: 1.7 !important; }
+.mkassa-page details.mkassa-question .mkassa-question__content p { margin: 0 0 0.8rem 0 !important; }
+
+/* КНОПКА "НАВЕРХ" */
+.mkassa-scroll-top {
+  position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px;
+  border-radius: 50%; background-color: var(--mkassa-primary, #2563eb); color: #ffffff;
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); z-index: 9999;
+}
+.mkassa-scroll-top:hover { background-color: var(--mkassa-primary-hover, #1d4ed8); transform: translateY(-4px); }
+.mkassa-scroll-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ТЕМНАЯ ТЕМА */
+[data-md-color-scheme="slate"] .mkassa-page { --mkassa-bg: #0f172a; --mkassa-surface: #1e293b; --mkassa-ink: #f8fafc; --mkassa-text: #cbd5e1; --mkassa-muted: #94a3b8; --mkassa-border: #334155; --mkassa-primary: #3b82f6; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-mockup { background: #0f172a; color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-ui-sidebar { background: #0f172a; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-ui-menu summary { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-ui-chevron { border-color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-ui-menu-item { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-ui-menu-item.active { color: #60a5fa !important; background: rgba(37, 99, 235, 0.1) !important; border-color: rgba(37, 99, 235, 0.3) !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-topbar { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-topbar-left { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-btn-outline { background: #0f172a; border-color: #334155; color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-cards { background: #0f172a; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card--active { border-color: var(--mkassa-green); }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card-header, [data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card-footer { border-color: #334155; background: #0f172a; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card-title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card-body { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-rc-card-links a { color: #60a5fa; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-partners { background: #0f172a; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-partner-card { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-partner-card:hover { border-color: #60a5fa; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-partner-card.active { border-color: var(--mkassa-green); }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-partner-logo { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-table-wrapper { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-table th { background: #0f172a; border-color: #334155; color: #94a3b8; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-table td { border-color: #334155; color: #cbd5e1; background: #1e293b; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-table tr:nth-child(even) td { background: #0f172a; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-table .mkassa-select { background: #0f172a; border-color: #334155; color: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-table .mkassa-input { background: #0f172a; border-color: #334155; color: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-info-box { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-info-box p { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-info-box svg { stroke: #60a5fa; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-card { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-card::before { color: rgba(37, 99, 235, 0.1); }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-card:hover::before { color: rgba(37, 99, 235, 0.2); }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-title { color: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-title svg { stroke: #60a5fa; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-text { color: #94a3b8; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-process-card:not(:last-child)::after { color: #475569; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-feature { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-card-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-card-title svg { stroke: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-feature p { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .mkassa-page details.mkassa-question { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .mkassa-page details.mkassa-question summary { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .mkassa-page details.mkassa-question summary::after { border-color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .mkassa-page details.mkassa-question .mkassa-question__content { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-setup-form { background: #1e293b; border-color: #334155; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-setup-form > p { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-input-row label { color: #cbd5e1; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-input-row input[type="text"] { background: #0f172a; border-color: #334155; color: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-warning-text h4 { color: #f8fafc; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-warning-text p { color: #94a3b8; }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-warning-fines { background: rgba(239, 68, 68, 0.1); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+[data-md-color-scheme="slate"] .mkassa-page .mkassa-warning-fines h4 { color: #fecaca; }
+
+/* АДАПТИВ */
+@media (max-width: 900px) {
+  .mkassa-page .mkassa-guide-step, .mkassa-page .mkassa-guide-step:nth-child(even) { grid-template-columns: 1fr; gap: 1.5rem; }
+  .mkassa-page .mkassa-guide-step:nth-child(even) .mkassa-guide-text { order: 0; }
+  .mkassa-page .mkassa-ui-sidebar { display: none; }
+  .mkassa-page .mkassa-partners { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .mkassa-page .mkassa-rc-cards { grid-template-columns: 1fr; }
+  .mkassa-page .mkassa-info-box { flex-direction: column; }
+  .mkassa-page .mkassa-process-line { grid-template-columns: 1fr; gap: 30px; }
+  .mkassa-page .mkassa-process-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -30px; transform: translateX(50%); }
+  .mkassa-page .mkassa-warning-grid { grid-template-columns: 1fr !important; }
+  .mkassa-page .mkassa-input-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .mkassa-page .mkassa-input-row label { text-align: left; }
+  .mkassa-page .mkassa-input-row input[type="text"] { max-width: 100%; }
+}
