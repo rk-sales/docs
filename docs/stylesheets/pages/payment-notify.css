@@ -71,7 +71,7 @@ body:has(.notify-page) .md-content__inner { padding-top: 0 !important; margin-to
 
 .notify-page .notify-lk-highlight {
   position: relative; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4) !important;
-  border-radius: 6px; z-index: 10; animation: notify-pulse-border 2s infinite;
+  border-radius: 6px; z-index: 1; animation: notify-pulse-border 2s infinite;
 }
 @keyframes notify-pulse-border {
   0% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.6), 0 0 10px rgba(37,99,235,0.3); }
@@ -88,8 +88,9 @@ body:has(.notify-page) .md-content__inner { padding-top: 0 !important; margin-to
 }
 
 /* ИСПРАВЛЕНИЕ СЛОЕВ ДЛЯ МАКЕТА С МАГАЗИНАМИ */
-.notify-page .notify-lk-mockup.notify-mockup-store-list { overflow: visible !important; z-index: 5; }
-.notify-page .notify-lk-ui-sidebar { position: relative; z-index: 10; overflow: visible !important; background: #f8f9fb; border-right: 1px solid var(--notify-border); padding: 12px; }
+.notify-page .notify-lk-mockup.notify-mockup-store-list { overflow: visible !important; z-index: 1; }
+/* Поднимаем z-index сайдбара, чтобы выпадающее меню перекрывало правую часть */
+.notify-page .notify-lk-ui-sidebar { position: relative; z-index: 2; overflow: visible !important; background: #f8f9fb; border-right: 1px solid var(--notify-border); padding: 12px; }
 .notify-page .notify-lk-ui-main { background: #fff; position: relative; z-index: 1; }
 
 /* МАКЕТ 1: САЙДБАР С МАГАЗИНАМИ */
@@ -99,7 +100,7 @@ body:has(.notify-page) .md-content__inner { padding-top: 0 !important; margin-to
 .notify-page .notify-store-sub { font-size: 12px; opacity: 0.8; }
 .notify-page .notify-store-currency { font-size: 16px; font-weight: 700; margin-top: 10px; }
 .notify-page .notify-store-items { display: flex; flex-direction: column; gap: 8px; }
-.notify-page .notify-store-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; position: relative; z-index: 10; }
+.notify-page .notify-store-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; position: relative; z-index: 1; }
 .notify-page .notify-store-item-info { display: flex; align-items: center; gap: 12px; }
 .notify-page .notify-store-item-icon { width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center; font-size: 14px; font-weight: 700; color: #fff; }
 .notify-page .notify-store-item-name { font-weight: 600; font-size: 13px; }
@@ -113,7 +114,7 @@ body:has(.notify-page) .md-content__inner { padding-top: 0 !important; margin-to
 .notify-page .notify-context-menu { 
   position: absolute !important; left: 100%; top: 50%; transform: translateY(-50%); margin-left: 8px;
   background: #fff; border-radius: 8px; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4), 0 10px 25px rgba(0,0,0,0.15); 
-  border: 1px solid #e2e8f0; padding: 8px; width: max-content; z-index: 100; animation: notify-pulse-border 2s infinite;
+  border: 1px solid #e2e8f0; padding: 8px; width: max-content; z-index: 3; animation: notify-pulse-border 2s infinite;
 }
 .notify-page .notify-context-menu-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; font-size: 13px; color: #111827; border-radius: 4px; cursor: pointer; white-space: nowrap; }
 .notify-page .notify-context-menu-item:hover { background: #f3f4f6; }

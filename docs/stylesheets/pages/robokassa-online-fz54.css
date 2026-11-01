@@ -73,7 +73,7 @@ body:has(.fz54-page) .md-content__inner { padding-top: 0 !important; margin-top:
 
 .fz54-page .fz54-lk-highlight {
   position: relative; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4) !important;
-  border-radius: 6px; z-index: 10; animation: fz54-pulse-border 2s infinite;
+  border-radius: 6px; z-index: 1; animation: fz54-pulse-border 2s infinite;
 }
 @keyframes fz54-pulse-border {
   0% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.6), 0 0 10px rgba(37,99,235,0.3); }
