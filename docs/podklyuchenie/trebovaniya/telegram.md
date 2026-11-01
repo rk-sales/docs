@@ -1,73 +1,73 @@
-<div class="audit-page">
+<div class="atg-page">
 
-<div class="audit-container">
-  <header class="audit-hero">
-    <div class="audit-hero__badge">Аудит канала / бота</div>
-    <h1 class="audit-hero__title">Требования к подключению Telegram</h1>
-    <p class="audit-hero__desc">
+<div class="atg-container">
+  <header class="atg-hero">
+    <div class="atg-hero__badge">Аудит канала / бота</div>
+    <h1 class="atg-hero__title">Требования к подключению Telegram</h1>
+    <p class="atg-hero__desc">
       Перед подключением Robokassa убедитесь, что в вашем Telegram-канале или боте есть вся обязательная информация. Это ускорит модерацию и поможет избежать отказа в подключении.
     </p>
   </header>
 
-  <div class="audit-alert">
-    <div class="audit-alert__icon">!</div>
-    <div class="audit-alert__content">
+  <div class="atg-alert">
+    <div class="atg-alert__icon">!</div>
+    <div class="atg-alert__content">
       <strong>Совет:</strong> пройдитесь по всем пунктам ниже, прежде чем подавать заявку. Это сэкономит вам несколько дней на доработках.
     </div>
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title">
+<div class="atg-container">
+  <div class="atg-section-title">
     <h2>Три общих правила</h2>
     <p>На странице Telegram-канала или в боте должны быть расположены:</p>
   </div>
 
-  <div class="audit-rules">
+  <div class="atg-rules">
     <!-- Правило 1 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">01</div>
-      <div class="audit-rule__body">
+    <div class="atg-rule">
+      <div class="atg-rule__num">01</div>
+      <div class="atg-rule__body">
         <h3>Название и цены на товары/услуги</h3>
         <p>Цены должны быть указаны явно. Если у товаров/услуг нет фиксированных цен, их можно указать от и до.</p>
         
-        <div class="audit-rule__example">
+        <div class="atg-rule__example">
           <strong>Пример:</strong> «Юридические услуги от 10 000 до 50 000 рублей».
         </div>
 
-        <p class="audit-rule__hint">Варианты размещения цен:</p>
+        <p class="atg-rule__hint">Варианты размещения цен:</p>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В описании канала/бота</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>В Telegram откройте информацию о канале/боте, нажмите «Изменить описание» и укажите информацию с ценами. Не забудьте сохранить изменения.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В закреплённом сообщении</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>Создайте пост с описанием товаров/услуг и ценами, затем закрепите его вверху чата или канала.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В товарах/услугах (Telegram Shop)</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>Если используете Telegram-бота как магазин, товары можно оформить через специальные платёжные решения или Mini Apps.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В ссылке на облако</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>Загрузите файл прайс-листа в облачное хранилище (Google Disk, Yandex Drive и т.п.). Откройте доступ к файлу по ссылке и опубликуйте её в описании или закрепе.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В файле прайс-листа</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>В Telegram файл можно прикрепить к закреплённому сообщению или отправить его в чат и закрепить.</p>
           </div>
         </details>
@@ -75,22 +75,22 @@
     </div>
 
     <!-- Правило 2 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">02</div>
-      <div class="audit-rule__body">
+    <div class="atg-rule">
+      <div class="atg-rule__num">02</div>
+      <div class="atg-rule__body">
         <h3>Оферта ИЛИ условия оплаты и возврата</h3>
         
-        <div class="audit-rule__important">
+        <div class="atg-rule__important">
           <b>ВАЖНО:</b> Вам не обязательно размещать оферту, если у вас в Telegram уже имеется понятное описание условий оплаты и возврата денежных средств.
         </div>
 
         <p>Условия оплаты и возврата можно разместить в описании сообщества, по ссылке на облако или в закреплённом посте.</p>
 
-        <p class="audit-rule__hint">Примеры подходящих формулировок:</p>
+        <p class="atg-rule__hint">Примеры подходящих формулировок:</p>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>Пример 1. Продажа товаров онлайн</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>В канале доступна оплата картой или через СБП и другими платёжными методами через сервис Robokassa.</li>
@@ -100,9 +100,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>Пример 2. Продажа онлайн-услуг</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Оплата производится через бота или по ссылке картой или через СБП.</li>
@@ -112,9 +112,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>Пример 3. Продажа офлайн-услуг</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Бронь сеанса подтверждается 100% предоплатой по ссылке картой или через СБП.</li>
@@ -124,9 +124,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>Пример 4. Продажа товаров офлайн</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Товары бронируются через канал/бота, оплата производится только при получении в магазине наличными или картой.</li>
@@ -137,8 +137,8 @@
         </details>
 
         <!-- Генератор оферты -->
-        <div class="audit-generator">
-          <div class="audit-generator__badge">Бесплатно</div>
+        <div class="atg-generator">
+          <div class="atg-generator__badge">Бесплатно</div>
           <h4>Генератор оферты</h4>
           <p>Если вы решили разместить полноценную оферту, воспользуйтесь нашим бесплатным генератором в ЛК Robokassa:</p>
           <ol>
@@ -147,19 +147,19 @@
             <li>По вашему магазину нажмите на <b>«Настройки»</b>;</li>
             <li>Пролистайте вниз до раздела <b>«Об оферте»</b>, укажите вид деятельности и нажмите <b>«Скачать оферту»</b>.</li>
           </ol>
-          <p class="audit-generator__note">Файл с офертой можно загрузить в облако и дать ссылку в описании. Либо прикрепить файл к закреплённому сообщению.</p>
+          <p class="atg-generator__note">Файл с офертой можно загрузить в облако и дать ссылку в описании. Либо прикрепить файл к закреплённому сообщению.</p>
         </div>
       </div>
     </div>
 
     <!-- Правило 3 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">03</div>
-      <div class="audit-rule__body">
+    <div class="atg-rule">
+      <div class="atg-rule__num">03</div>
+      <div class="atg-rule__body">
         <h3>Реквизиты компании и актуальные контакты</h3>
         <p>На странице канала или в боте должны быть актуальные реквизиты и способы связи с вами.</p>
         
-        <div class="audit-rule__example">
+        <div class="atg-rule__example">
           <strong>Пример:</strong> <br>
           ИП Иванов Иван Иванович<br>
           ИНН: 12345784912<br>
@@ -167,18 +167,18 @@
           E-mail: ivanovaova@yandex.ru
         </div>
 
-        <p class="audit-rule__hint">Варианты размещения:</p>
+        <p class="atg-rule__hint">Варианты размещения:</p>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В описании канала/бота</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>В Telegram откройте информацию о канале/боте, нажмите «Изменить описание» и укажите реквизиты и контакты. Сохраните изменения.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="atg-question">
           <summary>В закреплённом сообщении</summary>
-          <div class="question__content">
+          <div class="atg-question__content">
             <p>Создайте пост с реквизитами и контактами и закрепите его вверху.</p>
           </div>
         </details>
@@ -187,14 +187,14 @@
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title" style="margin-top: 5rem;">
+<div class="atg-container">
+  <div class="atg-section-title" style="margin-top: 5rem;">
     <h2>Пример правильно оформленного Telegram-канала</h2>
     <p>Так выглядит канал, готовый к подключению (все обязательные элементы выделены):</p>
   </div>
   
   <!-- НОВЫЙ КАЧЕСТВЕННЫЙ SVG-МАКЕТ TELEGRAM (Темная тема) -->
-  <div class="audit-vk-mockup">
+  <div class="atg-mockup">
     <svg viewBox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; border-radius: 16px; border: 1px solid #333; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3); background: #0e1621; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
       
       <!-- Фон (паттерн Telegram) -->

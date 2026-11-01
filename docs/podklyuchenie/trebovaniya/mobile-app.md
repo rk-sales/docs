@@ -1,66 +1,66 @@
-<div class="audit-page">
+<div class="aapp-page">
 
-<div class="audit-container">
-  <header class="audit-hero">
-    <div class="audit-hero__badge">Аудит приложения</div>
-    <h1 class="audit-hero__title">Требования к мобильному приложению</h1>
-    <p class="audit-hero__desc">
+<div class="aapp-container">
+  <header class="aapp-hero">
+    <div class="aapp-hero__badge">Аудит приложения</div>
+    <h1 class="aapp-hero__title">Требования к мобильному приложению</h1>
+    <p class="aapp-hero__desc">
       Перед подключением Robokassa убедитесь, что в вашем мобильном приложении есть вся обязательная информация. Это ускорит модерацию и поможет избежать отказа в подключении.
     </p>
   </header>
 
-  <div class="audit-alert">
-    <div class="audit-alert__icon">!</div>
-    <div class="audit-alert__content">
+  <div class="aapp-alert">
+    <div class="aapp-alert__icon">!</div>
+    <div class="aapp-alert__content">
       <strong>Совет:</strong> пройдитесь по всем пунктам ниже, прежде чем подавать заявку. Это сэкономит вам несколько дней на доработках.
     </div>
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title">
+<div class="aapp-container">
+  <div class="aapp-section-title">
     <h2>Три общих правила</h2>
     <p>В мобильном приложении должны быть расположены:</p>
   </div>
 
-  <div class="audit-rules">
+  <div class="aapp-rules">
     <!-- Правило 1 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">01</div>
-      <div class="audit-rule__body">
+    <div class="aapp-rule">
+      <div class="aapp-rule__num">01</div>
+      <div class="aapp-rule__body">
         <h3>Название и цены на товары/услуги</h3>
         <p>Цены должны быть указаны явно. Если у товаров/услуг нет фиксированных цен, их можно указать от и до.</p>
         
-        <div class="audit-rule__example">
+        <div class="aapp-rule__example">
           <strong>Пример:</strong> «Юридические услуги от 10 000 до 50 000 рублей».
         </div>
 
-        <p class="audit-rule__hint">Варианты размещения цен:</p>
+        <p class="aapp-rule__hint">Варианты размещения цен:</p>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В описании приложения в сторе</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>В описании приложения в App Store, Google Play или RuStore укажите информацию о товарах/услугах и ценах. Это можно сделать в разделе «Описание» при заполнении карточки приложения.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>На главном экране приложения</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>На главном экране или в каталоге приложения должны быть явно указаны названия товаров/услуг и их стоимость (например, карточки товаров с ценами или список услуг).</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В отдельном разделе «Прайс-лист» или «Цены»</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>Создайте в приложении отдельный раздел с прайс-листом, где будут перечислены все товары/услуги и их стоимость.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В ссылке на облако с файлом</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>Разместите в приложении ссылку на файл с прайс-листом в облачном хранилище (Google Disk, Yandex Drive и т.п.). Ссылка должна быть активной и вести на общедоступный файл.</p>
           </div>
         </details>
@@ -68,20 +68,20 @@
     </div>
 
     <!-- Правило 2 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">02</div>
-      <div class="audit-rule__body">
+    <div class="aapp-rule">
+      <div class="aapp-rule__num">02</div>
+      <div class="aapp-rule__body">
         <h3>Оферта ИЛИ условия оплаты и возврата</h3>
         
-        <div class="audit-rule__important">
+        <div class="aapp-rule__important">
           <b>ВАЖНО:</b> Вам не обязательно размещать оферту, если в приложении уже имеется понятное описание условий оплаты и возврата денежных средств.
         </div>
 
-        <p class="audit-rule__hint">Примеры подходящих формулировок:</p>
+        <p class="aapp-rule__hint">Примеры подходящих формулировок:</p>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>Пример 1. Продажа товаров онлайн</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>В приложении доступна оплата картой или через СБП и другими платёжными методами через сервис Robokassa.</li>
@@ -91,9 +91,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>Пример 2. Продажа онлайн-услуг</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Оплата производится в приложении картой или через СБП.</li>
@@ -103,9 +103,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>Пример 3. Продажа офлайн-услуг</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Бронь сеанса подтверждается 100% предоплатой в приложении картой или через СБП.</li>
@@ -115,9 +115,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>Пример 4. Продажа товаров офлайн</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Товары бронируются через приложение, оплата производится только при получении в магазине наличными или картой.</li>
@@ -128,8 +128,8 @@
         </details>
 
         <!-- Генератор оферты -->
-        <div class="audit-generator">
-          <div class="audit-generator__badge">Бесплатно</div>
+        <div class="aapp-generator">
+          <div class="aapp-generator__badge">Бесплатно</div>
           <h4>Генератор оферты</h4>
           <p>Если вы решили разместить полноценную оферту, воспользуйтесь нашим бесплатным генератором в ЛК Robokassa:</p>
           <ol>
@@ -138,19 +138,19 @@
             <li>По вашему магазину нажмите на <b>«Настройки»</b>;</li>
             <li>Пролистайте вниз до раздела <b>«Об оферте»</b>, укажите вид деятельности и нажмите <b>«Скачать оферту»</b>.</li>
           </ol>
-          <p class="audit-generator__note">Файл с офертой можно разместить в отдельном разделе приложения («Документы» или «Оферта») либо дать ссылку на скачивание из облака.</p>
+          <p class="aapp-generator__note">Файл с офертой можно разместить в отдельном разделе приложения («Документы» или «Оферта») либо дать ссылку на скачивание из облака.</p>
         </div>
       </div>
     </div>
 
     <!-- Правило 3 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">03</div>
-      <div class="audit-rule__body">
+    <div class="aapp-rule">
+      <div class="aapp-rule__num">03</div>
+      <div class="aapp-rule__body">
         <h3>Реквизиты компании и актуальные контакты</h3>
         <p>В приложении должны быть актуальные реквизиты и способы связи с вами.</p>
         
-        <div class="audit-rule__example">
+        <div class="aapp-rule__example">
           <strong>Пример:</strong> <br>
           ИП Иванов Иван Иванович<br>
           ИНН: 12345784912<br>
@@ -158,39 +158,39 @@
           E-mail: ivanovaova@yandex.ru
         </div>
 
-        <p class="audit-rule__hint">Варианты размещения:</p>
+        <p class="aapp-rule__hint">Варианты размещения:</p>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В описании приложения в сторе</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>В описании приложения в App Store, Google Play или RuStore укажите реквизиты компании и контакты для связи. Это можно сделать в разделе «Информация о разработчике» или в тексте описания.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В отдельном разделе «Контакты» или «О компании»</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>Создайте в приложении раздел с контактной информацией, где будут указаны ИНН, ОГРН/ОГРНИП, юридический и фактический адрес, телефон, e-mail, ссылки на соцсети.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В настройках приложения</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>Разместите информацию о компании и контакты в разделе «Настройки» или «О приложении».</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В ссылке на облако с файлом</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>Загрузите файл с реквизитами в облачное хранилище и дайте активную ссылку в приложении.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="aapp-question">
           <summary>В закреплённом сообщении (чат поддержки)</summary>
-          <div class="question__content">
+          <div class="aapp-question__content">
             <p>Если в приложении есть встроенный чат или канал, закрепите сообщение с реквизитами и контактами.</p>
           </div>
         </details>
@@ -199,24 +199,24 @@
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title" style="margin-top: 5rem;">
+<div class="aapp-container">
+  <div class="aapp-section-title" style="margin-top: 5rem;">
     <h2>Пример правильного мобильного приложения</h2>
     <p>Так выглядит приложение, готовое к подключению (все обязательные элементы на экране):</p>
   </div>
   
   <!-- SVG-МАКЕТ МОБИЛЬНОГО ПРИЛОЖЕНИЯ -->
-  <div class="audit-vk-mockup">
+  <div class="aapp-mockup">
     <svg viewBox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; border-radius: 16px; border: 1px solid #333; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3); background: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
       
       <!-- Фон (градиент) -->
       <defs>
-        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="aappBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#1e293b" />
           <stop offset="100%" stop-color="#0f172a" />
         </linearGradient>
       </defs>
-      <rect width="1000" height="750" fill="url(#bgGradient)" />
+      <rect width="1000" height="750" fill="url(#aappBgGradient)" />
 
       <!-- Телефон (Корпус) -->
       <rect x="300" y="50" width="400" height="800" rx="40" fill="#000" stroke="#334155" stroke-width="4" />

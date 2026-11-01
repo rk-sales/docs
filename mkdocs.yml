@@ -79,6 +79,18 @@ extra_css:
   - stylesheets/pages/vozvrat.css
   - stylesheets/pages/payment-notify.css
   - stylesheets/pages/roles.css
+  - stylesheets/pages/robokassa-online-fz54.css
+  - stylesheets/pages/robocheki-fz54.css
+  - stylesheets/pages/komtet-kassa.css
+  - stylesheets/pages/evotor.css
+  - stylesheets/pages/pervy-ofd.css
+  - stylesheets/pages/business-ru.css
+  - stylesheets/pages/litebox.css
+  - stylesheets/pages/initpro.css
+  - stylesheets/pages/atol-online.css
+  - stylesheets/pages/mts-kassa.css
+  - stylesheets/pages/modulkassa.css
+  
   # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
   - stylesheets/dark-theme.css
   
@@ -165,8 +177,8 @@ nav:
                   - Первый ОФД: instructions/lk-robokassa/fz-54/external-integration/perviy-ofd.md
                   - Бизнес.Ру Онлайн-Чеки: instructions/lk-robokassa/fz-54/external-integration/biznes-ru.md
                   - LiteBox: instructions/lk-robokassa/fz-54/external-integration/litebox.md
-                  - Инит-Про: instructions/lk-robokassa/fz-54/external-integration/init-pro.md
                   - Модуль-Касса: instructions/lk-robokassa/fz-54/external-integration/modul-kassa.md
+                  - Инит-Про: instructions/lk-robokassa/fz-54/external-integration/init-pro.md
                   - МТС-Касса: instructions/lk-robokassa/fz-54/external-integration/mts.md
       - Работа через Мобильное Приложение (pwa.robokassa.ru):
           - instructions/app-robokassa/index.md

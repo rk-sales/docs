@@ -1,57 +1,56 @@
-<div class="audit-page">
+<div class="asajt-page">
 
-<div class="audit-container">
-  <header class="audit-hero">
-    <div class="audit-hero__badge">Аудит сайта</div>
-    <h1 class="audit-hero__title">Требования к сайту для подключения</h1>
-    <p class="audit-hero__desc">
+<div class="asajt-container">
+  <header class="asajt-hero">
+    <div class="asajt-hero__badge">Аудит сайта</div>
+    <h1 class="asajt-hero__title">Требования к сайту для подключения</h1>
+    <p class="asajt-hero__desc">
       Перед подключением Robokassa проверьте, что на вашем сайте или ресурсе есть вся обязательная информация. Это ускорит модерацию и поможет избежать отказа в подключении.
     </p>
   </header>
 
-  <div class="audit-alert">
-    <div class="audit-alert__icon">!</div>
-    <div class="audit-alert__content">
+  <div class="asajt-alert">
+    <div class="asajt-alert__icon">!</div>
+    <div class="asajt-alert__content">
       <strong>Совет:</strong> пройдитесь по всем пунктам ниже, прежде чем подавать заявку. Это сэкономит вам несколько дней на доработках и переписке с поддержкой.
     </div>
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title">
+<div class="asajt-container">
+  <div class="asajt-section-title">
     <h2>Три общих правила</h2>
     <p>На сайте должны быть расположены:</p>
   </div>
 
-  <div class="audit-rules">
+  <div class="asajt-rules">
     <!-- Правило 1 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">01</div>
-      <div class="audit-rule__body">
+    <div class="asajt-rule">
+      <div class="asajt-rule__num">01</div>
+      <div class="asajt-rule__body">
         <h3>Название и цены на товары/услуги</h3>
         <p>Если у товаров/услуг нет фиксированных цен, их можно указать от и до.</p>
-        <div class="audit-rule__example">
+        <div class="asajt-rule__example">
           <strong>Пример:</strong> «Юридические услуги от 10 000 до 50 000 рублей».
         </div>
       </div>
     </div>
 
     <!-- Правило 2 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">02</div>
-      <div class="audit-rule__body">
+    <div class="asajt-rule">
+      <div class="asajt-rule__num">02</div>
+      <div class="asajt-rule__body">
         <h3>Оферта ИЛИ условия оплаты и возврата</h3>
         
-        <div class="audit-rule__important">
+        <div class="asajt-rule__important">
           <b>ВАЖНО:</b> Вам не обязательно размещать оферту, если у вас на сайте уже имеется понятное описание условий оплаты и возврата денежных средств.
         </div>
 
-        <p class="audit-rule__hint">Посмотрите на примеры подходящих формулировок для разных типов бизнеса:</p>
+        <p class="asajt-rule__hint">Посмотрите на примеры подходящих формулировок для разных типов бизнеса:</p>
 
-        <!-- Примеры оферт (аккордеоны в стиле question) -->
-        <details class="question">
+        <details class="asajt-question">
           <summary>Пример 1. Продажа товаров онлайн</summary>
-          <div class="question__content">
+          <div class="asajt-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>На сайте доступна оплата картой или через СБП и другими платёжными методами через сервис Robokassa.</li>
@@ -61,9 +60,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="asajt-question">
           <summary>Пример 2. Продажа онлайн-услуг</summary>
-          <div class="question__content">
+          <div class="asajt-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Оплата производится на сайте картой или через СБП.</li>
@@ -73,9 +72,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="asajt-question">
           <summary>Пример 3. Продажа офлайн-услуг</summary>
-          <div class="question__content">
+          <div class="asajt-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Бронь сеанса подтверждается 100% предоплатой на сайте картой или через СБП.</li>
@@ -85,9 +84,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="asajt-question">
           <summary>Пример 4. Продажа товаров офлайн</summary>
-          <div class="question__content">
+          <div class="asajt-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Товары бронируются через сайт, оплата производится только при получении в магазине наличными или картой.</li>
@@ -98,8 +97,8 @@
         </details>
 
         <!-- Генератор оферты -->
-        <div class="audit-generator">
-          <div class="audit-generator__badge">Бесплатно</div>
+        <div class="asajt-generator">
+          <div class="asajt-generator__badge">Бесплатно</div>
           <h4>Генератор оферты</h4>
           <p>Если вы решили разместить полноценную оферту, воспользуйтесь нашим бесплатным генератором в ЛК Robokassa:</p>
           <ol>
@@ -108,18 +107,18 @@
             <li>По вашему магазину нажмите на «<b>ⵗ</b>» → <b>«Настройки»</b>;</li>
             <li>На открывшейся странице пролистайте вниз до раздела <b>«Об оферте»</b>, укажите ваш вид деятельности и нажмите <b>«Скачать оферту»</b>.</li>
           </ol>
-          <p class="audit-generator__note">Данный файл можно отредактировать при необходимости и разместить у вас на веб-ресурсе.</p>
+          <p class="asajt-generator__note">Данный файл можно отредактировать при необходимости и разместить у вас на веб-ресурсе.</p>
         </div>
       </div>
     </div>
 
     <!-- Правило 3 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">03</div>
-      <div class="audit-rule__body">
+    <div class="asajt-rule">
+      <div class="asajt-rule__num">03</div>
+      <div class="asajt-rule__body">
         <h3>Реквизиты компании и контакты</h3>
         <p>На сайте должны быть актуальные реквизиты и способы связи с вами.</p>
-        <div class="audit-rule__example">
+        <div class="asajt-rule__example">
           <strong>Пример:</strong> <br>
 		  ИП Иванов Иван Иванович<br>
 		  ИНН: 12345784912<br>
@@ -131,123 +130,123 @@
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title">
+<div class="asajt-container">
+  <div class="asajt-section-title">
     <h2>Технические требования</h2>
     <p>Пройдитесь по списку и отметьте, что уже готово.</p>
   </div>
 
   <!-- Интерактивный чек-лист -->
-  <div class="audit-checklist">
-    <label class="audit-check">
+  <div class="asajt-checklist">
+    <label class="asajt-check">
       <input type="checkbox">
-      <span class="audit-check__box"></span>
-      <span class="audit-check__text">Сайт доступен по прямой ссылке без бесконечных редиректов.</span>
+      <span class="asajt-check__box"></span>
+      <span class="asajt-check__text">Сайт доступен по прямой ссылке без бесконечных редиректов.</span>
     </label>
 
-    <label class="audit-check">
+    <label class="asajt-check">
       <input type="checkbox">
-      <span class="audit-check__box"></span>
-      <span class="audit-check__text">Все страницы, связанные с продажей, находятся в пределах одного доменного имени.</span>
+      <span class="asajt-check__box"></span>
+      <span class="asajt-check__text">Все страницы, связанные с продажей, находятся в пределах одного доменного имени.</span>
     </label>
 
-    <label class="audit-check">
+    <label class="asajt-check">
       <input type="checkbox">
-      <span class="audit-check__box"></span>
-      <span class="audit-check__text">Страницы корректно открываются и содержат актуальные данные — тестовые карточки товаров и «заглушки» удалены.</span>
+      <span class="asajt-check__box"></span>
+      <span class="asajt-check__text">Страницы корректно открываются и содержат актуальные данные — тестовые карточки товаров и «заглушки» удалены.</span>
     </label>
 
-    <label class="audit-check">
+    <label class="asajt-check">
       <input type="checkbox">
-      <span class="audit-check__box"></span>
-      <span class="audit-check__text">Сайт не находится в стадии разработки и не закрыт от общего доступа.</span>
+      <span class="asajt-check__box"></span>
+      <span class="asajt-check__text">Сайт не находится в стадии разработки и не закрыт от общего доступа.</span>
     </label>
 
-    <label class="audit-check">
+    <label class="asajt-check">
       <input type="checkbox">
-      <span class="audit-check__box"></span>
-      <span class="audit-check__text">Если доступ возможен только по авторизации — предоставьте данные для входа и откройте сайт на время проверки.</span>
+      <span class="asajt-check__box"></span>
+      <span class="asajt-check__text">Если доступ возможен только по авторизации — предоставьте данные для входа и откройте сайт на время проверки.</span>
     </label>
 
-    <label class="audit-check">
+    <label class="asajt-check">
       <input type="checkbox">
-      <span class="audit-check__box"></span>
-      <span class="audit-check__text">Для ресурсов 18+ есть страница с указанием возрастного ограничения и механизм подтверждения возраста.</span>
+      <span class="asajt-check__box"></span>
+      <span class="asajt-check__text">Для ресурсов 18+ есть страница с указанием возрастного ограничения и механизм подтверждения возраста.</span>
     </label>
   </div>
 
-  <div class="audit-note">
-    <div class="audit-note__icon">i</div>
-    <div class="audit-note__content">
+  <div class="asajt-note">
+    <div class="asajt-note__icon">i</div>
+    <div class="asajt-note__content">
       Если ваш проект временный или сезонный, заранее предупредите поддержку перед отключением сайта или сменой URL.
     </div>
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title">
+<div class="asajt-container">
+  <div class="asajt-section-title">
     <h2>Примеры сайтов</h2>
     <p>Посмотрите, как могут выглядеть сайты, готовые к подключению (кликните, чтобы открыть):</p>
   </div>
   
-      <div class="audit-portfolio">
+      <div class="asajt-portfolio">
     <!-- Сайт 1 -->
-    <a href="https://komod-idey.skatoolka.ru/" target="_blank" rel="noopener noreferrer" class="audit-portfolio__item">
-      <div class="audit-portfolio__browser"><span></span><span></span><span></span></div>
-      <div class="audit-portfolio__preview">
+    <a href="https://komod-idey.skatoolka.ru/" target="_blank" rel="noopener noreferrer" class="asajt-portfolio__item">
+      <div class="asajt-portfolio__browser"><span></span><span></span><span></span></div>
+      <div class="asajt-portfolio__preview">
         <img src="../../../img/site-1.webp" alt="Комод идей" loading="lazy">
       </div>
-      <div class="audit-portfolio__info">
+      <div class="asajt-portfolio__info">
         <span>komod-idey.skatoolka.ru</span>
-        <div class="audit-portfolio__arrow">→</div>
+        <div class="asajt-portfolio__arrow">→</div>
       </div>
     </a>
 
     <!-- Сайт 2 -->
-    <a href="https://robokassa-bilety-gvtjjv.skatoolka.ru" target="_blank" rel="noopener noreferrer" class="audit-portfolio__item">
-      <div class="audit-portfolio__browser"><span></span><span></span><span></span></div>
-      <div class="audit-portfolio__preview">
+    <a href="https://robokassa-bilety-gvtjjv.skatoolka.ru" target="_blank" rel="noopener noreferrer" class="asajt-portfolio__item">
+      <div class="asajt-portfolio__browser"><span></span><span></span><span></span></div>
+      <div class="asajt-portfolio__preview">
         <img src="../../../img/site-2.webp" alt="Билеты" loading="lazy">
       </div>
-      <div class="audit-portfolio__info">
+      <div class="asajt-portfolio__info">
         <span>robokassa-bilety...</span>
-        <div class="audit-portfolio__arrow">→</div>
+        <div class="asajt-portfolio__arrow">→</div>
       </div>
     </a>
 
     <!-- Сайт 3 -->
-    <a href="https://poznaysebya-bas1j4.skatoolka.ru" target="_blank" rel="noopener noreferrer" class="audit-portfolio__item">
-      <div class="audit-portfolio__browser"><span></span><span></span><span></span></div>
-      <div class="audit-portfolio__preview">
+    <a href="https://poznaysebya-bas1j4.skatoolka.ru" target="_blank" rel="noopener noreferrer" class="asajt-portfolio__item">
+      <div class="asajt-portfolio__browser"><span></span><span></span><span></span></div>
+      <div class="asajt-portfolio__preview">
         <img src="../../../img/site-3.webp" alt="Познай себя" loading="lazy">
       </div>
-      <div class="audit-portfolio__info">
+      <div class="asajt-portfolio__info">
         <span>poznaysebya...</span>
-        <div class="audit-portfolio__arrow">→</div>
+        <div class="asajt-portfolio__arrow">→</div>
       </div>
     </a>
 
     <!-- Сайт 4 -->
-    <a href="https://kovrovyy-tsentr-dmwd9h.skatoolka.ru/" target="_blank" rel="noopener noreferrer" class="audit-portfolio__item">
-      <div class="audit-portfolio__browser"><span></span><span></span><span></span></div>
-      <div class="audit-portfolio__preview">
+    <a href="https://kovrovyy-tsentr-dmwd9h.skatoolka.ru/" target="_blank" rel="noopener noreferrer" class="asajt-portfolio__item">
+      <div class="asajt-portfolio__browser"><span></span><span></span><span></span></div>
+      <div class="asajt-portfolio__preview">
         <img src="../../../img/site-4.webp" alt="Ковровый центр" loading="lazy">
       </div>
-      <div class="audit-portfolio__info">
+      <div class="asajt-portfolio__info">
         <span>kovrovyy-tsentr...</span>
-        <div class="audit-portfolio__arrow">→</div>
+        <div class="asajt-portfolio__arrow">→</div>
       </div>
     </a>
 
     <!-- Сайт 5 -->
-    <a href="https://volna-psihologicheskaya-is8dc9.skatoolka.ru/" target="_blank" rel="noopener noreferrer" class="audit-portfolio__item">
-      <div class="audit-portfolio__browser"><span></span><span></span><span></span></div>
-      <div class="audit-portfolio__preview">
+    <a href="https://volna-psihologicheskaya-is8dc9.skatoolka.ru/" target="_blank" rel="noopener noreferrer" class="asajt-portfolio__item">
+      <div class="asajt-portfolio__browser"><span></span><span></span><span></span></div>
+      <div class="asajt-portfolio__preview">
         <img src="../../../img/site-5.webp" alt="Волна" loading="lazy">
       </div>
-      <div class="audit-portfolio__info">
+      <div class="asajt-portfolio__info">
         <span>volna-psihologicheskaya...</span>
-        <div class="audit-portfolio__arrow">→</div>
+        <div class="asajt-portfolio__arrow">→</div>
       </div>
     </a>
   </div>

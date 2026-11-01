@@ -1,42 +1,44 @@
 /* =========================================================
-   INSTRUKCIYA (DOCS) — Universal Modern Tech Docs
+   INSTRUKCIYA SMZ (DOCS) — Isolated Styles
+   Корень: .smz-page
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.doc-page {
-  --doc-bg: #f8fafc;
-  --doc-surface: #ffffff;
-  --doc-ink: #0f172a;
-  --doc-text: #475569;
-  --doc-muted: #94a3b8;
-  --doc-border: #e2e8f0;
-  --doc-primary: #2563eb;
-  --doc-primary-hover: #1d4ed8;
+.smz-page {
+  --smz-bg: #f8fafc;
+  --smz-surface: #ffffff;
+  --smz-ink: #0f172a;
+  --smz-text: #475569;
+  --smz-muted: #94a3b8;
+  --smz-border: #e2e8f0;
+  --smz-primary: #2563eb;
+  --smz-primary-hover: #1d4ed8;
 
   display: block !important;
   width: 100% !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--doc-text);
-  background-color: var(--doc-bg);
+  color: var(--smz-text);
+  background-color: var(--smz-bg) !important;
+  background-image: none !important; /* Принудительно убираем точки, если они просочились */
   padding-bottom: 6rem;
   position: relative;
   overflow-x: hidden;
 }
 
-.doc-page *, .doc-page *::before, .doc-page *::after { box-sizing: border-box; }
+.smz-page *, .smz-page *::before, .smz-page *::after { box-sizing: border-box; }
 
-body:has(.doc-page) .md-nav--secondary { display: none !important; }
-body:has(.doc-page) .md-header__topic { display: none !important; }
-body:has(.doc-page) .md-content__inner > h1 { display: none !important; }
+body:has(.smz-page) .md-nav--secondary { display: none !important; }
+body:has(.smz-page) .md-header__topic { display: none !important; }
+body:has(.smz-page) .md-content__inner > h1 { display: none !important; }
 
 /* Убираем стандартный огромный отступ MkDocs сверху */
-body:has(.doc-page) .md-content__inner {
+body:has(.smz-page) .md-content__inner {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
-.doc-page .doc-container {
+.smz-page .smz-container {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -45,15 +47,16 @@ body:has(.doc-page) .md-content__inner {
 }
 
 /* =========================
-   HERO
+   HERO — Жесткая изоляция
    ========================= */
-.doc-page .doc-hero {
+.smz-page .smz-hero {
+  display: block !important; /* Сбрасываем возможные grid/flex из других CSS */
   padding-top: 1rem;
   padding-bottom: 3rem;
   text-align: left;
 }
 
-.doc-page .doc-hero__badge {
+.smz-page .smz-hero__badge {
   display: inline-block;
   padding: 0.3rem 0.8rem;
   background: #e0e7ff;
@@ -66,30 +69,37 @@ body:has(.doc-page) .md-content__inner {
   margin-bottom: 1.5rem;
 }
 
-.doc-page .doc-hero__title {
+.smz-page .smz-hero__title {
+  display: block !important;
+  width: 100% !important;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--doc-ink) !important;
+  color: var(--smz-ink) !important;
   margin: 0 0 1rem 0 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
-.doc-page .doc-hero__desc {
+.smz-page .smz-hero__desc {
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 650px;
   margin: 0 0 3rem 0 !important;
-  color: var(--doc-text);
+  color: var(--smz-text);
 }
 
 /* Карточка скачивания PDF */
-.doc-page .doc-download-card {
-  display: flex;
-  align-items: center;
+.smz-page .smz-download-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
   gap: 1.5rem;
-  background: var(--doc-surface);
-  border: 1px solid var(--doc-border);
+  background: var(--smz-surface);
+  border: 1px solid var(--smz-border);
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
@@ -98,39 +108,42 @@ body:has(.doc-page) .md-content__inner {
   margin: 0;
 }
 
-.doc-page .doc-download-card__icon {
+.smz-page .smz-download-card__icon {
   width: 48px; height: 48px;
   background: #eff6ff;
-  color: var(--doc-primary);
+  color: var(--smz-primary);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
-.doc-page .doc-download-card__icon svg { width: 24px; height: 24px; }
+.smz-page .smz-download-card__icon svg { width: 24px; height: 24px; }
 
-.doc-page .doc-download-card__content {
-  flex-grow: 1;
+.smz-page .smz-download-card__content {
+  flex: 1 1 auto !important; /* Заставляем контент занимать свободное место */
+  min-width: 0 !important; /* Отключаем сжатие текста в одну букву */
 }
-.doc-page .doc-download-card__content h3 {
+.smz-page .smz-download-card__content h3 {
   margin: 0 0 0.2rem 0 !important;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--doc-ink);
+  color: var(--smz-ink);
 }
-.doc-page .doc-download-card__content p {
+.smz-page .smz-download-card__content p {
   margin: 0 !important;
   font-size: 0.9rem;
-  color: var(--doc-muted);
+  color: var(--smz-muted);
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
 }
 
-.doc-page .doc-download-btn {
+.smz-page .smz-download-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1.2rem;
-  background: var(--doc-primary);
+  background: var(--smz-primary);
   color: #fff !important;
   font-size: 0.9rem;
   font-weight: 600;
@@ -138,13 +151,14 @@ body:has(.doc-page) .md-content__inner {
   border-radius: 8px;
   transition: background 0.2s;
   white-space: nowrap;
+  flex-shrink: 0;
 }
-.doc-page .doc-download-btn:hover { background: var(--doc-primary-hover); }
+.smz-page .smz-download-btn:hover { background: var(--smz-primary-hover); }
 
 /* =========================
-   ALERT (Внимание) — Если понадобится на других страницах
+   ALERT (Внимание)
    ========================= */
-.doc-page .doc-alert {
+.smz-page .smz-alert {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -156,7 +170,7 @@ body:has(.doc-page) .md-content__inner {
   margin-bottom: 4rem;
 }
 
-.doc-page .doc-alert__icon {
+.smz-page .smz-alert__icon {
   font-size: 1.2rem;
   font-weight: 800;
   color: #f59e0b;
@@ -169,26 +183,26 @@ body:has(.doc-page) .md-content__inner {
   margin-top: 2px;
 }
 
-.doc-page .doc-alert__content {
+.smz-page .smz-alert__content {
   font-size: 1rem;
   line-height: 1.5;
   color: #92400e;
 }
-.doc-page .doc-alert__content strong { font-weight: 700; }
-.doc-page .doc-alert__content b { font-weight: 700; text-decoration: underline; }
+.smz-page .smz-alert__content strong { font-weight: 700; }
+.smz-page .smz-alert__content b { font-weight: 700; text-decoration: underline; }
 
 /* =========================
-   FAQ (Стиль из foreign-cards)
+   FAQ
    ========================= */
-.doc-page .doc-faq__title {
+.smz-page .smz-faq__title {
   font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 700;
-  color: var(--doc-ink) !important;
+  color: var(--smz-ink) !important;
   margin: 0 0 2rem 0 !important;
   text-align: left;
 }
 
-.doc-page .question { 
+.smz-page details.smz-question { 
   margin: 12px 0 !important; 
   border: 1px solid #e2e8f0 !important; 
   border-left-width: 1px !important; 
@@ -199,12 +213,12 @@ body:has(.doc-page) .md-content__inner {
   transition: border-color 0.2s ease, box-shadow 0.2s ease; 
 }
 
-.doc-page .question:hover { 
+.smz-page details.smz-question:hover { 
   border-color: #bfdbfe !important; 
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important; 
 }
 
-.doc-page .question summary { 
+.smz-page details.smz-question summary { 
   position: relative; 
   display: block; 
   padding: 20px 52px 20px 22px !important; 
@@ -218,14 +232,14 @@ body:has(.doc-page) .md-content__inner {
   border-radius: 0 !important; 
 }
 
-.doc-page .question summary::-webkit-details-marker, 
-.doc-page .question summary::marker, 
-.doc-page .question summary::before { 
+.smz-page details.smz-question summary::-webkit-details-marker, 
+.smz-page details.smz-question summary::marker, 
+.smz-page details.smz-question summary::before { 
   display: none !important; 
   content: "" !important; 
 }
 
-.doc-page .question summary::after { 
+.smz-page details.smz-question summary::after { 
   content: ""; 
   position: absolute; 
   right: 22px; 
@@ -238,15 +252,15 @@ body:has(.doc-page) .md-content__inner {
   transition: transform 0.2s ease; 
 }
 
-.doc-page .question[open] summary::after { 
+.smz-page details.smz-question[open] summary::after { 
   transform: translateY(-25%) rotate(225deg); 
 }
 
-.doc-page .question[open] summary { 
+.smz-page details.smz-question[open] summary { 
   padding-bottom: 14px !important; 
 }
 
-.doc-page .question__content { 
+.smz-page details.smz-question .smz-question__content { 
   margin: 0 !important; 
   padding: 0 22px 22px !important; 
   color: #475569 !important; 
@@ -254,65 +268,65 @@ body:has(.doc-page) .md-content__inner {
   line-height: 1.8 !important; 
 }
 
-.doc-page .question__content p { margin: 0 0 1rem 0 !important; }
-.doc-page .question__content p:last-child { margin-bottom: 0 !important; }
-.doc-page .question__content ul { margin: 0 0 1rem 0; padding-left: 1.2rem; }
-.doc-page .question__content li { margin-bottom: 0.4rem; }
-.doc-page .question__content a { color: var(--doc-primary); text-decoration: none; }
-.doc-page .question__content a:hover { text-decoration: underline; }
-.doc-page .question__content b { color: #0f172a; }
+.smz-page details.smz-question .smz-question__content p { margin: 0 0 1rem 0 !important; }
+.smz-page details.smz-question .smz-question__content p:last-child { margin-bottom: 0 !important; }
+.smz-page details.smz-question .smz-question__content ul { margin: 0 0 1rem 0; padding-left: 1.2rem; }
+.smz-page details.smz-question .smz-question__content li { margin-bottom: 0.4rem; }
+.smz-page details.smz-question .smz-question__content a { color: var(--smz-primary); text-decoration: none; }
+.smz-page details.smz-question .smz-question__content a:hover { text-decoration: underline; }
+.smz-page details.smz-question .smz-question__content b { color: #0f172a; }
 
 /* =========================
    ТЁМНАЯ ТЕМА
    ========================= */
-[data-md-color-scheme="slate"] .doc-page {
-  --doc-bg: #0f172a;
-  --doc-surface: #1e293b;
-  --doc-ink: #f8fafc;
-  --doc-text: #cbd5e1;
-  --doc-muted: #94a3b8;
-  --doc-border: #334155;
-  --doc-primary: #3b82f6;
-  --doc-primary-hover: #2563eb;
+[data-md-color-scheme="slate"] .smz-page {
+  --smz-bg: #0f172a;
+  --smz-surface: #1e293b;
+  --smz-ink: #f8fafc;
+  --smz-text: #cbd5e1;
+  --smz-muted: #94a3b8;
+  --smz-border: #334155;
+  --smz-primary: #3b82f6;
+  --smz-primary-hover: #2563eb;
 }
 
-[data-md-color-scheme="slate"] .doc-page .doc-hero__badge { background: rgba(67, 56, 202, 0.2); color: #a5b4fc; }
-[data-md-color-scheme="slate"] .doc-page .doc-download-card__icon { background: rgba(37, 99, 235, 0.15); }
-[data-md-color-scheme="slate"] .doc-page .doc-alert { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
-[data-md-color-scheme="slate"] .doc-page .doc-alert__icon { background: #0f172a; }
-[data-md-color-scheme="slate"] .doc-page .doc-alert__content { color: #fcd34d; }
+[data-md-color-scheme="slate"] .smz-page .smz-hero__badge { background: rgba(67, 56, 202, 0.2); color: #a5b4fc; }
+[data-md-color-scheme="slate"] .smz-page .smz-download-card__icon { background: rgba(37, 99, 235, 0.15); }
+[data-md-color-scheme="slate"] .smz-page .smz-alert { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
+[data-md-color-scheme="slate"] .smz-page .smz-alert__icon { background: #0f172a; }
+[data-md-color-scheme="slate"] .smz-page .smz-alert__content { color: #fcd34d; }
 
-[data-md-color-scheme="slate"] .doc-page .question { 
+[data-md-color-scheme="slate"] .smz-page details.smz-question { 
   background: #1e293b !important; 
   border-color: #334155 !important; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important; 
 }
-[data-md-color-scheme="slate"] .doc-page .question:hover { 
+[data-md-color-scheme="slate"] .smz-page details.smz-question:hover { 
   border-color: #3b82f6 !important; 
   box-shadow: 0 4px 14px rgba(59, 130, 246, 0.1) !important; 
 }
-[data-md-color-scheme="slate"] .doc-page .question summary { color: #f8fafc !important; }
-[data-md-color-scheme="slate"] .doc-page .question summary::after { border-color: #94a3b8; }
-[data-md-color-scheme="slate"] .doc-page .question__content { color: #cbd5e1 !important; }
-[data-md-color-scheme="slate"] .doc-page .question__content b { color: #f8fafc; }
-[data-md-color-scheme="slate"] .doc-page .question__content a { color: #60a5fa; }
+[data-md-color-scheme="slate"] .smz-page details.smz-question summary { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .smz-page details.smz-question summary::after { border-color: #94a3b8; }
+[data-md-color-scheme="slate"] .smz-page details.smz-question .smz-question__content { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .smz-page details.smz-question .smz-question__content b { color: #f8fafc; }
+[data-md-color-scheme="slate"] .smz-page details.smz-question .smz-question__content a { color: #60a5fa; }
 
 /* =========================
    АДАПТИВ
    ========================= */
 @media (max-width: 767px) {
-  .doc-page .doc-hero { padding-top: 0; padding-bottom: 2rem; }
-  .doc-page .doc-hero__desc { margin-bottom: 2rem !important; }
-  .doc-page .doc-download-card { flex-direction: column; text-align: left; padding: 1.5rem 1rem; gap: 1rem; }
-  .doc-page .doc-download-card__icon { margin: 0; }
-  .doc-page .doc-download-btn { width: 100%; }
+  .smz-page .smz-hero { padding-top: 0; padding-bottom: 2rem; }
+  .smz-page .smz-hero__desc { margin-bottom: 2rem !important; }
+  .smz-page .smz-download-card { flex-direction: column !important; text-align: left; padding: 1.5rem 1rem; gap: 1rem; }
+  .smz-page .smz-download-card__icon { margin: 0; }
+  .smz-page .smz-download-btn { width: 100%; }
   
-  .doc-page .doc-alert { flex-direction: column; gap: 0.8rem; padding: 1.2rem; }
+  .smz-page .smz-alert { flex-direction: column; gap: 0.8rem; padding: 1.2rem; }
   
-  .doc-page .question summary { 
+  .smz-page details.smz-question summary { 
     padding: 17px 42px 17px 16px !important; 
     font-size: 0.95rem !important; 
   }
-  .doc-page .question summary::after { right: 18px; }
-  .doc-page .question__content { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+  .smz-page details.smz-question summary::after { right: 18px; }
+  .smz-page details.smz-question .smz-question__content { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
 }

@@ -1,73 +1,73 @@
-<div class="audit-page">
+<div class="avk-page">
 
-<div class="audit-container">
-  <header class="audit-hero">
-    <div class="audit-hero__badge">Аудит сообщества</div>
-    <h1 class="audit-hero__title">Требования к подключению сообщества VK</h1>
-    <p class="audit-hero__desc">
+<div class="avk-container">
+  <header class="avk-hero">
+    <div class="avk-hero__badge">Аудит сообщества</div>
+    <h1 class="avk-hero__title">Требования к подключению сообщества VK</h1>
+    <p class="avk-hero__desc">
       Перед подключением Robokassa убедитесь, что в вашем сообществе VK есть вся обязательная информация. Это ускорит модерацию и поможет избежать отказа в подключении.
     </p>
   </header>
 
-  <div class="audit-alert">
-    <div class="audit-alert__icon">!</div>
-    <div class="audit-alert__content">
+  <div class="avk-alert">
+    <div class="avk-alert__icon">!</div>
+    <div class="avk-alert__content">
       <strong>Совет:</strong> пройдитесь по всем пунктам ниже, прежде чем подавать заявку. Это сэкономит вам несколько дней на доработках.
     </div>
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title">
+<div class="avk-container">
+  <div class="avk-section-title">
     <h2>Три общих правила</h2>
     <p>На странице сообщества VK должны быть расположены:</p>
   </div>
 
-  <div class="audit-rules">
+  <div class="avk-rules">
     <!-- Правило 1 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">01</div>
-      <div class="audit-rule__body">
+    <div class="avk-rule">
+      <div class="avk-rule__num">01</div>
+      <div class="avk-rule__body">
         <h3>Название и цены на товары/услуги</h3>
         <p>Цены должны быть указаны явно. Если у товаров/услуг нет фиксированных цен, их можно указать от и до.</p>
         
-        <div class="audit-rule__example">
+        <div class="avk-rule__example">
           <strong>Пример:</strong> «Юридические услуги от 10 000 до 50 000 рублей».
         </div>
 
-        <p class="audit-rule__hint">Варианты размещения цен:</p>
+        <p class="avk-rule__hint">Варианты размещения цен:</p>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В описании сообщества</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Нажмите на <b>«⚙ Управление»</b>, на открывшейся странице в разделе «Описание» введите информацию с ценами и нажмите «Сохранить».</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В закреплённом посте</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Создайте пост с прайс-листом и закрепите его вверху стены сообщества.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В разделе "Товары" или "Услуги"</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Нажмите на <b>«⚙ Управление»</b>, перейдите во вкладку «Разделы», включите раздел «Товары» или «Услуги» передвинув ползунок. Вернитесь на главную страницу сообщества (обновите по F5), перейдите в раздел и добавьте информацию по прайсу.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В ссылке на облако</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Загрузите файл прайс-листа в облачное хранилище (Google Disk, Yandex Drive), откройте доступ и разместите ссылку в сообществе.</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В файле прайс-листа</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Нажмите на <b>«⚙ Управление»</b>, перейдите во вкладку «Разделы», включите раздел «Файлы» передвинув ползунок. Вернитесь на главную (обновите по F5), перейдите в раздел «Файлы» и добавьте файл с прайс-листом.</p>
           </div>
         </details>
@@ -75,20 +75,20 @@
     </div>
 
     <!-- Правило 2 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">02</div>
-      <div class="audit-rule__body">
+    <div class="avk-rule">
+      <div class="avk-rule__num">02</div>
+      <div class="avk-rule__body">
         <h3>Оферта ИЛИ условия оплаты и возврата</h3>
         
-        <div class="audit-rule__important">
+        <div class="avk-rule__important">
           <b>ВАЖНО:</b> Вам не обязательно размещать оферту, если у вас в сообществе уже имеется понятное описание условий оплаты и возврата денежных средств.
         </div>
 
-        <p class="audit-rule__hint">Примеры подходящих формулировок:</p>
+        <p class="avk-rule__hint">Примеры подходящих формулировок:</p>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>Пример 1. Продажа товаров онлайн</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>На сайте доступна оплата картой или через СБП и другими платёжными методами через сервис Robokassa.</li>
@@ -98,9 +98,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>Пример 2. Продажа онлайн-услуг</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Оплата производится на сайте картой или через СБП.</li>
@@ -110,9 +110,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>Пример 3. Продажа офлайн-услуг</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Бронь сеанса подтверждается 100% предоплатой на сайте картой или через СБП.</li>
@@ -122,9 +122,9 @@
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>Пример 4. Продажа товаров офлайн</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p><b>Условия оплаты и возврата</b></p>
             <ul>
               <li>Товары бронируются через сайт, оплата производится только при получении в магазине наличными или картой.</li>
@@ -135,8 +135,8 @@
         </details>
 
         <!-- Генератор оферты -->
-        <div class="audit-generator">
-          <div class="audit-generator__badge">Бесплатно</div>
+        <div class="avk-generator">
+          <div class="avk-generator__badge">Бесплатно</div>
           <h4>Генератор оферты</h4>
           <p>Если вы решили разместить полноценную оферту, воспользуйтесь нашим бесплатным генератором в ЛК Robokassa:</p>
           <ol>
@@ -145,20 +145,20 @@
             <li>По вашему магазину нажмите на <b>«Настройки»</b>;</li>
             <li>Пролистайте вниз до раздела <b>«Об оферте»</b>, укажите вид деятельности и нажмите <b>«Скачать оферту»</b>.</li>
           </ol>
-          <p class="audit-generator__note">Данный файл можно отредактировать и разместить в разделе «Файлы» вашего сообщества VK.</p>
+          <p class="avk-generator__note">Данный файл можно отредактировать и разместить в разделе «Файлы» вашего сообщества VK.</p>
         </div>
       </div>
     </div>
 
     <!-- Правило 3 -->
-    <div class="audit-rule">
-      <div class="audit-rule__num">03</div>
-      <div class="audit-rule__body">
+    <div class="avk-rule">
+      <div class="avk-rule__num">03</div>
+      <div class="avk-rule__body">
         <h3>Реквизиты компании и актуальные контакты</h3>
         <p>На странице сообщества должны быть актуальные реквизиты и способы связи с вами.</p>
         
         <!-- Добавлен пример реквизитов -->
-        <div class="audit-rule__example">
+        <div class="avk-rule__example">
           <strong>Пример:</strong> <br>
           ИП Иванов Иван Иванович<br>
           ИНН: 12345784912<br>
@@ -166,18 +166,18 @@
           E-mail: ivanovaova@yandex.ru
         </div>
 
-        <p class="audit-rule__hint">Варианты размещения:</p>
+        <p class="avk-rule__hint">Варианты размещения:</p>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В описании сообщества</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Нажмите на <b>«⚙ Управление»</b>, в разделе «Описание» введите ИНН, название компании и контакты. Нажмите «Сохранить».</p>
           </div>
         </details>
 
-        <details class="question">
+        <details class="avk-question">
           <summary>В закреплённом посте</summary>
-          <div class="question__content">
+          <div class="avk-question__content">
             <p>Создайте пост с реквизитами и контактами, закрепите его вверху стены сообщества.</p>
           </div>
         </details>
@@ -186,14 +186,14 @@
   </div>
 </div>
 
-<div class="audit-container">
-  <div class="audit-section-title" style="margin-top: 5rem;">
+<div class="avk-container">
+  <div class="avk-section-title" style="margin-top: 5rem;">
     <h2>Пример правильно оформленного сообщества</h2>
     <p>Так выглядит страница VK, готовая к подключению (все обязательные элементы выделены):</p>
   </div>
   
       <!-- НОВЫЙ КАЧЕСТВЕННЫЙ SVG-МАКЕТ VK (Темная тема с офертой) -->
-  <div class="audit-vk-mockup">
+  <div class="avk-mockup">
     <svg viewBox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; border-radius: 16px; border: 1px solid #333; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3); background: #19191a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
       
       <!-- Фон страницы -->

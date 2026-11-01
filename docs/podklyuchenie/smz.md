@@ -1,37 +1,37 @@
-<div class="doc-page">
+<div class="smz-page">
 
-<div class="doc-container">
-  <header class="doc-hero">
-    <div class="doc-hero__badge">Документация</div>
-    <h1 class="doc-hero__title">Инструкция подключения для самозанятых</h1>
-    <p class="doc-hero__desc">
+<div class="smz-container">
+  <header class="smz-hero">
+    <div class="smz-hero__badge">Документация</div>
+    <h1 class="smz-hero__title">Инструкция подключения для самозанятых</h1>
+    <p class="smz-hero__desc">
       Полная пошаговая инструкция подключения самозанятых к Robokassa с примерами и скриншотами. В ней подробно описаны: регистрация личного кабинета, заполнение анкеты, модерация данных и запуск приема платежей.
     </p>
     
     <!-- Блок с PDF -->
-    <div class="doc-download-card">
-      <div class="doc-download-card__icon">
+    <div class="smz-download-card">
+      <div class="smz-download-card__icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
       </div>
-      <div class="doc-download-card__content">
+      <div class="smz-download-card__content">
         <h3>PDF-инструкция</h3>
         <p>Скачайте полное руководство с примерами и скриншотами.</p>
       </div>
-      <a href="https://robokassa.com/media/RK_connect_SMZ.pdf" target="_blank" rel="noopener noreferrer" class="doc-download-btn">
+      <a href="https://robokassa.com/media/RK_connect_SMZ.pdf" target="_blank" rel="noopener noreferrer" class="smz-download-btn">
         Скачать PDF
       </a>
     </div>
   </header>
 </div>
 
-<div class="doc-container">
-  <div class="doc-faq">
-    <h2 class="doc-faq__title">Вопросы и ответы</h2>
+<div class="smz-container">
+  <div class="smz-faq">
+    <h2 class="smz-faq__title">Вопросы и ответы</h2>
 
     <!-- Вопрос 1 -->
-    <details class="question">
+    <details class="smz-question">
       <summary>Какие данные нужны для подключения?</summary>
-      <div class="question__content">
+      <div class="smz-question__content">
         <p><b>Обычно требуются:</b></p>
         <ul>
           <li>ИНН;</li>
@@ -49,9 +49,9 @@
     </details>
 
     <!-- Вопрос 2 -->
-    <details class="question">
+    <details class="smz-question">
       <summary>Что делать, если при регистрации указали не тот тип?</summary>
-      <div class="question__content">
+      <div class="smz-question__content">
         <p><b>Если вы ошиблись при выборе корректной формы собственности:</b></p>
         <ul>
           <li>Зайдите в ЛК Robokassa;</li>
@@ -63,9 +63,9 @@
     </details>
 
     <!-- Вопрос 3 -->
-    <details class="question">
+    <details class="smz-question">
       <summary>Ошибка: паспорт не прошёл проверку.</summary>
-      <div class="question__content">
+      <div class="smz-question__content">
         <p><b>Причины:</b></p>
         <ul>
           <li>В анкете на третьей странице "Представители вашего бизнеса" вы указали некорректные данные паспорта. Проверьте правильность введённых ФИО и оставшихся полей.</li>
@@ -75,17 +75,17 @@
     </details>
 
     <!-- Вопрос 4 -->
-    <details class="question">
+    <details class="smz-question">
       <summary>Обязательно ли на этапе активации "Подключать онлайн-кассу"?</summary>
-      <div class="question__content">
+      <div class="smz-question__content">
         <p>Нет. Главное, чтобы вы прошли и заполнили этапы "Анкета", "Создать магазин", и "Активируйте прием денежных средств". Этап "Подключить онлайн кассу" можно пропустить.</p>
       </div>
     </details>
 
     <!-- Вопрос 5 -->
-    <details class="question">
+    <details class="smz-question">
       <summary>Как понять, что магазин подключен и можно принимать оплату?</summary>
-      <div class="question__content">
+      <div class="smz-question__content">
         <p><b>Признаки успешного подключения:</b></p>
         <ul>
           <li>статус магазина в личном кабинете в разделе "Мои магазины" изменился на активный;</li>
