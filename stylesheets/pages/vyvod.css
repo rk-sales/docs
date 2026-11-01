@@ -74,9 +74,10 @@ body:has(.vyvod-page) .md-content__inner { padding-top: 0 !important; margin-top
 .vyvod-page .vyvod-step-heading { font-size: 1.4rem; color: var(--vyvod-ink); margin: 0 0 1rem 0 !important; font-weight: 700; }
 .vyvod-page .vyvod-guide-text p { font-size: 1.05rem; line-height: 1.6; color: var(--vyvod-text); margin: 0 !important; }
 
+/* ИСПРАВЛЕННЫЙ Z-INDEX (чтобы не наезжало на хедер) */
 .vyvod-page .vyvod-lk-highlight {
   position: relative; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4) !important;
-  border-radius: 6px; z-index: 10; animation: vyvod-pulse-border 2s infinite;
+  border-radius: 6px; z-index: 1; animation: vyvod-pulse-border 2s infinite;
 }
 @keyframes vyvod-pulse-border {
   0% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.6), 0 0 10px rgba(37,99,235,0.3); }

@@ -73,7 +73,7 @@ body:has(.cheki-page) .md-content__inner { padding-top: 0 !important; margin-top
 
 .cheki-page .cheki-lk-highlight {
   position: relative; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4) !important;
-  border-radius: 6px; z-index: 10; animation: cheki-pulse-border 2s infinite;
+  border-radius: 6px; z-index: 1; animation: cheki-pulse-border 2s infinite;
 }
 @keyframes cheki-pulse-border {
   0% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.6), 0 0 10px rgba(37,99,235,0.3); }
@@ -89,15 +89,57 @@ body:has(.cheki-page) .md-content__inner { padding-top: 0 !important; margin-top
   font-size: 13px; max-width: 100%; margin: 0 auto; color: #111827;
 }
 .cheki-page .cheki-lk-ui-sidebar { background: #f8f9fb; border-right: 1px solid var(--cheki-border); padding: 12px; }
-.cheki-page .cheki-lk-ui-menu summary { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px 10px 16px !important; font-weight: 700; color: #111827 !important; font-size: 13px; cursor: pointer; list-style: none !important; background: transparent !important; box-shadow: none !important; border: none !important; }
-.cheki-page .cheki-lk-ui-menu summary::-webkit-details-marker { display: none !important; }
-.cheki-page .cheki-lk-ui-menu summary::before, .cheki-page .cheki-lk-ui-menu summary::after { display: none !important; content: "" !important; }
-.cheki-page .cheki-lk-ui-chevron { display: inline-block; width: 7px; height: 7px; border: solid #111827; border-width: 0 2px 2px 0; transform: rotate(45deg); transition: transform 0.2s; }
-.cheki-page details[open] .cheki-lk-ui-chevron { transform: rotate(-135deg); margin-bottom: -4px; }
-.cheki-page .cheki-lk-ui-menu-item { display: flex; align-items: center; padding: 8px 12px 8px 36px !important; color: #4b5563 !important; font-weight: 500; font-size: 13px; cursor: default; border-radius: 6px; margin-bottom: 2px; border: 1px solid transparent; }
-.cheki-page .cheki-lk-ui-menu-item.active { color: #2563eb !important; font-weight: 600; background: #eff6ff !important; border: 1px solid #bfdbfe !important; }
-.cheki-page .cheki-lk-ui-main { background: #fff; }
+.cheki-page .cheki-lk-ui-main { background: #fff; position: relative; z-index: 1; }
 .cheki-page .cheki-lk-mockup-sidebar { display: grid; grid-template-columns: 230px 1fr; min-height: 350px; }
+
+/* ЖЁСТКИЙ СБРОС ДЛЯ МЕНЮ (ИСПРАВЛЕНИЕ ВИЗУАЛА) */
+.cheki-page .cheki-lk-ui-menu details { 
+  margin: 0 !important; 
+  padding: 0 !important; 
+  border: none !important; 
+  background: transparent !important; 
+  box-shadow: none !important; 
+  outline: none !important; 
+  overflow: visible !important; 
+}
+.cheki-page .cheki-lk-ui-menu summary { 
+  display: flex !important; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 12px 10px 16px !important; 
+  font-weight: 700 !important; 
+  color: #111827 !important; 
+  font-size: 13px !important; 
+  cursor: pointer; 
+  list-style: none !important; 
+  outline: none !important; 
+  box-shadow: none !important; 
+  border: none !important; 
+  background: transparent !important; 
+  -webkit-tap-highlight-color: transparent !important; 
+  border-radius: 8px; 
+  position: relative !important; 
+}
+.cheki-page .cheki-lk-ui-menu summary::-webkit-details-marker { display: none !important; }
+.cheki-page .cheki-lk-ui-menu summary::marker { display: none !important; content: none !important; }
+.cheki-page .cheki-lk-ui-menu summary::before, 
+.cheki-page .cheki-lk-ui-menu summary::after { display: none !important; content: none !important; }
+
+.cheki-page .cheki-lk-ui-chevron { display: inline-block; width: 7px; height: 7px; border: solid #111827 !important; border-width: 0 2px 2px 0 !important; transform: rotate(45deg); transition: transform 0.2s; }
+.cheki-page details[open] .cheki-lk-ui-chevron { transform: rotate(-135deg); margin-bottom: -4px; }
+.cheki-page .cheki-lk-ui-menu-item { 
+  display: flex; 
+  align-items: center; 
+  padding: 8px 12px 8px 36px !important; 
+  color: #4b5563 !important; 
+  font-weight: 500 !important; 
+  font-size: 13px !important; 
+  cursor: default; 
+  border-radius: 6px; 
+  margin-bottom: 2px; 
+  border: 1px solid transparent; 
+}
+.cheki-page .cheki-lk-ui-menu-item.active { color: #2563eb !important; font-weight: 600 !important; background: #eff6ff !important; border: 1px solid #bfdbfe !important; }
 
 /* ШАГ 1: ВЕРХНЯЯ ПАНЕЛЬ С КНОПКОЙ */
 .cheki-page .cheki-rc-topbar { background: #f8fafc; padding: 16px 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px; }
@@ -130,8 +172,9 @@ body:has(.cheki-page) .md-content__inner { padding-top: 0 !important; margin-top
 .cheki-page .cheki-rc-table tr:last-child td { border-bottom: none; }
 .cheki-page .cheki-rc-select { width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 13px; background: #fff; color: #111827; }
 .cheki-page .cheki-rc-check { color: #10b981; font-size: 18px; text-align: center; }
-.cheki-page .cheki-rc-btn-block { display: block; width: 100%; padding: 12px; background: var(--cheki-green); color: #fff; border: none; border-radius: 6px; font-weight: 600; font-size: 14px; margin-top: 20px; cursor: pointer; }
-.cheki-page .cheki-rc-btn-block--grey { background: #e2e8f0; color: #475569; margin-top: 10px; }
+.cheki-page .cheki-rc-btn-block { display: block; width: 100%; padding: 12px; background: var(--cheki-green); color: #fff; border: none; border-radius: 6px; font-weight: 600; font-size: 14px; margin-top: 20px; cursor: pointer; text-align: center; transition: background 0.2s; }
+.cheki-page .cheki-rc-btn-block:hover { background: var(--cheki-green-hover, #63a83e); }
+.cheki-page .cheki-rc-btn-block--grey { background: #e2e8f0; color: #475569; margin-top: 10px; border: 1px solid #cbd5e1; }
 
 /* ШАГ 4: КАРТОЧКИ И FAQ */
 .cheki-page .cheki-features { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 1.5rem !important; max-width: 1050px !important; margin: 2rem auto 0 !important; }
