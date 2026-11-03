@@ -1,0 +1,535 @@
+/* =========================================================
+   REFUND PAGE — Link Studio Style + Visual Mockups
+   ========================================================= */
+
+.wd-page.wd-refund-page {
+  --ref-bg: #f8fafc;
+  --ref-surface: #ffffff;
+  --ref-input-bg: #f1f5f9; /* Светлый фон для полей ввода */
+  --ref-ink: #0f172a;
+  --ref-text: #475569;
+  --ref-muted: #94a3b8;
+  --ref-border: #e2e8f0;
+  --ref-border-strong: #cbd5e1;
+
+  --ref-blue: #2563eb;
+  --ref-blue-soft: #eff6ff;
+  --ref-orange: #ea580c;
+  --ref-orange-soft: #fff7ed;
+  --ref-green: #10b981;
+  --ref-green-soft: #ecfdf5;
+
+  --ref-mono: 'JetBrains Mono', monospace;
+  --ref-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: var(--ref-sans);
+  color: var(--ref-text);
+  counter-reset: ref-sec;
+  position: relative;
+  padding: 0 0 2rem;
+  background: var(--ref-bg);
+  border-radius: 24px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wd-page.wd-refund-page *, .wd-page.wd-refund-page *::before, .wd-page.wd-refund-page *::after {
+  box-sizing: border-box;
+}
+
+.wd-page.wd-refund-page .wd-pl-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+body:has(.wd-page.wd-refund-page) .md-content__inner > h1 { display: none !important; }
+
+/* =========================
+   H2 — Секции с номерами
+   ========================= */
+.md-typeset .wd-page.wd-refund-page h2 {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  margin: 4rem 0 1.5rem !important;
+  color: var(--ref-ink) !important;
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: ref-sec;
+  position: relative;
+  padding-top: 0 !important;
+  border: 0 !important;
+}
+
+.md-typeset .wd-page.wd-refund-page h2 .headerlink { display: none !important; }
+.md-typeset .wd-page.wd-refund-page h2::after { display: none !important; }
+
+.md-typeset .wd-page.wd-refund-page h2::before {
+  content: "0" counter(ref-sec) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--ref-ink);
+  color: var(--ref-bg);
+  border-radius: 10px;
+  font-family: var(--ref-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.md-typeset .wd-page.wd-refund-page .wd-ref-hero {
+  position: relative;
+  padding: 3rem 0 1rem;
+  max-width: 800px;
+}
+
+.wd-page.wd-refund-page .wd-ref-hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent 60%);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.md-typeset .wd-page.wd-refund-page .wd-ref-hero__title {
+  display: block;
+  margin: 0 0 1.25rem !important;
+  color: var(--ref-ink) !important;
+  font-size: clamp(2rem, 3.5vw, 2.6rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+  padding: 0 !important;
+}
+.md-typeset .wd-page.wd-refund-page .wd-ref-hero__title::after { display: none !important; }
+
+.md-typeset .wd-page.wd-refund-page .wd-ref-hero__desc {
+  max-width: 680px;
+  margin: 0 !important;
+  color: var(--ref-text) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* =========================
+   VISUAL STEPS (Мокапы)
+   ========================= */
+.wd-page.wd-refund-page .wd-pl-visual-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 2rem 0 3rem;
+}
+
+.wd-page.wd-refund-page .wd-pl-vstep {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.wd-page.wd-refund-page .wd-pl-vstep--reverse {
+  flex-direction: row-reverse;
+}
+
+.wd-page.wd-refund-page .wd-pl-vstep__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.wd-page.wd-refund-page .wd-pl-vstep__title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ref-ink);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.wd-page.wd-refund-page .wd-pl-vstep__desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ref-text);
+}
+
+.wd-page.wd-refund-page .wd-pl-vstep__visual {
+  flex: 0 0 280px; 
+  display: flex;
+  justify-content: center;
+}
+
+/* Телефон */
+.wd-page.wd-refund-page .wd-pl-phone {
+  width: 280px; 
+  height: 540px; 
+  background: #182638;
+  border-radius: 36px;
+  padding: 8px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2), inset 0 0 0 2px rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.wd-page.wd-refund-page .wd-pl-phone__notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 20px;
+  background: #182638;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 10;
+}
+
+.wd-page.wd-refund-page .wd-pl-phone__screen {
+  width: 100%;
+  height: 100%;
+  background: var(--ref-bg);
+  border-radius: 28px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 32px 12px 16px;
+  scrollbar-width: none;
+  font-family: var(--ref-sans);
+}
+
+.wd-page.wd-refund-page .wd-pl-phone__screen::-webkit-scrollbar { display: none; }
+.wd-page.wd-refund-page .wd-pl-phone__screen--modal { padding: 0; overflow: hidden; }
+
+/* --- Специфичные стили для приложения (Возвраты) --- */
+.wd-page.wd-refund-page .app-btn-black { background: var(--ref-ink); color: var(--ref-bg); text-align: center; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: 600; border: none; width: 100%; display: block; }
+
+/* Общий стиль для SVG-иконок */
+.wd-page.wd-refund-page svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Список счетов (Шаг 1) */
+.wd-page.wd-refund-page .app-inv-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-inv-title { font-size: 20px; font-weight: 800; color: var(--ref-ink); }
+.wd-page.wd-refund-page .app-inv-search { display: flex; align-items: center; justify-content: center; color: var(--ref-ink); }
+.wd-page.wd-refund-page .app-inv-filters { display: flex; gap: 8px; margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-filter-btn { background: var(--ref-surface); border: 1px solid var(--ref-border); border-radius: 8px; padding: 6px 10px; font-size: 12px; color: var(--ref-ink); display: flex; align-items: center; gap: 6px; position: relative; }
+.wd-page.wd-refund-page .app-filter-btn svg { color: var(--ref-text); }
+.wd-page.wd-refund-page .app-filter-badge { background: #ef4444; color: #fff; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: bold; }
+.wd-page.wd-refund-page .app-store-select { background: var(--ref-surface); border: 1px solid var(--ref-border); border-radius: 8px; padding: 6px 10px; font-size: 12px; color: var(--ref-ink); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; justify-content: space-between; }
+.wd-page.wd-refund-page .app-date-label { font-size: 11px; color: var(--ref-text); margin: 12px 0 8px; }
+.wd-page.wd-refund-page .app-inv-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--ref-border); }
+.wd-page.wd-refund-page .app-inv-logo { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 10px; color: #fff; flex-shrink: 0; }
+.wd-page.wd-refund-page .app-inv-logo--mir { background: #059669; }
+.wd-page.wd-refund-page .app-inv-logo--sbp { background: #5c2d91; }
+.wd-page.wd-refund-page .app-inv-info { flex: 1; min-width: 0; }
+.wd-page.wd-refund-page .app-inv-id { font-size: 13px; font-weight: 700; color: var(--ref-ink); }
+.wd-page.wd-refund-page .app-inv-email { font-size: 10px; color: var(--ref-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wd-page.wd-refund-page .app-inv-amount { text-align: right; }
+.wd-page.wd-refund-page .app-inv-sum { font-size: 13px; font-weight: 700; color: var(--ref-ink); }
+.wd-page.wd-refund-page .app-inv-status { font-size: 10px; color: var(--ref-green); font-weight: 600; }
+
+/* ИСПРАВЛЕННЫЙ БЛОК НИЖНЕЙ ПАНЕЛИ */
+.wd-page.wd-refund-page .app-inv-bottom { 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  background: var(--ref-surface); 
+  border-top: 1px solid var(--ref-border); 
+  padding: 12px 8px 28px; /* Увеличен нижний отступ */
+}
+
+.wd-page.wd-refund-page .app-bottom-nav { 
+  display: flex; 
+  justify-content: space-between; 
+  font-size: 9.5px; 
+  color: var(--ref-muted); 
+  margin-top: 12px; 
+  padding-top: 10px; 
+  border-top: 1px solid var(--ref-border); 
+  width: 100%;
+}
+
+.wd-page.wd-refund-page .app-bottom-nav span { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start;
+  gap: 6px; 
+  flex: 1; /* Равномерное распределение */
+  white-space: nowrap; /* Запрет переноса текста */
+  cursor: pointer;
+}
+
+.wd-page.wd-refund-page .app-bottom-nav span.active { 
+  color: var(--ref-ink); 
+  font-weight: 600; 
+}
+
+.wd-page.wd-refund-page .app-bottom-nav span svg { 
+  width: 20px; 
+  height: 20px; 
+  display: block; 
+  margin: 0 auto;
+}
+
+/* Карточка счета (Шаг 2) */
+.wd-page.wd-refund-page .app-modal-overlay { position: absolute; inset: 0; background: rgba(15, 23, 42, 0.6); z-index: 1; }
+.wd-page.wd-refund-page .app-sheet { position: absolute; bottom: 0; left: 0; right: 0; background: var(--ref-bg); border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 12px 16px 16px; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+.wd-page.wd-refund-page .app-sheet__handle { width: 32px; height: 4px; background: var(--ref-border-strong); border-radius: 2px; margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-sheet-logo { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: #fff; margin-bottom: 8px; }
+.wd-page.wd-refund-page .app-sheet-badge { background: var(--ref-green-soft); color: var(--ref-green); padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; margin-bottom: 8px; }
+.wd-page.wd-refund-page .app-sheet-amount { font-size: 24px; font-weight: 900; color: var(--ref-ink); margin-bottom: 4px; }
+.wd-page.wd-refund-page .app-sheet-details { font-size: 11px; color: var(--ref-muted); margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-sheet-card { width: 100%; background: var(--ref-surface); border: 1px solid var(--ref-border); border-radius: 12px; padding: 12px; margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-sheet-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--ref-border); }
+.wd-page.wd-refund-page .app-sheet-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.wd-page.wd-refund-page .app-sheet-label { font-size: 10px; color: var(--ref-muted); }
+.wd-page.wd-refund-page .app-sheet-val { font-size: 12px; color: var(--ref-ink); font-weight: 500; }
+.wd-page.wd-refund-page .app-sheet-row svg { color: var(--ref-muted); width: 16px; height: 16px; }
+
+/* ИСПРАВЛЕННЫЙ БЛОК ДЕЙСТВИЙ В КАРТОЧКЕ */
+.wd-page.wd-refund-page .app-sheet-actions { 
+  display: flex; 
+  justify-content: space-between; 
+  width: 100%; 
+  background: var(--ref-surface); 
+  border: 1px solid var(--ref-border); 
+  border-radius: 12px; 
+  padding: 12px 8px; 
+}
+
+.wd-page.wd-refund-page .app-sheet-action { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  gap: 6px; 
+  flex: 1; 
+  font-size: 10.5px; 
+  color: var(--ref-ink); 
+  font-weight: 600; 
+  cursor: pointer;
+}
+
+.wd-page.wd-refund-page .app-sheet-action-icon { 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 50%; 
+  background: var(--ref-bg); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: var(--ref-ink); 
+}
+
+.wd-page.wd-refund-page .app-sheet-action-icon svg { 
+  width: 18px; 
+  height: 18px; 
+  display: block;
+}
+
+.wd-page.wd-refund-page .app-sheet-action--active .app-sheet-action-icon { 
+  background: var(--ref-blue-soft); 
+  color: var(--ref-blue); 
+}
+
+/* Форма возврата (Шаг 3) */
+.wd-page.wd-refund-page .app-ref-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.wd-page.wd-refund-page .app-ref-back { display: flex; align-items: center; justify-content: center; color: var(--ref-ink); cursor: pointer; }
+.wd-page.wd-refund-page .app-ref-back svg { width: 20px; height: 20px; }
+.wd-page.wd-refund-page .app-ref-title { font-size: 20px; font-weight: 800; color: var(--ref-ink); margin: 0; }
+.wd-page.wd-refund-page .app-ref-subtitle { font-size: 12px; color: var(--ref-text); margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-ref-form-group { margin-bottom: 16px; }
+.wd-page.wd-refund-page .app-ref-form-group label { display: block; font-size: 11px; color: var(--ref-muted); margin-bottom: 6px; }
+.wd-page.wd-refund-page .app-ref-input { background: var(--ref-input-bg); border-radius: 8px; padding: 12px; font-size: 14px; color: var(--ref-ink); font-weight: 500; }
+.wd-page.wd-refund-page .app-ref-summary-title { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: var(--ref-ink); margin-bottom: 8px; }
+.wd-page.wd-refund-page .app-ref-summary-box { background: var(--ref-input-bg); border-radius: 10px; padding: 12px; margin-bottom: 20px; }
+.wd-page.wd-refund-page .app-ref-summary-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--ref-ink); margin-bottom: 6px; }
+.wd-page.wd-refund-page .app-ref-summary-row:last-child { margin-bottom: 0; }
+.wd-page.wd-refund-page .app-ref-summary-row span:first-child { color: var(--ref-text); }
+.wd-page.wd-refund-page .app-ref-summary-row span:last-child { font-weight: 600; }
+
+/* =========================
+   БЛОК "ВАЖНО УЧИТЫВАТЬ"
+   ========================= */
+.wd-page.wd-refund-page .wd-ref-notice {
+  background: var(--ref-orange-soft);
+  border: 1px solid #fed7aa;
+  border-left: 4px solid var(--ref-orange);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.wd-page.wd-refund-page .wd-ref-notice__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #9a3412;
+  margin: 0 0 1rem 0;
+}
+
+.wd-page.wd-refund-page .wd-ref-notice ul {
+  margin: 0 !important;
+  padding-left: 1.5rem !important;
+}
+
+.wd-page.wd-refund-page .wd-ref-notice li {
+  color: #7c2d12 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.5rem !important;
+}
+.wd-page.wd-refund-page .wd-ref-notice li:last-child { margin-bottom: 0 !important; }
+
+/* =========================
+   FAQ & ACCORDIONS
+   ========================= */
+.wd-page.wd-refund-page .question {
+  margin: 12px 0 !important;
+  border: 1px solid var(--ref-border) !important;
+  border-left-width: 1px !important;
+  border-radius: 14px !important;
+  background: var(--ref-surface) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.wd-page.wd-refund-page .question:hover {
+  border-color: var(--ref-blue) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important;
+}
+.wd-page.wd-refund-page .question[open] {
+  border-color: var(--ref-blue) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important;
+}
+.wd-page.wd-refund-page .question summary {
+  position: relative;
+  display: block;
+  padding: 20px 52px 20px 22px !important;
+  color: var(--ref-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.wd-page.wd-refund-page .question summary::-webkit-details-marker,
+.wd-page.wd-refund-page .question summary::marker,
+.wd-page.wd-refund-page .question summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.wd-page.wd-refund-page .question summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--ref-muted);
+  border-bottom: 2px solid var(--ref-muted);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.wd-page.wd-refund-page .question[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+  border-color: var(--ref-blue);
+}
+.wd-page.wd-refund-page .question[open] summary {
+  padding-bottom: 14px !important;
+}
+.wd-page.wd-refund-page .question > p, 
+.wd-page.wd-refund-page .question > ol,
+.wd-page.wd-refund-page .question > ul {
+  margin: 0 !important;
+  padding: 0 22px 22px !important;
+  color: var(--ref-text) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Inline code */
+.wd-page.wd-refund-page code:not(.question code) {
+  font-family: var(--ref-mono);
+  background: var(--ref-bg);
+  border: 1px solid var(--ref-border);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: var(--ref-blue);
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+[data-md-color-scheme="slate"] .wd-page.wd-refund-page {
+  --ref-bg: #0f172a;
+  --ref-surface: #1e293b;
+  --ref-input-bg: #1e293b; 
+  --ref-ink: #f8fafc;
+  --ref-text: #cbd5e1;
+  --ref-muted: #94a3b8;
+  --ref-border: #334155;
+  --ref-border-strong: #475569;
+  --ref-blue-soft: rgba(37, 99, 235, 0.15);
+  --ref-orange-soft: rgba(234, 88, 12, 0.1);
+}
+
+[data-md-color-scheme="slate"] .wd-page.wd-refund-page .wd-ref-notice {
+  border-color: #7c2d12;
+  border-left-color: var(--ref-orange);
+}
+[data-md-color-scheme="slate"] .wd-page.wd-refund-page .wd-ref-notice__title {
+  color: #fdba74;
+}
+[data-md-color-scheme="slate"] .wd-page.wd-refund-page .wd-ref-notice li {
+  color: #fdba74 !important;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  .wd-page.wd-refund-page .wd-pl-vstep, 
+  .wd-page.wd-refund-page .wd-pl-vstep--reverse {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .wd-page.wd-refund-page .wd-pl-vstep__visual {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .wd-page.wd-refund-page .wd-pl-shell { padding: 0 16px; }
+  .md-typeset .wd-page.wd-refund-page h2 { font-size: 1.4rem !important; gap: 0.75rem; }
+  .md-typeset .wd-page.wd-refund-page h2::before { width: 32px; height: 32px; font-size: 0.75rem; }
+  .wd-page.wd-refund-page .question summary { padding: 17px 42px 17px 16px !important; font-size: 0.95rem !important; }
+  .wd-page.wd-refund-page .question summary::after { right: 18px; }
+  .wd-page.wd-refund-page .question > p,
+  .wd-page.wd-refund-page .question > ol,
+  .wd-page.wd-refund-page .question > ul { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}

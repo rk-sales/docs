@@ -14,7 +14,7 @@
         <link rel="prev" href="../app-robokassa/app-paynotify/">
       
       
-        <link rel="next" href="../rk-shops/robomarket/">
+        <link rel="next" href="../rk-shops/robox/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Работа через Telegram бота / VK бота - База знаний</title>
+        <title>Как выставлять платёжные ссылки через ботов Robokassa в Telegram и VK - База знаний</title>
       
     
     
@@ -173,6 +173,20 @@
     
       <link rel="stylesheet" href="../../stylesheets/pages/robokassa-app.css">
     
+      <link rel="stylesheet" href="../../stylesheets/pages/app-paylink.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pages/app-vozvrat.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pages/app-payment-notify.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pages/rkshop-bot.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pages/tg-vk-links.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pages/robox.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/pages/integrations.css">
+    
       <link rel="stylesheet" href="../../stylesheets/dark-theme.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -200,7 +214,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#robokassa-telegram-vk" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -235,7 +249,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Работа через Telegram бота / VK бота
+              Как выставлять платёжные ссылки через ботов Robokassa в Telegram и VK
             
           </span>
         </div>
@@ -2559,10 +2573,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Общие требования
+        Общие требования
       
     </span>
   </a>
@@ -2570,80 +2584,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-telegram-robomerchant_bot" class="md-nav__link">
+  <a href="#telegram-robomerchant_bot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Выставление счётов через Telegram‑бота @Robomerchant_bot
+        Выставление счетов в Telegram (@Robomerchant_bot)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Выставление счётов через Telegram‑бота @Robomerchant_bot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 1. Подключите магазин к боту
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 2. Выставить счёт и получить ссылку
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vk-robokassa" class="md-nav__link">
+  <a href="#vk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Выставление счётов через VK‑бота Robokassa
+        Выставление счетов в VK
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Выставление счётов через VK‑бота Robokassa">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-vk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 1. Подключите магазин к VK‑боту
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-vk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 2. Выставить счёт через VK‑бота
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2659,7 +2617,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Вопросы и ответы
@@ -2732,14 +2690,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../rk-shops/robomarket/" class="md-nav__link">
+      <a href="../rk-shops/robox/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Robomarket
+    Robox
   
 
     
@@ -2850,10 +2808,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Общие требования
+        Общие требования
       
     </span>
   </a>
@@ -2861,80 +2819,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-telegram-robomerchant_bot" class="md-nav__link">
+  <a href="#telegram-robomerchant_bot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Выставление счётов через Telegram‑бота @Robomerchant_bot
+        Выставление счетов в Telegram (@Robomerchant_bot)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Выставление счётов через Telegram‑бота @Robomerchant_bot">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 1. Подключите магазин к боту
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 2. Выставить счёт и получить ссылку
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vk-robokassa" class="md-nav__link">
+  <a href="#vk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Выставление счётов через VK‑бота Robokassa
+        Выставление счетов в VK
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Выставление счётов через VK‑бота Robokassa">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-vk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 1. Подключите магазин к VK‑боту
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-vk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 2. Выставить счёт через VK‑бота
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2950,7 +2852,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Вопросы и ответы
@@ -2977,133 +2879,262 @@
 
 
 
-<h1 id="robokassa-telegram-vk">Как выставлять платёжные ссылки через ботов Robokassa в Telegram и VK<a class="headerlink" href="#robokassa-telegram-vk" title="Permanent link">&para;</a></h1>
-<p>Robokassa предоставляет ботов, через которых можно:<br />
-- выставлять счета и получать платёжные ссылки прямо в мессенджере;<br />
-- отправлять эти ссылки клиентам сразу из Telegram или VK.</p>
-<h2 id="1">1. Общие требования<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>Перед началом убедитесь, что:</p>
-<ul>
-<li>у вас есть активированный магазин в Robokassa;</li>
-<li>вы знаете <strong>ID магазина</strong> и <strong>ID клиента</strong> (ID магазина находится в ЛК в разделе "Мои магазины"; ID клиента справа сверху рядом с ФИО пользователя;</li>
-<li>номер телефона и e‑mail актуальны — они могут использоваться для подтверждения подключения бота.</li>
-</ul>
-<h2 id="2-telegram-robomerchant_bot">2. Выставление счётов через Telegram‑бота @Robomerchant_bot<a class="headerlink" href="#2-telegram-robomerchant_bot" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Этот бот используется для <strong>уведомлений и выставления счетов</strong>: он формирует платёжные ссылки, которые ведут на стандартную платёжную страницу Robokassa.</p>
-</blockquote>
-<h3 id="1_1">Шаг 1. Подключите магазин к боту<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Откройте Telegram и найдите бота <strong>@Robomerchant_bot</strong>.</li>
-<li>Нажмите <strong>Start / Начать</strong>.  </li>
-<li>Введите <strong>ID магазина</strong> из личного кабинета Robokassa.  </li>
-<li>Подтвердите, что вы владеете магазином:</li>
-<li>бот отправит код подтверждения по SMS или e‑mail (на номер/почту из ЛК);</li>
-<li>введите код в диалоге с ботом.</li>
-</ol>
-<p>После успешного подтверждения бот привяжет ваш магазин к вашему Telegram‑аккаунту.</p>
-<h3 id="2">Шаг 2. Выставить счёт и получить ссылку<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>В меню бота выберите <strong>«Выставить счёт»</strong>. </li>
-<li>Укажите параметры продажи:<ul>
-<li>наименование товара/услуги;</li>
-<li>сумму;</li>
-<li>при необходимости добавьте позицию, укажите количество и дополнительные поля (НДС, тип товара, вид оплат). Подробнее см. в разделе
-<a href="#payment-params">«Параметры платежа в чеке»</a>.</li>
-</ul>
-</li>
-<li>Нажмите "Получить ссылку на оплату".</li>
-</ol>
-<p>Бот сформирует <strong>платёжную ссылку</strong> и отправит её вам в диалоге.</p>
-<p>Вы можете:<br />
-- переслать ссылку клиенту в Telegram;<br />
-- скопировать URL и отправить в любой другой канал (мессенджер, e‑mail, соцсети).</p>
-<h2 id="3-vk-robokassa">3. Выставление счётов через VK‑бота Robokassa<a class="headerlink" href="#3-vk-robokassa" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>VK‑бот работает по похожему принципу: вы подключаете магазин и выставляете счёт через диалог с официальным сообществом Robokassa во VK.</p>
-</blockquote>
-<h3 id="1-vk">Шаг 1. Подключите магазин к VK‑боту<a class="headerlink" href="#1-vk" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Зайдите в официальное сообщество <strong>Robokassa</strong> во VK. </li>
-<li>Нажмите <strong>«Сообщение»</strong>, чтобы начать диалог с ботом.</li>
-<li>Выберите кнопку <strong>«Подключить магазин»</strong>.</li>
-<li>Если у вас уже есть аккаунт Robokassa, нажмите <strong>«Да»</strong> и:<ul>
-<li>укажите ID магазина;</li>
-<li>подтвердите подключение по SMS или e‑mail (код придёт на контакты из ЛК).</li>
-</ul>
-</li>
-</ol>
-<p>После этого ваш магазин будет связан с вашим VK‑аккаунтом.</p>
-<h3 id="2-vk">Шаг 2. Выставить счёт через VK‑бота<a class="headerlink" href="#2-vk" title="Permanent link">&para;</a></h3>
-<ol>
-<li>В диалоге с ботом выберите <strong>«Выставление счета»</strong>. </li>
-<li>Введите:<ul>
-<li>наименование товара/услуги;</li>
-<li>стоимость;</li>
-<li>при необходимости добавьте позицию, укажите количество и дополнительные поля (НДС, тип товара, вид оплат). <a href="#payment-params">«Параметры платежа в чеке»</a>.</li>
-</ul>
-</li>
-<li>Подтвердите создание счёта.</li>
-</ol>
-<p>Бот отправит вам <strong>ссылку на оплату</strong>, которую можно:<br />
-- переслать клиенту прямо в VK;<br />
-- скопировать и отправить в другие каналы.</p>
+<div class="wd-page wd-tg-vk-page">
+<div class="wd-pl-shell">
+<header class="wd-tg-hero">
+<div class="wd-tg-hero__content">
+<h1 class="wd-tg-hero__title" id="_1">Платёжные ссылки через ботов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p class="wd-tg-hero__desc">Выставляйте счета и получайте платёжные ссылки прямо в мессенджерах. Отправляйте эти ссылки клиентам сразу из Telegram или VK.</p>
+</div>
+</header>
+<h2 id="_2">Общие требования<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Перед началом убедитесь, что у вас есть:</p>
+<div class="wd-tg-features">
+<div class="wd-tg-feature">
+<div class="wd-tg-feature__icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+</div>
+<div class="wd-tg-feature__title">ID магазина</div>
+<p class="wd-tg-feature__desc">Находится в ЛК в разделе «Мои магазины».</p>
+</div>
+<div class="wd-tg-feature">
+<div class="wd-tg-feature__icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div class="wd-tg-feature__title">ID клиента</div>
+<p class="wd-tg-feature__desc">Справа сверху рядом с ФИО пользователя в ЛК.</p>
+</div>
+<div class="wd-tg-feature" style="grid-column: 1 / -1;">
+<div class="wd-tg-feature__icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</div>
+<div class="wd-tg-feature__title">Актуальные контакты</div>
+<p class="wd-tg-feature__desc">Номер телефона и e-mail должны быть актуальны — на них придут коды подтверждения подключения бота.</p>
+</div>
+</div>
+<h2 id="telegram-robomerchant_bot">Выставление счетов в Telegram (@Robomerchant_bot)<a class="headerlink" href="#telegram-robomerchant_bot" title="Permanent link">&para;</a></h2>
+<div class="wd-pl-visual-steps">
+<div class="wd-pl-vstep">
+<div class="wd-pl-vstep__content">
+<div class="wd-pl-vstep__title">Подключите магазин к боту</div>
+<p class="wd-pl-vstep__desc">Найдите бота <strong>@Robomerchant_bot</strong> и нажмите Start. Введите ID магазина из личного кабинета. Бот отправит код подтверждения по SMS или e-mail (на контакты из ЛК) — введите его в чат.</p>
+</div>
+<div class="wd-pl-vstep__visual">
+<div class="tg-phone">
+<div class="tg-phone__notch"></div>
+<div class="tg-screen">
+<div class="tg-header">
+<div class="tg-header__back">←</div>
+<div class="tg-header__avatar">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<div class="tg-header__info">
+<div class="tg-header__name">Robomerchant_bot</div>
+<div class="tg-header__status">бот</div>
+</div>
+<div class="tg-header__menu">⋮</div>
+</div>
+<div class="tg-chat">
+<div class="tg-msg tg-msg--bot">Добро пожаловать! Введите ID вашего магазина из Личного кабинета.</div>
+<div class="tg-msg tg-msg--user">12345</div>
+<div class="tg-msg tg-msg--bot">Отправляю код подтверждения на ваш номер.</div>
+<div class="tg-msg tg-msg--user">4321</div>
+<div class="tg-msg tg-msg--bot">Магазин успешно подключен!</div>
+</div>
+<div class="tg-input-area">
+<div class="tg-input">Сообщение <span>😊</span></div>
+<div class="tg-send">➤</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wd-pl-vstep wd-pl-vstep--reverse">
+<div class="wd-pl-vstep__content">
+<div class="wd-pl-vstep__title">Выставьте счёт</div>
+<p class="wd-pl-vstep__desc">В меню бота выберите <strong>«Выставить счёт»</strong>. Укажите наименование товара, сумму, и при необходимости добавьте НДС, тип товара и вид оплаты. Нажмите «Получить ссылку на оплату».</p>
+</div>
+<div class="wd-pl-vstep__visual">
+<div class="tg-phone">
+<div class="tg-phone__notch"></div>
+<div class="tg-screen">
+<div class="tg-header">
+<div class="tg-header__back">←</div>
+<div class="tg-header__avatar">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</div>
+<div class="tg-header__info">
+<div class="tg-header__name">Robomerchant_bot</div>
+<div class="tg-header__status">бот</div>
+</div>
+<div class="tg-header__menu">⋮</div>
+</div>
+<div class="tg-chat">
+<div class="tg-msg tg-msg--user">Выставить счёт</div>
+<div class="tg-msg tg-msg--bot">
+Укажите наименование товара/услуги:
+</div>
+<div class="tg-msg tg-msg--user">Подписка на месяц</div>
+<div class="tg-msg tg-msg--bot">
+Укажите сумму:
+</div>
+<div class="tg-msg tg-msg--user">990</div>
+<div class="tg-msg tg-msg--bot">
+Счёт сформирован! Ссылка на оплату:<br><br>
+<span style="color: var(--tg-btn-text); word-break: break-all;">https://auth.robokassa.ru/Merchant/Index/...</span>
+</div>
+</div>
+<div class="tg-input-area">
+<div class="tg-input">Сообщение <span>😊</span></div>
+<div class="tg-send">➤</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="vk">Выставление счетов в VK<a class="headerlink" href="#vk" title="Permanent link">&para;</a></h2>
+<div class="wd-pl-visual-steps">
+<div class="wd-pl-vstep">
+<div class="wd-pl-vstep__content">
+<div class="wd-pl-vstep__title">Подключите магазин</div>
+<p class="wd-pl-vstep__desc">Зайдите в официальное сообщество <strong>Robokassa</strong> во ВКонтакте и нажмите «Сообщение». Выберите кнопку «Подключить магазин», укажите ID и подтвердите подключение по SMS или e-mail.</p>
+</div>
+<div class="wd-pl-vstep__visual">
+<div class="tg-phone">
+<div class="tg-phone__notch"></div>
+<div class="tg-screen">
+<div class="tg-header">
+<div class="tg-header__back">←</div>
+<div class="tg-header__avatar tg-header__avatar--vk">
+<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.78 17.72c-6.08 0-9.55-4.17-9.69-11.11h3.05c.09 5.09 2.34 7.24 4.12 7.68V6.61h2.86v4.39c1.77-.19 3.62-2.21 4.25-4.39h2.86c-.48 2.73-2.4 4.75-3.78 5.58 1.38.67 3.57 2.42 4.41 5.53h-3.15c-.65-2.03-2.27-3.61-4.42-3.83v3.83h-.51z"/></svg>
+</div>
+<div class="tg-header__info">
+<div class="tg-header__name">Robokassa</div>
+<div class="tg-header__status">сообщество</div>
+</div>
+<div class="tg-header__menu">⋮</div>
+</div>
+<div class="tg-chat">
+<div class="tg-msg tg-msg--bot">
+Здравствуйте! Выберите действие:
+<div class="tg-keyboard">
+<div class="tg-keyboard-row">
+<button class="tg-btn tg-btn--vk">Подключить магазин</button>
+</div>
+</div>
+</div>
+<div class="tg-msg tg-msg--user tg-msg--vk">Подключить магазин</div>
+<div class="tg-msg tg-msg--bot">У вас уже есть аккаунт Robokassa?</div>
+<div class="tg-msg tg-msg--user tg-msg--vk">Да</div>
+<div class="tg-msg tg-msg--bot">Введите ID магазина:</div>
+<div class="tg-msg tg-msg--user tg-msg--vk">12345</div>
+<div class="tg-msg tg-msg--bot">Магазин привязан к вашему VK-аккаунту!</div>
+</div>
+<div class="tg-input-area">
+<div class="tg-input">Сообщение <span>😊</span></div>
+<div class="tg-send">➤</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wd-pl-vstep wd-pl-vstep--reverse">
+<div class="wd-pl-vstep__content">
+<div class="wd-pl-vstep__title">Создайте счёт</div>
+<p class="wd-pl-vstep__desc">В диалоге с ботом выберите <strong>«Выставление счета»</strong>. Введите наименование товара и стоимость. Бот пришлёт ссылку на оплату, которую можно сразу переслать клиенту прямо в VK или скопировать.</p>
+</div>
+<div class="wd-pl-vstep__visual">
+<div class="tg-phone">
+<div class="tg-phone__notch"></div>
+<div class="tg-screen">
+<div class="tg-header">
+<div class="tg-header__back">←</div>
+<div class="tg-header__avatar tg-header__avatar--vk">
+<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.78 17.72c-6.08 0-9.55-4.17-9.69-11.11h3.05c.09 5.09 2.34 7.24 4.12 7.68V6.61h2.86v4.39c1.77-.19 3.62-2.21 4.25-4.39h2.86c-.48 2.73-2.4 4.75-3.78 5.58 1.38.67 3.57 2.42 4.41 5.53h-3.15c-.65-2.03-2.27-3.61-4.42-3.83v3.83h-.51z"/></svg>
+</div>
+<div class="tg-header__info">
+<div class="tg-header__name">Robokassa</div>
+<div class="tg-header__status">сообщество</div>
+</div>
+<div class="tg-header__menu">⋮</div>
+</div>
+<div class="tg-chat">
+<div class="tg-msg tg-msg--user tg-msg--vk">Выставление счета</div>
+<div class="tg-msg tg-msg--bot">Введите наименование:</div>
+<div class="tg-msg tg-msg--user tg-msg--vk">Консультация</div>
+<div class="tg-msg tg-msg--bot">Введите стоимость:</div>
+<div class="tg-msg tg-msg--user tg-msg--vk">3000</div>
+<div class="tg-msg tg-msg--bot">
+Счёт создан. Ссылка для оплаты:<br><br>
+<span style="color: #0077FF; word-break: break-all;">https://auth.robokassa.ru/Merchant/Index/...</span>
+</div>
+</div>
+<div class="tg-input-area">
+<div class="tg-input">Сообщение <span>😊</span></div>
+<div class="tg-send">➤</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="payment-params">Параметры платежа в чеке<a class="headerlink" href="#payment-params" title="Permanent link">&para;</a></h2>
-<details class="example">
-<summary><strong>Оплата</strong> — признак способа расчёта (тег 1214):</summary>
+<p>При необходимости в боте можно настроить дополнительные параметры фискализации.</p>
+<details class="question">
+<summary><b>Оплата</b> — признак способа расчёта (тег 1214)</summary>
 <ol>
-<li><strong><code>Предоплата 100% (код 3)</code></strong> — полная оплата заранее за будущую поставку/услугу. Позже пробивается чек полного расчёта с зачётом.  </li>
-<li><strong><code>Предоплата (код 2)</code></strong> — частичная оплата за конкретный товар/услугу до передачи. Указывается предмет расчёта с деталями.  </li>
-<li><strong><code>Аванс (код 1)</code></strong> — деньги внесены заранее без указания конкретных товаров/услуг (депозит, залог).  </li>
-<li><strong><code>Полный расчёт (код 4)</code></strong> — <strong>самый популярный вид оплаты.</strong> Оплата в момент передачи товара/услуги. Детализация позиций.  </li>
-<li><strong><code>Частичный расчёт (код 6)</code></strong> — часть оплачена сразу, остаток в кредит. Распределяются способы оплаты.  </li>
-<li><strong><code>Передача в кредит (код 5)</code></strong> — товар/услуга переданы без оплаты. Позже пробиваются чеки оплаты кредита.  </li>
-<li><strong><code>Кредит (код 7)</code></strong> — последующие платежи по ранее выданному кредиту. Предмет — «платёж», сумма чека равна полной стоимости.</li>
+<li><b>Предоплата 100% (код 3)</b> — полная оплата заранее за будущую поставку/услугу. Позже пробивается чек полного расчёта с зачётом.</li>
+<li><b>Предоплата (код 2)</b> — частичная оплата за конкретный товар/услугу до передачи. Указывается предмет расчёта с деталями.</li>
+<li><b>Аванс (код 1)</b> — деньги внесены заранее без указания конкретных товаров/услуг (депозит, залог).</li>
+<li><b>Полный расчёт (код 4)</b> — <b>самый популярный вид оплаты.</b> Оплата в момент передачи товара/услуги. Детализация позиций.</li>
+<li><b>Частичный расчёт (код 6)</b> — часть оплачена сразу, остаток в кредит. Распределяются способы оплаты.</li>
+<li><b>Передача в кредит (код 5)</b> — товар/услуга переданы без оплаты. Позже пробиваются чеки оплаты кредита.</li>
+<li><b>Кредит (код 7)</b> — последующие платежи по ранее выданному кредиту. Предмет — «платёж», сумма чека равна полной стоимости.</li>
 </ol>
 </details>
-<details class="example">
-<summary><strong>Тип</strong> — предмет расчёта для каждой позиции в чеке (тег 1212):</summary>
+<details class="question">
+<summary><b>Тип</b> — предмет расчёта для каждой позиции в чеке (тег 1212)</summary>
 <ol>
-<li><strong><code>Товар</code></strong> — физический товар, реализуемый продавцом.  </li>
-<li><strong><code>Подакцизный товар</code></strong> — товары с акцизами (алкоголь, табак и т.п.).  </li>
-<li><strong><code>Работа</code></strong> — выполненные работы (ремонт, строительство и т.п.).  </li>
-<li><strong><code>Услуга</code></strong> — оказанные услуги (консультации, транспорт и т.п.).  </li>
-<li><strong><code>Ставка азартной игры</code></strong> — приём ставок в казино, букмекерских конторах и т.п.  </li>
-<li><strong><code>Выигрыш азартной игры</code></strong> — выплата выигрыша по азартным играм.  </li>
-<li><strong><code>Лотерейный билет</code></strong> — продажа лотерейного билета.  </li>
-<li><strong><code>Выигрыш лотереи</code></strong> — выплата лотерейного выигрыша.  </li>
-<li><strong><code>Предоставление результатов интеллектуальной деятельности</code></strong> — лицензии, патенты, программное обеспечение.  </li>
-<li><strong><code>Платёж</code></strong> — денежные платежи (погашение кредитов, займов и т.п.).  </li>
-<li><strong><code>Агентское вознаграждение</code></strong> — комиссия агента за посредничество.  </li>
-<li><strong><code>Составной предмет расчёта</code></strong> — комбинация нескольких типов (например, товар + услуга).  </li>
-<li><strong><code>Иной предмет расчёта</code></strong> — всё, что не вошло в другие категории.  </li>
-<li><strong><code>Имущественное право</code></strong> — передача прав на имущество.  </li>
-<li><strong><code>Внереализационный доход</code></strong> — прочие доходы (штрафы, бонусы и т.п.).  </li>
-<li><strong><code>Страховые взносы</code></strong> — взносы в страховые фонды.  </li>
-<li><strong><code>Торговый сбор</code></strong> — сбор за торговую деятельность.  </li>
-<li><strong><code>Туристический налог</code></strong> — курортный/туристический сбор.  </li>
-<li><strong><code>Финансовый инструмент</code></strong> — ценные бумаги, вклады и другие финансовые инструменты.</li>
+<li><b>Товар</b> — физический товар, реализуемый продавцом.</li>
+<li><b>Подакцизный товар</b> — товары с акцизами (алкоголь, табак и т.п.).</li>
+<li><b>Работа</b> — выполненные работы (ремонт, строительство и т.п.).</li>
+<li><b>Услуга</b> — оказанные услуги (консультации, транспорт и т.п.).</li>
+<li><b>Ставка азартной игры</b> — приём ставок в казино, букмекерских конторах и т.п.</li>
+<li><b>Выигрыш азартной игры</b> — выплата выигрыша по азартным играм.</li>
+<li><b>Лотерейный билет</b> — продажа лотерейного билета.</li>
+<li><b>Выигрыш лотереи</b> — выплата лотерейного выигрыша.</li>
+<li><b>Предоставление результатов интеллектуальной деятельности</b> — лицензии, патенты, программное обеспечение.</li>
+<li><b>Платёж</b> — денежные платежи (погашение кредитов, займов и т.п.).</li>
+<li><b>Агентское вознаграждение</b> — комиссия агента за посредничество.</li>
+<li><b>Составной предмет расчёта</b> — комбинация нескольких типов (например, товар + услуга).</li>
+<li><b>Иной предмет расчёта</b> — всё, что не вошло в другие категории.</li>
+<li><b>Имущественное право</b> — передача прав на имущество.</li>
+<li><b>Внереализационный доход</b> — прочие доходы (штрафы, бонусы и т.п.).</li>
+<li><b>Страховые взносы</b> — взносы в страховые фонды.</li>
+<li><b>Торговый сбор</b> — сбор за торговую деятельность.</li>
+<li><b>Туристический налог</b> — курортный/туристический сбор.</li>
+<li><b>Финансовый инструмент</b> — ценные бумаги, вклады и другие финансовые инструменты.</li>
 </ol>
 </details>
-<details class="example">
-<summary><strong>Налог</strong> — ставка НДС для позиции в чеке (тег 1191):</summary>
+<details class="question">
+<summary><b>Налог</b> — ставка НДС для позиции в чеке (тег 1191)</summary>
 <ol>
-<li><strong><code>Без НДС</code></strong> — операции, не облагаемые НДС (например, экспорт, льготные виды деятельности).  </li>
-<li><strong><code>НДС 0%</code></strong> — нулевая ставка НДС.  </li>
-<li><strong><code>НДС +10%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 10/110</code>.  </li>
-<li><strong><code>НДС 10/110</code></strong> — сумма НДС выделена отдельно и соответствует 10% от налогооблагаемой базы.  </li>
-<li><strong><code>НДС +20%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 20/120</code>.  </li>
-<li><strong><code>НДС 20/120</code></strong> — сумма НДС выделена отдельно и соответствует 20% от базы.  </li>
-<li><strong><code>НДС +5%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 5/105</code>.  </li>
-<li><strong><code>НДС 5/105</code></strong> — сумма НДС выделена отдельно и соответствует 5% от базы.  </li>
-<li><strong><code>НДС +7%</code></strong> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 7/107</code>.  </li>
-<li><strong><code>НДС 7/107</code></strong> — сумма НДС выделена отдельно и соответствует 7% от базы.  </li>
-<li><strong><code>НДС +22%</code></strong> — расчётная ставка (с 2026 года): сумма НДС входит в цену, считается как <code>цена * 22/122</code>.  </li>
-<li><strong><code>НДС 22/122</code></strong> — сумма НДС выделена отдельно и соответствует 22% от налогооблагаемой базы (нововведение 2026 года).</li>
+<li><b>Без НДС</b> — операции, не облагаемые НДС (например, экспорт, льготные виды деятельности).</li>
+<li><b>НДС 0%</b> — нулевая ставка НДС.</li>
+<li><b>НДС +10%</b> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 10/110</code>.</li>
+<li><b>НДС 10/110</b> — сумма НДС выделена отдельно и соответствует 10% от налогооблагаемой базы.</li>
+<li><b>НДС +20%</b> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 20/120</code>.</li>
+<li><b>НДС 20/120</b> — сумма НДС выделена отдельно и соответствует 20% от базы.</li>
+<li><b>НДС +5%</b> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 5/105</code>.</li>
+<li><b>НДС 5/105</b> — сумма НДС выделена отдельно и соответствует 5% от базы.</li>
+<li><b>НДС +7%</b> — расчётная ставка: сумма НДС входит в цену, считается как <code>цена * 7/107</code>.</li>
+<li><b>НДС 7/107</b> — сумма НДС выделена отдельно и соответствует 7% от базы.</li>
+<li><b>НДС +22%</b> — расчётная ставка (с 2026 года): сумма НДС входит в цену, считается как <code>цена * 22/122</code>.</li>
+<li><b>НДС 22/122</b> — сумма НДС выделена отдельно и соответствует 22% от налогооблагаемой базы.</li>
 </ol>
 </details>
-<hr />
-<h2 id="_1">Вопросы и ответы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_3">Вопросы и ответы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <details class="question">
 <summary>Нужен ли отдельный магазин для Telegram и VK?</summary>
 <p>Нет, можно использовать тот же магазин, что и для сайта или других каналов.<br />
@@ -3116,15 +3147,19 @@
 </details>
 <details class="question">
 <summary>Где смотреть оплаты по счетам, выставленным через ботов?</summary>
-<p>Все оплаты видны в личном кабинете Robokassa в разделах с операциями и балансом.
-Дополнительно бот присылает вам уведомление об успешной оплате прямо в чате.</p>
+<p>Все оплаты видны в личном кабинете Robokassa в разделах с операциями и балансом. Дополнительно бот присылает вам уведомление об успешной оплате прямо в чате.</p>
 </details>
+</div>
+</div>
 
 
 
 
 
 
+
+  
+  
 
 
 
