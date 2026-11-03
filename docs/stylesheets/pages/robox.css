@@ -1,0 +1,312 @@
+/* =========================================================
+   ROBOX PAGE — Link Studio Style (SaaS Design)
+   ========================================================= */
+
+.wd-page.wd-rm-page {
+  --rm-bg: #f8fafc;
+  --rm-surface: #ffffff;
+  --rm-ink: #0f172a;
+  --rm-text: #475569;
+  --rm-muted: #94a3b8;
+  --rm-border: #e2e8f0;
+  
+  --rm-blue: #2563eb;
+  --rm-blue-soft: #eff6ff;
+  --rm-green: #10b981;
+  --rm-green-soft: #ecfdf5;
+  --rm-purple: #8b5cf6;
+  --rm-purple-soft: #f5f3ff;
+
+  --rm-mono: 'JetBrains Mono', monospace;
+  --rm-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: var(--rm-sans);
+  color: var(--rm-text);
+  counter-reset: rm-sec;
+  position: relative;
+  padding: 0 0 2rem;
+  background: var(--rm-bg);
+  border-radius: 24px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wd-page.wd-rm-page *, .wd-page.wd-rm-page *::before, .wd-page.wd-rm-page *::after {
+  box-sizing: border-box;
+}
+
+.wd-page.wd-rm-page .wd-pl-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+body:has(.wd-page.wd-rm-page) .md-content__inner > h1 { display: none !important; }
+
+/* =========================
+   H2 — Секции с номерами
+   ========================= */
+.md-typeset .wd-page.wd-rm-page h2 {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  margin: 4rem 0 1.5rem !important;
+  color: var(--rm-ink) !important;
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: rm-sec;
+  position: relative;
+  padding-top: 0 !important;
+  border: 0 !important;
+}
+.md-typeset .wd-page.wd-rm-page h2 .headerlink { display: none !important; }
+.md-typeset .wd-page.wd-rm-page h2::after { display: none !important; }
+.md-typeset .wd-page.wd-rm-page h2::before {
+  content: "0" counter(rm-sec) !important;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; width: 36px; height: 36px;
+  background: var(--rm-ink); color: var(--rm-bg);
+  border-radius: 10px; font-family: var(--rm-mono);
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.md-typeset .wd-page.wd-rm-page .wd-rm-hero {
+  position: relative; padding: 3rem 0 1rem; max-width: 800px;
+}
+.wd-page.wd-rm-page .wd-rm-hero::before {
+  content: ""; position: absolute; top: -20%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent 60%);
+  border-radius: 50%; z-index: -1; filter: blur(20px); pointer-events: none;
+}
+.md-typeset .wd-page.wd-rm-page .wd-rm-hero__title {
+  display: block; margin: 0 0 1.25rem !important; color: var(--rm-ink) !important;
+  font-size: clamp(2rem, 3.5vw, 2.6rem) !important; font-weight: 900 !important;
+  line-height: 1.1 !important; letter-spacing: -1px !important; padding: 0 !important;
+}
+.md-typeset .wd-page.wd-rm-page .wd-rm-hero__title::after { display: none !important; }
+.md-typeset .wd-page.wd-rm-page .wd-rm-hero__desc {
+  max-width: 680px; margin: 0 !important; color: var(--rm-text) !important;
+  font-size: 1.1rem !important; line-height: 1.7 !important;
+}
+
+/* =========================
+   BENTO GRID (Фичи)
+   ========================= */
+.wd-page.wd-rm-page .wd-rm-features {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 2rem 0;
+}
+.wd-page.wd-rm-page .wd-rm-feature {
+  background: var(--rm-surface); border: 1px solid var(--rm-border);
+  border-radius: 20px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wd-page.wd-rm-page .wd-rm-feature:hover {
+  transform: translateY(-4px); box-shadow: 0 15px 35px -15px rgba(15, 23, 42, 0.08);
+}
+.wd-page.wd-rm-page .wd-rm-feature__icon {
+  width: 44px; height: 44px; border-radius: 12px; background: var(--rm-blue-soft);
+  color: var(--rm-blue); display: flex; align-items: center; justify-content: center;
+}
+.wd-page.wd-rm-page .wd-rm-feature__icon svg { width: 22px; height: 22px; stroke-width: 2; fill: none; }
+.wd-page.wd-rm-page .wd-rm-feature__title { font-size: 1.15rem; font-weight: 800; color: var(--rm-ink); margin: 0; }
+.wd-page.wd-rm-page .wd-rm-feature__desc { font-size: 0.95rem; color: var(--rm-text); line-height: 1.6; margin: 0; }
+
+/* =========================
+   PRICING CARDS (Тарифы)
+   ========================= */
+.wd-page.wd-rm-page .wd-rm-pricing {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0;
+}
+.wd-page.wd-rm-page .wd-rm-price-card {
+  background: var(--rm-surface); border: 1px solid var(--rm-border);
+  border-radius: 20px; padding: 1.5rem; display: flex; flex-direction: column;
+  position: relative;
+}
+.wd-page.wd-rm-page .wd-rm-price-card--featured {
+  border-color: var(--rm-blue); box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
+}
+.wd-page.wd-rm-page .wd-rm-price-card--featured::before {
+  content: "Популярный выбор";
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--rm-blue); color: #fff; padding: 4px 12px; border-radius: 12px;
+  font-size: 0.75rem; font-weight: 700; white-space: nowrap;
+}
+.wd-page.wd-rm-page .wd-rm-price-title { font-size: 1.25rem; font-weight: 800; color: var(--rm-ink); margin-bottom: 0.5rem; }
+.wd-page.wd-rm-page .wd-rm-price-val { font-size: 2rem; font-weight: 900; color: var(--rm-ink); margin-bottom: 0.5rem; line-height: 1; }
+.wd-page.wd-rm-page .wd-rm-price-desc { font-size: 0.85rem; color: var(--rm-muted); margin-bottom: 1.5rem; min-height: 36px; }
+
+/* СПИСОК ФИЧ В ТАРИФАХ (Выравнивание по левому краю) */
+.wd-page.wd-rm-page .wd-rm-price-list { 
+  list-style: none !important; padding: 0 !important; margin: 0 !important; 
+  display: flex; flex-direction: column; gap: 0.6rem; text-align: left;
+}
+.wd-page.wd-rm-page .wd-rm-price-list li {
+  display: flex; align-items: flex-start; gap: 8px; 
+  font-size: 0.85rem; color: var(--rm-text); line-height: 1.4;
+}
+.wd-page.wd-rm-page .wd-rm-price-list svg { 
+  width: 14px; height: 14px; stroke-width: 3; color: var(--rm-blue); 
+  flex-shrink: 0; margin-top: 3px; 
+}
+
+/* =========================
+   BROWSER MOCKUP
+   ========================= */
+.wd-page.wd-rm-page .wd-rm-browser-wrap {
+  margin: 3rem 0; display: flex; justify-content: center;
+}
+.wd-page.wd-rm-page .wd-rm-browser {
+  width: 100%; max-width: 800px; background: var(--rm-surface);
+  border: 1px solid var(--rm-border); border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.wd-page.wd-rm-page .wd-rm-browser__header {
+  height: 40px; background: #f1f5f9; display: flex; align-items: center;
+  padding: 0 16px; gap: 16px; border-bottom: 1px solid var(--rm-border);
+}
+.wd-page.wd-rm-page .wd-rm-browser__dots { display: flex; gap: 6px; }
+.wd-page.wd-rm-page .wd-rm-browser__dot { width: 10px; height: 10px; border-radius: 50%; }
+.wd-page.wd-rm-page .wd-rm-browser__dot--red { background: #ef4444; }
+.wd-page.wd-rm-page .wd-rm-browser__dot--yellow { background: #facc15; }
+.wd-page.wd-rm-page .wd-rm-browser__dot--green { background: #22c55e; }
+.wd-page.wd-rm-page .wd-rm-browser__url {
+  flex: 1; background: var(--rm-surface); height: 24px; border-radius: 6px;
+  display: flex; align-items: center; padding: 0 12px; font-size: 11px; color: var(--rm-muted);
+  border: 1px solid var(--rm-border);
+}
+.wd-page.wd-rm-page .wd-rm-browser__body {
+  height: 400px; background: #f8fafc; display: flex;
+}
+.wd-page.wd-rm-page .wd-rm-browser__sidebar {
+  width: 200px; background: var(--rm-surface); border-right: 1px solid var(--rm-border); padding: 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.wd-page.wd-rm-page .wd-rm-browser__menu-item {
+  height: 32px; border-radius: 6px; background: transparent; display: flex; align-items: center; padding: 0 12px;
+  font-size: 13px; font-weight: 500; color: var(--rm-text);
+}
+.wd-page.wd-rm-page .wd-rm-browser__menu-item--active { background: var(--rm-blue-soft); color: var(--rm-blue); font-weight: 600; }
+.wd-page.wd-rm-page .wd-rm-browser__content { flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.wd-page.wd-rm-page .wd-rm-browser__topbar { display: flex; justify-content: space-between; align-items: center; }
+.wd-page.wd-rm-page .wd-rm-browser__title { font-size: 18px; font-weight: 800; color: var(--rm-ink); }
+.wd-page.wd-rm-page .wd-rm-browser__btn { background: var(--rm-blue); color: #fff; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; }
+.wd-page.wd-rm-page .wd-rm-browser__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.wd-page.wd-rm-page .wd-rm-browser__product {
+  background: var(--rm-surface); border: 1px solid var(--rm-border); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;
+}
+.wd-page.wd-rm-page .wd-rm-browser__img { height: 60px; background: #e2e8f0; border-radius: 4px; }
+.wd-page.wd-rm-page .wd-rm-browser__p-title { height: 12px; width: 80%; background: #cbd5e1; border-radius: 4px; }
+.wd-page.wd-rm-page .wd-rm-browser__p-price { height: 12px; width: 40%; background: #cbd5e1; border-radius: 4px; }
+
+/* =========================
+   STEPS (Шаги)
+   ========================= */
+.wd-page.wd-rm-page .wd-rm-steps {
+  counter-reset: step-counter; list-style: none !important; padding: 0 !important;
+  margin: 2rem 0 !important; display: flex; flex-direction: column; gap: 1rem;
+}
+.wd-page.wd-rm-page .wd-rm-steps li {
+  position: relative; padding: 1.5rem 1.5rem 1.5rem 4.5rem !important;
+  background: var(--rm-surface); border: 1px solid var(--rm-border);
+  border-radius: 16px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  counter-increment: step-counter; font-size: 1rem !important; line-height: 1.6 !important;
+  color: var(--rm-text) !important; margin: 0 !important;
+}
+.wd-page.wd-rm-page .wd-rm-steps li::before {
+  content: counter(step-counter); position: absolute; left: 1.5rem; top: 1.5rem;
+  width: 32px; height: 32px; background: var(--rm-blue-soft); color: var(--rm-blue);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.9rem; font-family: var(--rm-mono);
+}
+
+/* =========================
+   NOTICE BLOCK (Приём оплаты)
+   ========================= */
+.wd-page.wd-rm-page .wd-rm-notice {
+  background: var(--rm-blue-soft);
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--rm-blue);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.wd-page.wd-rm-page .wd-rm-notice__icon {
+  color: var(--rm-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.wd-page.wd-rm-page .wd-rm-notice__icon svg { width: 24px; height: 24px; stroke-width: 2; fill: none; }
+.wd-page.wd-rm-page .wd-rm-notice__content {
+  flex: 1;
+}
+.wd-page.wd-rm-page .wd-rm-notice__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--rm-ink);
+  margin: 0 0 0.5rem 0;
+}
+.wd-page.wd-rm-page .wd-rm-notice__text {
+  font-size: 0.95rem;
+  color: var(--rm-text);
+  line-height: 1.6;
+  margin: 0;
+}
+.wd-page.wd-rm-page .wd-rm-notice__text a {
+  color: var(--rm-blue);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page {
+  --rm-bg: #0f172a;
+  --rm-surface: #1e293b;
+  --rm-ink: #f8fafc;
+  --rm-text: #cbd5e1;
+  --rm-muted: #94a3b8;
+  --rm-border: #334155;
+  --rm-blue-soft: rgba(37, 99, 235, 0.15);
+}
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-browser__header { background: #0f172a; }
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-browser__url { background: #1e293b; }
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-browser__body { background: #0f172a; }
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-browser__img { background: #334155; }
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-browser__p-title,
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-browser__p-price { background: #334155; }
+
+[data-md-color-scheme="slate"] .wd-page.wd-rm-page .wd-rm-notice {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: #1e3a8a;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  .wd-page.wd-rm-page .wd-rm-features { grid-template-columns: 1fr; }
+  .wd-page.wd-rm-page .wd-rm-pricing { grid-template-columns: 1fr; gap: 2rem; }
+  .wd-page.wd-rm-page .wd-rm-browser__sidebar { display: none; }
+  .wd-page.wd-rm-page .wd-rm-browser__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 650px) {
+  .wd-page.wd-rm-page .wd-pl-shell { padding: 0 16px; }
+  .md-typeset .wd-page.wd-rm-page h2 { font-size: 1.4rem !important; }
+  .md-typeset .wd-page.wd-rm-page h2::before { width: 32px; height: 32px; font-size: 0.75rem; }
+  .wd-page.wd-rm-page .wd-rm-browser__grid { grid-template-columns: 1fr; }
+  .wd-page.wd-rm-page .wd-rm-steps li { padding: 1.25rem 1.25rem 1.25rem 3.5rem !important; }
+  .wd-page.wd-rm-page .wd-rm-steps li::before { left: 1rem; top: 1.25rem; width: 28px; height: 28px; font-size: 0.8rem; }
+}

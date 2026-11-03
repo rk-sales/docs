@@ -91,6 +91,13 @@ extra_css:
   - stylesheets/pages/mts-kassa.css
   - stylesheets/pages/modulkassa.css
   - stylesheets/pages/robokassa-app.css
+  - stylesheets/pages/app-paylink.css
+  - stylesheets/pages/app-vozvrat.css
+  - stylesheets/pages/app-payment-notify.css
+  - stylesheets/pages/rkshop-bot.css
+  - stylesheets/pages/tg-vk-links.css
+  - stylesheets/pages/robox.css
+  - stylesheets/pages/integrations.css
   # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
   - stylesheets/dark-theme.css
   
@@ -188,7 +195,7 @@ nav:
           
       - Работа через Telegram бота / VK бота: instructions/tg-vk-links.md
       - Создание Интернет-Магазина на базе Robokassa:
-          - Robomarket: instructions/rk-shops/robomarket.md
+          - Robox: instructions/rk-shops/robox.md
           - RobokassaShopBot в Telegram: instructions/rk-shops/rkshop-bot.md
 
   - Готовые интеграции и API: integratsii/index.md

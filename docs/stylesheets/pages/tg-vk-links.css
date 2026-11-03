@@ -1,0 +1,369 @@
+/* =========================================================
+   TG & VK LINKS PAGE — Link Studio Style
+   ========================================================= */
+
+.wd-page.wd-tg-vk-page {
+  --tg-bg: #f8fafc;
+  --tg-surface: #ffffff;
+  --tg-input-bg: #f1f5f9;
+  --tg-ink: #0f172a;
+  --tg-text: #475569;
+  --tg-muted: #94a3b8;
+  --tg-border: #e2e8f0;
+  
+  --tg-blue: #2563eb;
+  --tg-blue-soft: #eff6ff;
+  
+  /* Цвета для мокапов */
+  --tg-chat-bg: #e6ebee;
+  --tg-msg-bot: #ffffff;
+  --tg-msg-user: #e1ffc7;
+  --tg-btn-bg: #ffffff;
+  --tg-btn-text: #007aff;
+
+  /* Цвета для VK */
+  --vk-msg-user: #e5ebf1;
+  --vk-btn-text: #0077FF;
+  --vk-header-avatar: #0077FF;
+
+  --tg-mono: 'JetBrains Mono', monospace;
+  --tg-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  display: block !important;
+  width: 100% !important;
+  font-family: var(--tg-sans);
+  color: var(--tg-text);
+  counter-reset: tg-sec;
+  position: relative;
+  padding: 0 0 2rem;
+  background: var(--tg-bg);
+  border-radius: 24px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wd-page.wd-tg-vk-page *, .wd-page.wd-tg-vk-page *::before, .wd-page.wd-tg-vk-page *::after {
+  box-sizing: border-box;
+}
+
+.wd-page.wd-tg-vk-page .wd-pl-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+body:has(.wd-page.wd-tg-vk-page) .md-content__inner > h1 { display: none !important; }
+
+/* =========================
+   H2 — Секции с номерами
+   ========================= */
+.md-typeset .wd-page.wd-tg-vk-page h2 {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  margin: 4rem 0 1.5rem !important;
+  color: var(--tg-ink) !important;
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.8px !important;
+  counter-increment: tg-sec;
+  position: relative;
+  padding-top: 0 !important;
+  border: 0 !important;
+}
+.md-typeset .wd-page.wd-tg-vk-page h2 .headerlink { display: none !important; }
+.md-typeset .wd-page.wd-tg-vk-page h2::after { display: none !important; }
+.md-typeset .wd-page.wd-tg-vk-page h2::before {
+  content: "0" counter(tg-sec) !important;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; width: 36px; height: 36px;
+  background: var(--tg-ink); color: var(--tg-bg);
+  border-radius: 10px; font-family: var(--tg-mono);
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.md-typeset .wd-page.wd-tg-vk-page .wd-tg-hero {
+  position: relative; padding: 3rem 0 1rem; max-width: 800px;
+}
+.wd-page.wd-tg-vk-page .wd-tg-hero::before {
+  content: ""; position: absolute; top: -20%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent 60%);
+  border-radius: 50%; z-index: -1; filter: blur(20px); pointer-events: none;
+}
+.md-typeset .wd-page.wd-tg-vk-page .wd-tg-hero__title {
+  display: block; margin: 0 0 1.25rem !important; color: var(--tg-ink) !important;
+  font-size: clamp(2rem, 3.5vw, 2.6rem) !important; font-weight: 900 !important;
+  line-height: 1.1 !important; letter-spacing: -1px !important; padding: 0 !important;
+}
+.md-typeset .wd-page.wd-tg-vk-page .wd-tg-hero__title::after { display: none !important; }
+.md-typeset .wd-page.wd-tg-vk-page .wd-tg-hero__desc {
+  max-width: 680px; margin: 0 !important; color: var(--tg-text) !important;
+  font-size: 1.1rem !important; line-height: 1.7 !important;
+}
+
+/* =========================
+   VISUAL STEPS (Мокапы)
+   ========================= */
+.wd-page.wd-tg-vk-page .wd-pl-visual-steps {
+  display: flex; flex-direction: column; gap: 3rem; margin: 2rem 0 3rem;
+}
+.wd-page.wd-tg-vk-page .wd-pl-vstep {
+  display: flex; align-items: center; gap: 3rem;
+}
+.wd-page.wd-tg-vk-page .wd-pl-vstep--reverse {
+  flex-direction: row-reverse;
+}
+.wd-page.wd-tg-vk-page .wd-pl-vstep__content { flex: 1; min-width: 0; }
+.wd-page.wd-tg-vk-page .wd-pl-vstep__title {
+  font-size: 1.4rem; font-weight: 800; color: var(--tg-ink); margin-bottom: 0.75rem; letter-spacing: -0.5px;
+}
+.wd-page.wd-tg-vk-page .wd-pl-vstep__desc {
+  font-size: 1rem; line-height: 1.6; color: var(--tg-text);
+}
+.wd-page.wd-tg-vk-page .wd-pl-vstep__visual {
+  flex: 0 0 280px; display: flex; justify-content: center;
+}
+
+/* =========================
+   МОКАП ТЕЛЕФОНА
+   ========================= */
+.wd-page.wd-tg-vk-page .tg-phone {
+  width: 280px; height: 540px; background: #182638;
+  border-radius: 36px; padding: 8px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2), inset 0 0 0 2px rgba(255,255,255,0.1);
+  position: relative;
+}
+.wd-page.wd-tg-vk-page .tg-phone__notch {
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+  width: 90px; height: 20px; background: #182638;
+  border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; z-index: 10;
+}
+.wd-page.wd-tg-vk-page .tg-screen {
+  width: 100%; height: 100%; background: var(--tg-chat-bg);
+  border-radius: 28px; overflow: hidden; display: flex; flex-direction: column;
+  position: relative;
+}
+
+/* Шапка чата */
+.wd-page.wd-tg-vk-page .tg-header {
+  background: var(--tg-surface); padding: 36px 12px 10px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--tg-border); z-index: 2;
+}
+.wd-page.wd-tg-vk-page .tg-header__back { color: var(--tg-btn-text); font-size: 16px; }
+.wd-page.wd-tg-vk-page .tg-header__avatar {
+  width: 32px; height: 32px; border-radius: 50%; background: var(--tg-btn-text);
+  color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px;
+}
+.wd-page.wd-tg-vk-page .tg-header__avatar--vk { background: var(--vk-header-avatar); }
+.wd-page.wd-tg-vk-page .tg-header__avatar svg { width: 18px; height: 18px; stroke-width: 2; color: #fff; fill: none; }
+.wd-page.wd-tg-vk-page .tg-header__info { flex: 1; }
+.wd-page.wd-tg-vk-page .tg-header__name { font-size: 13px; font-weight: 600; color: var(--tg-ink); }
+.wd-page.wd-tg-vk-page .tg-header__status { font-size: 10px; color: var(--tg-muted); }
+.wd-page.wd-tg-vk-page .tg-header__menu { color: var(--tg-muted); font-weight: bold; letter-spacing: 1px; }
+
+/* Чат */
+.wd-page.wd-tg-vk-page .tg-chat {
+  flex: 1; padding: 16px 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;
+  background-image: radial-gradient(var(--tg-border) 1px, transparent 1px);
+  background-size: 20px 20px; background-position: 0 0;
+}
+.wd-page.wd-tg-vk-page .tg-chat::-webkit-scrollbar { display: none; }
+
+.wd-page.wd-tg-vk-page .tg-msg {
+  max-width: 85%; padding: 8px 12px; border-radius: 12px; font-size: 12px; line-height: 1.4;
+  color: var(--tg-ink); position: relative; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.wd-page.wd-tg-vk-page .tg-msg--bot {
+  background: var(--tg-msg-bot); align-self: flex-start; border-bottom-left-radius: 4px;
+}
+.wd-page.wd-tg-vk-page .tg-msg--user {
+  background: var(--tg-msg-user); align-self: flex-end; border-bottom-right-radius: 4px;
+  display: flex; align-items: center; gap: 6px;
+}
+.wd-page.wd-tg-vk-page .tg-msg--user.tg-msg--vk {
+  background: var(--vk-msg-user);
+}
+.wd-page.wd-tg-vk-page .tg-msg--user svg { width: 16px; height: 16px; stroke-width: 2; fill: none; }
+
+/* Клавиатура (Inline buttons) */
+.wd-page.wd-tg-vk-page .tg-keyboard {
+  display: flex; flex-direction: column; gap: 6px; margin-top: 8px;
+}
+.wd-page.wd-tg-vk-page .tg-keyboard-row {
+  display: flex; gap: 6px;
+}
+.wd-page.wd-tg-vk-page .tg-btn {
+  background: var(--tg-btn-bg); color: var(--tg-btn-text); border: none;
+  padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 500;
+  flex: 1; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+  white-space: normal; word-break: break-word; line-height: 1.2;
+}
+.wd-page.wd-tg-vk-page .tg-btn svg { width: 14px; height: 14px; stroke-width: 2; flex-shrink: 0; fill: none; }
+.wd-page.wd-tg-vk-page .tg-btn:hover { background: var(--tg-blue-soft); }
+.wd-page.wd-tg-vk-page .tg-btn--vk { color: var(--vk-btn-text); }
+
+/* Поле ввода снизу */
+.wd-page.wd-tg-vk-page .tg-input-area {
+  padding: 8px 12px; background: var(--tg-surface);
+  display: flex; align-items: center; gap: 8px;
+  border-top: 1px solid var(--tg-border);
+}
+.wd-page.wd-tg-vk-page .tg-input {
+  flex: 1; background: var(--tg-chat-bg); border-radius: 16px;
+  padding: 8px 12px; font-size: 12px; color: var(--tg-muted);
+  display: flex; justify-content: space-between;
+}
+.wd-page.wd-tg-vk-page .tg-send { color: var(--tg-btn-text); font-size: 16px; }
+
+/* =========================
+   СПИСОК ФИЧ (BENTO)
+   ========================= */
+.wd-page.wd-tg-vk-page .wd-tg-features {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0;
+}
+.wd-page.wd-tg-vk-page .wd-tg-feature {
+  background: var(--tg-surface); border: 1px solid var(--tg-border);
+  border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+}
+.wd-page.wd-tg-vk-page .wd-tg-feature__icon {
+  width: 32px; height: 32px; border-radius: 8px; background: var(--tg-blue-soft);
+  color: var(--tg-blue); display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; margin-bottom: 0.25rem;
+}
+.wd-page.wd-tg-vk-page .wd-tg-feature__icon svg { width: 18px; height: 18px; stroke-width: 2; fill: none; }
+.wd-page.wd-tg-vk-page .wd-tg-feature__title { font-size: 1rem; font-weight: 700; color: var(--tg-ink); margin: 0; }
+.wd-page.wd-tg-vk-page .wd-tg-feature__desc { font-size: 0.85rem; color: var(--tg-text); line-height: 1.5; margin: 0; }
+
+/* =========================
+   FAQ & ACCORDIONS
+   ========================= */
+.wd-page.wd-tg-vk-page .question {
+  margin: 12px 0 !important;
+  border: 1px solid var(--tg-border) !important;
+  border-radius: 14px !important;
+  background: var(--tg-surface) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.wd-page.wd-tg-vk-page .question:hover {
+  border-color: var(--tg-blue) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08) !important;
+}
+.wd-page.wd-tg-vk-page .question[open] {
+  border-color: var(--tg-blue) !important;
+}
+.wd-page.wd-tg-vk-page .question summary {
+  position: relative;
+  display: block;
+  padding: 20px 52px 20px 22px !important;
+  color: var(--tg-ink) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  cursor: pointer;
+  list-style: none !important;
+  background: transparent !important;
+}
+.wd-page.wd-tg-vk-page .question summary::-webkit-details-marker { display: none !important; }
+
+/* ВОТ ЭТИ СТРОКИ УБЕРУТ ЗЕЛЕНУЮ ИКОНКУ */
+.wd-page.wd-tg-vk-page .question summary::before {
+  display: none !important;
+  content: "" !important;
+}
+.wd-page.wd-tg-vk-page .question summary svg {
+  display: none !important;
+}
+.wd-page.wd-tg-vk-page .question summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--tg-muted);
+  border-bottom: 2px solid var(--tg-muted);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.wd-page.wd-tg-vk-page .question[open] summary::after {
+  transform: translateY(-25%) rotate(225deg);
+  border-color: var(--tg-blue);
+}
+.wd-page.wd-tg-vk-page .question[open] summary { padding-bottom: 14px !important; }
+.wd-page.wd-tg-vk-page .question > p, 
+.wd-page.wd-tg-vk-page .question > ol,
+.wd-page.wd-tg-vk-page .question > ul {
+  margin: 0 !important;
+  padding: 0 22px 22px !important;
+  color: var(--tg-text) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+.wd-page.wd-tg-vk-page .question code {
+  font-family: var(--tg-mono);
+  background: var(--tg-bg);
+  border: 1px solid var(--tg-border);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: var(--tg-blue);
+}
+
+/* =========================
+   DARK MODE
+   ========================= */
+[data-md-color-scheme="slate"] .wd-page.wd-tg-vk-page {
+  --tg-bg: #0f172a;
+  --tg-surface: #1e293b;
+  --tg-input-bg: #1e293b; 
+  --tg-ink: #f8fafc;
+  --tg-text: #cbd5e1;
+  --tg-muted: #94a3b8;
+  --tg-border: #334155;
+  --tg-blue-soft: rgba(37, 99, 235, 0.15);
+  
+  /* Тёмная тема ТГ */
+  --tg-chat-bg: #0e1621;
+  --tg-msg-bot: #182533;
+  --tg-msg-user: #2b5278;
+  --tg-btn-bg: #182533;
+  --tg-btn-text: #64a9e9;
+  
+  /* Тёмная тема VK */
+  --vk-msg-user: #1a2b45;
+}
+[data-md-color-scheme="slate"] .wd-page.wd-tg-vk-page .tg-msg--user,
+[data-md-color-scheme="slate"] .wd-page.wd-tg-vk-page .tg-msg--user.tg-msg--vk { color: #fff; }
+[data-md-color-scheme="slate"] .wd-page.wd-tg-vk-page .tg-btn:hover { background: #1c2c40; }
+[data-md-color-scheme="slate"] .wd-page.wd-tg-vk-page .tg-input { color: #64748b; }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 900px) {
+  .wd-page.wd-tg-vk-page .wd-pl-vstep, 
+  .wd-page.wd-tg-vk-page .wd-pl-vstep--reverse {
+    flex-direction: column; gap: 2rem;
+  }
+  .wd-page.wd-tg-vk-page .wd-pl-vstep__visual { width: 100%; }
+}
+@media (max-width: 650px) {
+  .wd-page.wd-tg-vk-page .wd-pl-shell { padding: 0 16px; }
+  .md-typeset .wd-page.wd-tg-vk-page h2 { font-size: 1.4rem !important; gap: 0.75rem; }
+  .md-typeset .wd-page.wd-tg-vk-page h2::before { width: 32px; height: 32px; font-size: 0.75rem; }
+  .wd-page.wd-tg-vk-page .wd-tg-features { grid-template-columns: 1fr; }
+  .wd-page.wd-tg-vk-page .question summary { padding: 17px 42px 17px 16px !important; font-size: 0.95rem !important; }
+  .wd-page.wd-tg-vk-page .question summary::after { right: 18px; }
+  .wd-page.wd-tg-vk-page .question > p,
+  .wd-page.wd-tg-vk-page .question > ol,
+  .wd-page.wd-tg-vk-page .question > ul { padding: 0 16px 18px !important; font-size: 0.9rem !important; }
+}

@@ -16,6 +16,11 @@ html, body {
   font-size: 18px;
 }
 
+/* Шрифт правого меню «Содержание» */
+.md-nav--secondary {
+  font-family: "TildaSans", sans-serif !important;
+}
+
 .md-main { background-color: #f8fafc !important; }
 .md-typeset .headerlink { display: none !important; }
 .md-typeset { font-size: 1rem; line-height: 1.7; color: #334155; }

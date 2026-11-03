@@ -60,40 +60,6 @@
 [data-md-color-scheme="slate"] .md-typeset .comparison-legend p { color: #94a3b8; }
 [data-md-color-scheme="slate"] .md-typeset .legend-symbol { background: #334155; }
 
-/* ===== ЛЕВОЕ МЕНЮ (Тёмная тема) ===== */
-[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__title {
-  color: #f8fafc !important;
-  border-bottom-color: #334155;
-}
-
-/* Уровень 1 (Все элементы белые) */
-[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
-[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link {
-  color: #ffffff !important;
-}
-
-/* Вложенные уровни (Тоже белые, убрали серый) */
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item .md-nav__item .md-nav__link .md-ellipsis {
-  color: #e2e8f0 !important; /* Светло-серый вместо темного */
-}
-
-/* Hover */
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover { 
-  background-color: #1e293b !important; 
-}
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover .md-ellipsis {
-  color: #ffffff !important;
-}
-
-/* Active */
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--active > .md-nav__link { 
-  background-color: rgba(59, 130, 246, 0.15) !important; 
-  border-left-color: #3b82f6 !important;
-}
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--active > .md-nav__link .md-ellipsis {
-  color: #60a5fa !important;
-}
-
 /* ===== ПРАВОЕ МЕНЮ (TOC) ===== */
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__title { color: #f8fafc; }
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link { color: #94a3b8; }
@@ -186,29 +152,163 @@
 [data-md-color-scheme="slate"] .cards-page .audience-item:hover { border-color: #475f88; background: #223149; }
 [data-md-color-scheme="slate"] .cards-page .highlight-block { background: radial-gradient(circle at 100% 0%, rgba(59, 130, 246, .13), transparent 55%), linear-gradient(145deg, #1a2b49, #1e293b); border-color: #2e4a7d; }
 
-/* =======================================================
-   ФИКС: Убираем ложный "ховер" у родительских папок
-   ======================================================= */
+/* =========================================================
+   LEFT NAVIGATION — DARK THEME
+   ========================================================= */
 
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link {
-  background-color: transparent !important;
-  border-left: none !important;
-  padding-left: 0.75rem !important;
+/* Заголовок */
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__title {
+  color: #f8fafc !important;
+  border-bottom-color: #334155 !important;
 }
 
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item .md-nav__item--nested.md-nav__item--active > .md-nav__link {
-  background-color: transparent !important;
-  border-left: none !important;
-  padding-left: 1.5rem !important;
+/* Уровень 1 */
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > a.md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
+  color: #f8fafc !important;
 }
 
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link .md-ellipsis,
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link .md-nav__icon {
+/* Уровень 2 */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="1"] .md-ellipsis {
+  color: #e2e8f0 !important;
+}
+
+/* Уровень 3 */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="2"] .md-ellipsis {
+  color: #cbd5e1 !important;
+}
+
+/* Уровень 4 */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="3"] .md-ellipsis {
+  color: #94a3b8 !important;
+}
+
+/* Родительские разделы активной страницы */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > label.md-nav__link:not([for="__toc"]) .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__container > a:not(.md-nav__link--active) .md-ellipsis {
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
+}
+
+/* Hover */
+
+[data-md-color-scheme="slate"] .md-nav--primary a.md-nav__link:not(.md-nav__link--active):hover,
+[data-md-color-scheme="slate"] .md-nav--primary label.md-nav__link:not(.md-nav__link--active):not([for="__toc"]):hover {
+  background-color: #263449 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover .md-ellipsis {
+  color: #ffffff !important;
+}
+
+/* Активная страница */
+
+[data-md-color-scheme="slate"] .md-nav--primary a.md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav--primary label.md-nav__link--active:not([for="__toc"]) {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  box-shadow: inset 3px 0 0 #3b82f6 !important;
+  color: #60a5fa !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary a.md-nav__link--active .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary label.md-nav__link--active:not([for="__toc"]) .md-ellipsis {
+  color: #60a5fa !important;
+  font-weight: 650 !important;
+}
+
+
+/* =========================================================
+   LEFT NAVIGATION — FINAL DARK THEME
+   ========================================================= */
+
+/* Заголовок меню */
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__title {
+  color: #f8fafc !important;
+  border-bottom-color: #334155 !important;
+}
+
+/* Базовый цвет текста */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link .md-ellipsis {
+  color: #cbd5e1 !important;
+}
+
+/* Уровень 1 — основные разделы */
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
+  color: #f8fafc !important;
+  font-weight: 650 !important;
+}
+
+/* Уровень 2 — подразделы */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
+  color: #e2e8f0 !important;
+  font-weight: 550 !important;
+}
+
+/* Уровень 3 — статьи */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="2"] > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="2"] > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
+  color: #cbd5e1 !important;
+  font-weight: 500 !important;
+}
+
+/* Уровень 4 — глубокая вложенность */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="3"] > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="3"] > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
+  color: #94a3b8 !important;
+  font-weight: 450 !important;
+}
+
+/* Родители активной статьи остаются нейтральными */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > label.md-nav__link:not([for="__toc"]) .md-ellipsis,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__container > a:not(.md-nav__link--active) .md-ellipsis {
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
   transform: none !important;
 }
 
-/* Подсвечиваем голубым текстом ВСЕ родительские папки в тёмной теме */
-[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__link .md-ellipsis {
+/* Наведение */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:not(.md-nav__link--active):hover {
+  background-color: #263449 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:not(.md-nav__link--active):hover .md-ellipsis {
+  color: #ffffff !important;
+}
+
+/* Стрелки при наведении */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link:hover .md-nav__icon {
+  opacity: 0.85 !important;
+}
+
+/* Активная страница */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link--active {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  box-shadow: inset 3px 0 0 #3b82f6 !important;
   color: #60a5fa !important;
-  font-weight: 600 !important;
+}
+
+/* Текст активной страницы */
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__link--active .md-ellipsis {
+  color: #60a5fa !important;
+  font-weight: 650 !important;
 }
