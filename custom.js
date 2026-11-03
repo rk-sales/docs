@@ -188,25 +188,71 @@ document.querySelectorAll('.pl-page .pl-pass-btn').forEach(function (btn) {
   });
 });
 
-// ===== 5. КНОПКА "НАВЕРХ" ДЛЯ СТРАНИЦЫ ВЫВОДА =====
-document.addEventListener('DOMContentLoaded', function () {
-  var scrollBtn = document.getElementById('scrollToTopBtn');
-  if (!scrollBtn) return;
 
-  // Отслеживаем скролл
-  window.addEventListener('scroll', function () {
+// ===== 5. ГЛОБАЛЬНАЯ ЗОНА "НАВЕРХ" =====
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Не допускаем создания нескольких кнопок
+  if (document.querySelector('.rk-backtop')) return;
+
+  // Создаём кнопку
+  var scrollBtn = document.createElement('button');
+
+  scrollBtn.type = 'button';
+  scrollBtn.className = 'rk-backtop';
+  scrollBtn.setAttribute('aria-label', 'Вернуться к началу страницы');
+  scrollBtn.setAttribute('title', 'Наверх');
+
+  // Внутреннее содержимое
+  scrollBtn.innerHTML = `
+    <span class="rk-backtop__content">
+      <span class="rk-backtop__label">Наверх</span>
+
+      <svg
+        class="rk-backtop__icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5"></path>
+        <path d="M5 12l7-7 7 7"></path>
+      </svg>
+    </span>
+  `;
+
+  // Добавляем кнопку на страницу
+  document.body.appendChild(scrollBtn);
+
+  // Показываем зону после прокрутки
+  function updateScrollButton() {
     if (window.scrollY > 400) {
       scrollBtn.classList.add('is-visible');
     } else {
       scrollBtn.classList.remove('is-visible');
     }
+  }
+
+  // Отслеживание прокрутки
+  window.addEventListener('scroll', updateScrollButton, {
+    passive: true
   });
 
-  // Плавный скролл наверх при клике
+  // Возврат наверх
   scrollBtn.addEventListener('click', function () {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth'
     });
   });
+
+  // Проверяем начальное положение
+  updateScrollButton();
+
 });

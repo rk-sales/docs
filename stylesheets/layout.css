@@ -513,46 +513,61 @@
   }
 }
 
+
 /* =========================================================
-   ПРАВОЕ МЕНЮ (TOC)
+   RIGHT NAVIGATION — TABLE OF CONTENTS
    ========================================================= */
 
 @media screen and (min-width: 76.25em) {
 
-  .md-nav--secondary .md-nav__title {
-    font-weight: 700;
-    color: #0f172a;
+  /* Шрифт всего правого меню */
+  .md-nav--secondary,
+  .md-nav--secondary .md-nav__title,
+  .md-nav--secondary .md-nav__link,
+  .md-nav--secondary .md-nav__link .md-ellipsis {
+    font-family: "TildaSans", sans-serif !important;
+  }
 
-    font-size: 0.85rem;
+  /* Заголовок Содержание */
+  .md-nav--secondary .md-nav__title {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+
     text-transform: uppercase;
     letter-spacing: 0.5px;
-
     padding-left: 0;
   }
 
+  /* Ссылки */
+  .md-nav--secondary .md-nav__link,
+  .md-nav--secondary .md-nav__link .md-ellipsis {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
   .md-nav--secondary .md-nav__link {
-    font-size: 0.85rem;
-    line-height: 1.4;
-
-    padding: 0.25rem 0;
-
+    padding: 0.3rem 0;
     color: #64748b;
     transition: color 0.2s;
   }
 
+  /* Наведение */
   .md-nav--secondary .md-nav__link:hover {
-    color: #2563eb;
+    color: #2563eb !important;
   }
 
+  /* Активный пункт */
   .md-nav--secondary .md-nav__link--active {
-    color: #2563eb;
-    font-weight: 600;
+    color: #2563eb !important;
+    font-weight: 600 !important;
 
     border-left: 2px solid #2563eb;
     padding-left: 0.5rem;
     margin-left: -0.5rem;
   }
 }
+
 
 /* =========================================================
    ТЁМНАЯ ТЕМА
@@ -779,6 +794,194 @@
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+  }
+
+}
+
+
+/* =========================================================
+   ROBOKASSA — BACK TO TOP
+   Bottom Edge Interaction
+   ========================================================= */
+
+/* Кликабельная область */
+
+.rk-backtop {
+  position: fixed !important;
+
+  right: 0 !important;
+  bottom: 0 !important;
+
+  width: 170px !important;
+  height: 104px !important;
+
+  z-index: 105 !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-end !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+
+  cursor: pointer !important;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+/* Видимое состояние */
+
+.rk-backtop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Мягкий градиент и тень */
+
+.rk-backtop::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 100% 100%,
+    rgba(15, 23, 42, 0.17) 0%,
+    rgba(15, 23, 42, 0.07) 38%,
+    transparent 76%
+  );
+
+  opacity: 0.18;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Внутренний блок */
+
+.rk-backtop__content {
+  position: absolute;
+
+  right: 25px;
+  bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  z-index: 1;
+
+  color: #334155;
+
+  transition: color 0.25s ease;
+}
+
+/* Иконка */
+
+.rk-backtop__icon {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  flex: 0 0 24px;
+
+  opacity: 0.45;
+  transform: translateY(4px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Надпись */
+
+.rk-backtop__label {
+  font-family: "TildaSans", sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  opacity: 0;
+  transform: translateY(5px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Наведение на всю область */
+
+.rk-backtop.is-visible:hover::before,
+.rk-backtop.is-visible:focus-visible::before {
+  opacity: 1;
+}
+
+.rk-backtop.is-visible:hover .rk-backtop__icon,
+.rk-backtop.is-visible:focus-visible .rk-backtop__icon {
+  opacity: 1;
+  transform: translateY(0);
+  color: #2563eb;
+}
+
+.rk-backtop.is-visible:hover .rk-backtop__label,
+.rk-backtop.is-visible:focus-visible .rk-backtop__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Фокус с клавиатуры */
+
+.rk-backtop:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: -5px !important;
+}
+
+/* Сенсорные экраны */
+
+@media (hover: none) {
+
+  .rk-backtop.is-visible::before {
+    opacity: 0.55;
+  }
+
+  .rk-backtop.is-visible .rk-backtop__icon {
+    opacity: 0.9;
+    transform: none;
+  }
+
+  .rk-backtop.is-visible .rk-backtop__label {
+    opacity: 0.85;
+    transform: none;
+  }
+}
+
+/* Мобильная адаптация */
+
+@media screen and (max-width: 600px) {
+
+  .rk-backtop {
+    width: 120px !important;
+    height: 78px !important;
+  }
+
+  .rk-backtop__content {
+    right: 17px;
+    bottom: 16px;
   }
 
 }
