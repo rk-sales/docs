@@ -90,7 +90,7 @@ extra_css:
   - stylesheets/pages/atol-online.css
   - stylesheets/pages/mts-kassa.css
   - stylesheets/pages/modulkassa.css
-  
+  - stylesheets/pages/robokassa-app.css
   # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
   - stylesheets/dark-theme.css
   
