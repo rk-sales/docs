@@ -312,3 +312,30 @@
   color: #60a5fa !important;
   font-weight: 650 !important;
 }
+
+
+/* =========================================================
+   BACK TO TOP — DARK THEME
+   ========================================================= */
+
+[data-md-color-scheme="slate"] .rk-backtop__content {
+  color: #cbd5e1;
+}
+
+[data-md-color-scheme="slate"] .rk-backtop::before {
+  background: radial-gradient(
+    ellipse at 100% 100%,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(15, 23, 42, 0.25) 40%,
+    transparent 76%
+  );
+}
+
+[data-md-color-scheme="slate"] .rk-backtop.is-visible:hover .rk-backtop__icon,
+[data-md-color-scheme="slate"] .rk-backtop.is-visible:focus-visible .rk-backtop__icon {
+  color: #60a5fa;
+}
+
+[data-md-color-scheme="slate"] .rk-backtop:focus-visible {
+  outline-color: #60a5fa !important;
+}
