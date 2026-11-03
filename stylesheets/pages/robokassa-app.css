@@ -1,0 +1,1505 @@
+/* =========================================================
+   ROBOKASSA APP — EDITORIAL TECH
+   ========================================================= */
+
+.app-page {
+  --app-bg: #f7f8fa;
+  --app-white: #ffffff;
+  --app-ink: #182638;
+  --app-text: #647386;
+  --app-muted: #94a1b1;
+  --app-border: #e7ebf0;
+  --app-blue: #286fe5;
+  --app-blue-dark: #1856bd;
+  --app-blue-light: #eaf2ff;
+  --app-inner-inset: 40px;
+
+  display: block !important;
+  width: 100% !important;
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-bottom: 0;
+  overflow-x: clip;
+  position: relative;
+}
+
+.app-page *, .app-page *::before, .app-page *::after { box-sizing: border-box; }
+
+body:has(.app-page) .md-header__topic,
+body:has(.app-page) .md-content__inner > h1 { display: none !important; }
+
+body:has(.app-page) .md-content__inner { padding: 0 !important; margin: 0 !important; }
+
+.app-page .app-container { 
+  max-width: 1160px; 
+  width: 100%;
+  margin: 0 auto; 
+  padding: 0 40px;
+  position: relative; 
+  z-index: 2; 
+  box-sizing: border-box;
+}
+
+.app-page .app-section-padding { padding: 40px 0; }
+
+/* =========================================================
+   01 — HERO
+   ========================================================= */
+
+.app-page .app-hero {
+  background: #fff; position: relative; overflow: hidden; padding: 60px 0 70px;
+  border-bottom: 1px solid var(--app-border); text-align: left;
+}
+.app-page .app-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(37, 93, 160, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 93, 160, .035) 1px, transparent 1px);
+  background-size: 48px 48px; mask-image: linear-gradient(90deg, transparent, black 50%, black);
+  pointer-events: none;
+}
+.app-page .app-hero::after {
+  content: ""; position: absolute; width: 390px; height: 390px; border-radius: 50%; right: 5%; top: 50%; transform: translateY(-50%);
+  border: 1px solid #dce9fb;
+  background: radial-gradient(circle at 50% 50%, #dceaff 0 4%, transparent 4.5%), radial-gradient(circle at 50% 50%, transparent 0 30%, #edf4ff 30.5% 48%, transparent 48.5%), radial-gradient(circle at 50% 50%, transparent 0 68%, #f5f8fc 68.5%);
+  box-shadow: 0 0 0 22px rgba(234, 242, 255, .45), 0 0 0 60px rgba(234, 242, 255, .25);
+  pointer-events: none;
+}
+.app-page .app-hero-badge {
+  display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px;
+  background: #f1f6ff; border: 1px solid #e0eafa; border-radius: 7px;
+  color: #3674cb; font-size: 12px; font-weight: 700; letter-spacing: .045em;
+  margin-bottom: 20px; position: relative; z-index: 2;
+}
+.app-page .app-hero-title {
+  max-width: 670px; font-size: clamp(34px, 4vw, 48px) !important; line-height: 1.15 !important;
+  font-weight: 780 !important; letter-spacing: -.045em !important; color: #182638 !important;
+  margin: 0 0 16px !important; position: relative; z-index: 2;
+}
+.app-page .app-hero-desc {
+  max-width: 560px; font-size: 16px; line-height: 1.75; color: #718096;
+  margin: 0 0 25px !important; position: relative; z-index: 2;
+}
+.app-page .app-hero-desc b { color: #286fe5; font-weight: 750; }
+
+/* =========================================================
+   STORE BUTTONS
+   ========================================================= */
+
+.app-page .app-store-buttons { display: flex; justify-content: flex-start; gap: 12px; flex-wrap: wrap; position: relative; z-index: 2; }
+.app-page .app-btn-store {
+  display: inline-flex; align-items: center; gap: 12px; min-width: 155px;
+  padding: 12px 17px; border-radius: 9px; background: #fff; border: 1px solid #dfe6ef;
+  color: #23364e !important; text-decoration: none !important; transition: .25s ease;
+}
+.app-page .app-btn-store:hover { border-color: #9bbced; background: #f8fbff; transform: translateY(-2px); box-shadow: 0 7px 18px rgba(36, 87, 150, .08); }
+.app-page .app-btn-store svg { width: 26px; height: 26px; fill: currentColor; }
+.app-page .app-btn-store-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.3; }
+.app-page .app-btn-store-text span { font-size: 10px; color: #8b98a8; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.app-page .app-btn-store-text b { font-size: 15px; font-weight: 750; }
+
+/* =========================================================
+   02 — FEATURES (BENTO)
+   ========================================================= */
+
+.app-page .app-section-title { 
+  color: var(--app-ink) !important; 
+  font-size: 32px !important; 
+  font-weight: 780 !important; 
+  letter-spacing: -.04em; 
+  line-height: 1.2 !important; 
+  margin: 0 0 25px !important; 
+  text-align: left;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: var(--app-inner-inset) !important;
+  margin-right: var(--app-inner-inset) !important;
+}
+
+.app-page .app-bento { 
+  display: grid; 
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  gap: 15px; 
+  width: auto !important; 
+  margin-left: var(--app-inner-inset) !important;
+  margin-right: var(--app-inner-inset) !important;
+}
+.app-page .app-bento-item { position: relative; overflow: hidden; background: #fff; border: 1px solid #e6ebf1; border-radius: 13px; padding: 27px; min-height: 235px; transition: transform .25s ease, box-shadow .25s ease; }
+.app-page .app-bento-item:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(32, 64, 105, .07); }
+.app-page .app-bento-item.large { grid-column: span 2; min-height: 260px; }
+.app-page .app-bento-item.dark { background: #edf4ff; border-color: #dce9fb; }
+.app-page .app-bento-item.dark::after { content: "₽"; position: absolute; right: 35px; bottom: -45px; font-size: 230px; font-weight: 800; line-height: 1; color: rgba(49, 112, 211, .055); pointer-events: none; }
+
+.app-page .app-bento-icon { width: 43px; height: 43px; display: flex; align-items: center; justify-content: center; background: #eff4fa; color: #3679d9; border-radius: 10px; margin-bottom: 25px; }
+.app-page .app-bento-item.dark .app-bento-icon { background: #fff; color: #286fe5; }
+.app-page .app-bento-icon svg { width: 23px; height: 23px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.app-page .app-bento-title { font-size: 18px; line-height: 1.35; font-weight: 750; color: #25364b; letter-spacing: -.025em; margin: 0 0 10px !important; }
+.app-page .app-bento-text { font-size: 14px; line-height: 1.75; color: #738195; margin: 0 !important; max-width: 540px; position: relative; z-index: 1; }
+.app-page .app-bento-item.dark .app-bento-title { color: #203d64; }
+.app-page .app-bento-item.dark .app-bento-text { color: #647d9e; }
+
+/* =========================================================
+   04 — ДИНАМИЧЕСКИЙ ИНТЕРАКТИВНЫЙ МАКЕТ
+   ========================================================= */
+
+.app-page .app-dynamic-layout {
+  display: grid;
+  grid-template-columns: 1fr 290px 1fr;
+  gap: 40px;
+  align-items: center;
+  width: auto !important;
+  max-width: none !important;
+  margin: 30px var(--app-inner-inset) 0 !important;
+}
+
+/* =========================================================
+   ДИЗАЙНЕРСКИЕ ПЛИТКИ (НАСТОЯЩИЙ 3D-ЭФФЕКТ)
+   ========================================================= */
+
+.app-page .app-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow:
+    0 25px 50px -12px rgba(15, 23, 42, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  text-align: left !important;
+}
+
+/* Симметричный 3D-наклон */
+.app-page .app-info-col.left .app-tile {
+  transform: perspective(1200px) rotateY(5deg) rotateX(2deg) translateY(-5px);
+}
+
+.app-page .app-info-col.right .app-tile {
+  transform: perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(-5px);
+}
+
+.app-page .app-tile:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(0) scale(1.02);
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.2);
+}
+
+.app-page .app-dynamic-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--app-ink);
+  margin: 0 0 16px !important;
+  letter-spacing: -0.5px;
+  text-align: left !important;
+}
+.app-page .app-dynamic-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--app-text);
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* Список фич */
+.app-page .app-feature-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+.app-page .app-feature-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--app-text);
+  font-weight: 500;
+  margin-bottom: 12px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  width: 100%;
+}
+.app-page .app-feature-list li:last-child {
+  margin-bottom: 0 !important;
+}
+.app-page .app-feature-list li svg {
+  width: 18px; height: 18px; stroke: #286fe5; fill: none; stroke-width: 2.5; flex-shrink: 0; margin-top: 2px;
+}
+.app-page .app-feature-list li span {
+  flex: 1;
+  text-align: left !important;
+}
+
+/* Анимации плиток */
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-20px) perspective(1200px) rotateY(5deg) rotateX(2deg); }
+  100% { opacity: 1; transform: translateX(0) perspective(1200px) rotateY(5deg) rotateX(2deg) translateY(-5px); }
+}
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(20px) perspective(1200px) rotateY(-5deg) rotateX(2deg); }
+  100% { opacity: 1; transform: translateX(0) perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(-5px); }
+}
+.app-page .app-info-col.left .app-tile.animate { animation: slideInLeft 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+.app-page .app-info-col.right .app-tile.animate { animation: slideInRight 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+
+/* Корпус телефона */
+.app-page .app-phone-mock {
+  width: 100%; max-width: 290px; margin: 0 auto;
+  background: #fff; border-radius: 36px; padding: 8px;
+  box-shadow: 0 0 0 2px #e9edf3, 0 25px 60px -15px rgba(34, 56, 88, 0.2);
+  position: relative;
+  z-index: 10;
+}
+.app-page .app-phone-notch {
+  position: absolute; z-index: 20; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 22px; background: #263449; border-radius: 20px;
+}
+.app-page .app-phone-screen {
+  width: 100%; height: 520px;
+  background: #f4f6f8; border-radius: 28px; overflow: hidden; position: relative;
+  display: flex; flex-direction: column;
+}
+
+/* Экраны */
+.app-page .app-screen {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  background: #f4f6f8; opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+  padding-bottom: 58px;
+}
+.app-page .app-screen.active { opacity: 1; pointer-events: auto; z-index: 10; }
+
+/* Статус-бар */
+.app-page .app-statusbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 20px 6px; font-size: 13px; font-weight: 600; color: #000;
+}
+.app-page .app-statusbar svg { height: 10px; fill: #000; }
+
+/* Скролл-контент */
+.app-page .app-scroll { overflow-y: auto; flex-grow: 1; padding: 0 16px 10px; scrollbar-width: none; }
+.app-page .app-scroll::-webkit-scrollbar { display: none; }
+
+/* Нижний таб-бар */
+.app-page .app-tabbar {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 58px;
+  background: #fff; border-top: 1px solid #e5e7eb;
+  display: flex; justify-content: space-between; align-items: center; padding: 0 6px 4px; z-index: 50;
+}
+.app-page .app-tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  color: #9ca3af; font-size: 9px; font-weight: 500; cursor: pointer; transition: color 0.2s;
+  background: none; border: none; padding: 4px;
+}
+.app-page .app-tab svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.app-page .app-tab.active { color: #111827; font-weight: 600; }
+
+/* =========================================================
+   ВНУТРЕННИЕ ЭЛЕМЕНТЫ ИНТЕРФЕЙСА
+   ========================================================= */
+
+/* --- ГЛАВНАЯ --- */
+.app-store-header-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; margin-top: 10px; }
+.app-store-logo { width: 36px; height: 36px; background: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); flex-shrink: 0; }
+.app-store-logo svg { width: 18px; height: 18px; fill: #111; }
+.app-store-info { display: flex; flex-direction: column; flex-grow: 1; }
+.app-store-name { font-size: 12px; color: #6b7280; font-weight: 500; display: flex; align-items: center; gap: 4px; }
+.app-store-name svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; }
+.app-store-balance { font-size: 16px; font-weight: 800; color: #111; }
+.app-settings-btn { width: 36px; height: 36px; background: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.app-settings-btn svg { width: 18px; height: 18px; stroke: #111; fill: none; stroke-width: 2; }
+
+.app-filters-row { display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; align-items: center; }
+.app-filters-row::-webkit-scrollbar { display: none; }
+.app-pill { padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 500; background: #fff; color: #4b5563; border: 1px solid #e5e7eb; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+.app-pill.active { background: #111827; color: #fff; border-color: #111827; }
+.filter-badge { background: #ef4444; color: #fff; font-size: 9px; font-weight: bold; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+.app-chart-card { background: #eef2f6; border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+.app-chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.app-chart-title { font-size: 11px; color: #6b7280; margin-bottom: 4px; }
+.app-chart-val { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #111; }
+.app-chart-visual { height: 2px; background: #8b5cf6; position: relative; margin-top: 15px; }
+.app-chart-visual::after { content: ""; position: absolute; right: 0; top: -4px; width: 10px; height: 10px; background: #8b5cf6; border-radius: 50%; }
+
+.app-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
+.app-stat-card { background: #fff; border-radius: 12px; padding: 10px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 8px; }
+.app-stat-label { font-size: 10px; color: #6b7280; }
+.app-stat-val { font-size: 14px; font-weight: 700; color: #111; display: flex; justify-content: space-between; align-items: center; }
+.app-stat-val svg { width: 14px; height: 14px; stroke: #111; fill: none; stroke-width: 2; }
+
+.app-btn-primary { display: block; width: 100%; background: #111827; color: #fff; text-align: center; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 14px; border: none; cursor: pointer; margin-bottom: 20px; font-family: inherit; }
+
+.app-section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.app-section-header h3 { margin: 0; font-size: 16px; font-weight: 700; color: #111; letter-spacing: -0.3px; }
+.app-section-header span { font-size: 12px; color: #6b7280; cursor: pointer; }
+
+.app-date-label { font-size: 12px; font-weight: 600; color: #111; margin-bottom: 10px; }
+
+/* --- СПИСКИ ОПЕРАЦИЙ --- */
+.app-list { display: flex; flex-direction: column; gap: 14px; }
+.app-list-item { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.app-list-left { display: flex; align-items: center; gap: 10px; }
+.app-item-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.app-item-icon svg { width: 16px; height: 16px; fill: #fff; }
+.app-item-info { display: flex; flex-direction: column; gap: 2px; }
+.app-item-title { font-size: 13px; font-weight: 600; color: #111; }
+.app-item-sub { font-size: 11px; color: #6b7280; }
+.app-list-right { text-align: right; }
+.app-item-amount { font-size: 13px; font-weight: 700; color: #111; }
+.app-item-status { font-size: 11px; font-weight: 500; margin-top: 2px; }
+.status-green { color: #059669; }
+.status-grey { color: #9ca3af; }
+.status-orange { color: #d97706; }
+
+/* --- ОПЕРАЦИИ / СЧЕТА --- */
+.app-page-title { font-size: 20px; font-weight: 800; color: #111; margin: 10px 0 16px; letter-spacing: -0.5px; display: flex; justify-content: space-between; align-items: center; }
+.app-page-title svg { width: 20px; height: 20px; stroke: #111; fill: none; stroke-width: 2; }
+
+/* --- ЧАТЫ --- */
+.app-chat-card { display: flex; align-items: center; gap: 12px; background: #fff; padding: 12px 14px; border-radius: 14px; border: 1px solid #e5e7eb; margin-bottom: 8px; cursor: pointer; }
+.app-chat-icon { width: 40px; height: 40px; background: #f3f4f6; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; }
+.app-chat-icon svg { width: 22px; height: 22px; fill: #fff; }
+.app-badge-red { position: absolute; top: -4px; right: -4px; background: #ef4444; color: #fff; font-size: 9px; font-weight: bold; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; }
+.app-chat-info { flex-grow: 1; }
+.app-chat-title { font-size: 14px; font-weight: 600; color: #111; margin-bottom: 2px; }
+.app-chat-desc { font-size: 11px; color: #6b7280; }
+.app-chat-arrow { width: 18px; height: 18px; stroke: #9ca3af; fill: none; stroke-width: 2; }
+
+/* --- АККАУНТ --- */
+.app-account-header { text-align: center; padding: 16px 0 10px; position: relative; }
+.app-logout-btn { position: absolute; top: 16px; right: 0; }
+.app-logout-btn svg { width: 20px; height: 20px; stroke: #111; fill: none; stroke-width: 2; }
+.app-avatar { width: 64px; height: 64px; background: #7c8cf8; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; font-weight: 500; }
+.app-account-name { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
+.app-account-dropdown { background: #fff; border-radius: 10px; padding: 14px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #111; border: 1px solid #e5e7eb; margin-bottom: 16px; font-size: 13px; }
+
+/* --- СОЗДАНИЕ СЧЕТА --- */
+.app-invoice-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; margin-top: 10px; }
+.app-invoice-title { font-size: 22px; font-weight: 800; color: #111; margin: 0; letter-spacing: -0.5px; line-height: 1.1; max-width: 140px; }
+.app-invoice-clear { font-size: 12px; color: #9ca3af; cursor: pointer; }
+
+.app-form-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.app-form-group label { font-size: 11px; color: #6b7280; }
+.app-input { background: #eef2f6; border: none; border-radius: 8px; padding: 12px 14px; font-size: 14px; color: #111; width: 100%; font-family: inherit; outline: none; }
+.app-input::placeholder { color: #9ca3af; }
+.app-form-row { display: flex; gap: 10px; }
+.app-form-row .app-form-group { flex: 1; }
+
+.app-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.app-tag { background: #fff; border: 1px solid #e5e7eb; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 4px; color: #111; cursor: pointer; }
+.app-tag svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.app-add-pos { border: 1px dashed #cbd5e1; border-radius: 8px; padding: 12px; text-align: center; font-size: 13px; font-weight: 500; color: #4b5563; margin-bottom: 20px; cursor: pointer; }
+
+/* --- УСПЕХ --- */
+.app-success-content { padding: 20px 16px; text-align: center; }
+.app-success-icon { width: 56px; height: 56px; background: #6ee7b7; border-radius: 14px; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; }
+.app-success-icon svg { width: 28px; height: 28px; stroke: #047857; fill: none; stroke-width: 3; }
+.app-success-badge { display: inline-block; background: #ecfdf5; color: #047857; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-bottom: 8px; }
+.app-success-sub { font-size: 12px; color: #6b7280; margin-bottom: 20px; }
+.app-action-icons { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; }
+.app-action-btn { width: 48px; height: 48px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.app-action-btn svg { width: 20px; height: 20px; stroke: #111; fill: none; stroke-width: 2; }
+
+.app-share-list { background: #fff; border-radius: 14px; border: 1px solid #e5e7eb; overflow: hidden; text-align: left; margin-bottom: 24px; }
+.app-share-item { display: flex; align-items: center; gap: 10px; padding: 14px; border-bottom: 1px solid #f3f4f6; cursor: pointer; font-size: 13px; font-weight: 500; color: #111; }
+.app-share-item:last-child { border-bottom: none; }
+.app-share-item svg { width: 18px; height: 18px; fill: #111; }
+.app-btn-secondary { display: block; width: 100%; background: #fff; color: #111; text-align: center; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 14px; border: 1px solid #d1d5db; cursor: pointer; font-family: inherit; }
+
+/* =========================================================
+   05 — SUPPORT FOOTER
+   ========================================================= */
+
+.app-page .app-support-section {
+  background: linear-gradient(180deg, #f4f7fb 0%, #e9eff5 100%);
+  border-radius: 40px 40px 0 0;
+  padding: 40px 0 60px; /* УМЕНЬШЕН ВЕРХНИЙ ПАДДИНГ С 60px ДО 40px */
+  text-align: center;
+  margin-top: 24px;
+}
+.app-page .app-support-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--app-ink);
+  margin: 0 0 10px !important;
+  letter-spacing: -0.5px;
+}
+.app-page .app-support-subtitle {
+  font-size: 16px;
+  color: var(--app-text);
+  margin: 0 0 40px !important;
+}
+
+.app-page .app-support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.app-page .app-support-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none !important;
+  color: var(--app-ink) !important;
+  transition: all 0.3s ease;
+  text-align: left;
+  box-shadow: 0 4px 15px -5px rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+.app-page .app-support-card:hover {
+  border-color: #bfdbfe;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.1);
+}
+.app-page .app-support-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.app-page .app-support-icon svg {
+  width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.app-page .app-support-text {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1;
+}
+.app-page .app-support-text span {
+  display: block !important;
+  font-size: 13px !important;
+  color: #94a1b1 !important;
+  margin-bottom: 4px !important;
+}
+.app-page .app-support-text b {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #182638 !important;
+  word-break: break-word;
+}
+
+/* =========================================================
+   06 — DARK MODE COMPATIBILITY
+   ========================================================= */
+
+[data-md-color-scheme="slate"] .app-page { 
+  --app-bg: #0f172a; 
+  --app-white: #1e293b; 
+  --app-ink: #f8fafc; 
+  --app-text: #cbd5e1; 
+  --app-muted: #64748b;
+  --app-border: #334155; 
+  background: var(--app-bg) !important; 
+  color: var(--app-text) !important; 
+}
+
+[data-md-color-scheme="slate"] .app-page .app-hero { 
+  background: #1e293b !important; 
+  border-bottom-color: var(--app-border);
+}
+[data-md-color-scheme="slate"] .app-page .app-hero::before {
+  background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+}
+[data-md-color-scheme="slate"] .app-page .app-hero::after {
+  border-color: #334155;
+  background: radial-gradient(circle at 50% 50%, #1e293b 0 4%, transparent 4.5%), radial-gradient(circle at 50% 50%, transparent 0 30%, #0f172a 30.5% 48%, transparent 48.5%), radial-gradient(circle at 50% 50%, transparent 0 68%, #0b1120 68.5%);
+  box-shadow: 0 0 0 22px rgba(30, 41, 59, 0.4), 0 0 0 60px rgba(30, 41, 59, 0.2);
+}
+[data-md-color-scheme="slate"] .app-page .app-hero-badge {
+  background: #0f172a;
+  border-color: #334155;
+  color: #60a5fa;
+}
+[data-md-color-scheme="slate"] .app-page .app-hero-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-hero-desc { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-hero-desc b { color: #60a5fa; }
+
+[data-md-color-scheme="slate"] .app-page .app-section-title { color: #f8fafc !important; }
+
+[data-md-color-scheme="slate"] .app-page .app-bento-item { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-bento-item.dark { background: #1e293b !important; border-color: #475569 !important; }
+[data-md-color-scheme="slate"] .app-page .app-bento-item.dark::after { color: rgba(255, 255, 255, 0.03); }
+[data-md-color-scheme="slate"] .app-page .app-bento-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-bento-text { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-bento-icon { background: #0f172a !important; color: #60a5fa !important; }
+[data-md-color-scheme="slate"] .app-page .app-bento-item.dark .app-bento-icon { background: #0f172a !important; color: #60a5fa !important; }
+
+[data-md-color-scheme="slate"] .app-page .app-tile { 
+  background: #1e293b !important; 
+  border-color: #334155 !important; 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+[data-md-color-scheme="slate"] .app-page .app-tile:hover {
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+}
+[data-md-color-scheme="slate"] .app-page .app-dynamic-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-dynamic-desc { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-feature-list li { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .app-page .app-feature-list li span { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .app-page .app-feature-list li svg { stroke: #60a5fa; }
+
+[data-md-color-scheme="slate"] .app-page .app-btn-store { background: #1e293b !important; border-color: #334155 !important; color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-btn-store:hover { background: #0f172a !important; border-color: #3b82f6 !important; }
+[data-md-color-scheme="slate"] .app-page .app-btn-store-text span { color: #94a3b8 !important; }
+
+[data-md-color-scheme="slate"] .app-page .app-support-section { background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%) !important; }
+[data-md-color-scheme="slate"] .app-page .app-support-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-support-subtitle { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-support-card { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-support-card:hover { border-color: #3b82f6 !important; }
+[data-md-color-scheme="slate"] .app-page .app-support-text b { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-support-text span { color: #94a3b8 !important; }
+
+/* Тёмный режим для телефона (интерактив) */
+[data-md-color-scheme="slate"] .app-page .app-phone-mock { background: #0f172a !important; box-shadow: 0 0 0 2px #334155, 0 25px 60px -15px rgba(0, 0, 0, 0.6) !important; }
+[data-md-color-scheme="slate"] .app-page .app-phone-screen { background: #0f172a !important; }
+[data-md-color-scheme="slate"] .app-page .app-screen { background: #0f172a !important; }
+[data-md-color-scheme="slate"] .app-page .app-statusbar { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-statusbar svg { fill: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-store-logo { background: #1e293b !important; box-shadow: none !important; }
+[data-md-color-scheme="slate"] .app-page .app-store-logo svg { fill: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-store-name { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-store-balance { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-settings-btn { background: #1e293b !important; }
+[data-md-color-scheme="slate"] .app-page .app-settings-btn svg { stroke: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-filters-row .app-pill { background: #1e293b !important; color: #cbd5e1 !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-filters-row .app-pill.active { background: #3b82f6 !important; color: #fff !important; border-color: #3b82f6 !important; }
+[data-md-color-scheme="slate"] .app-page .app-chart-card { background: #1e293b !important; }
+[data-md-color-scheme="slate"] .app-page .app-chart-title { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-chart-val { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-stat-card { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-stat-label { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-stat-val { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-stat-val svg { stroke: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-btn-primary { background: #3b82f6 !important; color: #fff !important; }
+[data-md-color-scheme="slate"] .app-page .app-section-header h3 { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-section-header span { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-date-label { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-list-item .app-item-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-list-item .app-item-sub { color: #64748b !important; }
+[data-md-color-scheme="slate"] .app-page .app-list-item .app-item-amount { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-tabbar { background: #1e293b !important; border-top-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-tab { color: #64748b !important; }
+[data-md-color-scheme="slate"] .app-page .app-tab.active { color: #60a5fa !important; }
+
+[data-md-color-scheme="slate"] .app-page .app-page-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-page-title svg { stroke: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-chat-card { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-chat-title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-chat-desc { color: #64748b !important; }
+[data-md-color-scheme="slate"] .app-page .app-chat-icon { background: #0f172a !important; }
+[data-md-color-scheme="slate"] .app-page .app-account-dropdown { background: #1e293b !important; border-color: #334155 !important; color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-form-group label { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-input { background: #0f172a !important; border-color: #334155 !important; color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-tag { background: #1e293b !important; border-color: #334155 !important; color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-add-pos { background: #1e293b !important; border-color: #334155 !important; color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .app-share-list { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .app-share-item { border-bottom-color: #334155 !important; color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-btn-secondary { background: #1e293b !important; border-color: #334155 !important; color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .app-invoice-title { color: #f8fafc !important; }
+
+/* Тёмный режим для iOS Инструкции */
+[data-md-color-scheme="slate"] .app-page .wd-ios-install { background: #1e293b !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install h2.wd-ios-install__title { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install p.wd-ios-install__description { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install .wd-ios-install__step h3 { color: #f8fafc !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install .wd-ios-install__step p { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install .wd-ios-install__step b { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__step { border-bottom-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__number { background: rgba(59, 130, 246, 0.2) !important; border-color: rgba(59, 130, 246, 0.4) !important; color: #93c5fd !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__note { background: rgba(59, 130, 246, 0.1) !important; border-color: rgba(59, 130, 246, 0.2) !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install .wd-ios-install__note p { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__visual { background: radial-gradient(ellipse at 50% 35%, rgba(59,130,246,0.1) 0%, transparent 65%), #0f172a !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__visual-heading { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__version { background: #1e293b !important; border-color: #334155 !important; color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__screen { background: #0f172a !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__browser-toolbar { background: rgba(30, 41, 59, 0.9) !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__page-menu-button { background: #1e293b !important; border-color: #3b82f6 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__address { background: rgba(15, 23, 42, 0.8) !important; color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__page-menu { background: rgba(30, 41, 59, 0.95) !important; border-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__menu-item { color: #cbd5e1 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__menu-item--share { background: rgba(59,130,246,0.15) !important; border-color: rgba(59,130,246,0.3) !important; color: #60a5fa !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__menu-item--share b { color: #60a5fa !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__visual-caption { color: #94a3b8 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-install__visual-caption b { background: #1e293b !important; color: #60a5fa !important; }
+
+/* Тёмный режим для экрана внутри Safari */
+[data-md-color-scheme="slate"] .app-page .wd-ios-app-screen { background: #0f172a !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-app-screen .app-tabbar { background: #1e293b !important; border-top-color: #334155 !important; }
+[data-md-color-scheme="slate"] .app-page .wd-ios-app-screen .app-btn-primary { background: #3b82f6 !important; }
+
+/* =========================================================
+   07 — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .app-page .app-container { padding: 0 30px; }
+  .app-page .app-dynamic-layout { grid-template-columns: 1fr; gap: 30px; justify-items: center; }
+  .app-page .app-tile { max-width: 400px; width: 100%; }
+  .app-page .app-info-col.left .app-tile, .app-page .app-info-col.right .app-tile { transform: none; }
+  .app-page .app-info-col { text-align: center; }
+  .app-page .app-feature-list { align-items: flex-start; max-width: 300px; margin: 0 auto; }
+  .app-page .app-info-col.left .app-tile.animate { animation: none; }
+  .app-page .app-info-col.right .app-tile.animate { animation: none; }
+}
+
+@media (max-width: 900px) {
+  .app-page { --app-inner-inset: 25px; }
+  .app-page .app-hero { padding: 50px 0; }
+  .app-page .app-hero::after { right: -180px; opacity: .45; }
+  .app-page .app-hero-title { max-width: 600px; font-size: 40px !important; }
+  .app-page .app-bento { grid-template-columns: repeat(2, 1fr); }
+  .app-page .app-bento-item.large { grid-column: span 2; }
+  .app-page .app-guide-box { grid-template-columns: 1fr 0.8fr; }
+  .app-page .app-guide-content { padding: 30px 25px; }
+}
+
+@media (max-width: 650px) {
+  .app-page { --app-inner-inset: 22px; }
+  .app-page .app-container { padding: 0 19px; }
+  .app-page .app-hero { padding: 40px 0 45px; }
+  .app-page .app-hero::after { width: 240px; height: 240px; right: -155px; top: 75%; opacity: .3; }
+  .app-page .app-hero-title { font-size: 34px !important; max-width: 100%; }
+  .app-page .app-hero-desc { font-size: 14px; }
+  .app-page .app-store-buttons { justify-content: flex-start; }
+  .app-page .app-btn-store { min-width: 0; padding: 11px 13px; }
+  .app-page .app-section-title { font-size: 27px !important; margin-bottom: 20px !important; }
+  .app-page .app-bento { grid-template-columns: 1fr; gap: 12px; }
+  .app-page .app-bento-item.large { grid-column: span 1; }
+  .app-page .app-bento-item { min-height: auto; padding: 23px; }
+  .app-page .app-guide-box { grid-template-columns: 1fr; }
+  .app-page .app-guide-content { padding: 28px 22px; }
+  .app-page .app-guide-content h3 { font-size: 24px; }
+  .app-page .app-guide-visual { min-height: 330px; border-left: 0; border-top: 1px solid #e5edf8; }
+  .app-page .app-phone-mock { width: 100%; max-width: 320px; }
+  .app-page .app-support-grid { grid-template-columns: 1fr; }
+  .app-page .app-support-card { padding: 16px; }
+}
+
+/* =========================================
+   iOS INSTALLATION — ROBOKASSA
+   ========================================= */
+
+.wd-ios-install,
+.wd-ios-install * {
+  box-sizing: border-box;
+}
+
+.wd-ios-install {
+  --ios-blue: #2563eb;
+  --ios-ink: #0f172a;
+  --ios-muted: #64748b;
+  --ios-border: #e2e8f0;
+
+  width: 100%;
+  margin: 0 auto; /* УБРАН MARGIN, ЧТОБЫ ОТСТУПЫ БЫЛИ РАВНЫ 40px */
+  padding: 44px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+  border-radius: 28px;
+  font-family: inherit;
+  color: var(--ios-ink);
+}
+
+.wd-ios-install__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+  align-items: center;
+  gap: 44px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* -----------------------------------------
+   Левая часть — текст и шаги
+   ----------------------------------------- */
+
+.wd-ios-install__content {
+  min-width: 0;
+}
+
+.wd-ios-install__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 17px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+}
+
+.wd-ios-install__eyebrow span {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  background: #2563eb;
+  border-radius: 50%;
+}
+
+.app-page .wd-ios-install h2.wd-ios-install__title {
+  margin: 0 0 13px !important;
+  color: #182638 !important;
+  font-size: clamp(26px, 3vw, 36px) !important;
+  font-weight: 750 !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.app-page .wd-ios-install p.wd-ios-install__description {
+  max-width: 530px;
+  margin: 0 0 30px !important;
+  color: #647386 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+.wd-ios-install__steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.wd-ios-install__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e7edf4;
+}
+
+.wd-ios-install__step:first-child {
+  padding-top: 0;
+}
+
+.wd-ios-install__step:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.wd-ios-install__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  margin-top: 1px;
+  background: #eaf1ff;
+  border: 1px solid #dbe7ff;
+  border-radius: 11px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.wd-ios-install__step-content {
+  min-width: 0;
+}
+
+.app-page .wd-ios-install .wd-ios-install__step h3 {
+  margin: 0 0 5px !important;
+  color: #25364b !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+
+.app-page .wd-ios-install .wd-ios-install__step p {
+  margin: 0 !important;
+  color: #647386 !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+}
+
+.wd-ios-install__step a {
+  color: #2563eb !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+.wd-ios-install__step a:hover {
+  border-bottom-color: #2563eb;
+}
+
+.wd-ios-install__step b {
+  color: #334155;
+  font-weight: 700;
+}
+
+.wd-ios-install__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 25px;
+  padding: 14px 16px;
+  background: #eef4ff;
+  border: 1px solid #dce8ff;
+  border-radius: 13px;
+}
+
+.wd-ios-install__note-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  margin-top: 1px;
+  background: #dbeafe;
+  border-radius: 50%;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.app-page .wd-ios-install .wd-ios-install__note p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: 12px !important;
+  line-height: 1.65 !important;
+}
+
+/* -----------------------------------------
+   Правая часть — визуал Safari
+   ----------------------------------------- */
+
+.wd-ios-install__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 25px 18px 21px;
+  background:
+    radial-gradient(ellipse at 50% 35%, #e5edff 0%, transparent 65%),
+    #eef2f8;
+  border: 1px solid #e3eaf4;
+  border-radius: 23px;
+}
+
+.wd-ios-install__visual-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 330px;
+  margin-bottom: 19px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.wd-ios-install__version {
+  padding: 5px 9px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* -----------------------------------------
+   Корпус iPhone
+   ----------------------------------------- */
+
+.wd-ios-install__phone {
+  position: relative;
+  width: 286px;
+  max-width: 100%;
+  padding: 7px;
+  background: linear-gradient(145deg, #303744, #111827 45%, #252d39);
+  border: 1px solid #4b5563;
+  border-radius: 45px;
+  box-shadow:
+    0 25px 50px rgba(15, 23, 42, 0.19),
+    0 6px 14px rgba(15, 23, 42, 0.09),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.wd-ios-install__screen {
+  position: relative;
+  height: 575px;
+  overflow: hidden;
+  background: #f4f6f8;
+  border-radius: 38px;
+  isolation: isolate;
+}
+
+/* Статус-бар и Dynamic Island */
+
+.wd-ios-install__status {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 39px;
+  padding: 8px 19px 0;
+  color: #111827;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.wd-ios-install__status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+}
+
+.wd-ios-install__battery {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 9px;
+  border: 1.3px solid #111827;
+  border-radius: 3px;
+}
+
+.wd-ios-install__battery::before {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background: #111827;
+  border-radius: 1px;
+  content: "";
+}
+
+.wd-ios-install__battery::after {
+  position: absolute;
+  top: 2px;
+  right: -3px;
+  width: 2px;
+  height: 4px;
+  background: #111827;
+  border-radius: 0 2px 2px 0;
+  content: "";
+}
+
+.wd-ios-install__island {
+  position: absolute;
+  z-index: 9;
+  top: 8px;
+  left: 50%;
+  width: 77px;
+  height: 22px;
+  transform: translateX(-50%);
+  background: #050505;
+  border-radius: 20px;
+}
+
+/* -----------------------------------------
+   Нижняя панель Safari
+   ----------------------------------------- */
+
+.wd-ios-install__browser-toolbar {
+  position: absolute;
+  z-index: 30;
+  right: 8px;
+  bottom: 12px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  height: 40px;
+  padding: 0 6px;
+  background: rgba(250, 250, 252, 0.94);
+  border: 1px solid rgba(210, 216, 226, 0.8);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.09);
+  backdrop-filter: blur(22px);
+}
+
+.wd-ios-install__browser-back,
+.wd-ios-install__reload,
+.wd-ios-install__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 28px;
+  flex: 0 0 22px;
+  color: #475569;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.wd-ios-install__reload {
+  font-size: 17px;
+}
+
+.wd-ios-install__page-menu-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  background: #f5f8ff;
+  border: 1px solid #b8d0fa;
+  border-radius: 9px;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.wd-ios-install__page-menu-glyph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5px;
+  width: 14px;
+  height: 13px;
+  padding: 2px;
+  border: 1.3px solid #2563eb;
+  border-radius: 3px;
+}
+
+.wd-ios-install__page-menu-glyph i {
+  display: block;
+  width: 100%;
+  height: 1.2px;
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+.wd-ios-install__page-menu-glyph i:nth-child(2) {
+  width: 65%;
+}
+
+.wd-ios-install__page-menu-glyph i:nth-child(3) {
+  width: 85%;
+}
+
+.wd-ios-install__address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 29px;
+  flex: 1 1 auto;
+  padding: 0 5px;
+  overflow: hidden;
+  background: rgba(226, 230, 237, 0.85);
+  border-radius: 9px;
+  color: #334155;
+  font-size: 8px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.wd-ios-install__tabs {
+  position: relative;
+}
+
+.wd-ios-install__tabs span {
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  border: 1.4px solid #475569;
+  border-radius: 3px;
+}
+
+.wd-ios-install__tabs span:first-child {
+  transform: translate(-2px, -2px);
+  background: #fafafa;
+}
+
+.wd-ios-install__tabs span:last-child {
+  transform: translate(2px, 2px);
+  background: #fafafa;
+}
+
+/* -----------------------------------------
+   Открытое меню страницы Safari
+   ----------------------------------------- */
+
+.wd-ios-install__page-menu {
+  position: absolute;
+  z-index: 20;
+  width: 205px;
+  max-width: calc(100% - 40px);
+  left: 50%;
+  right: auto;
+  bottom: 65px;
+  transform: translateX(-50%);
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(218, 224, 233, 0.95);
+  border-radius: 16px;
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.17),
+    0 3px 9px rgba(15, 23, 42, 0.07);
+  backdrop-filter: blur(24px);
+}
+
+.wd-ios-install__menu-title {
+  display: none;
+}
+
+.wd-ios-install__menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 34px;
+  padding: 6px 9px;
+  border-radius: 8px;
+  color: #263445;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.wd-ios-install__menu-item--share {
+  min-height: 38px;
+  margin-bottom: 4px;
+  background: #edf4ff;
+  border: 1px solid #c9dcff;
+  border-radius: 9px;
+  color: #1d5dcc;
+}
+
+.wd-ios-install__menu-item--share b {
+  color: #1d5dcc;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.wd-ios-install__share-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  color: #2563eb;
+}
+
+.wd-ios-install__share-icon svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+}
+
+.wd-ios-install__menu-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.wd-ios-install__menu-marker {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #2563eb;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+/* Индикатор главного экрана iPhone */
+
+.wd-ios-install__home-indicator {
+  position: absolute;
+  z-index: 31;
+  bottom: 5px;
+  left: 50%;
+  width: 91px;
+  height: 4px;
+  transform: translateX(-50%);
+  background: #111827;
+  border-radius: 10px;
+}
+
+/* -----------------------------------------
+   Подпись под мокапом
+   ----------------------------------------- */
+
+.wd-ios-install__visual-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  color: #647386;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.wd-ios-install__visual-caption > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wd-ios-install__visual-caption b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #dceaff;
+  border-radius: 50%;
+  color: #2563eb;
+  font-size: 10px;
+}
+
+.wd-ios-install__caption-arrow {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* -----------------------------------------
+   Адаптивность
+   ----------------------------------------- */
+
+@media (max-width: 900px) {
+  .wd-ios-install {
+    padding: 30px;
+  }
+
+  .wd-ios-install__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+    gap: 25px;
+  }
+
+  .wd-ios-install__visual {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .wd-ios-install__phone {
+    width: 260px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-page .wd-ios-install {
+    width: auto;
+    margin: 0 auto; /* УБРАН MARGIN ДЛЯ МОБИЛЬНЫХ */
+    padding: 25px 20px;
+    border-radius: 21px;
+  }
+
+  .app-page .wd-ios-install__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .app-page .wd-ios-install__visual {
+    width: 100%;
+    padding: 22px 14px;
+  }
+
+  .wd-ios-install__phone {
+    width: 286px;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-page .wd-ios-install {
+    padding: 22px 14px;
+  }
+
+  .wd-ios-install__step {
+    gap: 12px;
+  }
+
+  .wd-ios-install__number {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    font-size: 11px;
+  }
+
+  .wd-ios-install__visual {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .wd-ios-install__phone {
+    width: 270px;
+  }
+
+  .wd-ios-install__page-menu {
+    width: 195px;
+  }
+
+  .app-page .wd-ios-app-screen {
+    top: 32px;
+  }
+
+  .app-page .wd-ios-app-screen .app-scroll {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+/* =========================================================
+   ROBOKASSA APP — реальный главный экран внутри Safari
+   ========================================================= */
+
+/* Рабочая область сайта внутри рамки Safari. */
+.app-page .wd-ios-app-screen {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  bottom: 52px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: #f4f6f8;
+  color: #111827;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  z-index: 1;
+}
+
+/* Лента главного экрана */
+.app-page .wd-ios-app-screen .app-scroll {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 5px 10px 12px;
+  scrollbar-width: none;
+}
+.app-page .wd-ios-app-screen .app-scroll::-webkit-scrollbar { display: none; }
+
+/* Шапка магазина */
+.app-page .wd-ios-app-screen .app-store-header-row {
+  gap: 8px;
+  margin: 2px 0 12px;
+}
+.app-page .wd-ios-app-screen .app-store-logo {
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+}
+.app-page .wd-ios-app-screen .app-store-logo svg { width: 15px; height: 15px; }
+.app-page .wd-ios-app-screen .app-store-name { font-size: 9px; }
+.app-page .wd-ios-app-screen .app-store-name svg { width: 8px; height: 8px; }
+.app-page .wd-ios-app-screen .app-store-balance { font-size: 13px; }
+.app-page .wd-ios-app-screen .app-settings-btn { width: 29px; height: 29px; }
+.app-page .wd-ios-app-screen .app-settings-btn svg { width: 15px; height: 15px; }
+
+/* Периоды */
+.app-page .wd-ios-app-screen .app-filters-row {
+  gap: 4px;
+  margin-bottom: 10px;
+  padding-bottom: 1px;
+}
+.app-page .wd-ios-app-screen .app-pill {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 8px;
+  gap: 3px;
+}
+
+/* Выручка и показатели */
+.app-page .wd-ios-app-screen .app-chart-card {
+  padding: 10px;
+  margin-bottom: 9px;
+  border-radius: 10px;
+}
+.app-page .wd-ios-app-screen .app-chart-header { margin-bottom: 11px; }
+.app-page .wd-ios-app-screen .app-chart-title { font-size: 9px; margin-bottom: 2px; }
+.app-page .wd-ios-app-screen .app-chart-val { font-size: 17px; }
+.app-page .wd-ios-app-screen .app-chart-visual { margin-top: 9px; }
+.app-page .wd-ios-app-screen .app-stats-grid { gap: 4px; margin-bottom: 10px; }
+.app-page .wd-ios-app-screen .app-stat-card {
+  gap: 5px;
+  min-width: 0;
+  padding: 7px 5px;
+  border-radius: 8px;
+}
+.app-page .wd-ios-app-screen .app-stat-label { font-size: 8px; }
+.app-page .wd-ios-app-screen .app-stat-val { font-size: 10px; }
+.app-page .wd-ios-app-screen .app-stat-val svg { width: 10px; height: 10px; }
+
+/* Кнопка выставления счёта */
+.app-page .wd-ios-app-screen .app-btn-primary {
+  padding: 9px 8px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 10px;
+}
+
+/* Последние операции */
+.app-page .wd-ios-app-screen .app-section-header { margin-bottom: 8px; }
+.app-page .wd-ios-app-screen .app-section-header h3 { font-size: 11px; }
+.app-page .wd-ios-app-screen .app-section-header span { font-size: 9px; }
+.app-page .wd-ios-app-screen .app-date-label { font-size: 9px; margin-bottom: 7px; }
+.app-page .wd-ios-app-screen .app-list { gap: 8px; }
+.app-page .wd-ios-app-screen .app-list-left { gap: 7px; }
+.app-page .wd-ios-app-screen .app-item-icon { width: 27px; height: 27px; border-radius: 8px; }
+.app-page .wd-ios-app-screen .app-item-icon svg { width: 13px; height: 13px; }
+.app-page .wd-ios-app-screen .app-item-title,
+.app-page .wd-ios-app-screen .app-item-amount { font-size: 9px; }
+.app-page .wd-ios-app-screen .app-item-sub,
+.app-page .wd-ios-app-screen .app-item-status { font-size: 8px; }
+
+/* Нижнее меню приложения находится над панелью Safari */
+.app-page .wd-ios-app-screen .app-tabbar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 48px;
+  padding: 0 3px 3px;
+  background: rgba(255,255,255,.98);
+  border-top: 1px solid #e5e7eb;
+  z-index: 5;
+}
+.app-page .wd-ios-app-screen .app-tab {
+  min-width: 0;
+  gap: 2px;
+  padding: 3px 1px;
+  font-size: 7px;
+}
+.app-page .wd-ios-app-screen .app-tab svg { width: 16px; height: 16px; }
