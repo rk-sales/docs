@@ -1051,3 +1051,17 @@
   .sbp-page .sbp-step__num { transition: none; }
   .sbp-page .sbp-step:hover .sbp-step__num { transform: none; }
 }
+
+/* =========================================================
+   УБИРАЕМ СИНЮЮ ЛИНИЮ И ВЫРАВНИВАЕМ ОТСТУПЫ
+   ========================================================= */
+
+/* 1. Убираем верхнюю полоску */
+.md-typeset .sbp-page .sbp-hero::before {
+  display: none !important;
+}
+
+/* 2. Уменьшаем верхний отступ (нижний оставляем как есть) */
+.md-typeset .sbp-page .sbp-hero {
+  padding-top: 2.85rem !important; /* Можно попробовать 1.5rem, если 1.25rem мало */
+}

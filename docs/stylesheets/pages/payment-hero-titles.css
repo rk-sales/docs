@@ -1,0 +1,24 @@
+/* =========================================================
+   ЕДИНЫЙ РАЗМЕР HERO-ЗАГОЛОВКОВ ПЛАТЁЖНЫХ МЕТОДОВ
+   Эталон: фактический заголовок главной страницы
+   ========================================================= */
+
+.md-typeset .payments-page .payments-hero__title,
+.md-typeset .sbp-page .sbp-hero__title,
+.md-typeset .cards-page.cards-foreign .cards-hero__title,
+.md-typeset .alfapay-page .alfapay-hero__title,
+.md-typeset .halva-page .halva-hero__title,
+.md-typeset .mirpay-page .mirpay-hero__title,
+.md-typeset .mtspay-page .mtspay-hero__title,
+.md-typeset .otp-page .otp-hero__title,
+.md-typeset .pd-page .pd-hero__title,
+.md-typeset .sberpay-page .sberpay-hero__title,
+.md-typeset .tpay-page .tpay-hero__title,
+.md-typeset .yandexpay-page .yandexpay-hero__title,
+.md-typeset .ysplit-page .ysplit-hero__title,
+.md-typeset .ym-page .ym-hero__title {
+  font-size: 2.1rem !important; /* = МЕНЯТЬ РАЗМЕР ЗДЕСЬ */
+  font-weight: 800 !important;
+  line-height: 1.03 !important;
+  letter-spacing: -0.7px !important;
+}

@@ -98,6 +98,7 @@ extra_css:
   - stylesheets/pages/tg-vk-links.css
   - stylesheets/pages/robox.css
   - stylesheets/pages/integrations.css
+  - stylesheets/pages/payment-hero-titles.css
   # 6. Тёмная тема (ВАЖНО: всегда подключается последней, чтобы перекрывать светлые стили)
   - stylesheets/dark-theme.css
   
