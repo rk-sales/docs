@@ -767,3 +767,13 @@
   .cards-rf .system-card:hover,
   .cards-rf .process-step:hover .process-step__num { transform: none; }
 }
+
+/* Убираем синюю полосу сверху Hero-блока в картах */
+.md-typeset .cards-rf .hero-card::before {
+  display: none !important;
+}
+
+/* Уменьшаем только верхний отступ у карточки, нижний оставляем как был */
+.md-typeset .cards-rf .hero-card {
+  padding-top: 2.5rem !important; /* Уменьшили верхний отступ (было от 2rem до 3rem) */
+}

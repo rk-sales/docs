@@ -1,9 +1,6 @@
-
 /* =========================================================
-   HEADER — STABLE POSITIONING
+   HEADER
    ========================================================= */
-
-/* Основной хедер */
 .md-header {
   background-color: #ffffff !important;
   color: #000000 !important;
@@ -13,22 +10,18 @@
   z-index: 110 !important;
 }
 
-/* Контейнер хедера */
 .md-header__inner {
   width: 100% !important;
   max-width: 1750px !important;
   height: 100% !important;
   box-sizing: border-box !important;
-
   margin: 0 auto !important;
-  padding: 0 5rem 0 2rem !important;
-
+  padding: 0 calc(2.5rem + 1px) 0 2rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
 }
 
-/* Логотип */
 .md-header__button.md-logo {
   order: 0 !important;
   flex: 0 0 auto !important;
@@ -36,12 +29,10 @@
   padding: 0 !important;
 }
 
-/* Скрываем стандартный заголовок */
 .md-header__title {
   display: none !important;
 }
 
-/* Цвета элементов хедера */
 .md-header__title,
 .md-header__topic,
 .md-header__button,
@@ -50,50 +41,43 @@
   color: #000000 !important;
 }
 
-/* =========================================================
-   ПРАВАЯ ЧАСТЬ ХЕДЕРА
-   Переключатель темы + поиск
-   ========================================================= */
-
 /* Переключатель темы */
 .md-header__option {
   order: 2 !important;
-
   display: flex !important;
   align-items: center !important;
-
   flex: 0 0 auto !important;
-  margin: 0 0.05rem 0 0 !important;
+  left: auto !important;
+  margin: 0 1.2rem 0 0 !important;
 }
 
-/* Поиск */
+.md-header__option > .md-header__button {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
 .md-search {
   order: 3 !important;
-
   width: 260px !important;
   max-width: 260px !important;
   min-width: 0 !important;
-
   flex: 0 0 260px !important;
-
   margin: 0 !important;
   position: relative !important;
   z-index: 111 !important;
 }
 
-/* Форма поиска */
 .md-search__form {
   width: 100% !important;
   height: 40px !important;
-
   margin: 0 !important;
   border-radius: 8px !important;
-
   background-color: #f1f5f9 !important;
   box-shadow: none !important;
-
-  transition: background-color 0.2s ease,
-              box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .md-search__form:hover {
@@ -113,212 +97,159 @@
 
 .md-search__icon {
   color: #64748b !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
-/* =========================================================
-   РАСКРЫТЫЙ ПОИСК
-   ========================================================= */
+/* Закрытое состояние поиска */
+@media screen and (min-width: 76.25em) {
+  .md-search__inner {
+    width: 260px !important;
+    float: none !important;
+    transition: none !important;
+  }
+}
 
-/* Затемнение */
+/* РАСКРЫТЫЙ ПОИСК */
 [data-md-toggle="search"]:checked ~ .md-header .md-search__overlay {
   position: fixed !important;
   inset: 0 !important;
-
   width: 100vw !important;
   height: 100vh !important;
-
   background-color: rgba(15, 23, 42, 0.6) !important;
   z-index: 109 !important;
   cursor: pointer;
 }
 
-/* Окно поиска */
-[data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
-  position: fixed !important;
-
-  top: 1rem !important;
-
-  right: max(5rem, calc((100vw - 1750px) / 2 + 5rem)) !important;
-  left: auto !important;
-
-  width: min(400px, calc(100vw - 3rem)) !important;
-
-  transform: none !important;
-
-  background: #ffffff !important;
-  border-radius: 8px !important;
-
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2) !important;
-
-  overflow: hidden !important;
-  z-index: 112 !important;
+@media screen and (min-width: 76.25em) {
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
+    position: fixed !important;
+    top: 1rem !important;
+    right: max(calc(2.5rem + 1px), calc((100vw - 1750px) / 2 + 2.5rem + 1px)) !important;
+    left: auto !important;
+    width: min(400px, calc(100vw - 3rem)) !important;
+    transform: none !important;
+    transition: none !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2) !important;
+    overflow: visible !important;
+    z-index: 112 !important;
+  }
 }
 
-/* Форма раскрытого поиска */
 [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
   width: 100% !important;
-
   border-radius: 8px 8px 0 0 !important;
-
   background-color: #ffffff !important;
   box-shadow: none !important;
-
   border: 1px solid #e2e8f0 !important;
   border-bottom: none !important;
 }
 
-/* Результаты поиска */
 [data-md-toggle="search"]:checked ~ .md-header .md-search__output {
+  top: 40px !important;
   width: 100% !important;
-
+  box-sizing: border-box !important;
   border-radius: 0 0 8px 8px !important;
-
   border: 1px solid #e2e8f0 !important;
   border-top: none !important;
-
   background-color: #ffffff !important;
 }
 
+[data-md-toggle="search"]:checked ~ .md-header .md-search__scrollwrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
 
 /* =========================================================
-   LEFT NAVIGATION — CLEAN UX SYSTEM
-   Material for MkDocs
+   LEFT NAVIGATION
    ========================================================= */
-
-
-/* 1. ОСНОВА */
-
 .md-nav--primary {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-size: 14px !important;
 }
 
-/* Заголовок меню */
-
-.md-nav--primary > .md-nav__title {
-  display: block !important;
-
-  padding: 0.5rem 0.75rem !important;
-  margin-bottom: 0.5rem !important;
-
-  font-size: 1.1rem !important;
-  font-weight: 700 !important;
-
-  color: #0f172a !important;
-  border-bottom: 1px solid #e2e8f0 !important;
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary > .md-nav__title {
+    display: block !important;
+    padding: 0.5rem 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
 }
-
-/* ВАЖНО:
-   Стилизуем реальные ссылки и кнопки раскрытия отдельно.
-   Не применяем display:flex ко всем .md-nav__link.
-   Это предотвращает дублирование названия активной статьи. */
 
 .md-nav--primary a.md-nav__link,
 .md-nav--primary label.md-nav__link:not([for="__toc"]) {
   display: flex !important;
   align-items: center !important;
-
   min-height: 42px !important;
   margin: 2px 0 !important;
   padding: 0 !important;
-
   border-radius: 8px !important;
   box-sizing: border-box !important;
-
   line-height: 1.35 !important;
-
-  transition:
-    background-color 0.16s ease,
-    color 0.16s ease,
-    box-shadow 0.16s ease !important;
+  transition: background-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease !important;
 }
-
-/* 2. КОНТЕЙНЕР ССЫЛКИ И СТРЕЛКИ */
 
 .md-nav--primary .md-nav__container {
   display: flex !important;
   align-items: stretch !important;
-
   width: 100% !important;
   min-height: 42px !important;
-
   margin: 2px 0 !important;
   padding: 0 !important;
-
   background: transparent !important;
   border-radius: 8px !important;
-
   box-sizing: border-box !important;
 }
-
-/* Ссылка на обзорную страницу */
 
 .md-nav--primary .md-nav__container > a.md-nav__link {
   flex: 1 1 auto !important;
   min-width: 0 !important;
-
   min-height: 42px !important;
   margin: 0 !important;
   padding: 0 !important;
-
   border-radius: 8px 0 0 8px !important;
 }
-
-/* Отдельная кнопка раскрытия */
 
 .md-nav--primary .md-nav__container > label.md-nav__link {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
   flex: 0 0 40px !important;
   width: 40px !important;
-
   min-height: 42px !important;
   margin: 0 !important;
   padding: 0 !important;
-
   border-radius: 0 8px 8px 0 !important;
   cursor: pointer !important;
 }
 
-/* Текст */
-
 .md-nav--primary .md-nav__link .md-ellipsis {
   flex: 1 1 auto !important;
   min-width: 0 !important;
-
   padding: 0.35rem 0.75rem !important;
-
   transition: color 0.16s ease !important;
 }
 
-/* Стрелки раскрытия */
-
 .md-nav--primary .md-nav__link .md-nav__icon {
   flex: 0 0 auto !important;
-
   margin-left: auto !important;
   padding: 0 0.5rem 0 0 !important;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease !important;
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
 }
-
-/* Стрелка в отдельной кнопке */
 
 .md-nav--primary .md-nav__container > label.md-nav__link .md-nav__icon {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-
-/* 3. ВИЗУАЛЬНАЯ ИЕРАРХИЯ */
-
-/* Уровень 1 — основные разделы */
-
+/* Иерархия */
 .md-nav--primary > .md-nav__list > .md-nav__item > a.md-nav__link .md-ellipsis,
 .md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link .md-ellipsis,
 .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
@@ -326,8 +257,6 @@
   font-weight: 650 !important;
   color: #0f172a !important;
 }
-
-/* Уровень 2 — подразделы */
 
 .md-nav--primary .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > a.md-nav__link .md-ellipsis,
 .md-nav--primary .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > label.md-nav__link .md-ellipsis,
@@ -337,8 +266,6 @@
   color: #334155 !important;
 }
 
-/* Уровень 3 — статьи */
-
 .md-nav--primary .md-nav[data-md-level="2"] > .md-nav__list > .md-nav__item > a.md-nav__link .md-ellipsis,
 .md-nav--primary .md-nav[data-md-level="2"] > .md-nav__list > .md-nav__item > label.md-nav__link .md-ellipsis,
 .md-nav--primary .md-nav[data-md-level="2"] > .md-nav__list > .md-nav__item > .md-nav__container > a .md-ellipsis {
@@ -346,8 +273,6 @@
   font-weight: 500 !important;
   color: #475569 !important;
 }
-
-/* Уровень 4 — глубокая вложенность */
 
 .md-nav--primary .md-nav[data-md-level="3"] > .md-nav__list > .md-nav__item > a.md-nav__link .md-ellipsis,
 .md-nav--primary .md-nav[data-md-level="3"] > .md-nav__list > .md-nav__item > label.md-nav__link .md-ellipsis,
@@ -357,17 +282,13 @@
   color: #64748b !important;
 }
 
-
-/* 4. РОДИТЕЛЬСКИЕ РАЗДЕЛЫ */
-
+/* Родительские разделы */
 .md-nav--primary .md-nav__item--nested.md-nav__item--active > label.md-nav__link:not([for="__toc"]),
 .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__container > a:not(.md-nav__link--active),
 .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__container > label:not(.md-nav__link--active) {
   background: transparent !important;
   box-shadow: none !important;
 }
-
-/* Текст родительских разделов */
 
 .md-nav--primary .md-nav__item--nested.md-nav__item--active > label.md-nav__link:not([for="__toc"]) .md-ellipsis,
 .md-nav--primary .md-nav__item--nested.md-nav__item--active > .md-nav__container > a:not(.md-nav__link--active) .md-ellipsis {
@@ -376,19 +297,13 @@
   transform: none !important;
 }
 
-
-/* 5. АКТИВНАЯ СТАТЬЯ */
-
-/* Только текущая страница */
-
+/* Активная статья */
 .md-nav--primary a.md-nav__link--active,
 .md-nav--primary label.md-nav__link--active:not([for="__toc"]) {
   background-color: #eff6ff !important;
   box-shadow: inset 3px 0 0 #2563eb !important;
   color: #2563eb !important;
 }
-
-/* Текст текущей страницы */
 
 .md-nav--primary a.md-nav__link--active .md-ellipsis,
 .md-nav--primary label.md-nav__link--active:not([for="__toc"]) .md-ellipsis {
@@ -397,9 +312,7 @@
   transform: none !important;
 }
 
-
-/* 6. HOVER */
-
+/* Hover */
 .md-nav--primary a.md-nav__link:not(.md-nav__link--active):hover,
 .md-nav--primary label.md-nav__link:not(.md-nav__link--active):not([for="__toc"]):hover {
   background-color: #f1f5f9 !important;
@@ -416,60 +329,34 @@
   transform: none !important;
 }
 
-
-/* 7. ПРЕДОТВРАЩЕНИЕ ДУБЛИРОВАНИЯ АКТИВНОЙ СТРАНИЦЫ */
-
-/* На десктопе оставляем только ссылку на страницу,
-   а переключатель её TOC скрываем */
-
 @media screen and (min-width: 76.25em) {
   .md-nav--primary label.md-nav__link[for="__toc"] {
     display: none !important;
   }
 }
 
-
 /* =========================================================
-   ГЛОБАЛЬНОЕ РАСШИРЕНИЕ КОНТЕНТА
+   GLOBAL LAYOUT (СЕТКА)
    ========================================================= */
-
 @media screen and (min-width: 76.25em) {
+  .md-grid { max-width: 1750px !important; }
+  .md-main__inner { overflow: visible !important; }
+  .md-content { flex-grow: 1 !important; max-width: none !important; margin-right: 0 !important; }
 
-  .md-grid {
-    max-width: 1750px !important;
-  }
-
-  .md-main__inner {
-    overflow: visible !important;
-  }
-
-  .md-content {
-    flex-grow: 1 !important;
-    max-width: none !important;
-    margin-right: 0 !important;
-  }
-
-  /* Правое меню */
   .md-sidebar--secondary,
   .md-sidebar--aside {
     display: block !important;
     position: sticky !important;
-
     top: 5rem !important;
-
     flex: 0 0 16rem !important;
     width: 16rem !important;
     min-width: 16rem !important;
     max-width: 16rem !important;
-
     height: auto !important;
     max-height: none !important;
-
     align-self: flex-start !important;
-
-    margin-left: 1rem !important;
+    margin-left: 0 !important;
     margin-right: 1rem !important;
-
     overflow: visible !important;
   }
 
@@ -485,12 +372,10 @@
     padding: 0 !important;
   }
 
-  /* Левое меню */
   .md-sidebar--primary {
     width: 320px;
     min-width: 320px;
     max-width: 320px;
-
     flex: 0 0 320px;
     padding-left: 0.25rem;
   }
@@ -504,23 +389,10 @@
   }
 }
 
-/* Планшеты и мобильные устройства */
-@media screen and (max-width: 76.2344em) {
-
-  .md-sidebar--secondary,
-  .md-sidebar--aside {
-    display: none !important;
-  }
-}
-
-
 /* =========================================================
-   RIGHT NAVIGATION — TABLE OF CONTENTS
+   RIGHT NAVIGATION (TOC)
    ========================================================= */
-
 @media screen and (min-width: 76.25em) {
-
-  /* Шрифт всего правого меню */
   .md-nav--secondary,
   .md-nav--secondary .md-nav__title,
   .md-nav--secondary .md-nav__link,
@@ -528,18 +400,15 @@
     font-family: "TildaSans", sans-serif !important;
   }
 
-  /* Заголовок Содержание */
   .md-nav--secondary .md-nav__title {
     font-size: 0.95rem !important;
     font-weight: 700 !important;
     color: #0f172a !important;
-
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding-left: 0;
   }
 
-  /* Ссылки */
   .md-nav--secondary .md-nav__link,
   .md-nav--secondary .md-nav__link .md-ellipsis {
     font-size: 0.95rem !important;
@@ -552,34 +421,27 @@
     transition: color 0.2s;
   }
 
-  /* Наведение */
   .md-nav--secondary .md-nav__link:hover {
     color: #2563eb !important;
   }
 
-  /* Активный пункт */
   .md-nav--secondary .md-nav__link--active {
     color: #2563eb !important;
     font-weight: 600 !important;
-
     border-left: 2px solid #2563eb;
     padding-left: 0.5rem;
     margin-left: -0.5rem;
   }
 }
 
-
 /* =========================================================
-   ТЁМНАЯ ТЕМА
+   DARK THEME
    ========================================================= */
-
-/* Хедер */
 [data-md-color-scheme="slate"] .md-header {
   background-color: #1e293b !important;
   border-bottom-color: #334155 !important;
 }
 
-/* Иконки и текст */
 [data-md-color-scheme="slate"] .md-header__title,
 [data-md-color-scheme="slate"] .md-header__topic,
 [data-md-color-scheme="slate"] .md-header__button,
@@ -588,7 +450,6 @@
   color: #f8fafc !important;
 }
 
-/* Поле поиска */
 [data-md-color-scheme="slate"] .md-search__form {
   background-color: #0f172a !important;
 }
@@ -605,7 +466,6 @@
   color: #94a3b8 !important;
 }
 
-/* Раскрытый поиск */
 [data-md-color-scheme="slate"] [data-md-toggle="search"]:checked ~ .md-header .md-search__inner,
 [data-md-color-scheme="slate"] [data-md-toggle="search"]:checked ~ .md-header .md-search__form,
 [data-md-color-scheme="slate"] [data-md-toggle="search"]:checked ~ .md-header .md-search__output {
@@ -614,232 +474,29 @@
 }
 
 /* =========================================================
-   МОБИЛЬНАЯ АДАПТАЦИЯ
+   BACK TO TOP (Скролл наверх)
    ========================================================= */
-
-@media screen and (max-width: 76.2344em) {
-
-  .md-header__inner {
-    padding: 0 5rem 0 2rem !important;
-    justify-content: flex-start !important;
-  }
-
-  .md-header__button.md-logo {
-    margin-right: auto !important;
-  }
-
-  /* Переключатель темы */
-  .md-header__option {
-    margin: 0 0.65rem 0 0 !important;
-  }
-
-  /* Компактная иконка поиска */
-  .md-search {
-    width: 40px !important;
-    max-width: 40px !important;
-
-    flex: 0 0 40px !important;
-    margin: 0 !important;
-  }
-
-  .md-search__form {
-    width: 40px !important;
-    height: 40px !important;
-    background: transparent !important;
-  }
-
-  .md-search__form:hover {
-    background: rgba(100, 116, 139, 0.12) !important;
-  }
-
-  .md-search__input {
-    cursor: pointer !important;
-  }
-
-  /* Полноэкранный поиск */
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
-    position: fixed !important;
-
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-
-    max-width: none !important;
-
-    border-radius: 0 !important;
-    transform: none !important;
-  }
-
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
-    width: 100% !important;
-    background: #ffffff !important;
-  }
-}
-
-/* =========================================================
-   ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ
-   ========================================================= */
-
-@media screen and (max-width: 400px) {
-
-  .md-header__inner {
-    padding: 0 0.75rem !important;
-  }
-
-  .md-header__option {
-    margin: 0 0.05rem 0 0 !important;
-  }
-
-  .md-search {
-    width: 40px !important;
-    flex-basis: 40px !important;
-  }
-}
-
-@media screen and (max-width: 76.2344em) {
-  .md-header__inner {
-    padding: 0 1rem !important;
-    justify-content: flex-start !important;
-  }
-
-  .md-header__option {
-    margin: 0 0.05rem 0 0 !important;
-  }
-}
-
-/* =========================================================
-   FINAL HEADER POSITIONING FIX — V2
-   ========================================================= */
-
-@media screen and (min-width: 76.25em) {
-
-  /* Правый отступ хедера */
-  .md-header__inner {
-    padding-right: calc(2.5rem + 1px) !important;
-  }
-
-  /* Переключатель темы */
-  .md-header__option {
-    left: auto !important;
-    margin-right: 1.2rem !important;
-  }
-
-  .md-header__option > .md-header__button {
-    margin-right: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  /* Основной контейнер поиска */
-  .md-search {
-    width: 260px !important;
-    max-width: 260px !important;
-    flex: 0 0 260px !important;
-    margin: 0 !important;
-  }
-
-  /* Закрытое состояние поиска */
-  .md-search__inner {
-    width: 260px !important;
-    float: none !important;
-
-    /* Отключаем конфликтующую стандартную анимацию ширины */
-    transition: none !important;
-  }
-
-  /* Открытое состояние поиска */
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
-    position: fixed !important;
-
-    top: 1rem !important;
-
-    right: max(
-      calc(2.5rem + 1px),
-      calc((100vw - 1750px) / 2 + 2.5rem + 1px)
-    ) !important;
-
-    left: auto !important;
-
-    width: min(400px, calc(100vw - 3rem)) !important;
-
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-/* =========================================================
-   FIX: SEARCH RESULTS POSITIONING
-   ========================================================= */
-
-@media screen and (min-width: 76.25em) {
-
-  /* Разрешаем результатам выходить за границы окна */
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
-    overflow: visible !important;
-  }
-
-  /* Сам блок результатов */
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__output {
-    top: 40px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Внутренний список статей */
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__scrollwrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-}
-
-
-/* =========================================================
-   ROBOKASSA — BACK TO TOP
-   Bottom Edge Interaction
-   ========================================================= */
-
-/* Кликабельная область */
-
 .rk-backtop {
   position: fixed !important;
-
   right: 0 !important;
   bottom: 0 !important;
-
   width: 170px !important;
   height: 104px !important;
-
   z-index: 105 !important;
-
   display: flex !important;
   align-items: flex-end !important;
   justify-content: flex-end !important;
-
   margin: 0 !important;
   padding: 0 !important;
-
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
-
   cursor: pointer !important;
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
-
-/* Видимое состояние */
 
 .rk-backtop.is-visible {
   opacity: 1;
@@ -847,84 +504,47 @@
   pointer-events: auto;
 }
 
-/* Мягкий градиент и тень */
-
 .rk-backtop::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   z-index: 0;
   pointer-events: none;
-
-  background: radial-gradient(
-    ellipse at 100% 100%,
-    rgba(15, 23, 42, 0.17) 0%,
-    rgba(15, 23, 42, 0.07) 38%,
-    transparent 76%
-  );
-
+  background: radial-gradient(ellipse at 100% 100%, rgba(15, 23, 42, 0.17) 0%, rgba(15, 23, 42, 0.07) 38%, transparent 76%);
   opacity: 0.18;
-
   transition: opacity 0.3s ease;
 }
 
-/* Внутренний блок */
-
 .rk-backtop__content {
   position: absolute;
-
   right: 25px;
   bottom: 22px;
-
   display: flex;
   align-items: center;
   gap: 9px;
-
   z-index: 1;
-
   color: #334155;
-
   transition: color 0.25s ease;
 }
 
-/* Иконка */
-
 .rk-backtop__icon {
   display: block;
-
   width: 24px;
   height: 24px;
-
   flex: 0 0 24px;
-
   opacity: 0.45;
   transform: translateY(4px);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    color 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
-
-/* Надпись */
 
 .rk-backtop__label {
   font-family: "TildaSans", sans-serif;
-
   font-size: 13px;
   font-weight: 700;
-
   opacity: 0;
   transform: translateY(5px);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
-
-/* Наведение на всю область */
 
 .rk-backtop.is-visible:hover::before,
 .rk-backtop.is-visible:focus-visible::before {
@@ -944,36 +564,355 @@
   transform: translateY(0);
 }
 
-/* Фокус с клавиатуры */
-
 .rk-backtop:focus-visible {
   outline: 2px solid #2563eb !important;
   outline-offset: -5px !important;
 }
 
-/* Сенсорные экраны */
-
 @media (hover: none) {
+  .rk-backtop.is-visible::before { opacity: 0.55; }
+  .rk-backtop.is-visible .rk-backtop__icon { opacity: 0.9; transform: none; }
+  .rk-backtop.is-visible .rk-backtop__label { opacity: 0.85; transform: none; }
+}
 
-  .rk-backtop.is-visible::before {
-    opacity: 0.55;
+/* =========================================================
+   SEARCH RESULTS CUSTOMIZATION
+   ========================================================= */
+.md-search-result__article {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.md-search-result__article h1 {
+  display: block !important;
+  margin: 0 0 5px !important;
+  padding: 0 !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.4 !important;
+  color: #0f172a !important;
+  padding-left: 0 !important;
+  min-height: 0 !important;
+}
+
+.md-search-result__article h2,
+.md-search-result__article h3,
+.md-search-result__article h4,
+.md-search-result__article h5,
+.md-search-result__article h6 {
+  display: block !important;
+  margin: 5px 0 0 !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  color: #64748b !important;
+}
+
+.md-search-result__article mark {
+  font-size: inherit !important;
+}
+
+.md-search-result__item {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+
+.md-search-result__icon {
+  display: none !important;
+}
+
+.md-search__options {
+  display: flex !important;
+  align-items: center !important;
+  height: 50px !important;
+}
+
+.md-search__icon[for="__search"] {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* =========================================================
+   MOBILE & TABLET RESPONSIVE (Всё в одном месте)
+   ========================================================= */
+@media screen and (max-width: 76.2344em) {
+  
+  /* Скрываем правую панель */
+  .md-sidebar--secondary,
+  .md-sidebar--aside {
+    display: none !important;
   }
 
-  .rk-backtop.is-visible .rk-backtop__icon {
-    opacity: 0.9;
-    transform: none;
+  /* --- Хедер и поиск --- */
+  .md-header__inner {
+    padding: 0 1rem !important;
+    justify-content: flex-start !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    overflow: visible !important;
   }
 
-  .rk-backtop.is-visible .rk-backtop__label {
-    opacity: 0.85;
-    transform: none;
+  .md-header__button--menu { order: 0 !important; flex: 0 0 40px !important; width: 40px !important; margin: 0 !important; }
+  .md-header__button.md-logo { order: 1 !important; flex: 0 1 auto !important; min-width: 0 !important; margin: 0 auto 0 0 !important; }
+  .md-header__option { order: 2 !important; margin: 0 0.65rem 0 0 !important; }
+
+  .md-search {
+    order: 3 !important;
+    position: relative !important;
+    inset: auto !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .md-search__inner {
+    position: relative !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .md-search__form {
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    background: transparent !important;
+  }
+
+  .md-search__form:hover {
+    background: rgba(100, 116, 139, 0.12) !important;
+  }
+
+  .md-search__input {
+    cursor: pointer !important;
+  }
+
+  /* Раскрытый поиск */
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: 100vw !important;
+    height: 4.5rem !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    overflow: visible !important;
+    z-index: 112 !important;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+    width: 100% !important;
+    height: 40px !important;
+    background: #ffffff !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__output {
+    position: fixed !important;
+    top: calc(4.5rem - 16px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 50dvh !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border: 1px solid #e2e8f0 !important;
+    border-top: none !important;
+    border-radius: 0 0 10px 10px !important;
+    background: #ffffff !important;
+    z-index: 112 !important;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__scrollwrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 50dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__overlay {
+    position: fixed !important;
+    top: 4.5rem !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: auto !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    z-index: 109 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+
+  /* --- Мобильное меню (Drawer) --- */
+  .md-nav--primary > .md-nav__title[for="__drawer"] {
+    display: none !important;
+  }
+
+  .md-nav--primary label.md-nav__link[for="__toc"] {
+    display: none !important;
+  }
+
+  .md-sidebar--primary {
+    top: 4.5rem !important;
+    height: calc(100vh - 4.5rem) !important;
+    height: calc(100dvh - 4.5rem) !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    padding: 0 !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin;
+  }
+
+  .md-nav--primary {
+    padding: 12px 10px 24px !important;
+    font-size: 14px !important;
+  }
+
+  .md-nav--primary > .md-nav__list {
+    padding: 0 !important;
+  }
+
+  .md-nav--primary a.md-nav__link,
+  .md-nav--primary label.md-nav__link:not([for="__toc"]) {
+    min-height: 44px !important;
+    height: auto !important;
+    margin: 3px 0 !important;
+    border-radius: 8px !important;
+  }
+
+  .md-nav--primary .md-nav__container {
+    min-height: 44px !important;
+  }
+
+  .md-nav--primary .md-nav__link .md-ellipsis {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    padding: 10px 12px !important;
+    white-space: normal !important;
+  }
+
+  .md-nav--primary .md-nav__container > label.md-nav__link {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    min-height: 44px !important;
+  }
+
+  .md-nav--primary .md-nav {
+    padding-left: 10px !important;
+  }
+
+  /* Тёмная тема для мобильного поиска и меню */
+  [data-md-color-scheme="slate"] .md-search__form {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-search__form:hover {
+    background: rgba(148, 163, 184, 0.12) !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-nav--primary {
+    background-color: #0f172a !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-nav--primary .md-nav__list {
+    background-color: transparent !important;
   }
 }
 
-/* Мобильная адаптация */
-
+/* =========================================================
+   PHONE SEARCH & BACK TO TOP (Очень маленькие экраны)
+   ========================================================= */
 @media screen and (max-width: 600px) {
+  
+  .md-header {
+    background: #ffffff !important;
+  }
 
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__overlay {
+    inset: 4.5rem 0 0 0 !important;
+    height: auto !important;
+    z-index: 109 !important;
+    transform: none !important;
+    transform-origin: top left !important;
+    border-radius: 0 !important;
+    clip-path: none !important;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__output {
+    top: calc(4.5rem - 20px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 50dvh !important;
+    overflow: hidden !important;
+  }
+
+  [data-md-toggle="search"]:checked ~ .md-header .md-search__scrollwrap {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 50dvh !important;
+    overflow-y: auto !important;
+  }
+
+  .md-search__options {
+    display: flex !important;
+    align-items: center !important;
+    height: 50px !important;
+  }
+
+  .md-search__options button[type="reset"] {
+    position: relative !important;
+    top: -15px !important;
+    transform: none !important;
+  }
+
+  /* Компактный пустой поиск */
+  .md-search__inner:has(.md-search__input:placeholder-shown) .md-search__output {
+    max-height: 55px !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .md-search__inner:has(.md-search__input:placeholder-shown) .md-search__scrollwrap {
+    max-height: 55px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Мобильный Back To Top */
   .rk-backtop {
     width: 120px !important;
     height: 78px !important;
@@ -983,5 +922,58 @@
     right: 17px;
     bottom: 16px;
   }
+}
 
+/* =========================================================
+   TINY SCREENS (< 400px)
+   ========================================================= */
+@media screen and (max-width: 400px) {
+  .md-header__inner {
+    padding: 0 0.75rem !important;
+  }
+
+  .md-header__option {
+    margin: 0 0.05rem 0 0 !important;
+  }
+
+  .md-search {
+    width: 40px !important;
+    flex-basis: 40px !important;
+  }
+}
+
+/* =========================================================
+   СКРЫТИЕ СТАНДАРТНОГО H1 (Главная, Инструкции и т.д.)
+   ========================================================= */
+.md-content__inner > h1 {
+  display: none !important;
+}
+
+/* =========================================================
+   ФИКС ТЕМНОЙ ТЕМЫ ДЛЯ ПРАВОГО МЕНЮ (Содержание)
+   ========================================================= */
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__title {
+  color: #f8fafc !important; /* Делаем заголовок светлым */
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link {
+  color: #94a3b8 !important; /* Ссылки делаем светло-серыми */
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover {
+  color: #60a5fa !important; /* При наведении — голубым */
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
+  color: #60a5fa !important; /* Активная ссылка — голубая */
+}
+
+/* =========================================================
+   PAYMENT METHODS — ВЫРАВНИВАНИЕ БАННЕРА ПО HERO-ПЛИТКЕ
+   ========================================================= */
+
+body:has(.payments-page) .md-sidebar--secondary .aside-sticky {
+  position: relative !important;
+  top: -80px !important;
+  transform: none !important;
 }
