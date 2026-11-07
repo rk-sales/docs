@@ -1,195 +1,769 @@
-/* ===== ГЛАВНАЯ (HERO) ===== */
+/* =========================================================
+   ГЛАВНАЯ И СТРАНИЦА «О НАС» — Consolidated CSS
+   ========================================================= */
+
+/* =========================================================
+   1. ГЛАВНАЯ — HERO
+   ========================================================= */
 .home-hero {
-  position: relative; overflow: hidden; margin: 1.25rem 0 3rem;
-  padding: clamp(2rem, 5vw, 4.5rem); border: 1px solid #dbe5f3; border-radius: 28px;
-  background: radial-gradient(ellipse at 90% 0%, rgba(59,130,246,.13), transparent 38%), linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%);
+  position: relative;
+  overflow: hidden;
+  margin: 1.25rem 0 3rem;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border: 1px solid #dbe5f3;
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(59,130,246,.13), transparent 38%),
+    linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%);
   box-shadow: 0 14px 38px rgba(15,23,42,.055);
 }
-.home-hero::after {
-  content: ""; position: absolute; width: 230px; height: 230px; right: -90px; bottom: -130px;
-  border: 1px solid rgba(37,99,235,.18); border-radius: 50%;
-  box-shadow: 0 0 0 28px rgba(37,99,235,.035), 0 0 0 58px rgba(37,99,235,.025); pointer-events: none;
-}
-.home-hero__eyebrow, .home-kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #2563eb; }
-.home-hero__eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 1.4rem; }
-.home-kicker { margin-bottom: .35rem; }
-.home-hero__dot { width: 8px; height: 8px; border-radius: 50%; background: #2563eb; box-shadow: 0 0 0 4px rgba(37,99,235,.12); }
-.md-typeset .home-hero__title {
-  max-width: 780px; margin: 0 0 1.2rem; color: #0f172a;
-  font-size: clamp(2.6rem, 5.8vw, 4.5rem); font-weight: 800; line-height: 1.03; letter-spacing: -2.5px;
-}
-.home-hero__title span { color: #2563eb; }
-.home-hero__text { max-width: 650px; margin: 0; color: #526176; font-size: 1.08rem; line-height: 1.75; }
-.home-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 1.8rem; }
-.md-typeset .home-hero__actions .md-button { margin: 0; border-radius: 10px; padding: .5rem .9rem; font-size: 0.85rem; font-weight: 700; }
-.md-typeset .home-hero__actions .md-button--primary { background: #2563eb; border-color: #2563eb; color: #fff; }
-.md-typeset .home-hero__actions .md-button--primary:hover { background: #1d4ed8; border-color: #1d4ed8; }
-.md-typeset .home-hero__secondary { color: #0f172a; border-color: #cbd5e1; background: rgba(255,255,255,.75); }
-.home-hero__note { margin-top: 1.5rem; color: #8290a4; font-size: .78rem; }
 
-/* ===== НАВИГАЦИОННЫЕ КАРТОЧКИ ===== */
-.home-nav-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.4rem 0 1.5rem; }
+.home-hero::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -90px;
+  bottom: -130px;
+  border: 1px solid rgba(37,99,235,.18);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 28px rgba(37,99,235,.035),
+    0 0 0 58px rgba(37,99,235,.025);
+  pointer-events: none;
+}
+
+.home-hero__eyebrow,
+.home-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #2563eb;
+}
+
+.home-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 1.4rem;
+}
+
+.home-kicker {
+  margin-bottom: .35rem;
+}
+
+.home-hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+.md-typeset .home-hero__title {
+  max-width: 780px;
+  margin: 0 0 1.2rem;
+  color: #0f172a;
+  font-size: clamp(2.6rem, 5.8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -2.5px;
+}
+
+.home-hero__title span {
+  color: #2563eb;
+}
+
+.home-hero__text {
+  max-width: 650px;
+  margin: 0;
+  color: #526176;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1.8rem;
+}
+
+.md-typeset .home-hero__actions .md-button {
+  margin: 0;
+  padding: .5rem .9rem;
+  border-radius: 10px;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.md-typeset .home-hero__actions .md-button--primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.md-typeset .home-hero__actions .md-button--primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.md-typeset .home-hero__secondary {
+  color: #0f172a;
+  border-color: #cbd5e1;
+  background: rgba(255,255,255,.75);
+}
+
+.home-hero__note {
+  margin-top: 1.5rem;
+  color: #8290a4;
+  font-size: .78rem;
+}
+
+/* =========================================================
+   2. НАВИГАЦИОННЫЕ КАРТОЧКИ
+   ========================================================= */
+.home-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0 1.5rem;
+}
 
 .home-nav-card {
-  display: flex; 
-  min-width: 0; 
-  flex-direction: column; 
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
   align-items: flex-start;
-  height: 100%; /* Растягивает карточку на всю высоту ряда */
-  padding: 1.4rem; 
-  color: #334155 !important; 
+  padding: 1.4rem;
+  color: #334155 !important;
   text-decoration: none !important;
-  background: #fff; 
-  border: 1px solid #e2e8f0; 
-  border-radius: 18px; 
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
   box-shadow: 0 3px 10px rgba(15,23,42,.025);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
-.home-nav-card:hover { transform: translateY(-3px); border-color: #93b4f8; box-shadow: 0 12px 28px rgba(15,23,42,.07); }
-.home-nav-card--featured { background: linear-gradient(145deg, #fff, #f2f6ff); border-color: #c8d8fb; }
-.home-nav-card__icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 1.1rem; border-radius: 12px; background: #eff5ff; color: #2563eb; flex-shrink: 0; }
-.home-nav-card__icon svg { width: 22px; height: 22px; }
-.home-nav-card__tag { margin-bottom: .45rem; font-size: 9px; letter-spacing: 1.2px; color: #2563eb; }
-.md-typeset .home-nav-card strong { margin-bottom: .45rem; color: #0f172a; font-size: 1.12rem; line-height: 1.3; }
+.home-nav-card:hover {
+  transform: translateY(-3px);
+  border-color: #93b4f8;
+  box-shadow: 0 12px 28px rgba(15,23,42,.07);
+}
 
-.home-nav-card__description { 
-  display: block; 
-  flex-grow: 1; /* Растягивает описание, прижимая ссылку вниз */
+.home-nav-card--featured {
+  background: linear-gradient(145deg, #fff, #f2f6ff);
+  border-color: #c8d8fb;
+}
+
+.home-nav-card__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 1.1rem;
+  border-radius: 12px;
+  background: #eff5ff;
+  color: #2563eb;
+}
+
+.home-nav-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.home-nav-card__tag {
+  margin-bottom: .45rem;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  color: #2563eb;
+}
+
+.md-typeset .home-nav-card strong {
+  margin-bottom: .45rem;
+  color: #0f172a;
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.home-nav-card__description {
+  display: block;
+  flex-grow: 1;
   margin-bottom: 1rem;
-  color: #64748b; 
-  font-size: .84rem; 
-  line-height: 1.6; 
+  color: #64748b;
+  font-size: .84rem;
+  line-height: 1.6;
 }
 
-.home-nav-card__link { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: .5rem; margin-top: auto; padding-top: .85rem; border-top: 1px solid #edf1f6; color: #2563eb; font-size: .8rem; font-weight: 700; }
+.home-nav-card__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: .5rem;
+  margin-top: auto;
+  padding-top: .85rem;
+  border-top: 1px solid #edf1f6;
+  color: #2563eb;
+  font-size: .8rem;
+  font-weight: 700;
+}
 
-/* ===== TIP ===== */
-.home-tip { display: flex; gap: .9rem; align-items: flex-start; margin: 1.5rem 0 3rem; padding: 1.1rem 1.2rem; background: #f1f6ff; border: 1px solid #dbe8ff; border-radius: 14px; color: #526176; font-size: .88rem; line-height: 1.65; }
-.home-tip strong { color: #172554; }
-.home-tip__icon { display: grid; flex: 0 0 27px; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: #dbeafe; color: #1d4ed8; font-weight: 800; }
+/* =========================================================
+   3. ИНФОРМАЦИОННЫЙ БЛОК TIP
+   ========================================================= */
+.home-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: .9rem;
+  margin: 1.5rem 0 1.5rem;
+  padding: 1.1rem 1.2rem;
+  background: #f1f6ff;
+  border: 1px solid #dbe8ff;
+  border-radius: 14px;
+  color: #526176;
+  font-size: .88rem;
+  line-height: 1.65;
+}
 
-/* ===== СТРАНИЦА "О НАС" ===== */
+.home-tip strong {
+  color: #172554;
+}
+
+.home-tip__icon {
+  display: grid;
+  flex: 0 0 27px;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 800;
+}
+
+/* =========================================================
+   4. СТРАНИЦА «О НАС» — HERO
+   ========================================================= */
 .hero-card {
-  margin: 1.5rem 0 2rem; padding: 3rem; background: #ffffff;
-  border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.02), 0 8px 10px -6px rgba(0,0,0,0.02);
+  margin: 1.5rem 0 2rem;
+  padding: 3rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,.02), 0 8px 10px -6px rgba(0,0,0,.02);
 }
-.hero-title { margin-top: 0 !important; margin-bottom: 1.25rem !important; color: #0f172a !important; }
-.hero-content p { font-size: 1.05rem; line-height: 1.7; color: #475569; margin-bottom: 1rem; }
-.hero-content p:last-of-type { margin-bottom: 0; }
-.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-.hero-actions .md-button--black { padding: 0.6rem 1.2rem !important; font-size: 0.95rem !important; }
-.hero-image-full { margin: 0 0 3rem; text-align: center; }
-.hero-image-full img { display: block; width: 100%; max-width: 1100px; height: auto; margin: 0 auto; border-radius: 24px; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); }
 
-.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 0 0 3rem; }
-.metric-card { padding: 2rem 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; text-align: center; transition: all 0.3s ease; }
-.metric-card:hover { transform: translateY(-4px); box-shadow: 0 12px 25px -5px rgba(0,0,0,0.05); border-color: #cbd5e1; }
-.metric-value { font-size: 2.5rem; font-weight: 800; color: #0f172a; line-height: 1; margin-bottom: 0.5rem; letter-spacing: -1px; }
-.metric-label { font-size: 1rem; color: #64748b; line-height: 1.4; font-weight: 500; }
-
-.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
-.feature-card {
-  display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem;
-  background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; box-shadow: 0 3px 10px rgba(15,23,42,.025);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+.hero-title {
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem !important;
+  color: #0f172a !important;
 }
-.feature-card:hover { transform: translateY(-3px); border-color: #93b4f8; box-shadow: 0 12px 28px rgba(15,23,42,.07); }
-.feature-icon { display: grid; place-items: center; width: 48px; height: 48px; background: #eff5ff; color: #2563eb; border-radius: 12px; flex-shrink: 0; }
-.feature-icon svg { width: 24px; height: 24px; }
-.feature-content { flex: 1; min-width: 0; }
-.feature-content h3 { font-size: 1.12rem; font-weight: 700; margin: 0 0 0.45rem; color: #0f172a; }
-.feature-content p { font-size: 0.95rem; line-height: 1.6; color: #475569; }
 
-/* ===== СТИЛИ ДЛЯ ИКОНОК В ТАБЛИЦЕ ===== */
-.availability svg { width: 20px; height: 20px; display: block; margin: 0 auto; }
-.availability--yes svg { color: #10b981; } 
-.availability--no svg { color: #ef4444; } 
-.availability--check svg { color: #f59e0b; } 
+.hero-content p {
+  margin-bottom: 1rem;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
 
-/* ФИКС ПРОЗРАЧНОСТИ: Убираем прозрачность с ячейки и переносим на иконку */
+.hero-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hero-actions .md-button--black {
+  padding: .6rem 1.2rem !important;
+  font-size: .95rem !important;
+}
+
+.hero-image-full {
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+.hero-image-full img {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image-full img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -10px rgba(0,0,0,.15);
+}
+
+/* =========================================================
+   5. МЕТРИКИ
+   ========================================================= */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 0 0 3rem;
+}
+
+.metric-card {
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 25px -5px rgba(0,0,0,.05);
+}
+
+.metric-value {
+  margin-bottom: .5rem;
+  color: #0f172a;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.metric-label {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* =========================================================
+   6. WHY ROBOKASSA — STICKY STACKING CARDS (Apple Style)
+   ========================================================= */
+
+/* 1. Контейнер */
+.features-grid {
+  counter-reset: feature-counter;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  margin: 0 0 5rem !important;
+  padding: 0 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* 2. Карточки */
+.features-grid > .feature-card {
+  position: sticky !important;
+  top: 15vh !important; 
+  
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 2.5rem !important;
+  padding: 3rem !important;
+  
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  
+  border: 1px solid rgba(255, 255, 255, 1) !important;
+  border-radius: 32px !important;
+  box-shadow: 
+    0 -20px 40px -10px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+  
+  z-index: 1 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  overflow: hidden !important;
+}
+
+/* Марджины карточек для эффекта наложения */
+.features-grid > .feature-card:nth-child(1) { margin-top: 0 !important; }
+.features-grid > .feature-card:nth-child(2) { margin-top: 1rem !important; }
+.features-grid > .feature-card:nth-child(3) { margin-top: 1rem !important; }
+.features-grid > .feature-card:nth-child(4) { margin-top: 1rem !important; }
+.features-grid > .feature-card:nth-child(5) { margin-top: 1rem !important; }
+.features-grid > .feature-card:nth-child(6) { margin-top: 1rem !important; }
+
+/* 3. Огромные цифры на фоне карточки */
+.features-grid > .feature-card::before {
+  counter-increment: feature-counter;
+  content: "0" counter(feature-counter);
+  position: absolute !important;
+  bottom: -3rem !important;
+  right: 2rem !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14rem !important;
+  font-weight: 900 !important;
+  color: rgba(37, 99, 235, 0.03) !important; 
+  line-height: 1 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Подсветка при наведении */
+.features-grid > .feature-card:hover {
+  border-color: rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 
+    0 -20px 50px -10px rgba(37, 99, 235, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+  transform: translateY(-5px) !important;
+}
+
+.features-grid > .feature-card:hover::before {
+  color: rgba(37, 99, 235, 0.08) !important;
+}
+
+/* 4. Иконки */
+.features-grid .feature-icon {
+  display: grid !important;
+  flex: 0 0 64px !important;
+  place-items: center !important;
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+  color: #2563eb !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15) !important;
+  z-index: 1 !important;
+}
+
+.features-grid .feature-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+/* 5. Текст */
+.features-grid .feature-content {
+  flex: 1 !important;
+  min-width: 0 !important;
+  z-index: 1 !important;
+}
+
+.features-grid .feature-content h3 {
+  margin: 0 0 0.6rem !important;
+  color: #0f172a !important;
+  font-size: 1.3rem !important; 
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.3px !important;
+}
+
+.features-grid .feature-content p {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+}
+
+/* =========================================================
+   ПЛАНШЕТЫ И МОБИЛЬНЫЕ (Адаптив)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+  .features-grid {
+    gap: 0 !important; 
+    padding: 0 1rem !important;
+  }
+  
+  .features-grid > .feature-card {
+    flex-direction: row !important; /* Иконка слева, текст справа */
+    align-items: flex-start !important; 
+    gap: 1rem !important;
+    padding: 1.25rem !important; /* Уменьшили внутренние отступы */
+    margin-top: 0.5rem !important; 
+    top: 6vh !important; 
+  }
+
+  /* Микро-сдвиг для стопки */
+  .features-grid > .feature-card:nth-child(1) { top: 6vh !important; margin-top: 0 !important; }
+  .features-grid > .feature-card:nth-child(2) { top: 6.5vh !important; }
+  .features-grid > .feature-card:nth-child(3) { top: 7vh !important; }
+  .features-grid > .feature-card:nth-child(4) { top: 7.5vh !important; }
+  .features-grid > .feature-card:nth-child(5) { top: 8vh !important; }
+  .features-grid > .feature-card:nth-child(6) { top: 8.5vh !important; }
+  
+  .features-grid > .feature-card::before {
+    font-size: 8rem !important;
+    bottom: -1rem !important;
+    right: 1rem !important;
+  }
+  
+  /* Уменьшаем иконку, чтобы она не раздувала карточку */
+  .features-grid .feature-icon {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    margin-top: 0.2rem !important; /* Выравниваем по верхней линии заголовка */
+  }
+  
+  .features-grid .feature-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Размеры шрифтов */
+  .features-grid .feature-content h3 {
+    font-size: 1.05rem !important; 
+    margin-bottom: 0.35rem !important;
+  }
+  
+  .features-grid .feature-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* =========================================================
+   7. ИКОНКИ В ТАБЛИЦЕ
+   ========================================================= */
+.availability svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+.availability--yes svg { color: #10b981; }
+.availability--no svg { color: #ef4444; }
+.availability--check svg { color: #f59e0b; }
+
 .md-typeset .table-wrapper td.availability--no {
-  opacity: 1 !important; /* Ячейка становится полностью непрозрачной */
+  opacity: 1 !important;
   filter: none !important;
 }
+
 .md-typeset .table-wrapper td.availability--no svg {
-  opacity: 0.3 !important; /* Прозрачность только для крестика */
+  opacity: .3 !important;
   filter: grayscale(100%) !important;
 }
 
-/* ===== ЛЕГЕНДА ===== */
+/* =========================================================
+   8. ЛЕГЕНДА
+   ========================================================= */
 .comparison-legend {
-  margin: 1rem 0 3rem; padding: 1.25rem 1.5rem; border: 1px solid #e2e8f0; border-radius: 16px; background: #ffffff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+  margin: 1rem 0 3rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.02);
 }
-.comparison-legend__title { display: block; margin-bottom: 1rem; color: #0f172a; font-size: 1.05rem; font-weight: 800; }
-.legend-items { display: flex; flex-direction: column; gap: 0.75rem; }
-.legend-item { display: flex; align-items: flex-start; gap: 0.5rem; }
-.legend-symbol { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.legend-text { font-size: 0.95rem; color: #475569; line-height: 1.5; }
 
-/* ===== АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ ===== */
+.comparison-legend__title {
+  display: block;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
 
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+.legend-symbol {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-text {
+  color: #475569;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   9. PDF И РЕКВИЗИТЫ
+   ========================================================= */
+.requisites-footer {
+  text-align: center !important;
+}
+
+.pdf-btn {
+  padding: .6rem 1.2rem !important;
+  font-size: .9rem !important;
+}
+
+.pdf-btn span {
+  font-size: 1.1rem !important;
+}
+
+/* =========================================================
+   10. ПЛАНШЕТЫ — ДО 1024px
+   ========================================================= */
 @media screen and (max-width: 1024px) {
-  .home-nav-grid { grid-template-columns: repeat(2, 1fr); }
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .home-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
+/* =========================================================
+   11. ТЕЛЕФОНЫ — ДО 768px
+   ========================================================= */
 @media screen and (max-width: 768px) {
-  .md-content__inner { padding-bottom: 5rem; }
-  
-  .home-hero { padding: 1.5rem; border-radius: 20px; margin: 1rem 0 2rem; }
-  .home-hero::after { display: none; }
-  .md-typeset .home-hero__title { font-size: 2.2rem; letter-spacing: -1px; }
-  .home-hero__text { font-size: 1rem; }
 
-  .home-hero__actions { flex-direction: column; align-items: stretch; gap: 0.75rem; }
-  .md-typeset .home-hero__actions .md-button { width: 100%; text-align: center; padding: 0.75rem; }
-  .home-hero__note { margin-top: 1rem; text-align: center; }
+  /* Верхний отступ от фиксированного хедера */
+  body:has(.home-hero) .md-main__inner {
+    margin-top: 0 !important;
+  }
 
-  /* ПЛИТКИ ПО 2 В РЯД */
-  .home-nav-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 0.75rem; 
+  body:has(.home-hero) .md-content__inner {
+    padding-top: 0 !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .home-hero {
+    margin: 1.4rem 0 2rem !important;
+    padding: 1.5rem !important;
+    padding-top: 1.75rem !important;
+    border-radius: 20px;
+  }
+
+  .home-hero::after {
+    display: none;
+  }
+
+  .md-typeset .home-hero__title {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+  }
+
+  .home-hero__text {
+    font-size: 1rem;
+  }
+
+  .home-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+
+  .md-typeset .home-hero__actions .md-button {
+    width: 100%;
+    padding: .75rem;
+    text-align: center;
+  }
+
+  .home-hero__note {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  /* Навигационные карточки */
+  .home-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
     margin-bottom: 1.5rem;
   }
-  
-  /* Уменьшаем контент внутри плиток */
-  .home-nav-card { padding: 1rem 0.75rem; }
-  .home-nav-card__icon { width: 32px; height: 32px; margin-bottom: 0.75rem; border-radius: 8px; }
+
+  .home-nav-card { padding: 1rem .75rem; }
+  .home-nav-card__icon { width: 32px; height: 32px; margin-bottom: .75rem; border-radius: 8px; }
   .home-nav-card__icon svg { width: 16px; height: 16px; }
   .home-nav-card__tag { font-size: 8px; }
-  .md-typeset .home-nav-card strong { font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .home-nav-card__description { font-size: 0.75rem; line-height: 1.4; }
-  
-  /* Фикс ссылок на мобилках */
-  .home-nav-card__link { 
-    font-size: 0.7rem; 
-    margin-top: 0.75rem; 
-    padding-top: 0.5rem; 
+  .md-typeset .home-nav-card strong { margin-bottom: .25rem; font-size: .95rem; }
+  .home-nav-card__description { font-size: .75rem; line-height: 1.4; }
+
+  .home-nav-card__link {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 8px;
+    margin-top: .75rem;
+    padding-top: .5rem;
+    font-size: .7rem;
   }
 
   .home-nav-card__link span {
     flex-shrink: 0;
-    margin-top: 1px; 
+    margin-top: 1px;
   }
 
-  .hero-card { padding: 1.5rem; border-radius: 20px; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .hero-actions .md-button { width: 100%; text-align: center; }
-  .demo-hint { display: block; margin-top: 0.5rem; text-align: center; }
+  /* Страница «О нас» */
+  .hero-card {
+    padding: 1.25rem !important;
+    border-radius: 20px;
+  }
 
-  .features-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .feature-card { padding: 1.25rem; flex-direction: column; gap: 1rem; }
-  
-  .table-mobile-hint { display: block; font-size: 0.8rem; color: #64748b; text-align: center; margin-top: 0.5rem; }
+  .hero-title {
+    margin-bottom: .75rem !important;
+    font-size: 1.3rem !important;
+  }
 
-  /* =========================================================
-     МОБИЛЬНАЯ ТАБЛИЦА (Заморозка 1 и 2 колонки)
-     ========================================================= */
+  .hero-content p {
+    margin-bottom: .75rem;
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .md-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions .md-button--black {
+    padding: .4rem .8rem !important;
+    border-radius: 8px !important;
+    font-size: .8rem !important;
+  }
+
+  .demo-hint {
+    display: block;
+    margin-top: .5rem;
+    text-align: center;
+  }
+
+  .pdf-btn {
+    width: 100%;
+    padding: .5rem 1rem !important;
+    justify-content: center;
+    font-size: .85rem !important;
+  }
+
+  /* Таблица */
+  .table-mobile-hint {
+    display: block;
+    margin-top: .5rem;
+    color: #64748b;
+    font-size: .8rem;
+    text-align: center;
+  }
+
   .md-typeset .table-wrapper {
     max-width: 100%;
     overflow-x: auto;
@@ -200,21 +774,21 @@
     min-width: 900px;
   }
 
-  /* 1. Замораживаем первую колонку (Название метода) */
   .md-typeset .table-wrapper th:first-child,
   .md-typeset .table-wrapper td:first-child {
-    width: 120px !important;
-    min-width: 120px !important;
-    max-width: 120px !important;
+    box-sizing: border-box !important;
     position: sticky !important;
     left: 0 !important;
     z-index: 3 !important;
+    width: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    padding: 12px 8px !important;
     background-color: #ffffff !important;
-    box-shadow: 2px 0 5px -2px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px -2px rgba(0,0,0,.1);
     white-space: normal !important;
     word-break: break-word !important;
     line-height: 1.3 !important;
-    padding: 12px 8px !important;
   }
 
   [data-md-color-scheme="slate"] .md-typeset .table-wrapper th:first-child,
@@ -222,21 +796,21 @@
     background-color: #1e293b !important;
   }
 
-  /* 2. Замораживаем вторую колонку (Robokassa) и делаем её такой же по ширине */
   .md-typeset .table-wrapper th:nth-child(2),
   .md-typeset .table-wrapper td:nth-child(2) {
+    box-sizing: border-box !important;
+    position: sticky !important;
+    left: 120px !important;
+    z-index: 3 !important;
     width: 100px !important;
     min-width: 100px !important;
     max-width: 100px !important;
-    position: sticky !important;
-    left: 120px !important; /* Сдвиг ровно на ширину первой колонки (120px) */
-    z-index: 3 !important;
+    padding: 12px 8px !important;
     background-color: #f0f7ff !important;
-    box-shadow: 2px 0 5px -2px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 5px -2px rgba(0,0,0,.1);
     white-space: normal !important;
     word-break: break-word !important;
     line-height: 1.3 !important;
-    padding: 12px 8px !important;
   }
 
   [data-md-color-scheme="slate"] .md-typeset .table-wrapper th:nth-child(2),
@@ -244,77 +818,112 @@
     background-color: #1a2b49 !important;
   }
 
-  /* 3. Остальные колонки делаем такой же ширины, как Robokassa */
-  .md-typeset .table-wrapper th:not(:first-child):not(:nth-child(2)),
-  .md-typeset .table-wrapper td:not(:first-child):not(:nth-child(2)) {
+  .md-typeset .table-wrapper th:not(:first-child),
+  .md-typeset .table-wrapper td:not(:first-child) {
     width: 100px !important;
     min-width: 100px !important;
     max-width: 100px !important;
+    padding: 12px 8px !important;
     white-space: normal !important;
     word-break: break-word !important;
     line-height: 1.3 !important;
-    padding: 12px 8px !important;
   }
-}
 
-@media screen and (max-width: 480px) {
-  /* Оставляем 2 колонки для метрик */
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-  .metric-card { padding: 1.25rem 0.5rem; }
-  .metric-value { font-size: 1.75rem; }
-  .metric-label { font-size: 0.8rem; }
-  
-  .home-hero__eyebrow { font-size: 10px; }
-  .md-typeset .home-hero__title { font-size: 1.9rem; }
+  /* Реквизиты */
+  .requisites-grid {
+    grid-template-columns: 1fr !important;
+  }
 
-  .site-footer__links { flex-direction: column; gap: 1rem; align-items: center; }
-  .site-footer__copy { text-align: center; font-size: 0.75rem; }
+  .requisite-item {
+    padding: 1rem !important;
+    border-right: none !important;
+  }
+
+  .requisite-value {
+    font-size: 14px !important;
+    word-break: break-all !important;
+  }
+
+  .requisite-label {
+    font-size: 10px !important;
+  }
 }
 
 /* =========================================================
-   ФИНАЛЬНЫЕ ПРАВКИ (PDF-кнопка, Текст, Темная тема)
+   12. УЗКИЕ ТЕЛЕФОНЫ — ДО 480px
    ========================================================= */
+@media screen and (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+  }
 
-/* 1. Кнопка скачивания PDF: выравниваем по центру и делаем чуть меньше */
-.requisites-footer { 
-  text-align: center !important; /* Центрируем кнопку */
-}
-.pdf-btn { 
-  padding: 0.6rem 1.2rem !important; 
-  font-size: 0.9rem !important; 
-}
-.pdf-btn span { 
-  font-size: 1.1rem !important; 
-}
+  .metric-card {
+    padding: 1.25rem .5rem;
+  }
 
-/* 2. Блок "О Robokassa" на мобильных: уменьшаем шрифты */
-@media screen and (max-width: 768px) {
-  .hero-card {
-    padding: 1.25rem !important;
+  .metric-value {
+    font-size: 1.75rem;
   }
-  .hero-title {
-    font-size: 1.3rem !important;
-    margin-bottom: 0.75rem !important;
+
+  .metric-label {
+    font-size: .8rem;
   }
-  .hero-content p {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 0.75rem !important;
+
+  .home-hero__eyebrow {
+    font-size: 10px;
   }
-  
-  /* Кнопка PDF на мобилках: делаем еще меньше */
-  .pdf-btn {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.85rem !important;
-    width: 100%; /* Растягиваем на всю ширину для удобства */
-    justify-content: center;
+
+  .md-typeset .home-hero__title {
+    font-size: 1.9rem;
   }
 }
 
-/* 3. Тёмная тема: исправляем цвет текста в легенде */
+/* =========================================================
+   13. ТЁМНАЯ ТЕМА
+   ========================================================= */
+[data-md-color-scheme="slate"] .features-grid > .feature-card {
+  background: rgba(30, 41, 59, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 
+    0 -20px 40px -10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .features-grid > .feature-card:hover {
+  border-color: rgba(96, 165, 250, 0.3) !important;
+  box-shadow: 
+    0 -20px 50px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .features-grid > .feature-card::before {
+  color: rgba(96, 165, 250, 0.03) !important;
+}
+
+[data-md-color-scheme="slate"] .features-grid > .feature-card:hover::before {
+  color: rgba(96, 165, 250, 0.08) !important;
+}
+
+[data-md-color-scheme="slate"] .features-grid .feature-icon {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(37, 99, 235, 0.05)) !important;
+  color: #60a5fa !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-md-color-scheme="slate"] .features-grid .feature-content h3 {
+  color: #f8fafc !important;
+}
+
+[data-md-color-scheme="slate"] .features-grid .feature-content p {
+  color: #cbd5e1 !important;
+}
+
+/* Легенда */
 [data-md-color-scheme="slate"] .legend-text {
-  color: #cbd5e1 !important; /* Светло-серый цвет для читаемости */
+  color: #cbd5e1 !important;
 }
+
 [data-md-color-scheme="slate"] .comparison-legend__title {
   color: #f8fafc !important;
 }

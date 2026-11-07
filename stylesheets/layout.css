@@ -977,3 +977,62 @@ body:has(.payments-page) .md-sidebar--secondary .aside-sticky {
   top: -80px !important;
   transform: none !important;
 }
+
+/* =========================================================
+   ГЛОБАЛЬНЫЙ ФУТЕР (Для всех страниц)
+   ========================================================= */
+.md-footer {
+  background-color: transparent !important; /* Убираем стандартный темный фон */
+}
+
+.custom-footer {
+  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem 1rem 1rem !important;
+  margin-top: 2rem !important;
+  text-align: center;
+}
+
+.custom-footer__inner {
+  max-width: 1750px;
+  margin: 0 auto;
+}
+
+.custom-footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.custom-footer__links a {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.custom-footer__links a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.custom-footer__copy {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Тёмная тема для футера */
+[data-md-color-scheme="slate"] .custom-footer {
+  border-top-color: #334155;
+}
+[data-md-color-scheme="slate"] .custom-footer__links a {
+  color: #94a3b8;
+}
+[data-md-color-scheme="slate"] .custom-footer__links a:hover {
+  color: #60a5fa;
+}
+[data-md-color-scheme="slate"] .custom-footer__copy {
+  color: #64748b;
+}
