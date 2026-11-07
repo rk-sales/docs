@@ -3,6 +3,7 @@ site_url: https://rk-sales.github.io/docs/
 
 theme:
   name: material
+  custom_dir: overrides
   language: ru
   logo: img/logo_robokassa_black.png   # Логотип в хедере
   logo_dark: img/logo_robokassa_white.png

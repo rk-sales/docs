@@ -93,7 +93,9 @@
 </div>
 
 <div class="hero-image-full">
-  <img src="img/main-hero.png" alt="Платёжные методы Robokassa" class="hero-image-full">
+  <a href="https://auth.robokassa.ru/merchant/Invoice/uo4Pw1Q_NkGN10_D9JyBWg" target="_blank" rel="noopener noreferrer">
+    <img src="img/main-hero.png" alt="Платёжные методы Robokassa" class="hero-image-full">
+  </a>
 </div>
 
 <div class="home-kicker" style="margin-top: 3rem;">ЦИФРЫ И ФАКТЫ</div>
@@ -101,6 +103,11 @@
 ## Ключевые показатели {: #metrics }
 
 <div class="metrics-grid">
+  <!-- Поменяли местами PCI DSS и 20 лет -->
+  <div class="metric-card">
+    <div class="metric-value">PCI DSS</div>
+    <div class="metric-label">сертификация Level 1</div>
+  </div>
   <div class="metric-card">
     <div class="metric-value">20+</div>
     <div class="metric-label">лет на рынке</div>
@@ -108,10 +115,6 @@
   <div class="metric-card">
     <div class="metric-value">99,9%</div>
     <div class="metric-label">заявленная стабильность платежей</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">PCI DSS</div>
-    <div class="metric-label">сертификация Level 1</div>
   </div>
   <div class="metric-card">
     <div class="metric-value">24/7</div>
@@ -522,13 +525,3 @@
     </a>
   </div>
 </div> <!-- Закрытие requisites-card -->
-
-<!-- ФУТЕР СТРАНИЦЫ -->
-<footer class="site-footer">
-  <div class="site-footer__links">
-    <a href="https://robokassa.com/media/dogovori/main_docs/dogovor_robokassa.pdf" target="_blank" rel="noopener noreferrer">Договор оферты</a>
-    <a href="https://robokassa.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Политика обработки персональных данных</a>
-    <a href="https://robokassa.com/partners/" target="_blank" rel="noopener noreferrer">Партнёрская программа</a>
-  </div>
-  <div class="site-footer__copy">© Robokassa, 2026. База знаний.</div>
-</footer>
