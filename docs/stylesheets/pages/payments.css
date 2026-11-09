@@ -867,3 +867,91 @@
   }
 }
 
+/* =========================================================
+   АДАПТИВ: ПЛАНШЕТЫ И МОБИЛЬНЫЕ (ФИКС HERO)
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+  /* Карточки теперь справа от заголовка на планшетах */
+  .md-typeset .payments-page .payments-hero {
+    grid-template-columns: 1fr 180px !important; 
+    gap: 1rem !important;
+    align-items: start !important;
+    padding: 2rem !important;
+  }
+
+  /* Магия, чтобы текст обтекал заголовок */
+  .payments-page .payments-hero__content {
+    display: contents !important;
+  }
+
+  /* Плашка на всю ширину */
+  .payments-page .payments-eyebrow {
+    grid-column: 1 / -1 !important;
+    justify-self: start !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Заголовок слева */
+  .md-typeset .payments-page .payments-hero__title {
+    grid-column: 1 / 2 !important;
+    grid-row: 2 / 3 !important;
+    font-size: 2rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Карты справа от заголовка */
+  .payments-page .payments-hero__visual {
+    grid-column: 2 / 3 !important;
+    grid-row: 2 / 3 !important;
+    order: 0 !important;
+    min-height: auto !important;
+    margin-top: 0 !important;
+    align-self: center !important;
+  }
+
+  /* Текст и кнопки на всю ширину под заголовком */
+  .md-typeset .payments-page .payments-hero__text,
+  .payments-page .payments-hero__actions {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Уменьшаем мокап карт для планшета */
+  .payments-page .payments-deck {
+    width: 160px !important;
+    height: 110px !important;
+  }
+  .payments-page .payments-deck__card {
+    padding: 0.75rem !important;
+    border-radius: 12px !important;
+  }
+  .payments-page .payments-deck__label { font-size: 0.5rem !important; }
+  .payments-page .payments-deck__icon svg { width: 14px !important; height: 14px !important; }
+  .payments-page .payments-deck__title { font-size: 0.8rem !important; }
+  .payments-page .payments-deck__num { font-size: 0.6rem !important; }
+}
+
+@media screen and (max-width: 767px) {
+  /* На мобилке делаем колонку для карт чуть уже */
+  .md-typeset .payments-page .payments-hero {
+    grid-template-columns: 1fr 110px !important;
+  }
+
+  /* Уменьшаем мокап еще сильнее для мобилки */
+  .payments-page .payments-deck {
+    width: 100px !important;
+    height: 70px !important;
+  }
+  
+  /* Прячем верхнюю плашку внутри карточек, чтобы не мешала */
+  .payments-page .payments-deck__top {
+    display: none !important;
+  }
+  .payments-page .payments-deck__title {
+    font-size: 0.65rem !important;
+    margin-top: auto !important;
+  }
+  .payments-page .payments-deck__num {
+    font-size: 0.5rem !important;
+  }
+}
