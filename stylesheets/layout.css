@@ -435,7 +435,7 @@
 }
 
 /* =========================================================
-   DARK THEME
+   DARK THEME — HEADER / SEARCH
    ========================================================= */
 [data-md-color-scheme="slate"] .md-header {
   background-color: #1e293b !important;
@@ -953,25 +953,24 @@
    ФИКС ТЕМНОЙ ТЕМЫ ДЛЯ ПРАВОГО МЕНЮ (Содержание)
    ========================================================= */
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__title {
-  color: #f8fafc !important; /* Делаем заголовок светлым */
+  color: #f8fafc !important;
 }
 
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link {
-  color: #94a3b8 !important; /* Ссылки делаем светло-серыми */
+  color: #94a3b8 !important;
 }
 
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover {
-  color: #60a5fa !important; /* При наведении — голубым */
+  color: #60a5fa !important;
 }
 
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
-  color: #60a5fa !important; /* Активная ссылка — голубая */
+  color: #60a5fa !important;
 }
 
 /* =========================================================
    PAYMENT METHODS — ВЫРАВНИВАНИЕ БАННЕРА ПО HERO-ПЛИТКЕ
    ========================================================= */
-
 body:has(.payments-page) .md-sidebar--secondary .aside-sticky {
   position: relative !important;
   top: -80px !important;
@@ -979,16 +978,63 @@ body:has(.payments-page) .md-sidebar--secondary .aside-sticky {
 }
 
 /* =========================================================
-   ГЛОБАЛЬНЫЙ ФУТЕР (Для всех страниц)
+   CONTENT VERTICAL PADDING — единый отступ сверху и снизу
+   ========================================================= */
+
+:root {
+  --content-vpad: 2.5rem;           /* ПК: 45px */
+}
+@media screen and (max-width: 76.25em) {
+  :root { --content-vpad: 1.8rem; } /* Планшет + телефон: 32.4px */
+}
+
+/* Обнуляем промежуточные margin/padding на пути хедер → контент → футер */
+.md-container,
+.md-main,
+.md-main__inner,
+.md-content,
+.md-typeset,
+.md-content__inner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Задаём единый визуальный зазор сверху и снизу */
+.md-content__inner {
+  /* Компенсация скрытого margin-top: 0.4rem (7.2px) от Material */
+  margin-top: -0.4rem !important;
+  padding-top: var(--content-vpad) !important;
+  padding-bottom: var(--content-vpad) !important;
+}
+
+/* Первый видимый блок без верхнего margin — зазор задаёт padding-top */
+.md-content__inner > *:first-child,
+.md-content__inner > h1 + * {
+  margin-top: 0 !important;
+}
+
+/* Последний блок без нижнего margin — зазор задаёт padding-bottom */
+.md-content__inner > *:last-child,
+.requisites-card {
+  margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   FOOTER
    ========================================================= */
 .md-footer {
-  background-color: transparent !important; /* Убираем стандартный темный фон */
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
 }
 
 .custom-footer {
-  border-top: 1px solid #e2e8f0;
-  padding: 1.5rem 1rem 1rem !important;
-  margin-top: 2rem !important;
+  margin-top: 0 !important;
+  background-color: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  padding: 2rem 1rem 1.5rem !important;
   text-align: center;
 }
 
@@ -1023,9 +1069,10 @@ body:has(.payments-page) .md-sidebar--secondary .aside-sticky {
   color: #94a3b8;
 }
 
-/* Тёмная тема для футера */
+/* Тёмная тема футера */
 [data-md-color-scheme="slate"] .custom-footer {
-  border-top-color: #334155;
+  background-color: #1e293b !important;
+  border-top-color: #334155 !important;
 }
 [data-md-color-scheme="slate"] .custom-footer__links a {
   color: #94a3b8;
